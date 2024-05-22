@@ -1,19 +1,24 @@
 package sims
 
 import (
+	"encoding/json"
 	"fmt"
+	"github.com/cosmos/cosmos-sdk/simsx"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	"io"
+	"os"
 	"path/filepath"
 	"testing"
 
 	dbm "github.com/cosmos/cosmos-db"
+	"github.com/cosmos/cosmos-sdk/client"
+	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/stretchr/testify/require"
 
 	"cosmossdk.io/core/log"
 	tlog "cosmossdk.io/log"
 
 	"github.com/cosmos/cosmos-sdk/baseapp"
-	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/runtime"
@@ -117,6 +122,7 @@ func RunWithSeeds[T SimulationApp](
 
 			app := testInstance.App
 			stateFactory := setupStateFactory(app)
+			ops, reporter := prepareWeightedOps(app.SimulationManager(), stateFactory.Codec, tCfg, testInstance.App.TxConfig())
 			simParams, err := simulation.SimulateFromSeedX(
 				t,
 				runLogger,
@@ -124,7 +130,7 @@ func RunWithSeeds[T SimulationApp](
 				app.GetBaseApp(),
 				stateFactory.AppStateFn,
 				simtypes.RandomAccounts, // Replace with own random account function if using keys other than secp256k1
-				simtestutil.SimulationOperations(app, stateFactory.Codec, tCfg, testInstance.App.TxConfig()),
+				ops,
 				stateFactory.BlockedAddr,
 				tCfg,
 				stateFactory.Codec,
@@ -137,6 +143,7 @@ func RunWithSeeds[T SimulationApp](
 			if tCfg.Commit {
 				simtestutil.PrintStats(testInstance.DB)
 			}
+			t.Log("+++ DONE: \n" + reporter.Summary().String())
 			for _, step := range postRunActions {
 				step(t, testInstance)
 			}
@@ -152,6 +159,54 @@ func RunWithSeeds[T SimulationApp](
 //   - Cfg: The configuration flags for the simulator.
 //   - AppLogger: The logger used for logging in the app during the simulation, with seed value attached.
 //   - ExecLogWriter: Captures block and operation data coming from the simulation
+//
+// included to avoid cyclic dependency in testutils/sims
+func prepareWeightedOps(sm *module.SimulationManager, cdc codec.Codec, config simtypes.Config, txConfig client.TxConfig) (simulation.WeightedOperations, *simsx.BasicSimulationReporter) {
+	signingCtx := cdc.InterfaceRegistry().SigningContext()
+	simState := module.SimulationState{
+		AppParams:      make(simtypes.AppParams),
+		Cdc:            cdc,
+		AddressCodec:   signingCtx.AddressCodec(),
+		ValidatorCodec: signingCtx.ValidatorAddressCodec(),
+		TxConfig:       txConfig,
+		BondDenom:      sdk.DefaultBondDenom,
+	}
+
+	if config.ParamsFile != "" {
+		bz, err := os.ReadFile(config.ParamsFile)
+		if err != nil {
+			panic(err)
+		}
+
+		err = json.Unmarshal(bz, &simState.AppParams)
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	simState.LegacyProposalContents = sm.GetProposalContents(simState) //nolint:staticcheck // we're testing the old way here
+	simState.ProposalMsgs = sm.GetProposalMsgs(simState)
+
+	wOps := make([]simtypes.WeightedOperation, 0, len(sm.Modules))
+	weights := simsx.ParamWeightSource(simState.AppParams)
+	reporter := simsx.NewBasicSimulationReporter()
+	reg := simsx.NewSimsRegistryAdapter(reporter, sm.AK, sm.BK, txConfig)
+
+	type weightedOperationsX interface {
+		WeightedOperationsX(weight simsx.WeightSource, reg simsx.Registry)
+	}
+
+	for _, m := range sm.Modules {
+		if xm, ok := m.(weightedOperationsX); ok {
+			xm.WeightedOperationsX(weights, reg)
+		} else {
+			// support legacy entry factory method
+			wOps = append(wOps, m.WeightedOperations(simState)...)
+		}
+	}
+	return append(wOps, reg.ToLegacyWeightedOperations()...), reporter
+}
+
 type TestInstance[T SimulationApp] struct {
 	App           T
 	DB            dbm.DB

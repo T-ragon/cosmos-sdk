@@ -126,15 +126,12 @@ func (s *SimTestSuite) SetupTest() {
 // TestWeightedOperations tests the weights of the operations.
 func (s *SimTestSuite) TestWeightedOperations() {
 	require := s.Require()
-
 	s.ctx.WithChainID("test-chain")
 
 	cdc := s.encCfg.Codec
 	appParams := make(simtypes.AppParams)
 
-	weightedOps := simulation.WeightedOperations(appParams, cdc, s.txConfig, s.accountKeeper,
-		s.bankKeeper, s.stakingKeeper,
-	)
+	weightedOps := simulation.WeightedOperations(appParams, cdc, s.txConfig, s.accountKeeper, s.bankKeeper, s.stakingKeeper)
 
 	expected := []struct {
 		weight     int

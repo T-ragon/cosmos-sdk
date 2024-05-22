@@ -9,6 +9,7 @@ import (
 	"cosmossdk.io/x/protocolpool/keeper"
 	"cosmossdk.io/x/protocolpool/simulation"
 	"cosmossdk.io/x/protocolpool/types"
+	"github.com/cosmos/cosmos-sdk/simsx"
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/types/module"
@@ -86,8 +87,13 @@ func (AppModule) ProposalMsgs(simState module.SimulationState) []simtypes.Weight
 
 // WeightedOperations returns the all the protocolpool module operations with their respective weights.
 func (am AppModule) WeightedOperations(simState module.SimulationState) []simtypes.WeightedOperation {
+	panic("old code")
 	return simulation.WeightedOperations(
 		simState.AppParams, simState.Cdc, simState.TxConfig,
 		am.accountKeeper, am.bankKeeper, am.keeper,
 	)
+}
+
+func (am AppModule) WeightedOperationsX(weight simsx.WeightSource, reg simsx.Registry) {
+	reg.Add(weight.Get("msg_fund_community_pool", 50), simulation.MsgCreateValidatorFactory())
 }

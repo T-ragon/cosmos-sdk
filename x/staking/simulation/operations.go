@@ -4,6 +4,9 @@ import (
 	"bytes"
 	"fmt"
 	"math/rand"
+	"testing"
+
+	"github.com/cosmos/cosmos-sdk/simsx"
 
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/staking/keeper"
@@ -84,11 +87,12 @@ func WeightedOperations(
 		weightMsgRotateConsPubKey = DefaultWeightMsgRotateConsPubKey
 	})
 
-	return simulation.WeightedOperations{
-		simulation.NewWeightedOperation(
-			weightMsgCreateValidator,
-			SimulateMsgCreateValidator(txGen, ak, bk, k),
-		),
+	reg := simsx.NewSimsRegistryAdapter(simsx.NewBasicSimulationReporter(), ak, bk, txGen)
+	weight := simsx.ParamWeightSource(appParams)
+	reg.Add(weight.Get("msg_create_validator", 100), MsgCreateValidatorFactory(k))
+	reg.Add(weight.Get("msg_delegate", 100), MsgDelegateFactory(k))
+	reg.Add(weight.Get("msg_undelegate", 100), MsgUndelegateFactory(k))
+	return append(reg.ToLegacyWeightedOperations(),
 		simulation.NewWeightedOperation(
 			weightMsgEditValidator,
 			SimulateMsgEditValidator(txGen, ak, bk, k),
@@ -113,7 +117,7 @@ func WeightedOperations(
 			weightMsgRotateConsPubKey,
 			SimulateMsgRotateConsPubKey(txGen, ak, bk, k),
 		),
-	}
+	)
 }
 
 // SimulateMsgCreateValidator generates a MsgCreateValidator with random values
