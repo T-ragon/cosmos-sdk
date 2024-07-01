@@ -154,7 +154,7 @@ func RunWithSeeds[T SimulationApp](
 			err = simtestutil.CheckExportSimulation(app, tCfg, simParams)
 			require.NoError(t, err)
 			if tCfg.Commit {
-				simtestutil.PrintStats(testInstance.DB)
+				simtestutil.PrintStats(testInstance.DB, t.Log)
 			}
 			t.Log("+++ DONE: \n" + reporter.Summary().String())
 			for _, step := range postRunActions {

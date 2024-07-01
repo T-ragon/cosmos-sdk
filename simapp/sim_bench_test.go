@@ -84,6 +84,6 @@ func BenchmarkFullAppSimulation(b *testing.B) {
 	}
 
 	if config.Commit {
-		simtestutil.PrintStats(db)
+		simtestutil.PrintStats(db, nil)
 	}
 }
