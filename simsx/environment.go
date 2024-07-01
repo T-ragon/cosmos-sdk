@@ -126,7 +126,7 @@ func (b *SimsAccountBalance) RandSubsetCoin(reporter SimulationReporter, denom s
 }
 
 func (b *SimsAccountBalance) randomAmount(retryCount int, reporter SimulationReporter, coins sdk.Coins, filters ...CoinsFilter) sdk.Coins {
-	if retryCount < 0 {
+	if retryCount < 0 || b.Coins.Empty() {
 		reporter.Skip("failed to find matching amount")
 		return sdk.Coins{}
 	}
@@ -257,7 +257,12 @@ func (c ChainDataSource) GetAccount(reporter SimulationReporter, addr string) Si
 func (c *ChainDataSource) randomAccount(reporter SimulationReporter, retryCount int, filters ...SimAccountFilter) SimAccount {
 	if retryCount < 0 {
 		reporter.Skip("failed to find a matching account")
-		return SimAccount{}
+		return SimAccount{
+			Account:       simtypes.Account{},
+			r:             c.r,
+			liquidBalance: &SimsAccountBalance{},
+			bank:          c.accounts[0].bank,
+		}
 	}
 	idx := c.r.Intn(len(c.accounts))
 	acc := c.accounts[idx]

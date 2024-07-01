@@ -80,10 +80,11 @@ func (l SimsRegistryAdapter) legacyOperationAdapter(rootReporter SimulationRepor
 		r *rand.Rand, app *baseapp.BaseApp, ctx sdk.Context,
 		accs []simtypes.Account, chainID string,
 	) (simtypes.OperationMsg, []simtypes.FutureOperation, error) {
+		xCtx, done := context.WithCancel(ctx)
+		ctx = sdk.UnwrapSDKContext(xCtx)
 		testData := NewChainDataSource(ctx, r, l.ak, l.bk, l.addressCodec, accs...)
-		reporter := rootReporter.WithScope(example)
-
-		from, msg := f(ctx, testData, reporter)
+		reporter := rootReporter.WithScope(example, SkipHookFn(func(args ...any) { done() }))
+		from, msg := runWithFailFast(ctx, testData, reporter, f)
 		return DeliverSimsMsg(
 			reporter,
 			r,
@@ -95,6 +96,39 @@ func (l SimsRegistryAdapter) legacyOperationAdapter(rootReporter SimulationRepor
 			chainID,
 			from...,
 		), nil, reporter.Close()
+	}
+}
+
+type tuple struct {
+	signer []SimAccount
+	msg    sdk.Msg
+}
+
+func runWithFailFast(ctx sdk.Context, data *ChainDataSource, reporter SimulationReporter, f FactoryMethod) (signer []SimAccount, msg sdk.Msg) {
+	r := make(chan tuple)
+	go func() {
+		defer recoverPanicForSkipped(reporter, r)
+		signer, msg := f(ctx, data, reporter)
+		r <- tuple{signer: signer, msg: msg}
+	}()
+	select {
+	case t, ok := <-r:
+		if !ok {
+			return nil, nil
+		}
+		return t.signer, t.msg
+	case <-ctx.Done():
+		reporter.Skip("context closed")
+		return nil, nil
+	}
+}
+
+func recoverPanicForSkipped(reporter SimulationReporter, resultChan chan tuple) {
+	if r := recover(); r != nil {
+		if !reporter.IsSkipped() {
+			panic(r)
+		}
+		close(resultChan)
 	}
 }
 
