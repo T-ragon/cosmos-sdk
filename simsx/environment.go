@@ -6,11 +6,10 @@ import (
 	"slices"
 	"time"
 
+	"cosmossdk.io/core/address"
 	"cosmossdk.io/math"
 
-	"cosmossdk.io/core/address"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/simulation"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 )
 
@@ -28,7 +27,7 @@ func (s contextAwareBalanceSource) IsSendEnabledDenom(denom string) bool {
 }
 
 type SimAccount struct {
-	simulation.Account
+	simtypes.Account
 	r             *rand.Rand
 	liquidBalance *SimsAccountBalance
 	AddressBech32 string
@@ -322,7 +321,7 @@ func (r *XRand) StringN(max int) string {
 }
 
 func (r *XRand) SubsetCoins(src sdk.Coins) sdk.Coins {
-	return simulation.RandSubsetCoins(r.Rand, src)
+	return simtypes.RandSubsetCoins(r.Rand, src)
 }
 
 func (r *XRand) DecN(max math.LegacyDec) math.LegacyDec {

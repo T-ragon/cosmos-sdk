@@ -7,8 +7,6 @@ import (
 	"sort"
 	"time"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-
 	"cosmossdk.io/core/address"
 	"cosmossdk.io/core/appmodule"
 	sdkmath "cosmossdk.io/math"

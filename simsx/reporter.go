@@ -7,11 +7,11 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/cosmos/gogoproto/proto"
 	"golang.org/x/exp/maps"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/cosmos/gogoproto/proto"
 )
 
 type ReportResult struct {
@@ -180,7 +180,7 @@ func NewExecutionSummary() *ExecutionSummary {
 	return &ExecutionSummary{counts: make(map[string]int), reasons: make(map[string]map[string]struct{})}
 }
 
-func (s *ExecutionSummary) Add(module string, url string, status ReporterStatus, comment string) {
+func (s *ExecutionSummary) Add(module, url string, status ReporterStatus, comment string) {
 	combinedKey := fmt.Sprintf("%s_%s", module, status.String())
 	s.counts[combinedKey] += 1
 	if status == completed {
