@@ -56,15 +56,17 @@ func TestFullAppSimulation(t *testing.T) {
 
 func setupStateFactory(app *SimApp) sims.SimStateFactory {
 	return sims.SimStateFactory{
-		Codec:       app.AppCodec(),
-		AppStateFn:  simtestutil.AppStateFn(app.AppCodec(), app.AuthKeeper.AddressCodec(), app.StakingKeeper.ValidatorAddressCodec(), app.SimulationManager(), app.DefaultGenesis()),
-		BlockedAddr: BlockedAddresses(),
+		Codec:         app.AppCodec(),
+		AppStateFn:    simtestutil.AppStateFn(app.AppCodec(), app.AuthKeeper.AddressCodec(), app.StakingKeeper.ValidatorAddressCodec(), app.SimulationManager(), app.DefaultGenesis()),
+		BlockedAddr:   BlockedAddresses(),
+		AccountSource: app.AuthKeeper,
+		BalanceSource: app.BankKeeper,
 	}
 }
 
 var (
-	exportAllModules       = []string{}
-	exportWithValidatorSet = []string{}
+	exportAllModules       []string
+	exportWithValidatorSet []string
 )
 
 func TestAppImportExport(t *testing.T) {

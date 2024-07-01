@@ -1,8 +1,13 @@
 package sims
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/cosmos/cosmos-sdk/client"
+	"github.com/cosmos/cosmos-sdk/simsx"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/cosmos-sdk/types/module"
 	"io"
 	"os"
 	"path/filepath"
@@ -39,10 +44,22 @@ var defaultSeeds = []int64{
 	977367484, 491163361, 424254581, 673398983,
 }
 
+// BalanceSource is a duplicate of sims.BalanceSource to break ciclic dependencies
+type BalanceSource interface {
+	SpendableCoins(ctx context.Context, addr sdk.AccAddress) sdk.Coins
+	IsSendEnabledDenom(ctx context.Context, denom string) bool
+}
+type AccountSource interface {
+	GetAccount(ctx context.Context, addr sdk.AccAddress) sdk.AccountI
+	GetModuleAddress(moduleName string) sdk.AccAddress
+}
+
 type SimStateFactory struct {
-	Codec       codec.Codec
-	AppStateFn  simtypes.AppStateFn
-	BlockedAddr map[string]bool
+	Codec         codec.Codec
+	AppStateFn    simtypes.AppStateFn
+	BalanceSource BalanceSource
+	AccountSource AccountSource
+	BlockedAddr   map[string]bool
 }
 
 // SimulationApp abstract app that is used by sims
@@ -118,7 +135,7 @@ func RunWithSeeds[T SimulationApp](
 
 			app := testInstance.App
 			stateFactory := setupStateFactory(app)
-			ops, reporter := prepareWeightedOps(app.SimulationManager(), stateFactory.Codec, tCfg, testInstance.App.TxConfig())
+			ops, reporter := prepareWeightedOps(app.SimulationManager(), stateFactory, tCfg, testInstance.App.TxConfig())
 			simParams, err := simulation.SimulateFromSeedX(
 				t,
 				runLogger,
@@ -157,11 +174,11 @@ func RunWithSeeds[T SimulationApp](
 //   - ExecLogWriter: Captures block and operation data coming from the simulation
 //
 // included to avoid cyclic dependency in testutils/sims
-func prepareWeightedOps(sm *module.SimulationManager, cdc codec.Codec, config simtypes.Config, txConfig client.TxConfig) (simulation.WeightedOperations, *simsx.BasicSimulationReporter) {
-	signingCtx := cdc.InterfaceRegistry().SigningContext()
+func prepareWeightedOps(sm *module.SimulationManager, stateFact SimStateFactory, config simtypes.Config, txConfig client.TxConfig) (simulation.WeightedOperations, *simsx.BasicSimulationReporter) {
+	signingCtx := stateFact.Codec.InterfaceRegistry().SigningContext()
 	simState := module.SimulationState{
 		AppParams:      make(simtypes.AppParams),
-		Cdc:            cdc,
+		Cdc:            stateFact.Codec,
 		AddressCodec:   signingCtx.AddressCodec(),
 		ValidatorCodec: signingCtx.ValidatorAddressCodec(),
 		TxConfig:       txConfig,
@@ -186,7 +203,7 @@ func prepareWeightedOps(sm *module.SimulationManager, cdc codec.Codec, config si
 	wOps := make([]simtypes.WeightedOperation, 0, len(sm.Modules))
 	weights := simsx.ParamWeightSource(simState.AppParams)
 	reporter := simsx.NewBasicSimulationReporter()
-	reg := simsx.NewSimsRegistryAdapter(reporter, sm.AK, sm.BK, txConfig)
+	reg := simsx.NewSimsRegistryAdapter(reporter, stateFact.AccountSource, stateFact.BalanceSource, txConfig)
 
 	type weightedOperationsX interface {
 		WeightedOperationsX(weight simsx.WeightSource, reg simsx.Registry)

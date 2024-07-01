@@ -7,7 +7,6 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/simsx"
 
-	"cosmossdk.io/math"
 	"cosmossdk.io/x/staking/keeper"
 	"cosmossdk.io/x/staking/types"
 
@@ -109,103 +108,6 @@ func WeightedOperations(
 			SimulateMsgRotateConsPubKey(txGen, ak, bk, k),
 		),
 	)
-}
-
-// SimulateMsgCreateValidator generates a MsgCreateValidator with random values
-func SimulateMsgCreateValidator(
-	txGen client.TxConfig,
-	ak types.AccountKeeper,
-	bk types.BankKeeper,
-	k *keeper.Keeper,
-) simtypes.Operation {
-	return func(
-		r *rand.Rand, app *baseapp.BaseApp, ctx sdk.Context, accs []simtypes.Account, chainID string,
-	) (simtypes.OperationMsg, []simtypes.FutureOperation, error) {
-		msgType := sdk.MsgTypeURL(&types.MsgCreateValidator{})
-
-		simAccount, _ := simtypes.RandomAcc(r, accs)
-		address := sdk.ValAddress(simAccount.Address)
-
-		// ensure the validator doesn't exist already
-		_, err := k.GetValidator(ctx, address)
-		if err == nil {
-			return simtypes.NoOpMsg(types.ModuleName, msgType, "validator already exists"), nil, nil
-		}
-
-		consPubKey := sdk.GetConsAddress(simAccount.ConsKey.PubKey())
-		_, err = k.GetValidatorByConsAddr(ctx, consPubKey)
-		if err == nil {
-			return simtypes.NoOpMsg(types.ModuleName, msgType, "cons key already used"), nil, nil
-		}
-
-		denom, err := k.BondDenom(ctx)
-		if err != nil {
-			return simtypes.NoOpMsg(types.ModuleName, msgType, "bond denom not found"), nil, err
-		}
-
-		balance := bk.GetBalance(ctx, simAccount.Address, denom).Amount
-		if !balance.IsPositive() {
-			return simtypes.NoOpMsg(types.ModuleName, msgType, "balance is negative"), nil, nil
-		}
-
-		amount, err := simtypes.RandPositiveInt(r, balance)
-		if err != nil {
-			return simtypes.NoOpMsg(types.ModuleName, msgType, "unable to generate positive amount"), nil, err
-		}
-
-		selfDelegation := sdk.NewCoin(denom, amount)
-
-		account := ak.GetAccount(ctx, simAccount.Address)
-		spendable := bk.SpendableCoins(ctx, account.GetAddress())
-
-		var fees sdk.Coins
-
-		coins, hasNeg := spendable.SafeSub(selfDelegation)
-		if !hasNeg {
-			fees, err = simtypes.RandomFees(r, coins)
-			if err != nil {
-				return simtypes.NoOpMsg(types.ModuleName, msgType, "unable to generate fees"), nil, err
-			}
-		}
-
-		description := types.NewDescription(
-			simtypes.RandStringOfLength(r, 10),
-			simtypes.RandStringOfLength(r, 10),
-			simtypes.RandStringOfLength(r, 10),
-			simtypes.RandStringOfLength(r, 10),
-			simtypes.RandStringOfLength(r, 10),
-		)
-
-		maxCommission := math.LegacyNewDecWithPrec(int64(simtypes.RandIntBetween(r, 0, 100)), 2)
-		commission := types.NewCommissionRates(
-			simtypes.RandomDecAmount(r, maxCommission),
-			maxCommission,
-			simtypes.RandomDecAmount(r, maxCommission),
-		)
-
-		addr, err := k.ValidatorAddressCodec().BytesToString(address)
-		if err != nil {
-			return simtypes.NoOpMsg(types.ModuleName, msgType, "unable to generate validator address"), nil, err
-		}
-		msg, err := types.NewMsgCreateValidator(addr, simAccount.ConsKey.PubKey(), selfDelegation, description, commission, math.OneInt())
-		if err != nil {
-			return simtypes.NoOpMsg(types.ModuleName, sdk.MsgTypeURL(msg), "unable to create CreateValidator message"), nil, err
-		}
-
-		txCtx := simulation.OperationInput{
-			R:             r,
-			App:           app,
-			TxGen:         txGen,
-			Cdc:           nil,
-			Msg:           msg,
-			Context:       ctx,
-			SimAccount:    simAccount,
-			AccountKeeper: ak,
-			ModuleName:    types.ModuleName,
-		}
-
-		return simulation.GenAndDeliverTx(txCtx, fees)
-	}
 }
 
 // SimulateMsgEditValidator generates a MsgEditValidator with random values
@@ -825,6 +727,17 @@ func SimulateMsgRotateConsPubKey(txGen client.TxConfig, ak types.AccountKeeper, 
 		msg, err := types.NewMsgRotateConsPubKey(valAddr, acc.ConsKey.PubKey())
 		if err != nil {
 			return simtypes.NoOpMsg(types.ModuleName, msgType, "unable to build msg"), nil, err
+		}
+
+		// check if there's another key rotation for this same key in the same block
+		allRotations, err := k.GetBlockConsPubKeyRotationHistory(ctx)
+		if err != nil {
+			return simtypes.NoOpMsg(types.ModuleName, msgType, "cannot get block cons key rotation history"), nil, err
+		}
+		for _, r := range allRotations {
+			if r.NewConsPubkey.Compare(msg.NewPubkey) == 0 {
+				return simtypes.NoOpMsg(types.ModuleName, msgType, "cons key already used in this block"), nil, nil
+			}
 		}
 
 		txCtx := simulation.OperationInput{

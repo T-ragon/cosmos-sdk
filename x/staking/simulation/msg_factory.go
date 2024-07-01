@@ -2,10 +2,10 @@ package simulation
 
 import (
 	"context"
-
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/staking/keeper"
 	"cosmossdk.io/x/staking/types"
+	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/simsx"
 	"github.com/cosmos/cosmos-sdk/testutil"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -32,6 +32,13 @@ func MsgCreateValidatorFactory(k *keeper.Keeper) simsx.SimMsgFactoryFn[*types.Ms
 		if reporter.IsSkipped() {
 			return nil, nil
 		}
+
+		newPubKey := simAccount.ConsKey.PubKey()
+		assertKeyUnused(ctx, reporter, k, newPubKey)
+		if reporter.IsSkipped() {
+			return nil, nil
+		}
+
 		selfDelegation := simAccount.LiquidBalance().RandSubsetCoin(reporter, bondDenom)
 		description := types.NewDescription(
 			r.StringN(10),
@@ -53,11 +60,13 @@ func MsgCreateValidatorFactory(k *keeper.Keeper) simsx.SimMsgFactoryFn[*types.Ms
 			reporter.Skip("unable to generate validator address")
 			return nil, nil
 		}
-		msg, err := types.NewMsgCreateValidator(addr, simAccount.ConsKey.PubKey(), selfDelegation, description, commission, math.OneInt())
+
+		msg, err := types.NewMsgCreateValidator(addr, newPubKey, selfDelegation, description, commission, math.OneInt())
 		if err != nil {
 			reporter.Skip(err.Error())
 			return nil, nil
 		}
+
 		return []simsx.SimAccount{simAccount}, msg
 	}
 }
@@ -70,7 +79,7 @@ func MsgDelegateFactory(k *keeper.Keeper) simsx.SimMsgFactoryFn[*types.MsgDelega
 			reporter.Skip(err.Error())
 			return nil, nil
 		}
-		val := randomValidator(reporter, ctx, k, r)
+		val := randomValidator(ctx, reporter, k, r)
 		if reporter.IsSkipped() {
 			return nil, nil
 		}
@@ -93,7 +102,7 @@ func MsgUndelegateFactory(k *keeper.Keeper) simsx.SimMsgFactoryFn[*types.MsgUnde
 			reporter.Skip(err.Error())
 			return nil, nil
 		}
-		val := randomValidator(reporter, ctx, k, r)
+		val := randomValidator(ctx, reporter, k, r)
 		if reporter.IsSkipped() {
 			return nil, nil
 		}
@@ -141,7 +150,7 @@ func MsgUndelegateFactory(k *keeper.Keeper) simsx.SimMsgFactoryFn[*types.MsgUnde
 	}
 }
 
-func randomValidator(reporter simsx.SimulationReporter, ctx context.Context, k *keeper.Keeper, r *simsx.XRand) types.Validator {
+func randomValidator(ctx context.Context, reporter simsx.SimulationReporter, k *keeper.Keeper, r *simsx.XRand) types.Validator {
 	vals, err := k.GetAllValidators(ctx)
 	if err != nil || len(vals) == 0 {
 		reporter.Skipf("unable to get validators or empty list: %s", err)
@@ -153,4 +162,19 @@ func randomValidator(reporter simsx.SimulationReporter, ctx context.Context, k *
 		return types.Validator{}
 	}
 	return val
+}
+
+// skips execution if there's another key rotation for the same key in the same block
+func assertKeyUnused(ctx context.Context, reporter simsx.SimulationReporter, k *keeper.Keeper, newPubKey cryptotypes.PubKey) {
+	allRotations, err := k.GetBlockConsPubKeyRotationHistory(ctx)
+	if err != nil {
+		reporter.Skipf("cannot get block cons key rotation history: %s", err.Error())
+		return
+	}
+	for _, r := range allRotations {
+		if r.NewConsPubkey.Compare(newPubKey) != 0 {
+			reporter.Skip("cons key already used in this block")
+			return
+		}
+	}
 }

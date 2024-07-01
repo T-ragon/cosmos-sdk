@@ -30,11 +30,11 @@ type SimulationReporter interface {
 	Skipf(comment string, args ...any)
 	IsSkipped() bool
 	ToLegacyOperationMsg() simtypes.OperationMsg
-	// complete with failure
+	// Fail complete with failure
 	Fail(err error, comments ...string)
-	// complete with success
+	// Success complete with success
 	Success(msg sdk.Msg, comments ...string)
-	// error captured on fail
+	// Close returns error captured on fail
 	Close() error
 	Comment() string
 }
