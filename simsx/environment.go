@@ -30,7 +30,6 @@ type SimAccount struct {
 	simtypes.Account
 	r             *rand.Rand
 	liquidBalance *SimsAccountBalance
-	AddressBech32 string
 	bank          contextAwareBalanceSource
 }
 
@@ -224,17 +223,12 @@ func NewChainDataSource(ctx context.Context, r *rand.Rand, ak ModuleAccountSourc
 	acc := make([]SimAccount, len(oldSimAcc))
 	index := make(map[string]int, len(oldSimAcc))
 	for i, a := range oldSimAcc {
-		addrStr, err := codec.BytesToString(a.Address)
-		if err != nil {
-			panic(err.Error())
-		}
 		acc[i] = SimAccount{
-			Account:       a,
-			r:             r,
-			AddressBech32: addrStr,
-			bank:          contextAwareBalanceSource{ctx: ctx, bank: bk},
+			Account: a,
+			r:       r,
+			bank:    contextAwareBalanceSource{ctx: ctx, bank: bk},
 		}
-		index[addrStr] = i
+		index[a.AddressBech32] = i
 	}
 	return &ChainDataSource{r: r, accountSource: ak, addressCodec: codec, accounts: acc}
 }

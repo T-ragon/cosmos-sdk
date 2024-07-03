@@ -70,7 +70,7 @@ var (
 )
 
 func TestAppImportExport(t *testing.T) {
-	sims.Run(t, NewSimApp, setupStateFactory, func(t *testing.T, ti sims.TestInstance[*SimApp]) {
+	sims.Run(t, NewSimApp, setupStateFactory, func(t testing.TB, ti sims.TestInstance[*SimApp]) {
 		app := ti.App
 		t.Log("exporting genesis...\n")
 		exported, err := app.ExportAppStateAndValidators(false, exportWithValidatorSet, exportAllModules)
@@ -113,7 +113,7 @@ func TestAppImportExport(t *testing.T) {
 //	set up a new node instance, Init chain from exported genesis
 //	run new instance for n blocks
 func TestAppSimulationAfterImport(t *testing.T) {
-	sims.Run(t, NewSimApp, setupStateFactory, func(t *testing.T, ti sims.TestInstance[*SimApp]) {
+	sims.Run(t, NewSimApp, setupStateFactory, func(t testing.TB, ti sims.TestInstance[*SimApp]) {
 		app := ti.App
 		t.Log("exporting genesis...\n")
 		exported, err := app.ExportAppStateAndValidators(false, exportWithValidatorSet, exportAllModules)
@@ -192,7 +192,7 @@ func TestAppStateDeterminism(t *testing.T) {
 	var mx sync.Mutex
 	appHashResults := make(map[int64][][]byte)
 	appSimLogger := make(map[int64][]simulation.LogWriter)
-	captureAndCheckHash := func(t *testing.T, ti sims.TestInstance[*SimApp]) {
+	captureAndCheckHash := func(t testing.TB, ti sims.TestInstance[*SimApp]) {
 		seed, appHash := ti.Cfg.Seed, ti.App.LastCommitID().Hash
 		mx.Lock()
 		otherHashes, execWriters := appHashResults[seed], appSimLogger[seed]
@@ -228,7 +228,7 @@ type ComparableStoreApp interface {
 	GetStoreKeys() []storetypes.StoreKey
 }
 
-func AssertEqualStores(t *testing.T, app ComparableStoreApp, newApp ComparableStoreApp, storeDecoders simtypes.StoreDecoderRegistry, skipPrefixes map[string][][]byte) {
+func AssertEqualStores(t testing.TB, app ComparableStoreApp, newApp ComparableStoreApp, storeDecoders simtypes.StoreDecoderRegistry, skipPrefixes map[string][][]byte) {
 	ctxA := app.NewContextLegacy(true, cmtproto.Header{Height: app.LastBlockHeight()})
 	ctxB := newApp.NewContextLegacy(true, cmtproto.Header{Height: app.LastBlockHeight()})
 

@@ -85,7 +85,7 @@ func Run[T SimulationApp](
 		baseAppOptions ...func(*baseapp.BaseApp),
 	) T,
 	setupStateFactory func(app T) SimStateFactory,
-	postRunActions ...func(t *testing.T, app TestInstance[T]),
+	postRunActions ...func(t testing.TB, app TestInstance[T]),
 ) {
 	t.Helper()
 	RunWithSeeds(t, appFactory, setupStateFactory, defaultSeeds, nil, postRunActions...)
@@ -99,7 +99,7 @@ func Run[T SimulationApp](
 // The execution is deterministic and can be used for fuzz tests as well.
 //
 // The system under test is isolated for each run but unlike the old runsim command, there is no Process separation.
-// This means, global caches may be reused for example. This implementation build upon the vanialla Go stdlib test framework.
+// This means, global caches may be reused for example. This implementation build upon the vanilla Go stdlib test framework.
 func RunWithSeeds[T SimulationApp](
 	t *testing.T,
 	appFactory func(
@@ -113,7 +113,7 @@ func RunWithSeeds[T SimulationApp](
 	setupStateFactory func(app T) SimStateFactory,
 	seeds []int64,
 	fuzzSeed []byte,
-	postRunActions ...func(t *testing.T, app TestInstance[T]),
+	postRunActions ...func(t testing.TB, app TestInstance[T]),
 ) {
 	t.Helper()
 	cfg := cli.NewConfigFromFlags()
@@ -122,45 +122,58 @@ func RunWithSeeds[T SimulationApp](
 		seed := seeds[i]
 		t.Run(fmt.Sprintf("seed: %d", seed), func(t *testing.T) {
 			t.Parallel()
-			// setup environment
-			tCfg := cfg.With(t, seed, fuzzSeed)
-			testInstance := NewSimulationAppInstance(t, tCfg, appFactory)
-			var runLogger log.Logger
-			if cli.FlagVerboseValue {
-				runLogger = tlog.NewTestLogger(t)
-			} else {
-				runLogger = tlog.NewTestLoggerInfo(t)
-			}
-			runLogger = runLogger.With("seed", tCfg.Seed)
-
-			app := testInstance.App
-			stateFactory := setupStateFactory(app)
-			ops, reporter := prepareWeightedOps(app.SimulationManager(), stateFactory, tCfg, testInstance.App.TxConfig())
-			simParams, err := simulation.SimulateFromSeedX(
-				t,
-				runLogger,
-				WriteToDebugLog(runLogger),
-				app.GetBaseApp(),
-				stateFactory.AppStateFn,
-				simtypes.RandomAccounts, // Replace with own random account function if using keys other than secp256k1
-				ops,
-				stateFactory.BlockedAddr,
-				tCfg,
-				stateFactory.Codec,
-				app.TxConfig().SigningContext().AddressCodec(),
-				testInstance.ExecLogWriter,
-			)
-			require.NoError(t, err)
-			err = simtestutil.CheckExportSimulation(app, tCfg, simParams)
-			require.NoError(t, err)
-			if tCfg.Commit {
-				simtestutil.PrintStats(testInstance.DB, t.Log)
-			}
-			t.Log("+++ DONE: \n" + reporter.Summary().String())
-			for _, step := range postRunActions {
-				step(t, testInstance)
-			}
+			RunWithSeed(t, cfg, appFactory, setupStateFactory, seed, fuzzSeed, postRunActions...)
 		})
+	}
+}
+
+func RunWithSeed[T SimulationApp](
+	tb testing.TB,
+	cfg simtypes.Config,
+	appFactory func(logger log.Logger, db dbm.DB, traceStore io.Writer, loadLatest bool, appOpts servertypes.AppOptions, baseAppOptions ...func(*baseapp.BaseApp)) T,
+	setupStateFactory func(app T) SimStateFactory,
+	seed int64,
+	fuzzSeed []byte,
+	postRunActions ...func(t testing.TB, app TestInstance[T]),
+) {
+	tb.Helper()
+	// setup environment
+	tCfg := cfg.With(tb, seed, fuzzSeed)
+	testInstance := NewSimulationAppInstance(tb, tCfg, appFactory)
+	var runLogger log.Logger
+	if cli.FlagVerboseValue {
+		runLogger = tlog.NewTestLogger(tb)
+	} else {
+		runLogger = tlog.NewTestLoggerInfo(tb)
+	}
+	runLogger = runLogger.With("seed", tCfg.Seed)
+
+	app := testInstance.App
+	stateFactory := setupStateFactory(app)
+	ops, reporter := prepareWeightedOps(app.SimulationManager(), stateFactory, tCfg, testInstance.App.TxConfig())
+	simParams, err := simulation.SimulateFromSeedX(
+		tb,
+		runLogger,
+		WriteToDebugLog(runLogger),
+		app.GetBaseApp(),
+		stateFactory.AppStateFn,
+		simtypes.RandomAccounts, // Replace with own random account function if using keys other than secp256k1
+		ops,
+		stateFactory.BlockedAddr,
+		tCfg,
+		stateFactory.Codec,
+		app.TxConfig().SigningContext().AddressCodec(),
+		testInstance.ExecLogWriter,
+	)
+	require.NoError(tb, err)
+	err = simtestutil.CheckExportSimulation(app, tCfg, simParams)
+	require.NoError(tb, err)
+	if tCfg.Commit {
+		simtestutil.PrintStats(testInstance.DB, tb.Log)
+	}
+	tb.Log("+++ DONE: \n" + reporter.Summary().String())
+	for _, step := range postRunActions {
+		step(tb, testInstance)
 	}
 }
 
@@ -235,7 +248,7 @@ type TestInstance[T SimulationApp] struct {
 // The function then initializes a logger based on the verbosity flag and sets the logger's seed to the test configuration's seed.
 // The database is closed and cleaned up on test completion.
 func NewSimulationAppInstance[T SimulationApp](
-	t *testing.T,
+	t testing.TB,
 	tCfg simtypes.Config,
 	appFactory func(logger log.Logger, db dbm.DB, traceStore io.Writer, loadLatest bool, appOpts servertypes.AppOptions, baseAppOptions ...func(*baseapp.BaseApp)) T,
 ) TestInstance[T] {
@@ -258,8 +271,11 @@ func NewSimulationAppInstance[T SimulationApp](
 	appOptions := make(simtestutil.AppOptionsMap)
 	appOptions[flags.FlagHome] = workDir
 	appOptions[server.FlagInvCheckPeriod] = cli.FlagPeriodValue
-
-	app := appFactory(logger, db, nil, true, appOptions, baseapp.SetChainID(SimAppChainID))
+	opts := []func(*baseapp.BaseApp){baseapp.SetChainID(SimAppChainID)}
+	if tCfg.FauxMerkle {
+		opts = append(opts, FauxMerkleModeOpt)
+	}
+	app := appFactory(logger, db, nil, true, appOptions, opts...)
 	if !cli.FlagSigverifyTxValue {
 		app.SetNotSigverifyTx()
 	}
