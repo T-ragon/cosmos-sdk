@@ -11,6 +11,7 @@ import (
 	"strings"
 	"sync"
 	"testing"
+	"time"
 
 	"cosmossdk.io/log"
 	"cosmossdk.io/store"
@@ -56,11 +57,9 @@ func TestFullAppSimulation(t *testing.T) {
 
 func setupStateFactory(app *SimApp) sims.SimStateFactory {
 	return sims.SimStateFactory{
-		Codec:         app.AppCodec(),
-		AppStateFn:    simtestutil.AppStateFn(app.AppCodec(), app.AuthKeeper.AddressCodec(), app.StakingKeeper.ValidatorAddressCodec(), app.SimulationManager(), app.DefaultGenesis()),
-		BlockedAddr:   BlockedAddresses(),
-		AccountSource: app.AuthKeeper,
-		BalanceSource: app.BankKeeper,
+		Codec:       app.AppCodec(),
+		AppStateFn:  simtestutil.AppStateFn(app.AppCodec(), app.AuthKeeper.AddressCodec(), app.StakingKeeper.ValidatorAddressCodec(), app.SimulationManager(), app.DefaultGenesis()),
+		BlockedAddr: BlockedAddresses(),
 	}
 }
 
@@ -120,33 +119,27 @@ func TestAppSimulationAfterImport(t *testing.T) {
 		require.NoError(t, err)
 
 		t.Log("importing genesis...\n")
-		newTestInstance := sims.NewSimulationAppInstance(t, ti.Cfg, NewSimApp)
-		newApp := newTestInstance.App
-		_, err = newApp.InitChain(&abci.InitChainRequest{
-			AppStateBytes: exported.AppState,
-			ChainId:       sims.SimAppChainID,
-		})
-		if IsEmptyValidatorSetErr(err) {
-			t.Skip("Skipping simulation as all validators have been unbonded")
-			return
+		importGenesisStateFactory := func(app *SimApp) sims.SimStateFactory {
+			return sims.SimStateFactory{
+				Codec: app.AppCodec(),
+				AppStateFn: func(r *rand.Rand, accs []simtypes.Account, config simtypes.Config) (json.RawMessage, []simtypes.Account, string, time.Time) {
+					_, err = app.InitChain(&abci.InitChainRequest{
+						AppStateBytes: exported.AppState,
+						ChainId:       sims.SimAppChainID,
+					})
+					if IsEmptyValidatorSetErr(err) {
+						t.Skip("Skipping simulation as all validators have been unbonded")
+						return nil, nil, "", time.Time{}
+					}
+					acc, err := simtestutil.AccountsFromAppState(app.AppCodec(), exported.AppState)
+					require.NoError(t, err)
+					genesisTimestamp := time.Unix(config.GenesisTime, 0)
+					return exported.AppState, acc, config.ChainID, genesisTimestamp
+				},
+				BlockedAddr: BlockedAddresses(),
+			}
 		}
-		require.NoError(t, err)
-		newStateFactory := setupStateFactory(newApp)
-		_, err = simulation.SimulateFromSeedX(
-			t,
-			newTestInstance.AppLogger,
-			sims.WriteToDebugLog(newTestInstance.AppLogger),
-			newApp.BaseApp,
-			newStateFactory.AppStateFn,
-			simtypes.RandomAccounts,
-			simtestutil.SimulationOperations(newApp, newApp.AppCodec(), newTestInstance.Cfg, newApp.TxConfig()),
-			newStateFactory.BlockedAddr,
-			newTestInstance.Cfg,
-			newStateFactory.Codec,
-			newApp.TxConfig().SigningContext().AddressCodec(),
-			ti.ExecLogWriter,
-		)
-		require.NoError(t, err)
+		sims.RunWithSeed(t, ti.Cfg, NewSimApp, importGenesisStateFactory, ti.Cfg.Seed, ti.Cfg.FuzzSeed)
 	})
 }
 

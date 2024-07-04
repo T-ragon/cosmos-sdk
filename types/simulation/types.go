@@ -1,6 +1,7 @@
 package simulation
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"math/rand"
@@ -36,12 +37,14 @@ type Content interface {
 }
 
 type WeightedProposalMsg interface {
-	AppParamsKey() string           // key used to retrieve the value of the weight from the simulation application params
-	DefaultWeight() int             // default weight
-	MsgSimulatorFn() MsgSimulatorFn // msg simulator function
+	AppParamsKey() string            // key used to retrieve the value of the weight from the simulation application params
+	DefaultWeight() int              // default weight
+	MsgSimulatorFn() MsgSimulatorFnX // msg simulator function
 }
 
+// Deprecated: use MsgSimulatorFnX
 type MsgSimulatorFn func(r *rand.Rand, accs []Account, cdc address.Codec) (sdk.Msg, error)
+type MsgSimulatorFnX func(ctx context.Context, r *rand.Rand, accs []Account, cdc address.Codec) (sdk.Msg, error)
 
 type SimValFn func(r *rand.Rand) string
 

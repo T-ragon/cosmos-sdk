@@ -85,12 +85,12 @@ func WeightedOperations(
 		weightMsgRotateConsPubKey = DefaultWeightMsgRotateConsPubKey
 	})
 
-	reg := simsx.NewSimsRegistryAdapter(simsx.NewBasicSimulationReporter(), ak, bk, txGen)
+	reg := simsx.NewSimsMsgRegistryAdapter(simsx.NewBasicSimulationReporter(), ak, bk, txGen)
 	weight := simsx.ParamWeightSource(appParams)
 	reg.Add(weight.Get("msg_create_validator", 100), MsgCreateValidatorFactory(k))
 	reg.Add(weight.Get("msg_delegate", 100), MsgDelegateFactory(k))
 	reg.Add(weight.Get("msg_undelegate", 100), MsgUndelegateFactory(k))
-	return append(reg.ToLegacyWeightedOperations(),
+	return append(reg.ToLegacy(),
 		simulation.NewWeightedOperation(
 			weightMsgEditValidator,
 			SimulateMsgEditValidator(txGen, ak, bk, k),

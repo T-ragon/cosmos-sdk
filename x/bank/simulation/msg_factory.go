@@ -20,56 +20,44 @@ func MsgSendFactory() simsx.SimMsgFactoryFn[*types.MsgSend] {
 	}
 }
 
-func MsgSendToModuleAccountFactory() simsx.SimMsgFactoryFn[*types.MsgSend] {
-	return func(ctx context.Context, testData *simsx.ChainDataSource, reporter simsx.SimulationReporter) ([]simsx.SimAccount, sdk.Msg) {
-		from := testData.AnyAccount(reporter, simsx.WithSpendableBalance())
-		toStr := testData.ModuleAccountAddress(reporter, "distribution")
-		coins := from.LiquidBalance().RandSubsetCoins(reporter, simsx.WithSendEnabledCoins())
-		return []simsx.SimAccount{from}, types.NewMsgSend(from.AddressBech32, toStr, coins)
-	}
-}
-
 func MsgMultiSendFactory() simsx.SimMsgFactoryFn[*types.MsgMultiSend] {
 	return func(ctx context.Context, testData *simsx.ChainDataSource, reporter simsx.SimulationReporter) ([]simsx.SimAccount, sdk.Msg) {
 		r := testData.Rand()
-		// random number of inputs/outputs between [1, 3]
-		inputs := make([]types.Input, r.Intn(1)+1) //nolint:staticcheck // SA4030: (*math/rand.Rand).Intn(n) generates a random value 0 <= x < n; that is, the generated values don't include n; r.Intn(1) therefore always returns 0
-		outputs := make([]types.Output, r.Intn(3)+1)
-		senderAcc := make([]simsx.SimAccount, len(inputs))
-		// use map to check if address already exists as input
-		usedAddrs := make(map[string]struct{})
-
-		var totalSentCoins sdk.Coins
-		for i := range inputs {
+		var (
+			sending        = make([]types.Input, r.Intn(1)+1)
+			receiving      = make([]types.Output, r.Intn(3)+1)
+			senderAcc      = make([]simsx.SimAccount, len(sending))
+			usedAddrsIdx   = make(map[string]struct{}) // use map to check if address already exists as input
+			totalSentCoins sdk.Coins
+		)
+		for i := range sending {
 			// generate random input fields, ignore to address
-			from := testData.AnyAccount(reporter, simsx.WithSpendableBalance(), simsx.ExcludeAddresses(maps.Keys(usedAddrs)...))
+			from := testData.AnyAccount(reporter, simsx.WithSpendableBalance(), simsx.ExcludeAddresses(maps.Keys(usedAddrsIdx)...))
 			if reporter.IsSkipped() {
 				return nil, nil
 			}
 			coins := from.LiquidBalance().RandSubsetCoins(reporter, simsx.WithSendEnabledCoins())
-			fromAddr := from.AddressBech32
-
 			// set input address in used address map
-			usedAddrs[fromAddr] = struct{}{}
+			usedAddrsIdx[from.AddressBech32] = struct{}{}
 
 			// set signer privkey
 			senderAcc[i] = from
 
 			// set next input and accumulate total sent coins
-			inputs[i] = types.NewInput(fromAddr, coins)
+			sending[i] = types.NewInput(from.AddressBech32, coins)
 			totalSentCoins = totalSentCoins.Add(coins...)
 		}
 
-		for i := range outputs {
-			out := testData.AnyAccount(reporter)
-			outAddr := out.AddressBech32
+		for i := range receiving {
+			receiver := testData.AnyAccount(reporter)
 			if reporter.IsSkipped() {
 				return nil, nil
 			}
 
 			var outCoins sdk.Coins
 			// split total sent coins into random subsets for output
-			if i == len(outputs)-1 {
+			if i == len(receiving)-1 {
+				// last one receives remaining amount
 				outCoins = totalSentCoins
 			} else {
 				// take random subset of remaining coins for output
@@ -78,13 +66,25 @@ func MsgMultiSendFactory() simsx.SimMsgFactoryFn[*types.MsgMultiSend] {
 				totalSentCoins = totalSentCoins.Sub(outCoins...)
 			}
 
-			outputs[i] = types.NewOutput(outAddr, outCoins)
+			receiving[i] = types.NewOutput(receiver.AddressBech32, outCoins)
 		}
 
-		// remove any output that has no coins
-		slices.DeleteFunc(outputs, func(o types.Output) bool {
+		// remove any entries that have no coins
+		slices.DeleteFunc(receiving, func(o types.Output) bool {
 			return o.Coins.Empty()
 		})
-		return senderAcc, &types.MsgMultiSend{Inputs: inputs, Outputs: outputs}
+		return senderAcc, &types.MsgMultiSend{Inputs: sending, Outputs: receiving}
+	}
+}
+
+// MsgUpdateParamsFactory creates a gov proposal for param updates
+func MsgUpdateParamsFactory() simsx.SimMsgFactoryFn[*types.MsgUpdateParams] {
+	return func(_ context.Context, testData *simsx.ChainDataSource, reporter simsx.SimulationReporter) ([]simsx.SimAccount, sdk.Msg) {
+		params := types.DefaultParams()
+		params.DefaultSendEnabled = testData.Rand().Intn(2) == 0
+		return nil, &types.MsgUpdateParams{
+			Authority: testData.ModuleAccountAddress(reporter, "gov"),
+			Params:    params,
+		}
 	}
 }

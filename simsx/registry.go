@@ -19,6 +19,7 @@ var _ SimMsgFactoryX = SimMsgFactoryFn[sdk.Msg](nil)
 
 type SimMsgFactoryFn[T sdk.Msg] FactoryMethod
 
+// MsgType returns an empty instance of type T, which implements `sdk.Msg`.
 func (f SimMsgFactoryFn[T]) MsgType() sdk.Msg {
 	var x T
 	return x
@@ -36,67 +37,106 @@ type SimMsgFactoryX interface {
 	MsgType() sdk.Msg
 	Create() FactoryMethod
 }
+
+// Registry is an abstract entry point to register message factories with weights
 type Registry interface {
 	Add(weight uint32, f SimMsgFactoryX)
-	ToLegacyWeightedOperations() simulation.WeightedOperations
 }
-
-var _ Registry = &SimsRegistryAdapter{}
 
 type AccountSourceX interface {
 	AccountSource
 	ModuleAccountSource
 }
-type SimsRegistryAdapter struct {
+
+var _ Registry = &SimsRegistryAdapter[any]{}
+
+// SimsRegistryAdapter is an implementation of the Registry interface that provides adapters to use the new message factories
+// with the legacy simulation system
+type SimsRegistryAdapter[T any] struct {
 	reporter     SimulationReporter
-	legacyOps    simulation.WeightedOperations
+	legacyProps  []T
 	ak           AccountSourceX
 	bk           BalanceSource
-	txConfig     client.TxConfig
 	addressCodec address.Codec
+	adapter      func(l *SimsRegistryAdapter[T], weight uint32, example sdk.Msg, f FactoryMethod) T
+	txConfig     client.TxConfig
 }
 
-func NewSimsRegistryAdapter(reporter SimulationReporter, ak AccountSourceX, bk BalanceSource, txConfig client.TxConfig) *SimsRegistryAdapter {
-	return &SimsRegistryAdapter{
+// NewSimsMsgRegistryAdapter creates a new instance of SimsRegistryAdapter for WeightedOperation types.
+func NewSimsMsgRegistryAdapter(
+	reporter SimulationReporter,
+	ak AccountSourceX,
+	bk BalanceSource,
+	txConfig client.TxConfig,
+) *SimsRegistryAdapter[simtypes.WeightedOperation] {
+	return &SimsRegistryAdapter[simtypes.WeightedOperation]{
 		reporter:     reporter,
 		ak:           ak,
 		bk:           bk,
 		txConfig:     txConfig,
 		addressCodec: txConfig.SigningContext().AddressCodec(),
+		adapter:      LegacyOperationAdapter,
 	}
 }
 
-func (l *SimsRegistryAdapter) Add(weight uint32, f SimMsgFactoryX) {
+// NewSimsProposalRegistryAdapter creates a new instance of SimsRegistryAdapter for WeightedProposalMsg types.
+func NewSimsProposalRegistryAdapter(
+	reporter SimulationReporter,
+	ak AccountSourceX,
+	bk BalanceSource,
+	addrCodec address.Codec,
+) *SimsRegistryAdapter[simtypes.WeightedProposalMsg] {
+	return &SimsRegistryAdapter[simtypes.WeightedProposalMsg]{
+		reporter:     reporter,
+		ak:           ak,
+		bk:           bk,
+		addressCodec: addrCodec,
+		adapter:      LegacyProposalMsgAdapter,
+	}
+}
+
+// Add adds a new weighted operation to the SimsRegistryAdapter
+func (l *SimsRegistryAdapter[T]) Add(weight uint32, f SimMsgFactoryX) {
 	if f == nil {
-		panic("message factory is nil")
+		panic("message factory must not be nil")
 	}
-	opAdapter := l.legacyOperationAdapter(l.reporter, f.MsgType(), f.Create())
-	l.legacyOps = append(l.legacyOps, simulation.NewWeightedOperation(int(weight), opAdapter))
+	if weight == 0 {
+		return
+	}
+	l.legacyProps = append(l.legacyProps, l.adapter(l, weight, f.MsgType(), f.Create()))
 }
 
-// adapter to convert the new msg factory into the weighted operations
-func (l SimsRegistryAdapter) legacyOperationAdapter(rootReporter SimulationReporter, example sdk.Msg, f FactoryMethod) simtypes.Operation {
-	return func(
+// ToLegacy returns the legacy properties of the SimsRegistryAdapter as a slice of type T.
+func (l *SimsRegistryAdapter[T]) ToLegacy() []T {
+	return l.legacyProps
+}
+
+// LegacyOperationAdapter adapter to convert the new msg factory into the weighted operations type
+func LegacyOperationAdapter(l *SimsRegistryAdapter[simtypes.WeightedOperation], weight uint32, example sdk.Msg, f FactoryMethod) simtypes.WeightedOperation {
+	opAdapter := func(
 		r *rand.Rand, app *baseapp.BaseApp, ctx sdk.Context,
 		accs []simtypes.Account, chainID string,
 	) (simtypes.OperationMsg, []simtypes.FutureOperation, error) {
 		xCtx, done := context.WithCancel(ctx)
 		ctx = sdk.UnwrapSDKContext(xCtx)
 		testData := NewChainDataSource(ctx, r, l.ak, l.bk, l.addressCodec, accs...)
-		reporter := rootReporter.WithScope(example, SkipHookFn(func(args ...any) { done() }))
+		reporter := l.reporter.WithScope(example, SkipHookFn(func(args ...any) { done() }))
 		from, msg := runWithFailFast(ctx, testData, reporter, f)
-		return DeliverSimsMsg(
-			reporter,
-			r,
-			app,
-			l.txConfig,
-			l.ak,
-			msg,
-			ctx,
-			chainID,
-			from...,
-		), nil, reporter.Close()
+		return DeliverSimsMsg(ctx, reporter, app, r, l.txConfig, l.ak, chainID, msg, from...), nil, reporter.Close()
 	}
+	return simulation.NewWeightedOperation(int(weight), opAdapter)
+}
+
+// LegacyProposalMsgAdapter adapter to convert the new msg factory into the weighted proposal message type
+func LegacyProposalMsgAdapter(l *SimsRegistryAdapter[simtypes.WeightedProposalMsg], weight uint32, example sdk.Msg, f FactoryMethod) simtypes.WeightedProposalMsg {
+	msgAdapter := func(ctx context.Context, r *rand.Rand, accs []simtypes.Account, cdc address.Codec) (sdk.Msg, error) {
+		xCtx, done := context.WithCancel(ctx)
+		testData := NewChainDataSource(xCtx, r, l.ak, l.bk, l.addressCodec, accs...)
+		reporter := l.reporter.WithScope(example, SkipHookFn(func(args ...any) { done() }))
+		_, msg := runWithFailFast(xCtx, testData, reporter, f)
+		return msg, nil
+	}
+	return simulation.NewWeightedProposalMsgX("", int(weight), msgAdapter)
 }
 
 type tuple struct {
@@ -104,7 +144,8 @@ type tuple struct {
 	msg    sdk.Msg
 }
 
-func runWithFailFast(ctx sdk.Context, data *ChainDataSource, reporter SimulationReporter, f FactoryMethod) (signer []SimAccount, msg sdk.Msg) {
+// runWithFailFast runs the factory method on a separate goroutine to abort early when the context is canceled via reporter skip
+func runWithFailFast(ctx context.Context, data *ChainDataSource, reporter SimulationReporter, f FactoryMethod) (signer []SimAccount, msg sdk.Msg) {
 	r := make(chan tuple)
 	go func() {
 		defer recoverPanicForSkipped(reporter, r)
@@ -130,8 +171,4 @@ func recoverPanicForSkipped(reporter SimulationReporter, resultChan chan tuple) 
 		}
 		close(resultChan)
 	}
-}
-
-func (l SimsRegistryAdapter) ToLegacyWeightedOperations() simulation.WeightedOperations {
-	return l.legacyOps
 }

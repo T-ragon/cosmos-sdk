@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io"
 	"math/rand"
+	"slices"
 	"testing"
 	"time"
 
@@ -73,7 +74,7 @@ func SimulateFromSeed( // exists for backwards compatibility only
 ) (exportedParams Params, err error) {
 	tb.Helper()
 	mode, _, _ := getTestingMode(tb)
-	return SimulateFromSeedX(tb, logger, w, app, appStateFn, randAccFn, ops, blockedAddrs, config, cdc, addressCodec, NewLogWriter(mode))
+	return SimulateFromSeedX(tb, logger, w, app, appStateFn, randAccFn, ops, blockedAddrs, config, cdc, NewLogWriter(mode))
 }
 
 // SimulateFromSeedX tests an application by running the provided
@@ -89,7 +90,6 @@ func SimulateFromSeedX(
 	blockedAddrs map[string]bool,
 	config simulation.Config,
 	cdc codec.JSONCodec,
-	addressCodec address.Codec,
 	logWriter LogWriter,
 ) (exportedParams Params, err error) {
 	tb.Helper()
@@ -119,19 +119,9 @@ func SimulateFromSeedX(
 	config.ChainID = chainID
 
 	// remove module account address if they exist in accs
-	var tmpAccs []simulation.Account
-
-	for _, acc := range accs {
-		accAddr, err := addressCodec.BytesToString(acc.Address)
-		if err != nil {
-			return params, err
-		}
-		if !blockedAddrs[accAddr] {
-			tmpAccs = append(tmpAccs, acc)
-		}
-	}
-
-	accs = tmpAccs
+	accs = slices.DeleteFunc(accs, func(acc simulation.Account) bool {
+		return blockedAddrs[acc.AddressBech32]
+	})
 	nextValidators := validators
 
 	var (

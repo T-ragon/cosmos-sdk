@@ -1,7 +1,6 @@
 package sims
 
 import (
-	"context"
 	"encoding/json"
 	"fmt"
 	"github.com/cosmos/cosmos-sdk/client"
@@ -44,22 +43,10 @@ var defaultSeeds = []int64{
 	977367484, 491163361, 424254581, 673398983,
 }
 
-// BalanceSource is a duplicate of sims.BalanceSource to break ciclic dependencies
-type BalanceSource interface {
-	SpendableCoins(ctx context.Context, addr sdk.AccAddress) sdk.Coins
-	IsSendEnabledDenom(ctx context.Context, denom string) bool
-}
-type AccountSource interface {
-	GetAccount(ctx context.Context, addr sdk.AccAddress) sdk.AccountI
-	GetModuleAddress(moduleName string) sdk.AccAddress
-}
-
 type SimStateFactory struct {
-	Codec         codec.Codec
-	AppStateFn    simtypes.AppStateFn
-	BalanceSource BalanceSource
-	AccountSource AccountSource
-	BlockedAddr   map[string]bool
+	Codec       codec.Codec
+	AppStateFn  simtypes.AppStateFn
+	BlockedAddr map[string]bool
 }
 
 // SimulationApp abstract app that is used by sims
@@ -151,20 +138,7 @@ func RunWithSeed[T SimulationApp](
 	app := testInstance.App
 	stateFactory := setupStateFactory(app)
 	ops, reporter := prepareWeightedOps(app.SimulationManager(), stateFactory, tCfg, testInstance.App.TxConfig())
-	simParams, err := simulation.SimulateFromSeedX(
-		tb,
-		runLogger,
-		WriteToDebugLog(runLogger),
-		app.GetBaseApp(),
-		stateFactory.AppStateFn,
-		simtypes.RandomAccounts, // Replace with own random account function if using keys other than secp256k1
-		ops,
-		stateFactory.BlockedAddr,
-		tCfg,
-		stateFactory.Codec,
-		app.TxConfig().SigningContext().AddressCodec(),
-		testInstance.ExecLogWriter,
-	)
+	simParams, err := simulation.SimulateFromSeedX(tb, runLogger, WriteToDebugLog(runLogger), app.GetBaseApp(), stateFactory.AppStateFn, simtypes.RandomAccounts, ops, stateFactory.BlockedAddr, tCfg, stateFactory.Codec, testInstance.ExecLogWriter)
 	require.NoError(tb, err)
 	err = simtestutil.CheckExportSimulation(app, tCfg, simParams)
 	require.NoError(tb, err)
@@ -177,6 +151,35 @@ func RunWithSeed[T SimulationApp](
 	}
 }
 
+type (
+	HasWeightedOperationsX interface {
+		WeightedOperationsX(weight simsx.WeightSource, reg simsx.Registry)
+	}
+	HasProposalMsgsX interface {
+		ProposalMsgsX(weights simsx.WeightSource, reg simsx.Registry)
+	}
+)
+
+type (
+	HasLegacyWeightedOperations interface {
+		// WeightedOperations simulation operations (i.e msgs) with their respective weight
+		WeightedOperations(simState module.SimulationState) []simtypes.WeightedOperation
+	}
+	// HasLegacyProposalMsgs defines the messages that can be used to simulate governance (v1) proposals
+	// Deprecated replaced by HasProposalMsgsX
+	HasLegacyProposalMsgs interface {
+		// ProposalMsgs msg functions used to simulate governance proposals
+		ProposalMsgs(simState module.SimulationState) []simtypes.WeightedProposalMsg
+	}
+
+	// HasLegacyProposalContents defines the contents that can be used to simulate legacy governance (v1beta1) proposals
+	// Deprecated replaced by HasProposalMsgsX
+	HasLegacyProposalContents interface {
+		// ProposalContents content functions used to simulate governance proposals
+		ProposalContents(simState module.SimulationState) []simtypes.WeightedProposalContent //nolint:staticcheck // legacy v1beta1 governance
+	}
+)
+
 // TestInstance is a generic type that represents an instance of a SimulationApp used for testing simulations.
 // It contains the following fields:
 //   - App: The instance of the SimulationApp under test.
@@ -188,10 +191,11 @@ func RunWithSeed[T SimulationApp](
 //
 // included to avoid cyclic dependency in testutils/sims
 func prepareWeightedOps(sm *module.SimulationManager, stateFact SimStateFactory, config simtypes.Config, txConfig client.TxConfig) (simulation.WeightedOperations, *simsx.BasicSimulationReporter) {
-	signingCtx := stateFact.Codec.InterfaceRegistry().SigningContext()
+	cdc := stateFact.Codec
+	signingCtx := cdc.InterfaceRegistry().SigningContext()
 	simState := module.SimulationState{
 		AppParams:      make(simtypes.AppParams),
-		Cdc:            stateFact.Codec,
+		Cdc:            cdc,
 		AddressCodec:   signingCtx.AddressCodec(),
 		ValidatorCodec: signingCtx.ValidatorAddressCodec(),
 		TxConfig:       txConfig,
@@ -211,26 +215,38 @@ func prepareWeightedOps(sm *module.SimulationManager, stateFact SimStateFactory,
 	}
 
 	simState.LegacyProposalContents = sm.GetProposalContents(simState) //nolint:staticcheck // we're testing the old way here
-	simState.ProposalMsgs = sm.GetProposalMsgs(simState)
 
-	wOps := make([]simtypes.WeightedOperation, 0, len(sm.Modules))
 	weights := simsx.ParamWeightSource(simState.AppParams)
 	reporter := simsx.NewBasicSimulationReporter()
-	reg := simsx.NewSimsRegistryAdapter(reporter, stateFact.AccountSource, stateFact.BalanceSource, txConfig)
 
-	type weightedOperationsX interface {
-		WeightedOperationsX(weight simsx.WeightSource, reg simsx.Registry)
-	}
+	pReg := simsx.NewSimsProposalRegistryAdapter(reporter, sm.AccountSource, sm.BalanceSource, txConfig.SigningContext().AddressCodec())
+	wProps := make([]simtypes.WeightedProposalMsg, 0, len(sm.Modules))
 
 	for _, m := range sm.Modules {
-		if xm, ok := m.(weightedOperationsX); ok {
-			xm.WeightedOperationsX(weights, reg)
-		} else {
-			// support legacy entry factory method
-			wOps = append(wOps, m.WeightedOperations(simState)...)
+		// add proposals
+		switch xm := m.(type) {
+		case HasProposalMsgsX:
+			xm.ProposalMsgsX(weights, pReg)
+		case HasLegacyProposalMsgs:
+			wProps = append(wProps, xm.ProposalMsgs(simState)...)
 		}
 	}
-	return append(wOps, reg.ToLegacyWeightedOperations()...), reporter
+	simState.ProposalMsgs = append(wProps, pReg.ToLegacy()...)
+
+	oReg := simsx.NewSimsMsgRegistryAdapter(reporter, sm.AccountSource, sm.BalanceSource, txConfig)
+	wOps := make([]simtypes.WeightedOperation, 0, len(sm.Modules))
+	for _, m := range sm.Modules {
+		// add operations
+		switch xm := m.(type) {
+		case HasWeightedOperationsX:
+			xm.WeightedOperationsX(weights, oReg)
+		case HasLegacyWeightedOperations:
+			wOps = append(wOps, xm.WeightedOperations(simState)...)
+		default:
+			panic(fmt.Sprintf("no weighted operations found for module: %T", m))
+		}
+	}
+	return append(wOps, oReg.ToLegacy()...), reporter
 }
 
 type TestInstance[T SimulationApp] struct {

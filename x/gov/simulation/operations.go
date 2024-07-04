@@ -171,12 +171,12 @@ func SimulateMsgSubmitProposal(
 	ak types.AccountKeeper,
 	bk types.BankKeeper,
 	k *keeper.Keeper,
-	msgSim simtypes.MsgSimulatorFn,
+	msgSim simtypes.MsgSimulatorFnX,
 ) simtypes.Operation {
 	return func(r *rand.Rand, app *baseapp.BaseApp, ctx sdk.Context, accs []simtypes.Account, chainID string,
 	) (simtypes.OperationMsg, []simtypes.FutureOperation, error) {
 		msgs := []sdk.Msg{}
-		proposalMsg, err := msgSim(r, accs, ak.AddressCodec())
+		proposalMsg, err := msgSim(ctx, r, accs, ak.AddressCodec())
 		if err != nil {
 			return simtypes.OperationMsg{}, nil, err
 		}
