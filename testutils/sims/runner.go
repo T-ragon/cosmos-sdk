@@ -145,7 +145,8 @@ func RunWithSeed[T SimulationApp](
 	if tCfg.Commit {
 		simtestutil.PrintStats(testInstance.DB, tb.Log)
 	}
-	tb.Log("+++ DONE: \n" + reporter.Summary().String())
+	// not using tb.Log to always print the summary
+	fmt.Printf("+++ DONE (seed: %d): \n %s\n", seed, reporter.Summary().String())
 	for _, step := range postRunActions {
 		step(tb, testInstance)
 	}

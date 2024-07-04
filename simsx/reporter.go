@@ -247,7 +247,7 @@ func (s *ExecutionSummary) String() string {
 		sb.WriteString(fmt.Sprintf("%s: %d\n", key, s.counts[key]))
 	}
 	for m, c := range s.reasons {
-		sb.WriteString(fmt.Sprintf("%s: %q\n", m, c))
+		sb.WriteString(fmt.Sprintf("%s: %q\n", m, maps.Keys(c)))
 	}
 	return sb.String()
 }
