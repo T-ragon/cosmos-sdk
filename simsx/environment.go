@@ -239,17 +239,30 @@ func NewChainDataSource(ctx context.Context, r *rand.Rand, ak ModuleAccountSourc
 	return &ChainDataSource{r: r, accountSource: ak, addressCodec: codec, accounts: acc}
 }
 
-// no module accounts
+// AnyAccount returns a random SimAccount matching the filter critera. Module accounts are excluded.
+// In case of an error or no matching account found, the reporter is set to skip and an empty value is returned.
 func (c *ChainDataSource) AnyAccount(r SimulationReporter, filters ...SimAccountFilter) SimAccount {
 	acc := c.randomAccount(r, 5, filters...)
 	return acc
 }
 
+func (c ChainDataSource) GetAccountbyAccAddr(reporter SimulationReporter, addr sdk.AccAddress) SimAccount {
+	if len(addr) == 0 {
+		reporter.Skip("can not find account for empty address")
+		return c.nullAccount()
+	}
+	addrStr, err := c.addressCodec.BytesToString(addr)
+	if err != nil {
+		reporter.Skipf("can not convert account address to string: %s", err)
+		return c.nullAccount()
+	}
+	return c.GetAccount(reporter, addrStr)
+}
 func (c ChainDataSource) GetAccount(reporter SimulationReporter, addr string) SimAccount {
 	pos, ok := c.addressToAccountsPosIndex[addr]
 	if !ok {
 		reporter.Skipf("no such account: %s", addr)
-		return SimAccount{}
+		return c.nullAccount()
 	}
 	return c.accounts[pos]
 }
@@ -257,12 +270,7 @@ func (c ChainDataSource) GetAccount(reporter SimulationReporter, addr string) Si
 func (c *ChainDataSource) randomAccount(reporter SimulationReporter, retryCount int, filters ...SimAccountFilter) SimAccount {
 	if retryCount < 0 {
 		reporter.Skip("failed to find a matching account")
-		return SimAccount{
-			Account:       simtypes.Account{},
-			r:             c.r,
-			liquidBalance: &SimsAccountBalance{},
-			bank:          c.accounts[0].bank,
-		}
+		return c.nullAccount()
 	}
 	idx := c.r.Intn(len(c.accounts))
 	acc := c.accounts[idx]
@@ -272,6 +280,16 @@ func (c *ChainDataSource) randomAccount(reporter SimulationReporter, retryCount 
 		}
 	}
 	return acc
+}
+
+// create null object
+func (c ChainDataSource) nullAccount() SimAccount {
+	return SimAccount{
+		Account:       simtypes.Account{},
+		r:             c.r,
+		liquidBalance: &SimsAccountBalance{},
+		bank:          c.accounts[0].bank,
+	}
 }
 
 func (c *ChainDataSource) ModuleAccountAddress(reporter SimulationReporter, moduleName string) string {
@@ -286,6 +304,10 @@ func (c *ChainDataSource) ModuleAccountAddress(reporter SimulationReporter, modu
 		return ""
 	}
 	return res
+}
+
+func (c *ChainDataSource) AddressCodec() address.Codec {
+	return c.addressCodec
 }
 
 func (c *ChainDataSource) Rand() *XRand {

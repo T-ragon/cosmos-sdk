@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/cosmos/cosmos-sdk/simsx"
 
 	gwruntime "github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/spf13/cobra"
@@ -43,27 +44,21 @@ var (
 
 // AppModule implements the sdk.AppModule interface
 type AppModule struct {
-	cdc           codec.Codec
-	keeper        keeper.Keeper
-	accountKeeper authz.AccountKeeper
-	bankKeeper    authz.BankKeeper
-	registry      cdctypes.InterfaceRegistry
+	cdc      codec.Codec
+	keeper   keeper.Keeper
+	registry cdctypes.InterfaceRegistry
 }
 
 // NewAppModule creates a new AppModule object
 func NewAppModule(
 	cdc codec.Codec,
 	keeper keeper.Keeper,
-	ak authz.AccountKeeper,
-	bk authz.BankKeeper,
 	registry cdctypes.InterfaceRegistry,
 ) AppModule {
 	return AppModule{
-		cdc:           cdc,
-		keeper:        keeper,
-		accountKeeper: ak,
-		bankKeeper:    bk,
-		registry:      registry,
+		cdc:      cdc,
+		keeper:   keeper,
+		registry: registry,
 	}
 }
 
@@ -168,11 +163,8 @@ func (am AppModule) RegisterStoreDecoder(sdr simtypes.StoreDecoderRegistry) {
 	sdr[keeper.StoreKey] = simulation.NewDecodeStore(am.cdc)
 }
 
-// WeightedOperations returns the all the gov module operations with their respective weights.
-func (am AppModule) WeightedOperations(simState module.SimulationState) []simtypes.WeightedOperation {
-	return simulation.WeightedOperations(
-		am.registry,
-		simState.AppParams, simState.Cdc, simState.TxConfig,
-		am.accountKeeper, am.bankKeeper, am.keeper,
-	)
+func (am AppModule) WeightedOperationsX(weights simsx.WeightSource, reg simsx.Registry) {
+	reg.Add(weights.Get("msg_grant", 100), simulation.MsgGrantFactory())
+	reg.Add(weights.Get("msg_revoke", 90), simulation.MsgRevokeFactory(am.keeper))
+	reg.Add(weights.Get("msg_exec", 90), simulation.MsgExecFactory(am.keeper))
 }
