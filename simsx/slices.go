@@ -20,3 +20,8 @@ func Collect[T, E any](source []T, f func(a T) E) []E {
 	}
 	return r
 }
+
+// OneOf returns a random element from the given slice using the provided random number generator.
+func OneOf[T any](r interface{ Intn(n int) int }, s []T) T {
+	return s[r.Intn(len(s))]
+}

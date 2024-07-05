@@ -1,6 +1,7 @@
 package simulation
 
 import (
+	"github.com/cosmos/cosmos-sdk/simsx"
 	"math"
 	"math/rand"
 	"sync/atomic"
@@ -23,25 +24,13 @@ const unsetProposalID = 100000000000000
 
 // Governance message types and routes
 var (
-	TypeMsgDeposit        = sdk.MsgTypeURL(&v1.MsgDeposit{})
-	TypeMsgVote           = sdk.MsgTypeURL(&v1.MsgVote{})
-	TypeMsgVoteWeighted   = sdk.MsgTypeURL(&v1.MsgVoteWeighted{})
 	TypeMsgSubmitProposal = sdk.MsgTypeURL(&v1.MsgSubmitProposal{})
-	TypeMsgCancelProposal = sdk.MsgTypeURL(&v1.MsgCancelProposal{})
+	TypeMsgVote           = sdk.MsgTypeURL(&v1.MsgVote{})
 )
 
 // Simulation operation weights constants
 const (
-	OpWeightMsgDeposit        = "op_weight_msg_deposit"
-	OpWeightMsgVote           = "op_weight_msg_vote"
-	OpWeightMsgVoteWeighted   = "op_weight_msg_weighted_vote"
-	OpWeightMsgCancelProposal = "op_weight_msg_cancel_proposal"
-
-	DefaultWeightMsgDeposit        = 100
-	DefaultWeightMsgVote           = 67
-	DefaultWeightMsgVoteWeighted   = 33
-	DefaultWeightTextProposal      = 5
-	DefaultWeightMsgCancelProposal = 5
+	DefaultWeightTextProposal = 5
 )
 
 // SharedState shared state between message invocations
@@ -74,37 +63,6 @@ func WeightedOperations(
 	wMsgs []simtypes.WeightedProposalMsg,
 	wContents []simtypes.WeightedProposalContent, //nolint:staticcheck // used for legacy testing
 ) simulation.WeightedOperations {
-	var (
-		weightMsgDeposit        int
-		weightMsgVote           int
-		weightMsgVoteWeighted   int
-		weightMsgCancelProposal int
-	)
-
-	appParams.GetOrGenerate(OpWeightMsgDeposit, &weightMsgDeposit, nil,
-		func(_ *rand.Rand) {
-			weightMsgDeposit = DefaultWeightMsgDeposit
-		},
-	)
-
-	appParams.GetOrGenerate(OpWeightMsgVote, &weightMsgVote, nil,
-		func(_ *rand.Rand) {
-			weightMsgVote = DefaultWeightMsgVote
-		},
-	)
-
-	appParams.GetOrGenerate(OpWeightMsgVoteWeighted, &weightMsgVoteWeighted, nil,
-		func(_ *rand.Rand) {
-			weightMsgVoteWeighted = DefaultWeightMsgVoteWeighted
-		},
-	)
-
-	appParams.GetOrGenerate(OpWeightMsgCancelProposal, &weightMsgCancelProposal, nil,
-		func(_ *rand.Rand) {
-			weightMsgCancelProposal = DefaultWeightMsgCancelProposal
-		},
-	)
-
 	// generate the weighted operations for the proposal msgs
 	var wProposalOps simulation.WeightedOperations
 	for _, wMsg := range wMsgs {
@@ -140,27 +98,18 @@ func WeightedOperations(
 			),
 		)
 	}
-	state := NewSharedState()
-	wGovOps := simulation.WeightedOperations{
-		simulation.NewWeightedOperation(
-			weightMsgDeposit,
-			SimulateMsgDeposit(txGen, ak, bk, k, state),
-		),
-		simulation.NewWeightedOperation(
-			weightMsgVote,
-			SimulateMsgVote(txGen, ak, bk, k, state),
-		),
-		simulation.NewWeightedOperation(
-			weightMsgVoteWeighted,
-			SimulateMsgVoteWeighted(txGen, ak, bk, k, state),
-		),
-		simulation.NewWeightedOperation(
-			weightMsgCancelProposal,
-			SimulateMsgCancelProposal(txGen, ak, bk, k),
-		),
-	}
 
-	return append(wGovOps, append(wProposalOps, wLegacyProposalOps...)...)
+	state := NewSharedState()
+
+	reg := simsx.NewSimsMsgRegistryAdapter(simsx.NewBasicSimulationReporter(), ak, bk.(simsx.BalanceSource), txGen)
+	weights := simsx.ParamWeightSource(appParams)
+	reg.Add(weights.Get("msg_submit_proposal", 100), MsgDepositFactory(k, state))
+	reg.Add(weights.Get("msg_deposit", 100), MsgDepositFactory(k, state))
+	reg.Add(weights.Get("msg_vote", 67), MsgVoteFactory(k, state))
+	reg.Add(weights.Get("msg_weighted_vote", 33), MsgWeightedVoteFactory(k, state))
+	reg.Add(weights.Get("cancel_proposal", 5), MsgCancelProposalFactory(k, state))
+
+	return append(reg.ToLegacy(), append(wProposalOps, wLegacyProposalOps...)...)
 }
 
 // SimulateMsgSubmitProposal simulates creating a msg Submit Proposal
@@ -341,84 +290,6 @@ func simulateMsgSubmitProposal(
 	}
 }
 
-// SimulateMsgDeposit generates a MsgDeposit with random values.
-func SimulateMsgDeposit(
-	txGen client.TxConfig,
-	ak types.AccountKeeper,
-	bk types.BankKeeper,
-	k *keeper.Keeper,
-	s *SharedState,
-) simtypes.Operation {
-	return func(
-		r *rand.Rand, app *baseapp.BaseApp, ctx sdk.Context,
-		accs []simtypes.Account, chainID string,
-	) (simtypes.OperationMsg, []simtypes.FutureOperation, error) {
-		simAccount, _ := simtypes.RandomAcc(r, accs)
-		proposalID, ok := randomProposalID(r, k, ctx, v1.StatusDepositPeriod, s)
-		if !ok {
-			return simtypes.NoOpMsg(types.ModuleName, TypeMsgDeposit, "unable to generate proposalID"), nil, nil
-		}
-
-		p, err := k.Proposals.Get(ctx, proposalID)
-		if err != nil {
-			return simtypes.NoOpMsg(types.ModuleName, TypeMsgDeposit, "unable to get proposal"), nil, err
-		}
-
-		isExpedited := p.ProposalType == v1.ProposalType_PROPOSAL_TYPE_EXPEDITED
-
-		deposit, skip, err := randomDeposit(r, ctx, ak, bk, k, simAccount.Address, false, isExpedited)
-		switch {
-		case skip:
-			return simtypes.NoOpMsg(types.ModuleName, TypeMsgDeposit, "skip deposit"), nil, nil
-		case err != nil:
-			return simtypes.NoOpMsg(types.ModuleName, TypeMsgDeposit, "unable to generate deposit"), nil, err
-		}
-
-		addr, err := ak.AddressCodec().BytesToString(simAccount.Address)
-		if err != nil {
-			return simtypes.NoOpMsg(types.ModuleName, TypeMsgDeposit, "unable to get simAccount address"), nil, err
-		}
-		msg := v1.NewMsgDeposit(addr, proposalID, deposit)
-
-		account := ak.GetAccount(ctx, simAccount.Address)
-		spendable := bk.SpendableCoins(ctx, account.GetAddress())
-
-		var fees sdk.Coins
-		coins, hasNeg := spendable.SafeSub(deposit...)
-		if !hasNeg {
-			fees, err = simtypes.RandomFees(r, coins)
-			if err != nil {
-				return simtypes.NoOpMsg(types.ModuleName, sdk.MsgTypeURL(msg), "unable to generate fees"), nil, err
-			}
-		}
-
-		txCtx := simulation.OperationInput{
-			R:             r,
-			App:           app,
-			TxGen:         txGen,
-			Cdc:           nil,
-			Msg:           msg,
-			Context:       ctx,
-			SimAccount:    simAccount,
-			AccountKeeper: ak,
-			ModuleName:    types.ModuleName,
-		}
-
-		return simulation.GenAndDeliverTx(txCtx, fees)
-	}
-}
-
-// SimulateMsgVote generates a MsgVote with random values.
-func SimulateMsgVote(
-	txGen client.TxConfig,
-	ak types.AccountKeeper,
-	bk types.BankKeeper,
-	k *keeper.Keeper,
-	s *SharedState,
-) simtypes.Operation {
-	return operationSimulateMsgVote(txGen, ak, bk, k, simtypes.Account{}, -1, s)
-}
-
 func operationSimulateMsgVote(
 	txGen client.TxConfig,
 	ak types.AccountKeeper,
@@ -458,126 +329,6 @@ func operationSimulateMsgVote(
 
 		account := ak.GetAccount(ctx, simAccount.Address)
 		spendable := bk.SpendableCoins(ctx, account.GetAddress())
-
-		txCtx := simulation.OperationInput{
-			R:               r,
-			App:             app,
-			TxGen:           txGen,
-			Cdc:             nil,
-			Msg:             msg,
-			Context:         ctx,
-			SimAccount:      simAccount,
-			AccountKeeper:   ak,
-			Bankkeeper:      bk,
-			ModuleName:      types.ModuleName,
-			CoinsSpentInMsg: spendable,
-		}
-
-		return simulation.GenAndDeliverTxWithRandFees(txCtx)
-	}
-}
-
-// SimulateMsgVoteWeighted generates a MsgVoteWeighted with random values.
-func SimulateMsgVoteWeighted(
-	txGen client.TxConfig,
-	ak types.AccountKeeper,
-	bk types.BankKeeper,
-	k *keeper.Keeper,
-	s *SharedState,
-) simtypes.Operation {
-	return operationSimulateMsgVoteWeighted(txGen, ak, bk, k, simtypes.Account{}, -1, s)
-}
-
-func operationSimulateMsgVoteWeighted(
-	txGen client.TxConfig,
-	ak types.AccountKeeper,
-	bk types.BankKeeper,
-	k *keeper.Keeper,
-	simAccount simtypes.Account,
-	proposalIDInt int64,
-	s *SharedState,
-) simtypes.Operation {
-	return func(
-		r *rand.Rand, app *baseapp.BaseApp, ctx sdk.Context,
-		accs []simtypes.Account, chainID string,
-	) (simtypes.OperationMsg, []simtypes.FutureOperation, error) {
-		if simAccount.Equals(simtypes.Account{}) {
-			simAccount, _ = simtypes.RandomAcc(r, accs)
-		}
-
-		var proposalID uint64
-
-		switch {
-		case proposalIDInt < 0:
-			var ok bool
-			proposalID, ok = randomProposalID(r, k, ctx, v1.StatusVotingPeriod, s)
-			if !ok {
-				return simtypes.NoOpMsg(types.ModuleName, TypeMsgVoteWeighted, "unable to generate proposalID"), nil, nil
-			}
-		default:
-			proposalID = uint64(proposalIDInt)
-		}
-
-		options := randomWeightedVotingOptions(r)
-		addr, err := ak.AddressCodec().BytesToString(simAccount.Address)
-		if err != nil {
-			return simtypes.NoOpMsg(types.ModuleName, TypeMsgVoteWeighted, "unable to get simAccount address"), nil, err
-		}
-		msg := v1.NewMsgVoteWeighted(addr, proposalID, options, "")
-
-		account := ak.GetAccount(ctx, simAccount.Address)
-		spendable := bk.SpendableCoins(ctx, account.GetAddress())
-
-		txCtx := simulation.OperationInput{
-			R:               r,
-			App:             app,
-			TxGen:           txGen,
-			Cdc:             nil,
-			Msg:             msg,
-			Context:         ctx,
-			SimAccount:      simAccount,
-			AccountKeeper:   ak,
-			Bankkeeper:      bk,
-			ModuleName:      types.ModuleName,
-			CoinsSpentInMsg: spendable,
-		}
-
-		return simulation.GenAndDeliverTxWithRandFees(txCtx)
-	}
-}
-
-// SimulateMsgCancelProposal generates a MsgCancelProposal.
-func SimulateMsgCancelProposal(txGen client.TxConfig, ak types.AccountKeeper, bk types.BankKeeper, k *keeper.Keeper) simtypes.Operation {
-	return func(
-		r *rand.Rand, app *baseapp.BaseApp, ctx sdk.Context,
-		accs []simtypes.Account, chainID string,
-	) (simtypes.OperationMsg, []simtypes.FutureOperation, error) {
-		simAccount := accs[0]
-		proposal := randomProposal(r, k, ctx)
-		if proposal == nil {
-			return simtypes.NoOpMsg(types.ModuleName, TypeMsgCancelProposal, "no proposals found"), nil, nil
-		}
-
-		proposerAddr, err := ak.AddressCodec().BytesToString(simAccount.Address)
-		if err != nil {
-			return simtypes.NoOpMsg(types.ModuleName, TypeMsgCancelProposal, "invalid proposer"), nil, err
-		}
-		if proposal.Proposer != proposerAddr {
-			return simtypes.NoOpMsg(types.ModuleName, TypeMsgCancelProposal, "invalid proposer"), nil, nil
-		}
-
-		if (proposal.Status != v1.StatusDepositPeriod) && (proposal.Status != v1.StatusVotingPeriod) {
-			return simtypes.NoOpMsg(types.ModuleName, TypeMsgCancelProposal, "invalid proposal status"), nil, nil
-		}
-
-		account := ak.GetAccount(ctx, simAccount.Address)
-		spendable := bk.SpendableCoins(ctx, account.GetAddress())
-
-		accAddr, err := ak.AddressCodec().BytesToString(account.GetAddress())
-		if err != nil {
-			return simtypes.NoOpMsg(types.ModuleName, TypeMsgCancelProposal, "could not get account address"), nil, err
-		}
-		msg := v1.NewMsgCancelProposal(proposal.Id, accAddr)
 
 		txCtx := simulation.OperationInput{
 			R:               r,
@@ -663,23 +414,6 @@ func randomDeposit(
 	return sdk.Coins{sdk.NewCoin(denom, amount)}, false, nil
 }
 
-// randomProposal returns a random proposal stored in state
-func randomProposal(r *rand.Rand, k *keeper.Keeper, ctx sdk.Context) *v1.Proposal {
-	var proposals []*v1.Proposal
-	err := k.Proposals.Walk(ctx, nil, func(key uint64, value v1.Proposal) (stop bool, err error) {
-		proposals = append(proposals, &value)
-		return false, nil
-	})
-	if err != nil {
-		panic(err)
-	}
-	if len(proposals) == 0 {
-		return nil
-	}
-	randomIndex := r.Intn(len(proposals))
-	return proposals[randomIndex]
-}
-
 // Pick a random proposal ID between the initial proposal ID
 // (defined in gov GenesisState) and the latest proposal ID
 // that matches a given Status.
@@ -713,38 +447,4 @@ func randomVotingOption(r *rand.Rand) v1.VoteOption {
 	default:
 		panic("invalid vote option")
 	}
-}
-
-// Pick a random weighted voting options
-func randomWeightedVotingOptions(r *rand.Rand) v1.WeightedVoteOptions {
-	w1 := r.Intn(100 + 1)
-	w2 := r.Intn(100 - w1 + 1)
-	w3 := r.Intn(100 - w1 - w2 + 1)
-	w4 := 100 - w1 - w2 - w3
-	weightedVoteOptions := v1.WeightedVoteOptions{}
-	if w1 > 0 {
-		weightedVoteOptions = append(weightedVoteOptions, &v1.WeightedVoteOption{
-			Option: v1.OptionYes,
-			Weight: sdkmath.LegacyNewDecWithPrec(int64(w1), 2).String(),
-		})
-	}
-	if w2 > 0 {
-		weightedVoteOptions = append(weightedVoteOptions, &v1.WeightedVoteOption{
-			Option: v1.OptionAbstain,
-			Weight: sdkmath.LegacyNewDecWithPrec(int64(w2), 2).String(),
-		})
-	}
-	if w3 > 0 {
-		weightedVoteOptions = append(weightedVoteOptions, &v1.WeightedVoteOption{
-			Option: v1.OptionNo,
-			Weight: sdkmath.LegacyNewDecWithPrec(int64(w3), 2).String(),
-		})
-	}
-	if w4 > 0 {
-		weightedVoteOptions = append(weightedVoteOptions, &v1.WeightedVoteOption{
-			Option: v1.OptionNoWithVeto,
-			Weight: sdkmath.LegacyNewDecWithPrec(int64(w4), 2).String(),
-		})
-	}
-	return weightedVoteOptions
 }

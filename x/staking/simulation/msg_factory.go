@@ -139,7 +139,7 @@ func MsgUndelegateFactory(k *keeper.Keeper) simsx.SimMsgFactoryFn[*types.MsgUnde
 			return nil, nil
 		}
 
-		unbondAmt, err := r.PositiveInt(totalBond)
+		unbondAmt, err := r.PositiveSDKIntn(totalBond)
 		if err != nil {
 			reporter.Skip("invalid unbond amount")
 			return nil, nil

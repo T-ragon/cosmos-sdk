@@ -2,6 +2,7 @@ package simsx
 
 import (
 	"context"
+	"errors"
 	"math/rand"
 	"slices"
 	"time"
@@ -178,6 +179,11 @@ func WithDenomBalance(denom string) SimAccountFilter {
 		return a.LiquidBalance().AmountOf(denom).IsPositive()
 	})
 }
+func WithLiquidBalanceGTE(amount ...sdk.Coin) SimAccountFilter {
+	return SimAccountFilterFn(func(a SimAccount) bool {
+		return a.LiquidBalance().IsAllGTE(amount)
+	})
+}
 
 // todo: liquid token but sent may not be enabled for all or any
 func WithSpendableBalance() SimAccountFilter {
@@ -310,8 +316,26 @@ func (r *XRand) IntInRange(min, max int) int {
 	return r.Rand.Intn(max-min) + min
 }
 
-func (r *XRand) PositiveInt(max math.Int) (math.Int, error) {
+// Uint64InRange returns a pseudo-random uint64 number in the range [min, max].
+// It panics when min >= max
+func (r *XRand) Uint64InRange(min, max uint64) uint64 {
+	return uint64(r.Rand.Int63n(int64(max-min)) + int64(min))
+}
+
+func (r *XRand) PositiveSDKIntn(max math.Int) (math.Int, error) {
 	return simtypes.RandPositiveInt(r.Rand, max)
+}
+
+func (r *XRand) PositiveSDKIntInRange(min, max math.Int) (math.Int, error) {
+	diff := max.Sub(min)
+	if !diff.IsPositive() {
+		return math.Int{}, errors.New("min value must not be greater or equal to max")
+	}
+	result, err := r.PositiveSDKIntn(diff)
+	if err != nil {
+		return math.Int{}, err
+	}
+	return result.Add(min), nil
 }
 
 // Timestamp returns a timestamp between  Jan 1, 2062 and Jan 1, 2262

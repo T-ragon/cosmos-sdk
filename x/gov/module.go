@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-
 	gwruntime "github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc"
@@ -214,12 +213,12 @@ func (AppModule) GenerateGenesisState(simState *module.SimulationState) {
 // ProposalContents returns all the gov content functions used to
 // simulate governance proposals.
 func (AppModule) ProposalContents(simState module.SimulationState) []simtypes.WeightedProposalContent { //nolint:staticcheck // used for legacy testing
-	return simulation.ProposalContents()
+	return simulation.ProposalContents() // todo (Alex): remove
 }
 
 // ProposalMsgs returns all the gov msgs used to simulate governance proposals.
 func (AppModule) ProposalMsgs(simState module.SimulationState) []simtypes.WeightedProposalMsg {
-	return simulation.ProposalMsgs()
+	return simulation.ProposalMsgs() // todo (Alex): remove
 }
 
 // RegisterStoreDecoder registers a decoder for gov module's types
@@ -235,3 +234,15 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 		simState.ProposalMsgs, simState.LegacyProposalContents,
 	)
 }
+
+//func (AppModule) WeightedOperationsXProposalMsgs( // todo: find a better name
+//	weights simsx.WeightSource,
+//	reg simsx.Registry,
+//	wMsgs []simtypes.WeightedProposalMsg,
+//	wContents []simtypes.WeightedProposalContent,
+//) {
+//	reg.Add(weights.Get("msg_deposit", 100), simulation.MsgDepositFactory())
+//	reg.Add(weights.Get("msg_vote", 67), simulation.MsgVoteFactory())
+//	reg.Add(weights.Get("msg_weighted_vote", 33), simulation.MsgWeightedVoteFactory())
+//	reg.Add(weights.Get("cancel_proposal", 5), simulation.MsgCancelProposalFactory())
+//}

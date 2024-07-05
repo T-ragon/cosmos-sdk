@@ -146,7 +146,7 @@ func RunWithSeed[T SimulationApp](
 		simtestutil.PrintStats(testInstance.DB, tb.Log)
 	}
 	// not using tb.Log to always print the summary
-	fmt.Printf("+++ DONE (seed: %d): \n %s\n", seed, reporter.Summary().String())
+	fmt.Printf("+++ DONE (seed: %d): \n%s\n", seed, reporter.Summary().String())
 	for _, step := range postRunActions {
 		step(tb, testInstance)
 	}
@@ -158,6 +158,14 @@ type (
 	}
 	HasProposalMsgsX interface {
 		ProposalMsgsX(weights simsx.WeightSource, reg simsx.Registry)
+	}
+	HasWeightedOperationsXProposalMsgs interface {
+		WeightedOperationsXProposalMsgs( // todo: find a better name
+			weights simsx.WeightSource,
+			reg simsx.Registry,
+			wMsgs []simtypes.WeightedProposalMsg,
+			wContents []simtypes.WeightedProposalContent, //nolint: staticcheck // used for legacy proposal types
+		)
 	}
 )
 
@@ -223,8 +231,8 @@ func prepareWeightedOps(sm *module.SimulationManager, stateFact SimStateFactory,
 	pReg := simsx.NewSimsProposalRegistryAdapter(reporter, sm.AccountSource, sm.BalanceSource, txConfig.SigningContext().AddressCodec())
 	wProps := make([]simtypes.WeightedProposalMsg, 0, len(sm.Modules))
 
+	// add gov proposals types
 	for _, m := range sm.Modules {
-		// add proposals
 		switch xm := m.(type) {
 		case HasProposalMsgsX:
 			xm.ProposalMsgsX(weights, pReg)
@@ -241,9 +249,12 @@ func prepareWeightedOps(sm *module.SimulationManager, stateFact SimStateFactory,
 		switch xm := m.(type) {
 		case HasWeightedOperationsX:
 			xm.WeightedOperationsX(weights, oReg)
+		case HasWeightedOperationsXProposalMsgs:
+			xm.WeightedOperationsXProposalMsgs(weights, oReg, simState.ProposalMsgs, simState.LegacyProposalContents)
 		case HasLegacyWeightedOperations:
 			wOps = append(wOps, xm.WeightedOperations(simState)...)
 		default:
+			// todo: not sure if we should fail or accept modules without operations
 			panic(fmt.Sprintf("no weighted operations found for module: %T", m))
 		}
 	}

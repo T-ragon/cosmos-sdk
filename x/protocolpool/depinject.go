@@ -80,20 +80,11 @@ func (AppModule) GenerateGenesisState(simState *module.SimulationState) {
 func (am AppModule) RegisterStoreDecoder(sdr simtypes.StoreDecoderRegistry) {
 }
 
-// ProposalMsgs returns all the protocolpool msgs used to simulate governance proposals.
-func (AppModule) ProposalMsgs(simState module.SimulationState) []simtypes.WeightedProposalMsg {
-	return simulation.ProposalMsgs()
-}
-
-// WeightedOperations returns the all the protocolpool module operations with their respective weights.
-func (am AppModule) WeightedOperations(simState module.SimulationState) []simtypes.WeightedOperation {
-	panic("old code")
-	return simulation.WeightedOperations(
-		simState.AppParams, simState.Cdc, simState.TxConfig,
-		am.accountKeeper, am.bankKeeper, am.keeper,
-	)
+// ProposalMsgsX returns all the protocolpool msgs used to simulate governance proposals.
+func (am AppModule) ProposalMsgsX(weight simsx.WeightSource, reg simsx.Registry) {
+	reg.Add(weight.Get("msg_community_pool_spend", 50), simulation.MsgCommunityPoolSpendFactory())
 }
 
 func (am AppModule) WeightedOperationsX(weight simsx.WeightSource, reg simsx.Registry) {
-	reg.Add(weight.Get("msg_fund_community_pool", 50), simulation.MsgCreateValidatorFactory())
+	reg.Add(weight.Get("msg_fund_community_pool", 50), simulation.MsgMsgFundCommunityPoolFactory())
 }

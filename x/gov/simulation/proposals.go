@@ -37,7 +37,7 @@ func SimulateTextProposal(r *rand.Rand, _ []simtypes.Account, _ coreaddress.Code
 func ProposalContents() []simtypes.WeightedProposalContent {
 	return []simtypes.WeightedProposalContent{
 		simulation.NewWeightedProposalContent(
-			OpWeightMsgDeposit,
+			OpWeightSubmitTextProposal,
 			DefaultWeightTextProposal,
 			SimulateLegacyTextProposalContent,
 		),
