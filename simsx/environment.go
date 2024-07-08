@@ -168,6 +168,29 @@ func ExcludeAccounts(others ...SimAccount) SimAccountFilter {
 	})
 }
 
+// UniqueAccounts returns a stateful filter that rejects duplicate accounts.
+// It uses a map to keep track of accounts that have been processed.
+// If an account exists in the map, the filter function returns false
+// to reject a duplicate, else it adds the account to the map and returns true.
+//
+// Example usage:
+//
+//	uniqueAccountsFilter := simsx.UniqueAccounts()
+//
+//	for {
+//	    from := testData.AnyAccount(reporter, uniqueAccountsFilter)
+//	    //... rest of the loop
+//	}
+func UniqueAccounts() SimAccountFilter {
+	idx := make(map[string]struct{})
+	return SimAccountFilterFn(func(a SimAccount) bool {
+		if _, ok := idx[a.AddressBech32]; ok {
+			return false
+		}
+		idx[a.AddressBech32] = struct{}{}
+		return true
+	})
+}
 func ExcludeAddresses(addrs ...string) SimAccountFilter {
 	return SimAccountFilterFn(func(a SimAccount) bool {
 		return !slices.Contains(addrs, a.AddressBech32)
@@ -217,7 +240,14 @@ func NewChainDataSource(ctx context.Context, r *rand.Rand, ak ModuleAccountSourc
 		acc[i] = SimAccount{Account: a, r: r, bank: bank}
 		index[a.AddressBech32] = i
 	}
-	return &ChainDataSource{r: r, accountSource: ak, addressCodec: codec, accounts: acc, bank: bank}
+	return &ChainDataSource{
+		r:                         r,
+		accountSource:             ak,
+		addressCodec:              codec,
+		accounts:                  acc,
+		bank:                      bank,
+		addressToAccountsPosIndex: index,
+	}
 }
 
 // AnyAccount returns a random SimAccount matching the filter criteria. Module accounts are excluded.
@@ -240,10 +270,14 @@ func (c ChainDataSource) GetAccountbyAccAddr(reporter SimulationReporter, addr s
 	return c.GetAccount(reporter, addrStr)
 }
 
+func (c ChainDataSource) HasAccount(addr string) bool {
+	_, ok := c.addressToAccountsPosIndex[addr]
+	return ok
+}
 func (c ChainDataSource) GetAccount(reporter SimulationReporter, addr string) SimAccount {
 	pos, ok := c.addressToAccountsPosIndex[addr]
 	if !ok {
-		reporter.Skipf("no such account: %s", addr)
+		reporter.Skipf("no account: %s", addr)
 		return c.nullAccount()
 	}
 	return c.accounts[pos]

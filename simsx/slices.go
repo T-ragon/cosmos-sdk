@@ -21,7 +21,18 @@ func Collect[T, E any](source []T, f func(a T) E) []E {
 	return r
 }
 
+// First returns the first element in the slice that matches the condition
+func First[T any](source []T, f func(a T) bool) *T {
+	for i := 0; i < len(source); i++ {
+		if f(source[i]) {
+			return &source[i]
+		}
+	}
+	return nil
+}
+
 // OneOf returns a random element from the given slice using the provided random number generator.
+// Panics for empty or nil slice
 func OneOf[T any](r interface{ Intn(n int) int }, s []T) T {
 	return s[r.Intn(len(s))]
 }

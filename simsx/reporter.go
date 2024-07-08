@@ -214,11 +214,11 @@ func (x *BasicSimulationReporter) Summary() *ExecutionSummary {
 type ExecutionSummary struct {
 	mx      sync.RWMutex
 	counts  map[string]int
-	reasons map[string]map[string]struct{}
+	reasons map[string]map[string]int
 }
 
 func NewExecutionSummary() *ExecutionSummary {
-	return &ExecutionSummary{counts: make(map[string]int), reasons: make(map[string]map[string]struct{})}
+	return &ExecutionSummary{counts: make(map[string]int), reasons: make(map[string]map[string]int)}
 }
 
 func (s *ExecutionSummary) Add(module, url string, status ReporterStatus, comment string) {
@@ -231,10 +231,10 @@ func (s *ExecutionSummary) Add(module, url string, status ReporterStatus, commen
 	}
 	r, ok := s.reasons[url]
 	if !ok {
-		r = make(map[string]struct{})
+		r = make(map[string]int)
 		s.reasons[url] = r
 	}
-	r[comment] = struct{}{}
+	r[comment] += 1
 }
 
 func (s *ExecutionSummary) String() string {
@@ -247,7 +247,15 @@ func (s *ExecutionSummary) String() string {
 		sb.WriteString(fmt.Sprintf("%s: %d\n", key, s.counts[key]))
 	}
 	for m, c := range s.reasons {
-		sb.WriteString(fmt.Sprintf("%s: %q\n", m, maps.Keys(c)))
+		sb.WriteString(fmt.Sprintf("%d\t%s: %q\n", sum(maps.Values(c)), m, maps.Keys(c)))
 	}
 	return sb.String()
+}
+
+func sum(values []int) int {
+	var r int
+	for _, v := range values {
+		r += v
+	}
+	return r
 }

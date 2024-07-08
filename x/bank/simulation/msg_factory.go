@@ -8,7 +8,6 @@ import (
 
 	"cosmossdk.io/x/bank/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"golang.org/x/exp/maps"
 )
 
 func MsgSendFactory() simsx.SimMsgFactoryFn[*types.MsgSend] {
@@ -24,21 +23,19 @@ func MsgMultiSendFactory() simsx.SimMsgFactoryFn[*types.MsgMultiSend] {
 	return func(ctx context.Context, testData *simsx.ChainDataSource, reporter simsx.SimulationReporter) ([]simsx.SimAccount, sdk.Msg) {
 		r := testData.Rand()
 		var (
-			sending        = make([]types.Input, r.Intn(1)+1)
-			receiving      = make([]types.Output, r.Intn(3)+1)
-			senderAcc      = make([]simsx.SimAccount, len(sending))
-			usedAddrsIdx   = make(map[string]struct{}) // use map to check if address already exists as input
-			totalSentCoins sdk.Coins
+			sending              = make([]types.Input, r.Intn(1)+1)
+			receiving            = make([]types.Output, r.Intn(3)+1)
+			senderAcc            = make([]simsx.SimAccount, len(sending))
+			totalSentCoins       sdk.Coins
+			uniqueAccountsFilter = simsx.UniqueAccounts()
 		)
 		for i := range sending {
 			// generate random input fields, ignore to address
-			from := testData.AnyAccount(reporter, simsx.WithSpendableBalance(), simsx.ExcludeAddresses(maps.Keys(usedAddrsIdx)...))
+			from := testData.AnyAccount(reporter, simsx.WithSpendableBalance(), uniqueAccountsFilter)
 			if reporter.IsSkipped() {
 				return nil, nil
 			}
 			coins := from.LiquidBalance().RandSubsetCoins(reporter, simsx.WithSendEnabledCoins())
-			// set input address in used address map
-			usedAddrsIdx[from.AddressBech32] = struct{}{}
 
 			// set signer privkey
 			senderAcc[i] = from

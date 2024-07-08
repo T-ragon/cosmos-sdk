@@ -43,13 +43,15 @@ func MsgExecFactory(k keeper.Keeper) simsx.SimMsgFactoryFn[*authz.MsgExec] {
 			_, ok := a.(*banktype.SendAuthorization)
 			return ok
 		}
-		granterAddr, granteeAddr, _ := findGrant(ctx, k, reporter, bankSendOnlyFilter)
+		granterAddr, granteeAddr, gAuthz := findGrant(ctx, k, reporter, bankSendOnlyFilter)
 		granter := testData.GetAccountbyAccAddr(reporter, granterAddr)
 		grantee := testData.GetAccountbyAccAddr(reporter, granteeAddr)
 		if reporter.IsSkipped() {
 			return nil, nil
 		}
 		amount := granter.LiquidBalance().RandSubsetCoins(reporter, simsx.WithSendEnabledCoins())
+		amount = amount.Min(gAuthz.(*banktype.SendAuthorization).SpendLimit)
+
 		payloadMsg := []sdk.Msg{banktype.NewMsgSend(granter.AddressBech32, grantee.AddressBech32, amount)}
 		msgExec := authz.NewMsgExec(grantee.AddressBech32, payloadMsg)
 		return []simsx.SimAccount{grantee}, &msgExec
@@ -64,7 +66,7 @@ func MsgRevokeFactory(k keeper.Keeper) simsx.SimMsgFactoryFn[*authz.MsgRevoke] {
 			return nil, nil
 		}
 		msgExec := authz.NewMsgRevoke(granter.AddressBech32, grantee.AddressBech32, auth.MsgTypeURL())
-		return []simsx.SimAccount{grantee}, &msgExec
+		return []simsx.SimAccount{granter}, &msgExec
 	}
 }
 
