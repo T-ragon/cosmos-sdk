@@ -195,26 +195,9 @@ func WithSpendableBalance() SimAccountFilter {
 type ModuleAccountSource interface {
 	GetModuleAddress(moduleName string) sdk.AccAddress
 }
-type SpendableCoinser interface {
-	SpendableCoins(addr sdk.AccAddress) sdk.Coins
-}
-
-type SpendableCoinserFn func(addr sdk.AccAddress) sdk.Coins
-
-func (b SpendableCoinserFn) SpendableCoins(addr sdk.AccAddress) sdk.Coins {
-	return b(addr)
-}
-
 type BalanceSource interface {
 	SpendableCoins(ctx context.Context, addr sdk.AccAddress) sdk.Coins
 	IsSendEnabledDenom(ctx context.Context, denom string) bool
-}
-
-func NewBalanceSource(ctx sdk.Context, bk BalanceSource,
-) SpendableCoinser {
-	return SpendableCoinserFn(func(addr sdk.AccAddress) sdk.Coins {
-		return bk.SpendableCoins(ctx, addr)
-	})
 }
 
 type ChainDataSource struct {
@@ -223,23 +206,21 @@ type ChainDataSource struct {
 	accounts                  []SimAccount
 	accountSource             ModuleAccountSource
 	addressCodec              address.Codec
+	bank                      contextAwareBalanceSource
 }
 
 func NewChainDataSource(ctx context.Context, r *rand.Rand, ak ModuleAccountSource, bk BalanceSource, codec address.Codec, oldSimAcc ...simtypes.Account) *ChainDataSource {
 	acc := make([]SimAccount, len(oldSimAcc))
 	index := make(map[string]int, len(oldSimAcc))
+	bank := contextAwareBalanceSource{ctx: ctx, bank: bk}
 	for i, a := range oldSimAcc {
-		acc[i] = SimAccount{
-			Account: a,
-			r:       r,
-			bank:    contextAwareBalanceSource{ctx: ctx, bank: bk},
-		}
+		acc[i] = SimAccount{Account: a, r: r, bank: bank}
 		index[a.AddressBech32] = i
 	}
-	return &ChainDataSource{r: r, accountSource: ak, addressCodec: codec, accounts: acc}
+	return &ChainDataSource{r: r, accountSource: ak, addressCodec: codec, accounts: acc, bank: bank}
 }
 
-// AnyAccount returns a random SimAccount matching the filter critera. Module accounts are excluded.
+// AnyAccount returns a random SimAccount matching the filter criteria. Module accounts are excluded.
 // In case of an error or no matching account found, the reporter is set to skip and an empty value is returned.
 func (c *ChainDataSource) AnyAccount(r SimulationReporter, filters ...SimAccountFilter) SimAccount {
 	acc := c.randomAccount(r, 5, filters...)
@@ -258,6 +239,7 @@ func (c ChainDataSource) GetAccountbyAccAddr(reporter SimulationReporter, addr s
 	}
 	return c.GetAccount(reporter, addrStr)
 }
+
 func (c ChainDataSource) GetAccount(reporter SimulationReporter, addr string) SimAccount {
 	pos, ok := c.addressToAccountsPosIndex[addr]
 	if !ok {
@@ -312,6 +294,10 @@ func (c *ChainDataSource) AddressCodec() address.Codec {
 
 func (c *ChainDataSource) Rand() *XRand {
 	return &XRand{c.r}
+}
+
+func (c *ChainDataSource) IsSendEnabledDenom(denom string) bool {
+	return c.bank.IsSendEnabledDenom(denom)
 }
 
 type XRand struct {

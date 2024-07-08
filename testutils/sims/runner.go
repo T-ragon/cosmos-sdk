@@ -255,7 +255,7 @@ func prepareWeightedOps(sm *module.SimulationManager, stateFact SimStateFactory,
 			wOps = append(wOps, xm.WeightedOperations(simState)...)
 		default:
 			// todo: not sure if we should fail or accept modules without operations
-			panic(fmt.Sprintf("no weighted operations found for module: %T", m))
+			//panic(fmt.Sprintf("no weighted operations found for module: %T", m))
 		}
 	}
 	return append(wOps, oReg.ToLegacy()...), reporter

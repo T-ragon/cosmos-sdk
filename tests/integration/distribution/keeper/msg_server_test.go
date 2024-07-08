@@ -143,7 +143,7 @@ func initFixture(t *testing.T) *fixture {
 	authModule := auth.NewAppModule(cdc, accountKeeper, acctsModKeeper, authsims.RandomGenesisAccounts)
 	bankModule := bank.NewAppModule(cdc, bankKeeper, accountKeeper)
 	stakingModule := staking.NewAppModule(cdc, stakingKeeper, accountKeeper, bankKeeper)
-	distrModule := distribution.NewAppModule(cdc, distrKeeper, accountKeeper, bankKeeper, stakingKeeper, poolKeeper)
+	distrModule := distribution.NewAppModule(cdc, distrKeeper, stakingKeeper)
 	poolModule := protocolpool.NewAppModule(cdc, poolKeeper, accountKeeper, bankKeeper)
 
 	addr := sdk.AccAddress(PKS[0].Address())

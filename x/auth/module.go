@@ -196,8 +196,3 @@ func (AppModule) ProposalMsgsX(weights simsx.WeightSource, reg simsx.Registry) {
 func (am AppModule) RegisterStoreDecoder(sdr simtypes.StoreDecoderRegistry) {
 	sdr[types.StoreKey] = simtypes.NewStoreDecoderFuncFromCollectionsSchema(am.accountKeeper.Schema)
 }
-
-// WeightedOperations doesn't return any auth module operation.
-func (AppModule) WeightedOperations(_ module.SimulationState) []simtypes.WeightedOperation {
-	return nil
-}
