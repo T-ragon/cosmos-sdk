@@ -8,8 +8,31 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"slices"
 	"strconv"
+	"sync/atomic"
 	"time"
 )
+
+const unsetGroupID = 100000000000000
+
+// SharedState shared state between message invocations
+type SharedState struct {
+	minGroupID atomic.Uint64
+}
+
+// NewSharedState constructor
+func NewSharedState() *SharedState {
+	r := &SharedState{}
+	r.setMinGroupID(unsetGroupID)
+	return r
+}
+
+func (s *SharedState) getMinGroupID() uint64 {
+	return s.minGroupID.Load()
+}
+
+func (s *SharedState) setMinGroupID(id uint64) {
+	s.minGroupID.Store(id)
+}
 
 func MsgCreateGroupFactory() simsx.SimMsgFactoryFn[*group.MsgCreateGroup] {
 	return func(ctx context.Context, testData *simsx.ChainDataSource, reporter simsx.SimulationReporter) ([]simsx.SimAccount, sdk.Msg) {

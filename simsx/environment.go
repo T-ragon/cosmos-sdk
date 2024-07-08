@@ -191,6 +191,7 @@ func UniqueAccounts() SimAccountFilter {
 		return true
 	})
 }
+
 func ExcludeAddresses(addrs ...string) SimAccountFilter {
 	return SimAccountFilterFn(func(a SimAccount) bool {
 		return !slices.Contains(addrs, a.AddressBech32)
@@ -274,6 +275,7 @@ func (c ChainDataSource) HasAccount(addr string) bool {
 	_, ok := c.addressToAccountsPosIndex[addr]
 	return ok
 }
+
 func (c ChainDataSource) GetAccount(reporter SimulationReporter, addr string) SimAccount {
 	pos, ok := c.addressToAccountsPosIndex[addr]
 	if !ok {
