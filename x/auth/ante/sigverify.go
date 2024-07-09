@@ -421,7 +421,7 @@ func (svd SigVerificationDecorator) increaseSequence(tx authsigning.Tx, acc sdk.
 		return nil
 	}
 
-	return acc.SetSequence(acc.GetSequence() + 1)
+	return acc.SetSequence(acc.GetSequence())
 }
 
 // authenticateAbstractedAccount computes an AA authentication instruction and invokes the auth flow on the AA.
