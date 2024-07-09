@@ -14,15 +14,15 @@ import (
 	"cosmossdk.io/x/auth/signing"
 	txsigning "cosmossdk.io/x/tx/signing"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/client/tx"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	kmultisig "github.com/T-ragon/cosmos-sdk/crypto/keys/multisig"
-	"github.com/T-ragon/cosmos-sdk/crypto/types/multisig"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	signingtypes "github.com/T-ragon/cosmos-sdk/types/tx/signing"
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/client/tx"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	kmultisig "github.com/T-ragon/cosmos-sdk/v3/crypto/keys/multisig"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/types/multisig"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	signingtypes "github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 // GetMultiSignCommand returns the multi-sign command

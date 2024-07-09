@@ -14,9 +14,9 @@ import (
 	"cosmossdk.io/x/auth/ante"
 	"cosmossdk.io/x/feegrant"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // Keeper manages state of all fee grants, as well as calculating approval.

@@ -8,7 +8,7 @@ import (
 	"cosmossdk.io/x/evidence/exported"
 	"cosmossdk.io/x/evidence/types"
 
-	"github.com/T-ragon/cosmos-sdk/types/query"
+	"github.com/T-ragon/cosmos-sdk/v3/types/query"
 )
 
 func (suite *KeeperTestSuite) TestQueryEvidence() {

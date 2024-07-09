@@ -3,9 +3,9 @@ package signing
 import (
 	"context"
 
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 // SignModeHandler defines a interface to be implemented by types which will handle

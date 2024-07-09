@@ -24,11 +24,11 @@ import (
 	_ "cosmossdk.io/x/staking"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/testutil/configurator"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/configurator"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var (

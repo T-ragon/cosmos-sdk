@@ -12,6 +12,6 @@ var (
 
 	// EnvironmentContextKey is the context key for the environment.
 	// A caller should not assume the environment is available in each context.
-	// ref: https://github.com/T-ragon/cosmos-sdk/issues/19640
+	// ref: https://github.com/T-ragon/cosmos-sdk/v3/issues/19640
 	EnvironmentContextKey = environmentKey{}
 )

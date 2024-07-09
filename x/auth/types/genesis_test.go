@@ -10,11 +10,11 @@ import (
 	"cosmossdk.io/x/auth"
 	"cosmossdk.io/x/auth/types"
 
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 func TestSanitize(t *testing.T) {

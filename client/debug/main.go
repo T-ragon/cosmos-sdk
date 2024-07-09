@@ -12,14 +12,14 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/types/bech32/legacybech32" //nolint:staticcheck // we do old keys, they're keys after all.
-	"github.com/T-ragon/cosmos-sdk/types/errors"
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/bech32/legacybech32" //nolint:staticcheck // we do old keys, they're keys after all.
+	"github.com/T-ragon/cosmos-sdk/v3/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 var (

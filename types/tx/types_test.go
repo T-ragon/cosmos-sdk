@@ -12,11 +12,11 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/tx/signing"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/codec/address"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx"
 )
 
 func TestTx_GetMsgs(t *testing.T) {

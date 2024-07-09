@@ -5,7 +5,7 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // UpgradeInfoFileName file to store upgrade information

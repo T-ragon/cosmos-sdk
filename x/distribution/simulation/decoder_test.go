@@ -11,11 +11,11 @@ import (
 	"cosmossdk.io/x/distribution/simulation"
 	"cosmossdk.io/x/distribution/types"
 
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/kv"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/kv"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 var (

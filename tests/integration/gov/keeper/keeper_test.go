@@ -30,13 +30,13 @@ import (
 	stakingkeeper "cosmossdk.io/x/staking/keeper"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/testutil/integration"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/integration"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 type fixture struct {

@@ -26,16 +26,16 @@ import (
 	minttypes "cosmossdk.io/x/mint/types"
 	"cosmossdk.io/x/tx/signing"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/testutil/integration"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/integration"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 type fixture struct {

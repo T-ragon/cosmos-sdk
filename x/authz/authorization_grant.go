@@ -7,8 +7,8 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	cdctypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	cdctypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // NewGrant returns new Grant. Expiration is optional and noop if null.

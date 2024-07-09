@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // DefaultDefaultSendEnabled is the value that DefaultSendEnabled will have from DefaultParams().

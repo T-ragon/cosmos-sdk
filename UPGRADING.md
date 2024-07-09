@@ -143,7 +143,7 @@ transactions in your application:
 To submit an unordered transaction, the client must set the `unordered` flag to
 `true` and ensure a reasonable `timeout_height` is set. The `timeout_height` is
 used as a TTL for the transaction and is used to provide replay protection. See
-[ADR-070](https://github.com/T-ragon/cosmos-sdk/blob/main/docs/architecture/adr-070-unordered-transactions.md)
+[ADR-070](https://github.com/T-ragon/cosmos-sdk/v3/blob/main/docs/architecture/adr-070-unordered-transactions.md)
 for more details.
 
 ### Depinject `app_config.go` / `app.yml`
@@ -345,7 +345,7 @@ storetypes.StoreUpgrades{
 }
 ```
 
-## [v0.50.x](https://github.com/T-ragon/cosmos-sdk/releases/tag/v0.50.0-alpha.0)
+## [v0.50.x](https://github.com/T-ragon/cosmos-sdk/v3/releases/tag/v0.50.0-alpha.0)
 
 ### Migration to CometBFT (Part 2)
 
@@ -412,7 +412,7 @@ for more info.
 #### Set PreBlocker
 
 A `SetPreBlocker` method has been added to BaseApp. This is essential for BaseApp to run `PreBlock` which runs before begin blocker other modules, and allows to modify consensus parameters, and the changes are visible to the following state machine logics.
-Read more about other use cases [here](https://github.com/T-ragon/cosmos-sdk/blob/main/docs/architecture/adr-068-preblock.md).
+Read more about other use cases [here](https://github.com/T-ragon/cosmos-sdk/v3/blob/main/docs/architecture/adr-068-preblock.md).
 
 `depinject` / app v2 users need to add `x/upgrade` in their `app_config.go` / `app.yml`:
 
@@ -486,14 +486,14 @@ ClevelDB, BoltDB and BadgerDB are not supported anymore. To migrate from an unsu
 
 With the deprecation of the Amino JSON codec defined in [cosmos/gogoproto](https://github.com/cosmos/gogoproto) in favor of the protoreflect powered x/tx/aminojson codec, module developers are encouraged verify that their messages have the correct protobuf annotations to deterministically produce identical output from both codecs.
 
-For core SDK types equivalence is asserted by generative testing of [SignableTypes](https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-beta.0/tests/integration/rapidgen/rapidgen.go#L102) in [TestAminoJSON_Equivalence](https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-beta.0/tests/integration/tx/aminojson/aminojson_test.go#L94).
+For core SDK types equivalence is asserted by generative testing of [SignableTypes](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-beta.0/tests/integration/rapidgen/rapidgen.go#L102) in [TestAminoJSON_Equivalence](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-beta.0/tests/integration/tx/aminojson/aminojson_test.go#L94).
 
 Read more about the available annotations [here](https://docs.cosmos.network/v0.50/build/building-modules/protobuf-annotations).
 
 #### Stringer
 
 The `gogoproto.goproto_stringer = false` annotation has been removed from most proto files. This means that the `String()` method is being generated for types that previously had this annotation. The generated `String()` method uses `proto.CompactTextString` for _stringifying_ structs.
-[Verify](https://github.com/T-ragon/cosmos-sdk/pull/13850#issuecomment-1328889651) the usage of the modified `String()` methods and double-check that they are not used in state-machine code.
+[Verify](https://github.com/T-ragon/cosmos-sdk/v3/pull/13850#issuecomment-1328889651) the usage of the modified `String()` methods and double-check that they are not used in state-machine code.
 
 ### SimApp
 
@@ -592,7 +592,7 @@ if err := autoCliOpts.EnhanceRootCommand(rootCmd); err != nil {
 ```
 
 Where `autoCliOpts` is the autocli options of the app, containing all modules and codecs.
-That value can injected by depinject ([see root_v2.go](https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-beta.0/simapp/simd/cmd/root_v2.go#L49-L67)) or manually provided by the app ([see legacy app.go](https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-beta.0/simapp/app.go#L636-L655)).
+That value can injected by depinject ([see root_v2.go](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-beta.0/simapp/simd/cmd/root_v2.go#L49-L67)) or manually provided by the app ([see legacy app.go](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-beta.0/simapp/app.go#L636-L655)).
 
 :::warning
 Not doing this will result in all core SDK modules queries not to be included in the binary.
@@ -629,7 +629,7 @@ References to `types/store.go` which contained aliases for store types have been
 ##### Extract Store to a standalone module
 
 The `store` module is extracted to have a separate go.mod file which allows it be a standalone module.
-All the store imports are now renamed to use `cosmossdk.io/store` instead of `github.com/T-ragon/cosmos-sdk/store` across the SDK.
+All the store imports are now renamed to use `cosmossdk.io/store` instead of `github.com/T-ragon/cosmos-sdk/v3/store` across the SDK.
 
 ##### Streaming
 
@@ -771,7 +771,7 @@ Read more on those interfaces [here](https://docs.cosmos.network/v0.50/building-
 
 * `GetSigners()` is no longer required to be implemented on `Msg` types. The SDK will automatically infer the signers from the `Signer` field on the message. The signer field is required on all messages unless using a custom signer function.
 
-To find out more please read the [signer field](https://github.com/T-ragon/cosmos-sdk/blob/main/docs/build/building-modules/05-protobuf-annotations.md) & [here](https://github.com/T-ragon/cosmos-sdk/blob/7352d0bce8e72121e824297df453eb1059c28da8/docs/docs/build/building-modules/02-messages-and-queries.md#L40) documentation.
+To find out more please read the [signer field](https://github.com/T-ragon/cosmos-sdk/v3/blob/main/docs/build/building-modules/05-protobuf-annotations.md) & [here](https://github.com/T-ragon/cosmos-sdk/v3/blob/7352d0bce8e72121e824297df453eb1059c28da8/docs/docs/build/building-modules/02-messages-and-queries.md#L40) documentation.
 <!-- Link to docs once redeployed -->
 
 #### `x/auth`
@@ -822,28 +822,28 @@ By default, the new `ProposalCancelRatio` parameter is set to `0.5` during migra
 ##### Extract evidence to a standalone module
 
 The `x/evidence` module is extracted to have a separate go.mod file which allows it be a standalone module.
-All the evidence imports are now renamed to use `cosmossdk.io/x/evidence` instead of `github.com/T-ragon/cosmos-sdk/x/evidence` across the SDK.
+All the evidence imports are now renamed to use `cosmossdk.io/x/evidence` instead of `github.com/T-ragon/cosmos-sdk/v3/x/evidence` across the SDK.
 
 #### `x/nft`
 
 ##### Extract nft to a standalone module
 
 The `x/nft` module is extracted to have a separate go.mod file which allows it to be a standalone module.
-All the evidence imports are now renamed to use `cosmossdk.io/x/nft` instead of `github.com/T-ragon/cosmos-sdk/x/nft` across the SDK.
+All the evidence imports are now renamed to use `cosmossdk.io/x/nft` instead of `github.com/T-ragon/cosmos-sdk/v3/x/nft` across the SDK.
 
 #### x/feegrant
 
 ##### Extract feegrant to a standalone module
 
 The `x/feegrant` module is extracted to have a separate go.mod file which allows it to be a standalone module.
-All the feegrant imports are now renamed to use `cosmossdk.io/x/feegrant` instead of `github.com/T-ragon/cosmos-sdk/x/feegrant` across the SDK.
+All the feegrant imports are now renamed to use `cosmossdk.io/x/feegrant` instead of `github.com/T-ragon/cosmos-sdk/v3/x/feegrant` across the SDK.
 
 #### `x/upgrade`
 
 ##### Extract upgrade to a standalone module
 
 The `x/upgrade` module is extracted to have a separate go.mod file which allows it to be a standalone module.
-All the upgrade imports are now renamed to use `cosmossdk.io/x/upgrade` instead of `github.com/T-ragon/cosmos-sdk/x/upgrade` across the SDK.
+All the upgrade imports are now renamed to use `cosmossdk.io/x/upgrade` instead of `github.com/T-ragon/cosmos-sdk/v3/x/upgrade` across the SDK.
 
 ### Tooling
 
@@ -853,7 +853,7 @@ Rosetta has moved to it's own [repo](https://github.com/cosmos/rosetta) and not 
 Any user who is interested on using the tool can connect it standalone to any node without the need to add it as part of the node binary.
 The rosetta tool also allows multi chain connections.
 
-## [v0.47.x](https://github.com/T-ragon/cosmos-sdk/releases/tag/v0.47.0)
+## [v0.47.x](https://github.com/T-ragon/cosmos-sdk/v3/releases/tag/v0.47.0)
 
 ### Migration to CometBFT (Part 1)
 
@@ -899,13 +899,13 @@ by this change.
 
 ### SimApp
 
-The `simapp` package **should not be imported in your own app**. Instead, you should import the `runtime.AppI` interface, that defines an `App`, and use the [`simtestutil` package](https://pkg.go.dev/github.com/T-ragon/cosmos-sdk/testutil/sims) for application testing.
+The `simapp` package **should not be imported in your own app**. Instead, you should import the `runtime.AppI` interface, that defines an `App`, and use the [`simtestutil` package](https://pkg.go.dev/github.com/T-ragon/cosmos-sdk/v3/testutil/sims) for application testing.
 
 #### App Wiring
 
 SimApp's `app_v2.go` is using [App Wiring](https://docs.cosmos.network/main/build/building-apps/app-go-v2), the dependency injection framework of the Cosmos SDK.
-This means that modules are injected directly into SimApp thanks to a [configuration file](https://github.com/T-ragon/cosmos-sdk/blob/v0.47.0-rc1/simapp/app_config.go).
-The previous behavior, without the dependency injection framework, is still present in [`app.go`](https://github.com/T-ragon/cosmos-sdk/blob/v0.47.0-rc1/simapp/app.go) and is not going anywhere.
+This means that modules are injected directly into SimApp thanks to a [configuration file](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.47.0-rc1/simapp/app_config.go).
+The previous behavior, without the dependency injection framework, is still present in [`app.go`](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.47.0-rc1/simapp/app.go) and is not going anywhere.
 
 If you are using a `app.go` without dependency injection, add the following lines to your `app.go` in order to provide newer gRPC services:
 
@@ -941,7 +941,7 @@ That argument should be passed to the module maanager `ExportGenesisFromModules`
 The `GoLevelDB` version must pinned to `v1.0.1-0.20210819022825-2ae1ddf74ef7` in the application, following versions might cause unexpected behavior.
 This can be done adding `replace github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7` to the `go.mod` file.
 
-* [issue #14949 on cosmos-sdk](https://github.com/T-ragon/cosmos-sdk/issues/14949)
+* [issue #14949 on cosmos-sdk](https://github.com/T-ragon/cosmos-sdk/v3/issues/14949)
 * [issue #25413 on go-ethereum](https://github.com/ethereum/go-ethereum/pull/25413)
 
 ### Protobuf
@@ -953,7 +953,7 @@ This allows you to remove the replace directive `replace github.com/gogo/protobu
 
 Please use the `ghcr.io/cosmos/proto-builder` image (version >= `0.11.5`) for generating protobuf files.
 
-See which buf commit for `cosmos/cosmos-sdk` to pin in your `buf.yaml` file [here](https://github.com/T-ragon/cosmos-sdk/blob/main/proto/README.md).
+See which buf commit for `cosmos/cosmos-sdk` to pin in your `buf.yaml` file [here](https://github.com/T-ragon/cosmos-sdk/v3/blob/main/proto/README.md).
 
 #### Gogoproto Import Paths
 
@@ -963,7 +963,7 @@ For example, assuming you put all your proto files in subfolders inside your roo
 
 If you are using a custom folder structure for your proto files, please reorganize them so that their OS path matches their proto package name.
 
-This is to allow the proto FileDescriptSets to be correctly registered, and this standardized OS import paths allows [Hubl](https://github.com/T-ragon/cosmos-sdk/tree/main/tools/hubl) to reflectively talk to any chain.
+This is to allow the proto FileDescriptSets to be correctly registered, and this standardized OS import paths allows [Hubl](https://github.com/T-ragon/cosmos-sdk/v3/tree/main/tools/hubl) to reflectively talk to any chain.
 
 #### `{accepts,implements}_interface` proto annotations
 
@@ -988,7 +988,7 @@ Here are the following replacements that you need to perform on your proto files
 
 Please also check that in your own app's proto files that there are no single-word names for those two proto annotations. If so, then replace them with fully-qualified names, even though those names don't actually resolve to an actual protobuf entity.
 
-For more information, see the [encoding guide](https://github.com/T-ragon/cosmos-sdk/blob/main/docs/learn/advanced/05-encoding.md).
+For more information, see the [encoding guide](https://github.com/T-ragon/cosmos-sdk/v3/blob/main/docs/learn/advanced/05-encoding.md).
 
 ### Transactions
 
@@ -1024,7 +1024,7 @@ In case a module does not follow the standard message path, (e.g. IBC), it is ad
 
 The `params` module was deprecated since v0.46. The Cosmos SDK has migrated away from `x/params` for its own modules.
 Cosmos SDK modules now store their parameters directly in its respective modules.
-The `params` module will be removed in `v0.50`, as mentioned [in v0.46 release](https://github.com/T-ragon/cosmos-sdk/blob/v0.46.1/UPGRADING.md#xparams). It is strongly encouraged to migrate away from `x/params` before `v0.50`.
+The `params` module will be removed in `v0.50`, as mentioned [in v0.46 release](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.46.1/UPGRADING.md#xparams). It is strongly encouraged to migrate away from `x/params` before `v0.50`.
 
 When performing a chain migration, the params table must be initizalied manually. This was done in the modules keepers in previous versions.
 Have a look at `simapp.RegisterUpgradeHandlers()` for an example.
@@ -1060,10 +1060,10 @@ The `Proposal` proto has been updated with proposer field. For proposal state mi
 
 ```go
 import (
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/module"
-	v4 "github.com/T-ragon/cosmos-sdk/x/gov/migrations/v4"
-	upgradetypes "github.com/T-ragon/cosmos-sdk/x/upgrade/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
+	v4 "github.com/T-ragon/cosmos-sdk/v3/x/gov/migrations/v4"
+	upgradetypes "github.com/T-ragon/cosmos-sdk/v3/x/upgrade/types"
 )
 
 func (app SimApp) RegisterUpgradeHandlers() {
@@ -1145,7 +1145,7 @@ Ledger support has been generalized to enable use of different apps and keytypes
 
 This is not a breaking change, as all values will default to use the standard Cosmos app implementation unless specified otherwise.
 
-## [v0.46.x](https://github.com/T-ragon/cosmos-sdk/releases/tag/v0.46.0)
+## [v0.46.x](https://github.com/T-ragon/cosmos-sdk/v3/releases/tag/v0.46.0)
 
 ### Go API Changes
 
@@ -1168,7 +1168,7 @@ To improve clarity of the API, some renaming and improvements has been done:
 | `x/gov`   | `keeper.RefundDeposits`            | `keeper.RefundAndDeleteDeposits`     |
 | `x/{mod}` | package `legacy`                   | package `migrations`                 |
 
-For the exhaustive list of API renaming, please refer to the [CHANGELOG](https://github.com/T-ragon/cosmos-sdk/blob/main/CHANGELOG.md).
+For the exhaustive list of API renaming, please refer to the [CHANGELOG](https://github.com/T-ragon/cosmos-sdk/v3/blob/main/CHANGELOG.md).
 
 #### new packages
 
@@ -1223,7 +1223,7 @@ mistakes.
 
 #### `x/params`
 
-* The `x/params` module has been deprecated in favour of each module housing and providing way to modify their parameters. Each module that has parameters that are changeable during runtime has an authority, the authority can be a module or user account. The Cosmos SDK team recommends migrating modules away from using the param module. An example of how this could look like can be found [here](https://github.com/T-ragon/cosmos-sdk/pull/12363).
+* The `x/params` module has been deprecated in favour of each module housing and providing way to modify their parameters. Each module that has parameters that are changeable during runtime has an authority, the authority can be a module or user account. The Cosmos SDK team recommends migrating modules away from using the param module. An example of how this could look like can be found [here](https://github.com/T-ragon/cosmos-sdk/v3/pull/12363).
 * The Param module will be maintained until April 18, 2023. At this point the module will reach end of life and be removed from the Cosmos SDK.
 
 #### `x/gov`
@@ -1240,7 +1240,7 @@ The `staking module` added a new message type to cancel unbonding delegations. U
 
 ### Protobuf
 
-The `third_party/proto` folder that existed in [previous version](https://github.com/T-ragon/cosmos-sdk/tree/v0.45.3/third_party/proto) now does not contain directly the [proto files](https://github.com/T-ragon/cosmos-sdk/tree/release/v0.46.x/third_party/proto).
+The `third_party/proto` folder that existed in [previous version](https://github.com/T-ragon/cosmos-sdk/v3/tree/v0.45.3/third_party/proto) now does not contain directly the [proto files](https://github.com/T-ragon/cosmos-sdk/v3/tree/release/v0.46.x/third_party/proto).
 
 Instead, the SDK uses [`buf`](https://buf.build). Clients should have their own [`buf.yaml`](https://docs.buf.build/configuration/v1/buf-yaml) with `buf.build/cosmos/cosmos-sdk` as dependency, in order to avoid having to copy paste these files.
 

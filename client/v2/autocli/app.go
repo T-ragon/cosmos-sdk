@@ -10,8 +10,8 @@ import (
 	"cosmossdk.io/core/appmodule"
 	"cosmossdk.io/depinject"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	sdkflags "github.com/T-ragon/cosmos-sdk/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	sdkflags "github.com/T-ragon/cosmos-sdk/v3/client/flags"
 )
 
 // AppOptions are autocli options for an app. These options can be built via depinject based on an app config. Ex:
@@ -21,7 +21,7 @@ import (
 //	err := depinject.Inject(appConfig, &encodingConfig.InterfaceRegistry, &autoCliOpts)
 //
 // If depinject isn't used, options can be provided manually or extracted from modules and the address codec can be provided by the auth keeper.
-// One method for extracting autocli options is via the github.com/T-ragon/cosmos-sdk/runtime/services.ExtractAutoCLIOptions function.
+// One method for extracting autocli options is via the github.com/T-ragon/cosmos-sdk/v3/runtime/services.ExtractAutoCLIOptions function.
 type AppOptions struct {
 	depinject.In
 

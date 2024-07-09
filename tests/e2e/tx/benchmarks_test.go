@@ -11,14 +11,14 @@ import (
 	authclient "cosmossdk.io/x/auth/client"
 	banktypes "cosmossdk.io/x/bank/types"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	clienttx "github.com/T-ragon/cosmos-sdk/client/tx"
-	"github.com/T-ragon/cosmos-sdk/testutil/cli"
-	"github.com/T-ragon/cosmos-sdk/testutil/network"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/tx"
-	"github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	clienttx "github.com/T-ragon/cosmos-sdk/v3/client/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/cli"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/network"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 type E2EBenchmarkSuite struct {

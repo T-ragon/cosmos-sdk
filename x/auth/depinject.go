@@ -10,8 +10,8 @@ import (
 	"cosmossdk.io/x/auth/simulation"
 	"cosmossdk.io/x/auth/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var _ depinject.OnePerModuleType = AppModule{}

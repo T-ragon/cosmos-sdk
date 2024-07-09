@@ -8,9 +8,9 @@ import (
 	signingv1beta1 "cosmossdk.io/api/cosmos/tx/signing/v1beta1"
 	txsigning "cosmossdk.io/x/tx/signing"
 
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/crypto/types/multisig"
-	"github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/types/multisig"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 // APISignModesToInternal converts a protobuf SignMode array to a signing.SignMode array.

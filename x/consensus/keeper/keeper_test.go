@@ -16,13 +16,13 @@ import (
 	consensusparamkeeper "cosmossdk.io/x/consensus/keeper"
 	"cosmossdk.io/x/consensus/types"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/address"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/address"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 type KeeperTestSuite struct {

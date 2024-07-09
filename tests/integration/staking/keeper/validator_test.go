@@ -12,10 +12,10 @@ import (
 	"cosmossdk.io/x/staking/testutil"
 	"cosmossdk.io/x/staking/types"
 
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/module"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
 )
 
 func newMonikerValidator(tb testing.TB, operator sdk.ValAddress, pubKey cryptotypes.PubKey, moniker string) types.Validator {

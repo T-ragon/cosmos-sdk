@@ -9,9 +9,9 @@ import (
 	"cosmossdk.io/x/group"
 	"cosmossdk.io/x/group/errors"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // doExecuteMsgs routes the messages to the registered handlers. Messages are limited to those that require no authZ or
@@ -26,7 +26,7 @@ func (k Keeper) doExecuteMsgs(ctx context.Context, proposal group.Proposal, grou
 	}
 
 	// Ensure it's not too late to execute the messages.
-	// After https://github.com/T-ragon/cosmos-sdk/issues/11245, proposals should
+	// After https://github.com/T-ragon/cosmos-sdk/v3/issues/11245, proposals should
 	// be pruned automatically, so this function should not even be called, as
 	// the proposal doesn't exist in state. For sanity check, we can still keep
 	// this simple and cheap check.

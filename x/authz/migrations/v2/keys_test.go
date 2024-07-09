@@ -7,9 +7,9 @@ import (
 
 	bank "cosmossdk.io/x/bank/types"
 
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/address"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/address"
 )
 
 var (

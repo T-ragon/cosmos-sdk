@@ -9,10 +9,10 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	"cosmossdk.io/math"
 
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 const mintModuleName = "mint"

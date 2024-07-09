@@ -12,13 +12,13 @@ import (
 	"cosmossdk.io/x/staking"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
-	"github.com/T-ragon/cosmos-sdk/x/genutil"
-	"github.com/T-ragon/cosmos-sdk/x/genutil/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/x/genutil"
+	"github.com/T-ragon/cosmos-sdk/v3/x/genutil/types"
 )
 
 var (
@@ -28,7 +28,7 @@ var (
 
 func TestNetGenesisState(t *testing.T) {
 	gen := types.NewGenesisState(nil)
-	assert.NotNil(t, gen.GenTxs) // https://github.com/T-ragon/cosmos-sdk/issues/5086
+	assert.NotNil(t, gen.GenTxs) // https://github.com/T-ragon/cosmos-sdk/v3/issues/5086
 
 	gen = types.NewGenesisState(
 		[]json.RawMessage{

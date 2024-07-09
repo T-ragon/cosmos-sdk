@@ -6,7 +6,7 @@ import (
 	v5 "cosmossdk.io/x/staking/migrations/v5"
 	v6 "cosmossdk.io/x/staking/migrations/v6"
 
-	"github.com/T-ragon/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
 )
 
 // Migrator is a struct for handling in-place store migrations.

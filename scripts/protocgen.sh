@@ -45,7 +45,7 @@ for dir in $proto_dirs; do
     fi
 
     if [ -d "../github.com" -a "$dir" != "./proto" ]; then
-      cp -r ../github.com/T-ragon/cosmos-sdk/* $home
+      cp -r ../github.com/T-ragon/cosmos-sdk/v3/* $home
       rm -rf ../github.com
     fi
   fi
@@ -54,7 +54,7 @@ for dir in $proto_dirs; do
 done
 
 # move generated files to the right places
-cp -r github.com/T-ragon/cosmos-sdk/* ./
+cp -r github.com/T-ragon/cosmos-sdk/v3/* ./
 rm -rf github.com
 
 go mod tidy

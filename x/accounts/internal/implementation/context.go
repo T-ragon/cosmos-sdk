@@ -8,7 +8,7 @@ import (
 	"cosmossdk.io/core/store"
 	"cosmossdk.io/x/accounts/internal/prefixstore"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var AccountStatePrefix = collections.NewPrefix(255)

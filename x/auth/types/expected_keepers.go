@@ -5,7 +5,7 @@ import (
 
 	"google.golang.org/protobuf/runtime/protoiface"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // BankKeeper defines the contract needed for supply related APIs (noalias)

@@ -1,8 +1,8 @@
 package ante
 
 import (
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var SimSecp256k1PubkeyInternal = simSecp256k1Pubkey

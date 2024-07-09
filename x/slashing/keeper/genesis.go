@@ -5,7 +5,7 @@ import (
 
 	"cosmossdk.io/x/slashing/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // InitGenesis initializes default parameters and the keeper's address to

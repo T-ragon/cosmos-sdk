@@ -1,7 +1,7 @@
 package simapp
 
 import (
-	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
+	servertypes "github.com/T-ragon/cosmos-sdk/v3/server/types"
 )
 
 // ExportAppStateAndValidators exports the state of the application for a genesis file.

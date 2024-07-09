@@ -10,9 +10,9 @@ import (
 	"github.com/decred/dcrd/dcrec/secp256k1/v4/ecdsa"
 	"gitlab.com/yawning/secp256k1-voi/secec"
 
-	"github.com/T-ragon/cosmos-sdk/crypto/hd"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	"github.com/T-ragon/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/hd"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/types"
 )
 
 // options stores the Ledger Options that can be used to customize Ledger usage

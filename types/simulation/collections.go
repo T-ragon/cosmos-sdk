@@ -7,7 +7,7 @@ import (
 	"cosmossdk.io/collections"
 	collcodec "cosmossdk.io/collections/codec"
 
-	"github.com/T-ragon/cosmos-sdk/types/kv"
+	"github.com/T-ragon/cosmos-sdk/v3/types/kv"
 )
 
 func NewStoreDecoderFuncFromCollectionsSchema(schema collections.Schema) func(kvA, kvB kv.Pair) string {

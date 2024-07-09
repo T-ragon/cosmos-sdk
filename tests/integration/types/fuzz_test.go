@@ -10,10 +10,10 @@ import (
 	"cosmossdk.io/store/prefix"
 	"cosmossdk.io/x/bank/testutil"
 
-	sdktestutil "github.com/T-ragon/cosmos-sdk/testutil"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/address"
-	"github.com/T-ragon/cosmos-sdk/types/query"
+	sdktestutil "github.com/T-ragon/cosmos-sdk/v3/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/address"
+	"github.com/T-ragon/cosmos-sdk/v3/types/query"
 )
 
 const (

@@ -14,12 +14,12 @@ import (
 	"cosmossdk.io/x/group/internal/orm"
 	"cosmossdk.io/x/group/keeper"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 type invariantTestSuite struct {

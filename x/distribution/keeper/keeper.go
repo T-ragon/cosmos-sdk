@@ -13,9 +13,9 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	"cosmossdk.io/x/distribution/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // Keeper of the distribution store

@@ -6,9 +6,9 @@ import (
 
 	dbm "github.com/cosmos/cosmos-db"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	"github.com/T-ragon/cosmos-sdk/types/module"
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 // AppBuilder is a type that is injected into a container by the runtime module

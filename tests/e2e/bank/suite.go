@@ -11,14 +11,14 @@ import (
 	"cosmossdk.io/x/bank/client/cli"
 	"cosmossdk.io/x/bank/types"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	clitestutil "github.com/T-ragon/cosmos-sdk/testutil/cli"
-	"github.com/T-ragon/cosmos-sdk/testutil/network"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	clitestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/cli"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/network"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 type E2ETestSuite struct {

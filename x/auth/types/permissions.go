@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // permissions

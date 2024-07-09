@@ -3,12 +3,12 @@ package testutil
 import (
 	"cosmossdk.io/x/auth/tx"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/std"
-	"github.com/T-ragon/cosmos-sdk/types/module"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/std"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
 )
 
 // TestEncodingConfig defines an encoding configuration that is used for testing

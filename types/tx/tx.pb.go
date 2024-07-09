@@ -6,11 +6,11 @@ package tx
 import (
 	fmt "fmt"
 	_ "github.com/cosmos/cosmos-proto"
-	types "github.com/T-ragon/cosmos-sdk/crypto/types"
-	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/types"
-	types1 "github.com/T-ragon/cosmos-sdk/types"
-	_ "github.com/T-ragon/cosmos-sdk/types/tx/amino"
-	signing "github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	types "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/v3/types"
+	types1 "github.com/T-ragon/cosmos-sdk/v3/types"
+	_ "github.com/T-ragon/cosmos-sdk/v3/types/tx/amino"
+	signing "github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	proto "github.com/cosmos/gogoproto/proto"
 	any "github.com/cosmos/gogoproto/types/any"
@@ -355,7 +355,7 @@ type TxBody struct {
 	// memo is any arbitrary note/comment to be added to the transaction.
 	// WARNING: in clients, any publicly exposed text should not be called memo,
 	// but should be called `note` instead (see
-	// https://github.com/T-ragon/cosmos-sdk/issues/9122).
+	// https://github.com/T-ragon/cosmos-sdk/v3/issues/9122).
 	Memo string `protobuf:"bytes,2,opt,name=memo,proto3" json:"memo,omitempty"`
 	// timeout_height is the block height after which this transaction will not
 	// be processed by the chain.
@@ -803,7 +803,7 @@ func (m *ModeInfo_Multi) GetModeInfos() []*ModeInfo {
 // which must be above some minimum to be accepted into the mempool.
 type Fee struct {
 	// amount is the amount of coins to be paid as a fee
-	Amount github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=amount,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"amount"`
+	Amount github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=amount,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"amount"`
 	// gas_limit is the maximum gas that can be used in transaction processing
 	// before an out of gas error occurs
 	GasLimit uint64 `protobuf:"varint,2,opt,name=gas_limit,json=gasLimit,proto3" json:"gas_limit,omitempty"`
@@ -885,7 +885,7 @@ func (m *Fee) GetGranter() string {
 // Deprecated: Do not use.
 type Tip struct {
 	// amount is the amount of the tip
-	Amount github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=amount,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"amount"`
+	Amount github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=amount,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"amount"`
 	// tipper is the address of the account paying for the tip
 	Tipper string `protobuf:"bytes,2,opt,name=tipper,proto3" json:"tipper,omitempty"`
 }

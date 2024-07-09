@@ -11,10 +11,10 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	"cosmossdk.io/x/auth/signing"
 
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
-	txsigning "github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
+	txsigning "github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 // KVStoreTx is an sdk.Tx which is its own sdk.Msg.

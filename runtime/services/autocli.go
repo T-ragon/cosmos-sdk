@@ -14,7 +14,7 @@ import (
 	cosmosmsg "cosmossdk.io/api/cosmos/msg/v1"
 	"cosmossdk.io/core/appmodule"
 
-	"github.com/T-ragon/cosmos-sdk/types/module"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
 )
 
 // AutoCLIQueryService implements the cosmos.autocli.v1.Query service.

@@ -13,8 +13,8 @@ import (
 	"github.com/creachadair/tomledit/transform"
 	"github.com/spf13/viper"
 
-	clientcfg "github.com/T-ragon/cosmos-sdk/client/config"
-	srvcfg "github.com/T-ragon/cosmos-sdk/server/config"
+	clientcfg "github.com/T-ragon/cosmos-sdk/v3/client/config"
+	srvcfg "github.com/T-ragon/cosmos-sdk/v3/server/config"
 )
 
 // Upgrade reads the configuration file at configPath and applies any

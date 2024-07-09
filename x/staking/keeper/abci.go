@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/core/appmodule"
 	"cosmossdk.io/x/staking/types"
 
-	"github.com/T-ragon/cosmos-sdk/telemetry"
+	"github.com/T-ragon/cosmos-sdk/v3/telemetry"
 )
 
 // EndBlocker called at every block, update validator set

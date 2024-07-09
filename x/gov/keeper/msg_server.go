@@ -15,8 +15,8 @@ import (
 	v1 "cosmossdk.io/x/gov/types/v1"
 	"cosmossdk.io/x/gov/types/v1beta1"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 type msgServer struct {
@@ -97,7 +97,7 @@ func (k msgServer) SubmitProposal(ctx context.Context, msg *v1.MsgSubmitProposal
 		return nil, err
 	}
 
-	// ref: https://github.com/T-ragon/cosmos-sdk/issues/9683
+	// ref: https://github.com/T-ragon/cosmos-sdk/v3/issues/9683
 	if err := k.GasService.GasMeter(ctx).Consume(
 		3*k.GasService.GasConfig(ctx).WriteCostPerByte*uint64(len(bytes)),
 		"submit proposal",

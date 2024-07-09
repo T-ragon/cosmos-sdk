@@ -3,8 +3,8 @@ package tx
 import (
 	"fmt"
 
-	"github.com/T-ragon/cosmos-sdk/codec/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 const (

@@ -11,12 +11,12 @@ import (
 	corectx "cosmossdk.io/core/context"
 	"cosmossdk.io/log"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	"github.com/T-ragon/cosmos-sdk/types/module"
-	genutilcli "github.com/T-ragon/cosmos-sdk/x/genutil/client/cli"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
+	genutilcli "github.com/T-ragon/cosmos-sdk/v3/x/genutil/client/cli"
 )
 
 func ExecInitCmd(mm *module.Manager, home string, cdc codec.Codec) error {

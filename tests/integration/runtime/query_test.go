@@ -21,11 +21,11 @@ import (
 	_ "cosmossdk.io/x/consensus"
 	_ "cosmossdk.io/x/staking"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/testutil/configurator"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/configurator"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 type fixture struct {

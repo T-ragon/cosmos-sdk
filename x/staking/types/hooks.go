@@ -5,8 +5,8 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // combine multiple staking hooks, all hook functions are run in array sequence

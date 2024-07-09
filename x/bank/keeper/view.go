@@ -11,9 +11,9 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/bank/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 var _ ViewKeeper = (*BaseViewKeeper)(nil)

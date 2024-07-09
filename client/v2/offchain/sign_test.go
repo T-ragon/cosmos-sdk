@@ -5,10 +5,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/codec/address"
-	"github.com/T-ragon/cosmos-sdk/crypto/hd"
-	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/hd"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keyring"
 )
 
 func Test_sign(t *testing.T) {

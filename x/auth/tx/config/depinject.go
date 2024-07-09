@@ -23,12 +23,12 @@ import (
 	txsigning "cosmossdk.io/x/tx/signing"
 	"cosmossdk.io/x/tx/signing/textual"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	signingtypes "github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	signingtypes "github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 func init() {

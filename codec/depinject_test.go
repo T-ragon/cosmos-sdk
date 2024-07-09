@@ -10,7 +10,7 @@ import (
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
 )
 
 var _ address.Codec = (*customAddressCodec)(nil)

@@ -16,11 +16,11 @@ import (
 	"cosmossdk.io/x/slashing/simulation"
 	"cosmossdk.io/x/slashing/types"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	cdctypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/types/module"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	cdctypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
 )
 
 // ConsensusVersion defines the current x/slashing module consensus version.

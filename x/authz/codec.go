@@ -7,8 +7,8 @@ import (
 	bank "cosmossdk.io/x/bank/types"
 	staking "cosmossdk.io/x/staking/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec/legacy"
-	"github.com/T-ragon/cosmos-sdk/types/msgservice"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/legacy"
+	"github.com/T-ragon/cosmos-sdk/v3/types/msgservice"
 )
 
 // RegisterLegacyAminoCodec registers the necessary x/authz interfaces and concrete types
@@ -33,7 +33,7 @@ func RegisterInterfaces(registrar registry.InterfaceRegistrar) {
 	// since bank.SendAuthorization and staking.StakeAuthorization both implement Authorization
 	// and authz depends on x/bank and x/staking in other places, these registrations are placed here
 	// to prevent a cyclic dependency.
-	// see: https://github.com/T-ragon/cosmos-sdk/pull/16509
+	// see: https://github.com/T-ragon/cosmos-sdk/v3/pull/16509
 	registrar.RegisterInterface(
 		"cosmos.authz.v1beta1.Authorization",
 		(*Authorization)(nil),

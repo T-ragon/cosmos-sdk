@@ -11,8 +11,8 @@ import (
 
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	baseapptestutil "github.com/T-ragon/cosmos-sdk/baseapp/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	baseapptestutil "github.com/T-ragon/cosmos-sdk/v3/baseapp/testutil"
 )
 
 var _ storetypes.ABCIListener = (*MockABCIListener)(nil)

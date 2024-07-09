@@ -9,11 +9,11 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/T-ragon/cosmos-sdk/codec/legacy"
-	"github.com/T-ragon/cosmos-sdk/crypto/hd"
-	"github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/legacy"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/hd"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func TestPublicKeyUnsafe(t *testing.T) {

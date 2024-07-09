@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/T-ragon/cosmos-sdk/types/kv"
+	"github.com/T-ragon/cosmos-sdk/v3/types/kv"
 )
 
 func TestAssertKeyAtLeastLength(t *testing.T) {

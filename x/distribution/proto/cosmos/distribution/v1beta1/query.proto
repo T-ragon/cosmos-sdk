@@ -99,11 +99,11 @@ message QueryValidatorDistributionInfoResponse {
   repeated cosmos.base.v1beta1.DecCoin self_bond_rewards = 2 [
     (gogoproto.nullable)     = false,
     (amino.dont_omitempty)   = true,
-    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.DecCoins"
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.DecCoins"
   ];
   // commission defines the commission the validator received.
   repeated cosmos.base.v1beta1.DecCoin commission = 3
-      [(gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.DecCoins", (gogoproto.nullable) = false];
+      [(gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.DecCoins", (gogoproto.nullable) = false];
 }
 
 // QueryValidatorOutstandingRewardsRequest is the request type for the
@@ -177,7 +177,7 @@ message QueryDelegationRewardsResponse {
   repeated cosmos.base.v1beta1.DecCoin rewards = 1 [
     (gogoproto.nullable)     = false,
     (amino.dont_omitempty)   = true,
-    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.DecCoins"
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.DecCoins"
   ];
 }
 
@@ -199,7 +199,7 @@ message QueryDelegationTotalRewardsResponse {
   repeated cosmos.base.v1beta1.DecCoin total = 2 [
     (gogoproto.nullable)     = false,
     (amino.dont_omitempty)   = true,
-    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.DecCoins"
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.DecCoins"
   ];
 }
 
@@ -261,7 +261,7 @@ message QueryCommunityPoolResponse {
   option deprecated                      = true;
   // pool defines community pool's coins.
   repeated cosmos.base.v1beta1.DecCoin pool = 1 [
-    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.DecCoins",
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.DecCoins",
     (gogoproto.nullable)     = false,
     (amino.dont_omitempty)   = true
   ];

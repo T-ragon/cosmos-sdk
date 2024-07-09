@@ -1,7 +1,7 @@
 package exported
 
 import (
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // GenesisBalance defines a genesis balance interface that allows for account

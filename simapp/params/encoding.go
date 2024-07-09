@@ -1,9 +1,9 @@
 package params
 
 import (
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
 )
 
 // EncodingConfig specifies the concrete encoding types to use for a given app.

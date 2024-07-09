@@ -19,17 +19,17 @@ import (
 	stakingtestutil "cosmossdk.io/x/staking/testutil"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/codec/address"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	addresstypes "github.com/T-ragon/cosmos-sdk/types/address"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	addresstypes "github.com/T-ragon/cosmos-sdk/v3/types/address"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 var (

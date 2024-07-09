@@ -5,8 +5,8 @@ package v1
 
 import (
 	fmt "fmt"
-	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/types"
-	types "github.com/T-ragon/cosmos-sdk/types"
+	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/v3/types"
+	types "github.com/T-ragon/cosmos-sdk/v3/types"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	proto "github.com/cosmos/gogoproto/proto"
 	io "io"
@@ -249,7 +249,7 @@ type MsgTestDependenciesResponse struct {
 	// after_gas is used to test gas meter increasing.
 	AfterGas uint64 `protobuf:"varint,4,opt,name=after_gas,json=afterGas,proto3" json:"after_gas,omitempty"`
 	// funds reports the funds from the implementation.Funds method.
-	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,5,rep,name=funds,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"funds"`
+	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,5,rep,name=funds,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"funds"`
 }
 
 func (m *MsgTestDependenciesResponse) Reset()         { *m = MsgTestDependenciesResponse{} }

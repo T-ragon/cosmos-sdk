@@ -11,13 +11,13 @@ import (
 	corecontext "cosmossdk.io/core/context"
 	errorsmod "cosmossdk.io/errors"
 
-	"github.com/T-ragon/cosmos-sdk/codec/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // TODO: Revisit this once we have proper gas fee framework.
-// Tracking issues https://github.com/T-ragon/cosmos-sdk/issues/9054, https://github.com/T-ragon/cosmos-sdk/discussions/9072
+// Tracking issues https://github.com/T-ragon/cosmos-sdk/v3/issues/9054, https://github.com/T-ragon/cosmos-sdk/v3/discussions/9072
 const (
 	gasCostPerIteration = uint64(10)
 )

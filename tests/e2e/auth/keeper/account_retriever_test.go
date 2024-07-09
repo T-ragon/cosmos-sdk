@@ -7,7 +7,7 @@ import (
 
 	"cosmossdk.io/x/auth/types"
 
-	"github.com/T-ragon/cosmos-sdk/testutil/network"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/network"
 )
 
 func TestAccountRetriever(t *testing.T) {

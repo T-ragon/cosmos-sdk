@@ -58609,7 +58609,7 @@ definitions:
 
               but should be called `note` instead (see
 
-              https://github.com/T-ragon/cosmos-sdk/issues/9122).
+              https://github.com/T-ragon/cosmos-sdk/v3/issues/9122).
           timeout_height:
             type: string
             format: uint64
@@ -59224,7 +59224,7 @@ definitions:
 
           but should be called `note` instead (see
 
-          https://github.com/T-ragon/cosmos-sdk/issues/9122).
+          https://github.com/T-ragon/cosmos-sdk/v3/issues/9122).
       timeout_height:
         type: string
         format: uint64

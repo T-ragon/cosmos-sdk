@@ -14,13 +14,13 @@ import (
 	v2 "cosmossdk.io/x/feegrant/migrations/v2"
 	"cosmossdk.io/x/feegrant/module"
 
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 func TestMigration(t *testing.T) {

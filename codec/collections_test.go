@@ -11,9 +11,9 @@ import (
 
 	"cosmossdk.io/collections/colltest"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
 )
 
 func TestCollectionsCorrectness(t *testing.T) {

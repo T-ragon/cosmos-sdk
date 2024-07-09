@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/core/appmodule"
 	appmodulev2 "cosmossdk.io/core/appmodule/v2"
 
-	"github.com/T-ragon/cosmos-sdk/types/module"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
 )
 
 // AppModuleWithAllExtensions is solely here for the purpose of generating

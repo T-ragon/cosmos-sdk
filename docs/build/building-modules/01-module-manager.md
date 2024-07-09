@@ -51,7 +51,7 @@ The usage of extension interfaces allows modules to define only the functionalit
 ### `HasAminoCodec`
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/eee5e21e1c8d0995b6d4f83b7f55ec0b58d27ba7/core/appmodule/module.go#L74-L78
+https://github.com/T-ragon/cosmos-sdk/v3/blob/eee5e21e1c8d0995b6d4f83b7f55ec0b58d27ba7/core/appmodule/module.go#L74-L78
 ```
 
 * `RegisterLegacyAminoCodec(*codec.LegacyAmino)`: Registers the `amino` codec for the module, which is used to marshal and unmarshal structs to/from `[]byte` in order to persist them in the module's `KVStore`.
@@ -59,7 +59,7 @@ https://github.com/T-ragon/cosmos-sdk/blob/eee5e21e1c8d0995b6d4f83b7f55ec0b58d27
 ### `HasRegisterInterfaces`
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/eee5e21e1c8d0995b6d4f83b7f55ec0b58d27ba7/core/appmodule/v2/module.go#L103-L106
+https://github.com/T-ragon/cosmos-sdk/v3/blob/eee5e21e1c8d0995b6d4f83b7f55ec0b58d27ba7/core/appmodule/v2/module.go#L103-L106
 ```
 
 * `RegisterInterfaces(codectypes.InterfaceRegistry)`: Registers a module's interface types and their concrete implementations as `proto.Message`.
@@ -67,7 +67,7 @@ https://github.com/T-ragon/cosmos-sdk/blob/eee5e21e1c8d0995b6d4f83b7f55ec0b58d27
 ### `HasGRPCGateway`
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/eee5e21e1c8d0995b6d4f83b7f55ec0b58d27ba7/types/module/module.go#L84-L87
+https://github.com/T-ragon/cosmos-sdk/v3/blob/eee5e21e1c8d0995b6d4f83b7f55ec0b58d27ba7/types/module/module.go#L84-L87
 ```
 
 * `RegisterGRPCGatewayRoutes(client.Context, *runtime.ServeMux)`: Registers gRPC routes for the module.
@@ -76,7 +76,7 @@ https://github.com/T-ragon/cosmos-sdk/blob/eee5e21e1c8d0995b6d4f83b7f55ec0b58d27
 ### `HasName`
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/types/module/module.go#L71-L73
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/types/module/module.go#L71-L73
 ```
 
 * `HasName` is an interface that has a method `Name()`. This method returns the name of the module as a `string`.
@@ -90,7 +90,7 @@ For easily creating an `AppModule` that only has genesis functionalities, implem
 #### `module.HasGenesisBasics`
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/types/module/module.go#L76-L79
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/types/module/module.go#L76-L79
 ```
 
 Let us go through the methods:
@@ -103,7 +103,7 @@ Let us go through the methods:
 `HasGenesis` is an extension interface for allowing modules to implement genesis functionalities.
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8/types/module/module.go#L184-L189
+https://github.com/T-ragon/cosmos-sdk/v3/blob/28fa3b8/types/module/module.go#L184-L189
 ```
 
 #### `module.HasABCIGenesis`
@@ -111,7 +111,7 @@ https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8/types/module/module.go#L184-L
 `HasABCIGenesis` is an extension interface for allowing modules to implement genesis functionalities and returns validator set updates.
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8/types/module/module.go#L94-L98
+https://github.com/T-ragon/cosmos-sdk/v3/blob/28fa3b8/types/module/module.go#L94-L98
 ```
 
 ### `AppModule`
@@ -122,7 +122,7 @@ The `AppModule` interface defines a module. Modules can declare their functional
 #### `appmodule.AppModule`
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8/core/appmodule/module.go#L11-L20
+https://github.com/T-ragon/cosmos-sdk/v3/blob/28fa3b8/core/appmodule/module.go#L11-L20
 ```
 
 #### `module.AppModule`
@@ -132,7 +132,7 @@ Previously the `module.AppModule` interface was containing all the methods that 
 :::
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8/core/appmodule/v2/module.go#L14-L20
+https://github.com/T-ragon/cosmos-sdk/v3/blob/28fa3b8/core/appmodule/v2/module.go#L14-L20
 ```
 
 ### `HasInvariants`
@@ -140,7 +140,7 @@ https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8/core/appmodule/v2/module.go#L
 This interface defines one method. It allows to checks if a module can register invariants.
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/types/module/module.go#L202-L205
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/types/module/module.go#L202-L205
 ```
 
 * `RegisterInvariants(sdk.InvariantRegistry)`: Registers the [`invariants`](./07-invariants.md) of the module. If an invariant deviates from its predicted value, the [`InvariantRegistry`](./07-invariants.md#registry) triggers appropriate logic (most often the chain will be halted).
@@ -152,13 +152,13 @@ This interface defines one method. It allows to checks if a module can register 
 #### `appmodule.HasService`
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8/core/appmodule/module.go#L22-L40
+https://github.com/T-ragon/cosmos-sdk/v3/blob/28fa3b8/core/appmodule/module.go#L22-L40
 ```
 
 #### `module.HasServices`
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/types/module/module.go#L208-L211
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/types/module/module.go#L208-L211
 ```
 
 * `RegisterServices(Configurator)`: Allows a module to register services.
@@ -168,7 +168,7 @@ https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/types/module/module.g
 This interface defines one method for checking a module consensus version.
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8/core/appmodule/v2/migrations.go#L6-L12
+https://github.com/T-ragon/cosmos-sdk/v3/blob/28fa3b8/core/appmodule/v2/migrations.go#L6-L12
 ```
 
 * `ConsensusVersion() uint64`: Returns the consensus version of the module.
@@ -182,7 +182,7 @@ The `HasPreBlocker` is an extension interface from `appmodule.AppModule`. All mo
 The `HasBeginBlocker` is an extension interface from `appmodule.AppModule`. All modules that have an `BeginBlock` method implement this interface.
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8dfcb3208d3b1cfbae08eda519e4cc1560/core/appmodule/v2/module.go#L30-L38
+https://github.com/T-ragon/cosmos-sdk/v3/blob/28fa3b8dfcb3208d3b1cfbae08eda519e4cc1560/core/appmodule/v2/module.go#L30-L38
 ```
 
 * `BeginBlock(context.Context) error`: This method gives module developers the option to implement logic that is automatically triggered at the beginning of each block.
@@ -192,7 +192,7 @@ https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8dfcb3208d3b1cfbae08eda519e4cc1
 The `HasEndBlocker` is an extension interface from `appmodule.AppModule`. All modules that have an `EndBlock` method implement this interface. If a module needs to return validator set updates (staking), they can use `HasABCIEndBlock`
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8dfcb3208d3b1cfbae08eda519e4cc1560/core/appmodule/v2/module.go#L40-L48
+https://github.com/T-ragon/cosmos-sdk/v3/blob/28fa3b8dfcb3208d3b1cfbae08eda519e4cc1560/core/appmodule/v2/module.go#L40-L48
 ```
 
 * `EndBlock(context.Context) error`: This method gives module developers the option to implement logic that is automatically triggered at the end of each block.
@@ -202,7 +202,7 @@ https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8dfcb3208d3b1cfbae08eda519e4cc1
 The `HasUpdateValidators` is an extension interface from `module.AppModule`. All modules that have an `EndBlock` which return validator set updates implement this interface.
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8dfcb3208d3b1cfbae08eda519e4cc1560/core/appmodule/v2/module.go#L87-L94
+https://github.com/T-ragon/cosmos-sdk/v3/blob/28fa3b8dfcb3208d3b1cfbae08eda519e4cc1560/core/appmodule/v2/module.go#L87-L94
 ```
 
 * `UpdateValidators(context.Context) ([]abci.ValidatorUpdate, error)`: This method gives module developers the option to inform the underlying consensus engine of validator set changes (e.g. the `staking` module).
@@ -233,7 +233,7 @@ The module manager is used to manage collections of `appmodule.AppModule` and `A
 The `Manager` is a structure that holds all the `AppModule` of an application, and defines the order of execution between several key components of these modules:
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/types/module/module.go#L267-L276
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/types/module/module.go#L267-L276
 ```
 
 The module manager is used throughout the application whenever an action on a collection of modules is required. It implements the following methods:
@@ -267,15 +267,15 @@ The module manager is used throughout the application whenever an action on a co
 Here's an example of a concrete integration within an `simapp`:
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app.go#L411-L434
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/simapp/app.go#L411-L434
 ```
 
 This is the same example from `runtime` (the package that powers app v2):
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/runtime/module.go#L61
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/runtime/module.go#L61
 ```
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/runtime/module.go#L82
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/runtime/module.go#L82
 ```

@@ -19,54 +19,54 @@ All packages and modules should have unit test coverage. Modules should have the
 The SDK uses `mockgen` to generate mocks for keepers:
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/scripts/mockgen.sh#L3-L6
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/scripts/mockgen.sh#L3-L6
 ```
 
 You can read more about mockgen [here](https://github.com/golang/mock).
 
 ### Example
 
-As an example, we will walkthrough the [keeper tests](https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/x/gov/keeper/keeper_test.go) of the `x/gov` module.
+As an example, we will walkthrough the [keeper tests](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/x/gov/keeper/keeper_test.go) of the `x/gov` module.
 
 The `x/gov` module has a `Keeper` type, which requires a few external dependencies (ie. imports outside `x/gov` to work properly).
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/x/gov/keeper/keeper.go#L22-L24
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/x/gov/keeper/keeper.go#L22-L24
 ```
 
 In order to only test `x/gov`, we mock the [expected keepers](https://docs.cosmos.network/v0.46/building-modules/keeper.html#type-definition) and instantiate the `Keeper` with the mocked dependencies. Note that we may need to configure the mocked dependencies to return the expected values:
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/x/gov/keeper/common_test.go#L67-L81
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/x/gov/keeper/common_test.go#L67-L81
 ```
 
 This allows us to test the `x/gov` module without having to import other modules.
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/x/gov/keeper/keeper_test.go#L3-L42
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/x/gov/keeper/keeper_test.go#L3-L42
 ```
 
 We can test then create unit tests using the newly created `Keeper` instance.
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/x/gov/keeper/keeper_test.go#L83-L107
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/x/gov/keeper/keeper_test.go#L83-L107
 ```
 
 ## Integration Tests
 
 Integration tests are at the second level of the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html).
-In the SDK, we locate our integration tests under [`/tests/integrations`](https://github.com/T-ragon/cosmos-sdk/tree/main/tests/integration).
+In the SDK, we locate our integration tests under [`/tests/integrations`](https://github.com/T-ragon/cosmos-sdk/v3/tree/main/tests/integration).
 
 The goal of these integration tests is to test how a component interacts with other dependencies. Compared to unit tests, integration tests do not mock dependencies. Instead, they use the direct dependencies of the component. This differs as well from end-to-end tests, which test the component with a full application.
 
 Integration tests interact with the tested module via the defined `Msg` and `Query` services. The result of the test can be verified by checking the state of the application, by checking the emitted events or the response. It is advised to combine two of these methods to verify the result of the test.
 
-The SDK provides small helpers for quickly setting up an integration tests. These helpers can be found at <https://github.com/T-ragon/cosmos-sdk/blob/main/testutil/integration>.
+The SDK provides small helpers for quickly setting up an integration tests. These helpers can be found at <https://github.com/T-ragon/cosmos-sdk/v3/blob/main/testutil/integration>.
 
 ### Example
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/a2f73a7dd37bea0ab303792c55fa1e4e1db3b898/testutil/integration/example_test.go#L30-L116
+https://github.com/T-ragon/cosmos-sdk/v3/blob/a2f73a7dd37bea0ab303792c55fa1e4e1db3b898/testutil/integration/example_test.go#L30-L116
 ```
 
 ## Deterministic and Regression tests	
@@ -81,7 +81,7 @@ Each query is tested using 2 methods:
 Here's an example of regression tests:
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/tests/integration/bank/keeper/deterministic_test.go#L134-L151
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/tests/integration/bank/keeper/deterministic_test.go#L134-L151
 ```
 
 ## Simulations
@@ -89,29 +89,29 @@ https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/tests/integration/ban
 Simulations uses as well a minimal application, built with [`depinject`](../packages/01-depinject.md):
 
 :::note
-You can as well use the `AppConfig` `configurator` for creating an `AppConfig` [inline](https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/x/slashing/app_test.go#L54-L62). There is no difference between those two ways, use whichever you prefer.
+You can as well use the `AppConfig` `configurator` for creating an `AppConfig` [inline](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/x/slashing/app_test.go#L54-L62). There is no difference between those two ways, use whichever you prefer.
 :::
 
 Following is an example for `x/gov/` simulations:
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/x/gov/simulation/operations_test.go#L406-L430
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/x/gov/simulation/operations_test.go#L406-L430
 ```
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/x/gov/simulation/operations_test.go#L90-L132
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/x/gov/simulation/operations_test.go#L90-L132
 ```
 
 ## End-to-end Tests
 
 End-to-end tests are at the top of the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html).
-They must test the whole application flow, from the user perspective (for instance, CLI tests). They are located under [`/tests/e2e`](https://github.com/T-ragon/cosmos-sdk/tree/main/tests/e2e).
+They must test the whole application flow, from the user perspective (for instance, CLI tests). They are located under [`/tests/e2e`](https://github.com/T-ragon/cosmos-sdk/v3/tree/main/tests/e2e).
 
 <!-- @julienrbrt: makes more sense to use an app wired app to have 0 simapp dependencies -->
 For that, the SDK is using `simapp` but you should use your own application (`appd`).
 Here are some examples:
 
-* SDK E2E tests: <https://github.com/T-ragon/cosmos-sdk/tree/main/tests/e2e>.
+* SDK E2E tests: <https://github.com/T-ragon/cosmos-sdk/v3/tree/main/tests/e2e>.
 * Cosmos Hub E2E tests: <https://github.com/cosmos/gaia/tree/main/tests/e2e>.
 * Osmosis E2E tests: <https://github.com/osmosis-labs/osmosis/tree/main/tests/e2e>.
 

@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/errors"
 	"cosmossdk.io/x/nft"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // BatchMint defines a method for minting a batch of nfts

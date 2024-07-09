@@ -10,10 +10,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	"github.com/T-ragon/cosmos-sdk/testutil/cmdtest"
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/cmdtest"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 func TestNewInfo(t *testing.T) {

@@ -5,7 +5,7 @@ import (
 
 	"cosmossdk.io/x/circuit/types"
 
-	"github.com/T-ragon/cosmos-sdk/types/query"
+	"github.com/T-ragon/cosmos-sdk/v3/types/query"
 )
 
 var _ types.QueryServer = QueryServer{}

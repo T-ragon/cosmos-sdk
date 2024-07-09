@@ -13,12 +13,12 @@ import (
 
 	"cosmossdk.io/server/v2/cometbft/client/rpc"
 
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	qtypes "github.com/T-ragon/cosmos-sdk/types/query"
-	"github.com/T-ragon/cosmos-sdk/version"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/v3/crypto/codec"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	qtypes "github.com/T-ragon/cosmos-sdk/v3/types/query"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 var (

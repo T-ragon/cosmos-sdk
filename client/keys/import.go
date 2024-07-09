@@ -9,11 +9,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/client/input"
-	"github.com/T-ragon/cosmos-sdk/crypto/hd"
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/client/input"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/hd"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 // ImportKeyCommand imports private keys from a keyfile.

@@ -8,7 +8,7 @@ import (
 
 	"cosmossdk.io/core/address"
 
-	sdkAddress "github.com/T-ragon/cosmos-sdk/types/address"
+	sdkAddress "github.com/T-ragon/cosmos-sdk/v3/types/address"
 )
 
 func FuzzCachedAddressCodec(f *testing.F) {

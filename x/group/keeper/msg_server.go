@@ -16,14 +16,14 @@ import (
 	"cosmossdk.io/x/group/internal/math"
 	"cosmossdk.io/x/group/internal/orm"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 var _ group.MsgServer = Keeper{}
 
 // TODO: Revisit this once we have proper gas fee framework.
-// Tracking issues https://github.com/T-ragon/cosmos-sdk/issues/9054, https://github.com/T-ragon/cosmos-sdk/discussions/9072
+// Tracking issues https://github.com/T-ragon/cosmos-sdk/v3/issues/9054, https://github.com/T-ragon/cosmos-sdk/v3/discussions/9072
 const gasCostPerIteration = uint64(20)
 
 func (k Keeper) CreateGroup(ctx context.Context, msg *group.MsgCreateGroup) (*group.MsgCreateGroupResponse, error) {

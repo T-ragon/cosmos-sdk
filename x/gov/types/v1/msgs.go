@@ -6,9 +6,9 @@ import (
 
 	"cosmossdk.io/x/gov/types/v1beta1"
 
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdktx "github.com/T-ragon/cosmos-sdk/types/tx"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdktx "github.com/T-ragon/cosmos-sdk/v3/types/tx"
 )
 
 var (

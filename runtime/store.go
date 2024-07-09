@@ -9,7 +9,7 @@ import (
 	"cosmossdk.io/core/store"
 	storetypes "cosmossdk.io/store/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func NewKVStoreService(storeKey *storetypes.KVStoreKey) store.KVStoreService {
@@ -63,7 +63,7 @@ func (failingStoreService) OpenTransientStore(ctx context.Context) store.KVStore
 }
 
 // CoreKVStore is a wrapper of Core/Store kvstore interface
-// Remove after https://github.com/T-ragon/cosmos-sdk/issues/14714 is closed
+// Remove after https://github.com/T-ragon/cosmos-sdk/v3/issues/14714 is closed
 type coreKVStore struct {
 	kvStore storetypes.KVStore
 }

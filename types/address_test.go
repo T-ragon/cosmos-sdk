@@ -14,12 +14,12 @@ import (
 	"github.com/stretchr/testify/suite"
 	"sigs.k8s.io/yaml"
 
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/bech32"
-	"github.com/T-ragon/cosmos-sdk/types/bech32/legacybech32" //nolint:staticcheck // we're using this to support the legacy way of dealing with bech32
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/bech32"
+	"github.com/T-ragon/cosmos-sdk/v3/types/bech32/legacybech32" //nolint:staticcheck // we're using this to support the legacy way of dealing with bech32
 )
 
 const (
@@ -163,7 +163,7 @@ func (s *addressTestSuite) TestUnmarshalYAMLWithInvalidInput() {
 
 // Test that the account address cache ignores the bech32 prefix setting, retrieving bech32 addresses from the cache.
 // This will cause the AccAddress.String() to print out unexpected prefixes if the config was changed between bech32 lookups.
-// See https://github.com/T-ragon/cosmos-sdk/issues/15317.
+// See https://github.com/T-ragon/cosmos-sdk/v3/issues/15317.
 func (s *addressTestSuite) TestAddrCache() {
 	// Use a random key
 	pubBz := make([]byte, ed25519.PubKeySize)
@@ -198,7 +198,7 @@ func (s *addressTestSuite) TestAddrCache() {
 
 // Test that the bech32 prefix is respected when the address cache is disabled.
 // This causes AccAddress.String() to print out the expected prefixes if the config is changed between bech32 lookups.
-// See https://github.com/T-ragon/cosmos-sdk/issues/15317.
+// See https://github.com/T-ragon/cosmos-sdk/v3/issues/15317.
 func (s *addressTestSuite) TestAddrCacheDisabled() {
 	types.SetAddrCacheEnabled(false)
 

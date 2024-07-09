@@ -9,8 +9,8 @@ import (
 	"cosmossdk.io/x/staking/keeper"
 	"cosmossdk.io/x/staking/types"
 
-	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/v3/crypto/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // WriteValidators returns a slice of bonded genesis validators.

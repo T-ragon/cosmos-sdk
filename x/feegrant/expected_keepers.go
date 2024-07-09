@@ -5,7 +5,7 @@ import (
 
 	"cosmossdk.io/core/address"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // AccountKeeper defines the expected auth Account Keeper (noalias)

@@ -12,13 +12,13 @@ import (
 
 	"cosmossdk.io/x/auth/migrations/legacytx"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/grpc/cmtservice"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
-	"github.com/T-ragon/cosmos-sdk/types/query"
-	txtypes "github.com/T-ragon/cosmos-sdk/types/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/grpc/cmtservice"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/types/query"
+	txtypes "github.com/T-ragon/cosmos-sdk/v3/types/tx"
 )
 
 // baseAppSimulateFn is the signature of the Baseapp#Simulate function.

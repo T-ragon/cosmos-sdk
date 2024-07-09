@@ -5,7 +5,7 @@ import (
 
 	"cosmossdk.io/x/distribution/types"
 
-	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
 )
 
 // QueryDelegationRewards queries a delegation rewards between a delegator and a

@@ -13,7 +13,7 @@ import (
 	"cosmossdk.io/x/accounts/accountstd"
 	v1 "cosmossdk.io/x/accounts/defaults/multisig/v1"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
 )
 
 var MULTISIG_ACCOUNT = "multisig-account"

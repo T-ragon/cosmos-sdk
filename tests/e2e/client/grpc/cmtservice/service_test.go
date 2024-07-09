@@ -13,13 +13,13 @@ import (
 	"cosmossdk.io/simapp"
 	_ "cosmossdk.io/x/gov"
 
-	"github.com/T-ragon/cosmos-sdk/client/grpc/cmtservice"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	"github.com/T-ragon/cosmos-sdk/testutil/network"
-	qtypes "github.com/T-ragon/cosmos-sdk/types/query"
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/client/grpc/cmtservice"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/network"
+	qtypes "github.com/T-ragon/cosmos-sdk/v3/types/query"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 type E2ETestSuite struct {

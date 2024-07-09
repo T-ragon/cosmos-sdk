@@ -121,5 +121,5 @@ Proposed
 ## References
 
 * on tendermint repo : https://github.com/tendermint/tendermint/issues/1136
-* on cosmos-sdk repo : https://github.com/T-ragon/cosmos-sdk/issues/5231
+* on cosmos-sdk repo : https://github.com/T-ragon/cosmos-sdk/v3/issues/5231
 * about multiple consensus keys : https://github.com/tendermint/tendermint/issues/1758#issuecomment-545291698

@@ -34,4 +34,4 @@ Check out the docs for the various parts of the Cosmos stack.
 
 * [**GitHub Discussions**](https://github.com/orgs/cosmos/discussions) - Ask questions and discuss SDK development on GitHub.
 * [**Discord**](https://discord.gg/interchain) - Chat with Cosmos developers on Discord.
-* [**Found an issue?**](https://github.com/T-ragon/cosmos-sdk/edit/main/docs/docs/README.md) - Help us improve this page by suggesting edits on GitHub.
+* [**Found an issue?**](https://github.com/T-ragon/cosmos-sdk/v3/edit/main/docs/docs/README.md) - Help us improve this page by suggesting edits on GitHub.

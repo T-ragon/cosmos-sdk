@@ -24,12 +24,12 @@ import (
 	"cosmossdk.io/depinject/appconfig"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/std"
-	"github.com/T-ragon/cosmos-sdk/types/module"
-	"github.com/T-ragon/cosmos-sdk/types/msgservice"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/std"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
+	"github.com/T-ragon/cosmos-sdk/v3/types/msgservice"
 )
 
 // appModule defines runtime as an AppModule

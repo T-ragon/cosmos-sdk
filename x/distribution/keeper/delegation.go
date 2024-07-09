@@ -10,7 +10,7 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/distribution/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // initialize starting info for a new delegation

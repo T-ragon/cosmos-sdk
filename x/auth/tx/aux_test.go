@@ -8,14 +8,14 @@ import (
 
 	authsigning "cosmossdk.io/x/auth/signing"
 
-	clienttx "github.com/T-ragon/cosmos-sdk/client/tx"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	_ "github.com/T-ragon/cosmos-sdk/testutil/testdata/testpb"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
-	"github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	clienttx "github.com/T-ragon/cosmos-sdk/v3/client/tx"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	_ "github.com/T-ragon/cosmos-sdk/v3/testutil/testdata/testpb"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 var (

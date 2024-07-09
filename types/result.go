@@ -8,8 +8,8 @@ import (
 	cmtproto "github.com/cometbft/cometbft/api/cometbft/types/v1"
 	coretypes "github.com/cometbft/cometbft/rpc/core/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
 )
 
 func (gi GasInfo) String() string {

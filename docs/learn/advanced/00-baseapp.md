@@ -49,7 +49,7 @@ management logic.
 
 The `BaseApp` type holds many important parameters for any Cosmos SDK based application.
 
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/baseapp.go#L58-L182
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/baseapp.go#L58-L182
 
 Let us go through the most important components.
 
@@ -71,7 +71,7 @@ First, the important parameters that are initialized during the bootstrapping of
 * [gRPC Query Router](#grpc-query-router): The `grpcQueryRouter` facilitates the routing of gRPC queries to the
   appropriate module for it to be processed. These queries are not ABCI messages themselves, but they
   are relayed to the relevant module's gRPC `Query` service.
-* [`TxDecoder`](https://pkg.go.dev/github.com/T-ragon/cosmos-sdk/types#TxDecoder): It is used to decode
+* [`TxDecoder`](https://pkg.go.dev/github.com/T-ragon/cosmos-sdk/v3/types#TxDecoder): It is used to decode
   raw transaction bytes relayed by the underlying CometBFT engine.
 * [`AnteHandler`](#antehandler): This handler is used to handle signature verification, fee payment,
   and other pre-message execution checks when a transaction is received. It's executed during
@@ -116,7 +116,7 @@ func NewBaseApp(
 ```
 
 The `BaseApp` constructor function is pretty straightforward. The only thing worth noting is the
-possibility to provide additional [`options`](https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/options.go)
+possibility to provide additional [`options`](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/options.go)
 to the `BaseApp`, which will execute them in order. The `options` are generally `setter` functions
 for important parameters, like `SetPruning()` to set pruning options or `SetMinGasPrices()` to set
 the node's `min-gas-prices`.
@@ -216,7 +216,7 @@ When messages and queries are received by the application, they must be routed t
 
 [`sdk.Msg`s](../../build/building-modules/02-messages-and-queries.md#messages) need to be routed after they are extracted from transactions, which are sent from the underlying CometBFT engine via the [`CheckTx`](#checktx) and [`FinalizeBlock`](#finalizeblock) ABCI messages. To do so, `BaseApp` holds a `msgServiceRouter` which maps fully-qualified service methods (`string`, defined in each module's Protobuf  `Msg` service) to the appropriate module's `MsgServer` implementation.
 
-The [default `msgServiceRouter` included in `BaseApp`](https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/msg_service_router.go) is stateless. However, some applications may want to make use of more stateful routing mechanisms such as allowing governance to disable certain routes or point them to new modules for upgrade purposes. For this reason, the `sdk.Context` is also passed into each [route handler inside `msgServiceRouter`](https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/msg_service_router.go#L31-L32). For a stateless router that doesn't want to make use of this, you can just ignore the `ctx`.
+The [default `msgServiceRouter` included in `BaseApp`](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/msg_service_router.go) is stateless. However, some applications may want to make use of more stateful routing mechanisms such as allowing governance to disable certain routes or point them to new modules for upgrade purposes. For this reason, the `sdk.Context` is also passed into each [route handler inside `msgServiceRouter`](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/msg_service_router.go#L31-L32). For a stateless router that doesn't want to make use of this, you can just ignore the `ctx`.
 
 The application's `msgServiceRouter` is initialized with all the routes using the application's [module manager](../../build/building-modules/01-module-manager.md#manager) (via the `RegisterServices` method), which itself is initialized with all the application's modules in the application's [constructor](../beginner/00-app-anatomy.md#constructor-function).
 
@@ -351,7 +351,7 @@ The response contains:
 * `GasUsed (int64)`: Amount of gas consumed by transaction. During `CheckTx`, this value is computed by multiplying the standard cost of a transaction byte by the size of the raw transaction. Next is an example:
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/x/auth/ante/basic.go#L102
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/x/auth/ante/basic.go#L102
 ```
 
 * `Events ([]cmn.KVPair)`: Key-Value tags for filtering and indexing transactions (eg. by account). See [`events`](./08-events.md) for more.
@@ -379,7 +379,7 @@ After that, `RunTx()` calls `ValidateBasic()`, when available and for backward c
 Then, the [`anteHandler`](#antehandler) of the application is run (if it exists). In preparation of this step, both the `checkState`/`finalizeBlockState`'s `context` and `context`'s `CacheMultiStore` are branched using the `cacheTxContext()` function.
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/baseapp.go#L663-L680
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/baseapp.go#L663-L680
 ```
 
 This allows `RunTx` not to commit the changes made to the state during the execution of `anteHandler` if it ends up failing. It also prevents the module implementing the `anteHandler` from writing to state, which is an important part of the [object-capabilities](./10-ocap.md) of the Cosmos SDK.
@@ -400,7 +400,7 @@ Key operations performed by the `AnteHandler` include:
 
 These operations are crucial for maintaining the security and integrity of transactions on the blockchain.
 
-For more detailed examples, see the [`auth` module's `AnteHandler`](https://github.com/T-ragon/cosmos-sdk/tree/main/x/auth) which is widely used for these purposes.
+For more detailed examples, see the [`auth` module's `AnteHandler`](https://github.com/T-ragon/cosmos-sdk/v3/tree/main/x/auth) which is widely used for these purposes.
 
 :::warning
 Ante handlers typically operate at the transaction level. By default, they process only the outermost message of a transaction. However, transactions that embed multiple messages, such as those found in modules like x/authz or x/gov, may have inner messages that are not automatically processed by these default ante handlers. These inner messages are generally routed directly to the [message router](https://docs.cosmos.network/main/learn/advanced/baseapp#msg-service-router) bypassing the ante handlers. To ensure comprehensive processing, custom ante handlers can be designed to recursively inspect and apply necessary checks to all embedded messages within a transaction. This capability must be explicitly implemented to extend the awareness of ante handlers to inner messages.
@@ -408,7 +408,7 @@ Ante handlers typically operate at the transaction level. By default, they proce
 
 The `AnteHandler` is a primary line of defense against spam and a second line of defense (the first one being the mempool) against transaction replay with fees deduction and [`sequence`](./01-transactions.md#transaction-generation) checking. It also performs preliminary _stateful_ validity checks like ensuring signatures are valid or that the sender has enough funds to pay for fees, and plays a role in the incentivisation of stakeholders via the collection of transaction fees.
 
-`BaseApp` holds an `anteHandler` as parameter that is initialized in the [application's constructor](../beginner/00-app-anatomy.md#application-constructor). The most widely used `anteHandler` is the [`auth` module](https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/x/auth/ante/ante.go).
+`BaseApp` holds an `anteHandler` as parameter that is initialized in the [application's constructor](../beginner/00-app-anatomy.md#application-constructor). The most widely used `anteHandler` is the [`auth` module](https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/x/auth/ante/ante.go).
 
 Click [here](../beginner/04-gas-fees.md#antehandler) for more on the `anteHandler`.
 
@@ -431,7 +431,7 @@ Like `AnteHandler`s, `PostHandler`s are theoretically optional.
 Other use cases like unused gas refund can also be enabled by `PostHandler`s.
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/x/auth/posthandler/post.go#L1-L15
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/x/auth/posthandler/post.go#L1-L15
 ```
 
 Note, when `PostHandler`s fail, the state from `runMsgs` is also reverted, effectively making the transaction fail.
@@ -455,7 +455,7 @@ The [`FinalizeBlock` ABCI message](https://docs.cometbft.com/v1.0/spec/abci/abci
 
 
 ```go reference 
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/abci.go#L623
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/abci.go#L623
 ```
 
 #### PreBlock 
@@ -467,7 +467,7 @@ https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/abci.go#L623
 * Initialize [`finalizeBlockState`](#state-updates) with the latest header using the `req abci.RequestFinalizeBlock` passed as parameter via the `setState` function.
 
   ```go reference
-  https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/baseapp.go#L682-L706
+  https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/baseapp.go#L682-L706
   ```
   
   This function also resets the [main gas meter](../beginner/04-gas-fees.md#main-gas-meter).
@@ -490,7 +490,7 @@ The `FinalizeBlock` ABCI function defined in `BaseApp` does the bulk of the stat
 
 Instead of using their `checkState`, full-nodes use `finalizeblock`:
 
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/baseapp.go#LL708-L743
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/baseapp.go#LL708-L743
 
 
 Transaction execution within `FinalizeBlock` performs the **exact same steps as `CheckTx`**, with a little caveat at step 3 and the addition of a fifth step:
@@ -501,7 +501,7 @@ Transaction execution within `FinalizeBlock` performs the **exact same steps as 
 During the additional fifth step outlined in (2), each read/write to the store increases the value of `GasConsumed`. You can find the default cost of each operation:
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/store/types/gas.go#L230-L241
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/store/types/gas.go#L230-L241
 ```
 
 At any point, if `GasConsumed > GasWanted`, the function returns with `Code != 0` and the execution fails.
@@ -524,7 +524,7 @@ Each transaction returns a response to the underlying consensus engine of type [
 EndBlock is run after transaction execution completes. It allows developers to have logic be executed at the end of each block. In the Cosmos SDK, the bulk EndBlock() method is to run the application's EndBlocker(), which mainly runs the EndBlocker() method of each of the application's modules.
 
 ```go reference 
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/baseapp.go#L747-L769
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/baseapp.go#L747-L769
 ```
 
 ### Commit
@@ -560,7 +560,7 @@ Each CometBFT `query` comes with a `path`, which is a `string` which denotes wha
 In the Cosmos-SDK this is implemented as a NoOp:
 
 ``` go reference 
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/abci_utils.go#L274-L281
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/abci_utils.go#L274-L281
 ```
 
 ### VerifyVoteExtension
@@ -570,5 +570,5 @@ https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/abci_utils.go
 In the Cosmos-SDK this is implemented as a NoOp:
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/abci_utils.go#L282-L288
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/abci_utils.go#L282-L288
 ```

@@ -4,8 +4,8 @@ import (
 	authtypes "cosmossdk.io/x/auth/types"
 	"cosmossdk.io/x/distribution/types"
 
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var (

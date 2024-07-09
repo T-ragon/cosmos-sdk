@@ -6,10 +6,10 @@ import (
 	coreaddress "cosmossdk.io/core/address"
 	"cosmossdk.io/x/bank/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/address"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
-	"github.com/T-ragon/cosmos-sdk/x/simulation"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/address"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/v3/x/simulation"
 )
 
 // Simulation operation weights constants

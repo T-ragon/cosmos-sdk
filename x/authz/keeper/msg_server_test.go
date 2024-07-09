@@ -11,9 +11,9 @@ import (
 	"cosmossdk.io/x/authz"
 	banktypes "cosmossdk.io/x/bank/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec/address"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func (suite *TestSuite) createAccounts() []sdk.AccAddress {

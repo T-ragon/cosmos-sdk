@@ -18,15 +18,15 @@ import (
 	banktypes "cosmossdk.io/x/bank/types"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
-	"github.com/T-ragon/cosmos-sdk/testutil/mock"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/v3/crypto/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	servertypes "github.com/T-ragon/cosmos-sdk/v3/server/types"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/mock"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 const DefaultGenTxGas = 10000000

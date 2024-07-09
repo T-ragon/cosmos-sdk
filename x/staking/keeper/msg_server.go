@@ -20,11 +20,11 @@ import (
 	consensusv1 "cosmossdk.io/x/consensus/types"
 	"cosmossdk.io/x/staking/types"
 
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/telemetry"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/telemetry"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 type msgServer struct {

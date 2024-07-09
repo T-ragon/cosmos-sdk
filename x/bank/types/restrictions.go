@@ -3,7 +3,7 @@ package types
 import (
 	"context"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // A MintingRestrictionFn can restrict minting of coins.

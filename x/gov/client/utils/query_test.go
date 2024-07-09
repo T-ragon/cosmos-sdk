@@ -14,10 +14,10 @@ import (
 	"cosmossdk.io/x/gov/client/utils"
 	v1 "cosmossdk.io/x/gov/types/v1"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 type TxSearchMock struct {

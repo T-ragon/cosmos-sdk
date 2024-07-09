@@ -12,10 +12,10 @@ import (
 	pruningtypes "cosmossdk.io/store/pruning/types"
 	"cosmossdk.io/store/rootmulti"
 
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/server"
-	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/server"
+	servertypes "github.com/T-ragon/cosmos-sdk/v3/server/types"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 const FlagAppDBBackend = "app-db-backend"

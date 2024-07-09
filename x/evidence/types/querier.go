@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/T-ragon/cosmos-sdk/types/query"
+	"github.com/T-ragon/cosmos-sdk/v3/types/query"
 )
 
 // Querier routes for the evidence module

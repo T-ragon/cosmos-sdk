@@ -9,13 +9,13 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/client/tx"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	txtypes "github.com/T-ragon/cosmos-sdk/types/tx"
-	"github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/client/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	txtypes "github.com/T-ragon/cosmos-sdk/v3/types/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 // ExecTestCLICmd builds the client context, mocks the output and executes the command.

@@ -10,11 +10,11 @@ import (
 	"cosmossdk.io/client/v2/internal/offchain"
 	txsigning "cosmossdk.io/x/tx/signing"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keyring"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 const (

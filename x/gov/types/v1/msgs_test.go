@@ -9,10 +9,10 @@ import (
 	banktypes "cosmossdk.io/x/bank/types"
 	v1 "cosmossdk.io/x/gov/types/v1"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/codec/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var (

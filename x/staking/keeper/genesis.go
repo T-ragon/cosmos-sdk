@@ -9,7 +9,7 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/staking/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // InitGenesis sets the pool and parameters for the provided keeper.  For each
@@ -148,7 +148,7 @@ func (k Keeper) InitGenesis(ctx context.Context, data *types.GenesisState) ([]ap
 		return nil, fmt.Errorf("%s module account has not been set", types.BondedPoolName)
 	}
 
-	// TODO: remove with genesis 2-phases refactor https://github.com/T-ragon/cosmos-sdk/issues/2862
+	// TODO: remove with genesis 2-phases refactor https://github.com/T-ragon/cosmos-sdk/v3/issues/2862
 
 	bondedBalance := k.bankKeeper.GetAllBalances(ctx, bondedPool.GetAddress())
 	if bondedBalance.IsZero() {

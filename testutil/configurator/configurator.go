@@ -28,7 +28,7 @@ import (
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/depinject/appconfig"
 
-	"github.com/T-ragon/cosmos-sdk/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
 )
 
 // Config should never need to be instantiated manually and is solely used for ModuleOption.

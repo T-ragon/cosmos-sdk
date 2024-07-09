@@ -7,7 +7,7 @@ import (
 	"cosmossdk.io/core/testing"
 	"cosmossdk.io/x/accounts/internal/implementation"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func NewMockContext(

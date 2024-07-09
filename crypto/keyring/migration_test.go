@@ -9,12 +9,12 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	"github.com/T-ragon/cosmos-sdk/codec/legacy"
-	"github.com/T-ragon/cosmos-sdk/crypto/hd"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/multisig"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/legacy"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/hd"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/multisig"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 const n1 = "cosmos.info"

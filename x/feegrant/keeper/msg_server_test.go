@@ -10,9 +10,9 @@ import (
 	authtypes "cosmossdk.io/x/auth/types"
 	"cosmossdk.io/x/feegrant"
 
-	codecaddress "github.com/T-ragon/cosmos-sdk/codec/address"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/types"
+	codecaddress "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func (suite *KeeperTestSuite) TestGrantAllowance() {

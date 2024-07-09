@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
 )
 
 func checkAminoJSON(t *testing.T, src, dst interface{}, isNil bool) {

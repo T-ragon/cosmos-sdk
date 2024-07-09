@@ -8,7 +8,7 @@ import (
 	"cosmossdk.io/core/appmodule"
 	"cosmossdk.io/x/circuit/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
 )
 
 // Keeper defines the circuit module's keeper.

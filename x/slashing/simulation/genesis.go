@@ -9,8 +9,8 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/slashing/types"
 
-	"github.com/T-ragon/cosmos-sdk/types/module"
-	"github.com/T-ragon/cosmos-sdk/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
+	"github.com/T-ragon/cosmos-sdk/v3/types/simulation"
 )
 
 // Simulation parameter constants

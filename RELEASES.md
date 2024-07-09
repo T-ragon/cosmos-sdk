@@ -1,6 +1,6 @@
 # Releases
 
-The Cosmos-SDK follows both [0ver](https://0ver.org/) and [Semver](https://semver.org/). While this is confusing let's break it down: 0ver is used for the main Cosmos-SDK dependency (`github.com/T-ragon/cosmos-sdk`) and Semver is used for all other dependencies.
+The Cosmos-SDK follows both [0ver](https://0ver.org/) and [Semver](https://semver.org/). While this is confusing let's break it down: 0ver is used for the main Cosmos-SDK dependency (`github.com/T-ragon/cosmos-sdk/v3`) and Semver is used for all other dependencies.
 
 ## Semver Dependencies
 

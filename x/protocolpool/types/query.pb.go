@@ -7,8 +7,8 @@ import (
 	context "context"
 	fmt "fmt"
 	_ "github.com/cosmos/cosmos-proto"
-	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/types"
-	types "github.com/T-ragon/cosmos-sdk/types"
+	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/v3/types"
+	types "github.com/T-ragon/cosmos-sdk/v3/types"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	grpc1 "github.com/cosmos/gogoproto/grpc"
 	proto "github.com/cosmos/gogoproto/proto"
@@ -79,7 +79,7 @@ var xxx_messageInfo_QueryCommunityPoolRequest proto.InternalMessageInfo
 // RPC method.
 type QueryCommunityPoolResponse struct {
 	// pool defines community pool's coins.
-	Pool github_com_cosmos_cosmos_sdk_types.DecCoins `protobuf:"bytes,1,rep,name=pool,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.DecCoins" json:"pool"`
+	Pool github_com_cosmos_cosmos_sdk_types.DecCoins `protobuf:"bytes,1,rep,name=pool,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.DecCoins" json:"pool"`
 }
 
 func (m *QueryCommunityPoolResponse) Reset()         { *m = QueryCommunityPoolResponse{} }

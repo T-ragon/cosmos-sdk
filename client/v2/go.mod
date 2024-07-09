@@ -12,7 +12,7 @@ require (
 	github.com/chzyer/readline v1.5.1 // indirect
 	github.com/cockroachdb/errors v1.11.1 // indirect
 	github.com/cosmos/cosmos-proto v1.0.0-beta.5
-	github.com/T-ragon/cosmos-sdk v0.51.0
+	github.com/T-ragon/cosmos-sdk/v3 v0.51.0
 	github.com/manifoldco/promptui v0.9.0 // indirect
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/pflag v1.0.5
@@ -172,7 +172,7 @@ require (
 
 require github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 
-replace github.com/T-ragon/cosmos-sdk => ./../../
+replace github.com/T-ragon/cosmos-sdk/v3 => ./../../
 
 // TODO remove post spinning out all modules
 replace (

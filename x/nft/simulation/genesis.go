@@ -6,8 +6,8 @@ import (
 	"cosmossdk.io/core/address"
 	"cosmossdk.io/x/nft"
 
-	"github.com/T-ragon/cosmos-sdk/types/module"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
 )
 
 // genClasses returns a slice of nft class.

@@ -6,7 +6,7 @@ import (
 
 	"cosmossdk.io/x/epochs/types"
 
-	"github.com/T-ragon/cosmos-sdk/telemetry"
+	"github.com/T-ragon/cosmos-sdk/v3/telemetry"
 )
 
 // BeginBlocker of epochs module.

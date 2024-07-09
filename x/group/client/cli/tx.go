@@ -10,10 +10,10 @@ import (
 	"cosmossdk.io/x/group"
 	"cosmossdk.io/x/group/internal/math"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/client/tx"
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/client/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 const (

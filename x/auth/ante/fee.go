@@ -8,8 +8,8 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	"cosmossdk.io/x/auth/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // TxFeeChecker checks if the provided fee is enough and returns the effective fee and tx priority.

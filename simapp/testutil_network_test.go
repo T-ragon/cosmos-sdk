@@ -8,7 +8,7 @@ import (
 
 	"cosmossdk.io/simapp"
 
-	"github.com/T-ragon/cosmos-sdk/testutil/network"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/network"
 )
 
 type IntegrationTestSuite struct {

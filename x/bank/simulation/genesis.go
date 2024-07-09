@@ -8,8 +8,8 @@ import (
 	sdkmath "cosmossdk.io/math"
 	"cosmossdk.io/x/bank/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/module"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
 )
 
 // KeyDefaultSendEnabled is store's key for the DefaultSendEnabled option

@@ -5,7 +5,7 @@ package secp256k1
 
 import (
 	fmt "fmt"
-	_ "github.com/T-ragon/cosmos-sdk/types/tx/amino"
+	_ "github.com/T-ragon/cosmos-sdk/v3/types/tx/amino"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	proto "github.com/cosmos/gogoproto/proto"
 	io "io"

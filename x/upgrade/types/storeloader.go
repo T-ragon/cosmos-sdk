@@ -3,7 +3,7 @@ package types
 import (
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
 )
 
 // UpgradeStoreLoader is used to prepare baseapp with a fixed StoreLoader

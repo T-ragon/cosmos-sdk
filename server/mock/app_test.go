@@ -11,9 +11,9 @@ import (
 
 	"cosmossdk.io/log"
 
-	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
-	genutiltypes "github.com/T-ragon/cosmos-sdk/x/genutil/types"
+	servertypes "github.com/T-ragon/cosmos-sdk/v3/server/types"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
+	genutiltypes "github.com/T-ragon/cosmos-sdk/v3/x/genutil/types"
 )
 
 // SetupApp initializes a new application,

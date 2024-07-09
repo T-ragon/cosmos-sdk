@@ -8,7 +8,7 @@ import (
 
 	"cosmossdk.io/core/registry"
 
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
 )
 
 const (

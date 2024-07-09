@@ -6,7 +6,7 @@ package secp256k1
 import (
 	"github.com/cometbft/cometbft/crypto"
 
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1/internal/secp256k1"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1/internal/secp256k1"
 )
 
 // Sign creates an ECDSA signature on curve Secp256k1, using SHA256 on the msg.

@@ -12,8 +12,8 @@ import (
 	"cosmossdk.io/x/distribution/types"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func TestQueryParams(t *testing.T) {
@@ -109,37 +109,37 @@ func TestQueryValidatorDistributionInfo(t *testing.T) {
 }
 
 func TestQueryValidatorOutstandingRewards(t *testing.T) {
-	// TODO https://github.com/T-ragon/cosmos-sdk/issues/16757
+	// TODO https://github.com/T-ragon/cosmos-sdk/v3/issues/16757
 	// currently tested in tests/e2e/distribution/grpc_query_suite.go
 }
 
 func TestQueryValidatorCommission(t *testing.T) {
-	// TODO https://github.com/T-ragon/cosmos-sdk/issues/16757
+	// TODO https://github.com/T-ragon/cosmos-sdk/v3/issues/16757
 	// currently tested in tests/e2e/distribution/grpc_query_suite.go
 }
 
 func TestQueryValidatorSlashes(t *testing.T) {
-	// TODO https://github.com/T-ragon/cosmos-sdk/issues/16757
+	// TODO https://github.com/T-ragon/cosmos-sdk/v3/issues/16757
 	// currently tested in tests/e2e/distribution/grpc_query_suite.go
 }
 
 func TestQueryDelegationRewards(t *testing.T) {
-	// TODO https://github.com/T-ragon/cosmos-sdk/issues/16757
+	// TODO https://github.com/T-ragon/cosmos-sdk/v3/issues/16757
 	// currently tested in tests/e2e/distribution/grpc_query_suite.go
 }
 
 func TestQueryDelegationTotalRewards(t *testing.T) {
-	// TODO https://github.com/T-ragon/cosmos-sdk/issues/16757
+	// TODO https://github.com/T-ragon/cosmos-sdk/v3/issues/16757
 	// currently tested in tests/e2e/distribution/grpc_query_suite.go
 }
 
 func TestQueryDelegatorValidators(t *testing.T) {
-	// TODO https://github.com/T-ragon/cosmos-sdk/issues/16757
+	// TODO https://github.com/T-ragon/cosmos-sdk/v3/issues/16757
 	// currently tested in tests/e2e/distribution/grpc_query_suite.go
 }
 
 func TestQueryDelegatorWithdrawAddress(t *testing.T) {
-	// TODO https://github.com/T-ragon/cosmos-sdk/issues/16757
+	// TODO https://github.com/T-ragon/cosmos-sdk/v3/issues/16757
 	// currently tested in tests/e2e/distribution/grpc_query_suite.go
 }
 

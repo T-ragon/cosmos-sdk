@@ -10,8 +10,8 @@ import (
 	"cosmossdk.io/x/params/simulation"
 	"cosmossdk.io/x/params/types/proposal"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
 )
 
 type MockParamChange struct {

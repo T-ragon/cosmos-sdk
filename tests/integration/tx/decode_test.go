@@ -30,15 +30,15 @@ import (
 	txsigning "cosmossdk.io/x/tx/signing"
 	"cosmossdk.io/x/upgrade"
 
-	"github.com/T-ragon/cosmos-sdk/codec/legacy"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/tests/integration/rapidgen"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/module/testutil"
-	txtypes "github.com/T-ragon/cosmos-sdk/types/tx"
-	"github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/legacy"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/tests/integration/rapidgen"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
+	txtypes "github.com/T-ragon/cosmos-sdk/v3/types/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 // TestDecode tests that the tx decoder can decode all the txs in the test suite.

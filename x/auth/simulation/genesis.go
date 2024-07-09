@@ -8,9 +8,9 @@ import (
 	"cosmossdk.io/x/auth/types"
 	vestingtypes "cosmossdk.io/x/auth/vesting/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/module"
-	"github.com/T-ragon/cosmos-sdk/types/simulation"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
+	"github.com/T-ragon/cosmos-sdk/v3/types/simulation"
 )
 
 // Simulation parameter constants

@@ -24,8 +24,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/tidwall/sjson"
 
-	"github.com/T-ragon/cosmos-sdk/server"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/server"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var (

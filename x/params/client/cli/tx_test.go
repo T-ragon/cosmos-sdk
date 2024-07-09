@@ -7,8 +7,8 @@ import (
 
 	"cosmossdk.io/x/params/client/utils"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
 )
 
 func TestParseProposal(t *testing.T) {

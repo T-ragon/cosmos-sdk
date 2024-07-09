@@ -11,8 +11,8 @@ import (
 	"cosmossdk.io/x/accounts/defaults/lockup/types"
 	"cosmossdk.io/x/bank/testutil"
 
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 type ProtoMsg = protoiface.MessageV1

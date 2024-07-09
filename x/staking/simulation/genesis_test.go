@@ -11,13 +11,13 @@ import (
 	"cosmossdk.io/x/staking/simulation"
 	"cosmossdk.io/x/staking/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/module"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/v3/crypto/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
 )
 
 // TestRandomizedGenState tests the normal scenario of applying RandomizedGenState.

@@ -20,11 +20,11 @@ import (
 	grouptestutil "cosmossdk.io/x/group/testutil"
 	stakingkeeper "cosmossdk.io/x/staking/keeper"
 
-	codecaddress "github.com/T-ragon/cosmos-sdk/codec/address"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	codecaddress "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 type IntegrationTestSuite struct {

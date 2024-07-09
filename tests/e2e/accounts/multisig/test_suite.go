@@ -14,9 +14,9 @@ import (
 	v1 "cosmossdk.io/x/accounts/defaults/multisig/v1"
 	"cosmossdk.io/x/bank/testutil"
 
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 type ProtoMsg = protoiface.MessageV1

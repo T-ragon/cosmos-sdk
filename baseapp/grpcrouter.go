@@ -10,11 +10,11 @@ import (
 	"google.golang.org/grpc/encoding"
 	"google.golang.org/protobuf/runtime/protoiface"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp/internal/protocompat"
-	"github.com/T-ragon/cosmos-sdk/client/grpc/reflection"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp/internal/protocompat"
+	"github.com/T-ragon/cosmos-sdk/v3/client/grpc/reflection"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 type QueryRouter interface {

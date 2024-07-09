@@ -8,7 +8,7 @@ import (
 
 	"cosmossdk.io/x/auth/migrations/legacytx"
 
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
 )
 
 func TestStdSignatureMarshalYAML(t *testing.T) {

@@ -10,9 +10,9 @@ import (
 	"cosmossdk.io/core/log"
 	"cosmossdk.io/core/store"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // NewEnvironment creates a new environment for the application

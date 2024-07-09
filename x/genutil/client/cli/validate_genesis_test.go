@@ -6,10 +6,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	clitestutil "github.com/T-ragon/cosmos-sdk/testutil/cli"
-	"github.com/T-ragon/cosmos-sdk/x/genutil/client/cli"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	clitestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/cli"
+	"github.com/T-ragon/cosmos-sdk/v3/x/genutil/client/cli"
 )
 
 // An example exported genesis file from a 0.37 chain. Note that evidence

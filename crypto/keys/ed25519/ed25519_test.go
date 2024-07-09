@@ -10,12 +10,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/codec/types"
-	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/v3/crypto/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
 )
 
 func TestSignAndValidateEd25519(t *testing.T) {

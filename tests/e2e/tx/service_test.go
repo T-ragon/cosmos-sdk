@@ -18,20 +18,20 @@ import (
 	"cosmossdk.io/x/auth/migrations/legacytx"
 	banktypes "cosmossdk.io/x/bank/types"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	clienttx "github.com/T-ragon/cosmos-sdk/client/tx"
-	"github.com/T-ragon/cosmos-sdk/crypto/hd"
-	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
-	kmultisig "github.com/T-ragon/cosmos-sdk/crypto/keys/multisig"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	"github.com/T-ragon/cosmos-sdk/testutil/cli"
-	"github.com/T-ragon/cosmos-sdk/testutil/network"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/query"
-	"github.com/T-ragon/cosmos-sdk/types/tx"
-	"github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	clienttx "github.com/T-ragon/cosmos-sdk/v3/client/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/hd"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keyring"
+	kmultisig "github.com/T-ragon/cosmos-sdk/v3/crypto/keys/multisig"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/cli"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/network"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/query"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 var bankMsgSendEventAction = fmt.Sprintf("message.action='%s'", sdk.MsgTypeURL(&banktypes.MsgSend{}))
@@ -324,8 +324,8 @@ func (s *E2ETestSuite) TestGetTxEvents_GRPC() {
 				s.Require().Equal(tc.expLen, len(grpcRes.Txs))
 
 				// Make sure fields are populated.
-				// ref: https://github.com/T-ragon/cosmos-sdk/issues/8680
-				// ref: https://github.com/T-ragon/cosmos-sdk/issues/8681
+				// ref: https://github.com/T-ragon/cosmos-sdk/v3/issues/8680
+				// ref: https://github.com/T-ragon/cosmos-sdk/v3/issues/8681
 				s.Require().NotEmpty(grpcRes.TxResponses[0].Timestamp)
 				s.Require().Empty(grpcRes.TxResponses[0].RawLog) // logs are empty if the transactions are successful
 			}
@@ -475,8 +475,8 @@ func (s *E2ETestSuite) TestGetTx_GRPCGateway() {
 				s.Require().NotZero(result.TxResponse.Height)
 
 				// Make sure fields are populated.
-				// ref: https://github.com/T-ragon/cosmos-sdk/issues/8680
-				// ref: https://github.com/T-ragon/cosmos-sdk/issues/8681
+				// ref: https://github.com/T-ragon/cosmos-sdk/v3/issues/8680
+				// ref: https://github.com/T-ragon/cosmos-sdk/v3/issues/8681
 				s.Require().NotEmpty(result.TxResponse.Timestamp)
 				s.Require().Empty(result.TxResponse.RawLog) // logs are empty on successful transactions
 			}

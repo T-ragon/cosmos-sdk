@@ -6,7 +6,7 @@ import (
 	autocliv1 "cosmossdk.io/api/cosmos/autocli/v1"
 	mintv1beta1 "cosmossdk.io/api/cosmos/mint/v1beta1"
 
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {

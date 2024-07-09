@@ -370,7 +370,7 @@ func (m *MM[T]) TxValidators() func(ctx context.Context, tx T) error {
 }
 
 // TODO write as descriptive godoc as module manager v1.
-// TODO include feedback from https://github.com/T-ragon/cosmos-sdk/issues/15120
+// TODO include feedback from https://github.com/T-ragon/cosmos-sdk/v3/issues/15120
 func (m *MM[T]) RunMigrations(ctx context.Context, fromVM appmodulev2.VersionMap) (appmodulev2.VersionMap, error) {
 	updatedVM := appmodulev2.VersionMap{}
 	for _, moduleName := range m.config.OrderMigrations {
@@ -666,7 +666,7 @@ func messagePassingInterceptor(msg appmodulev2.Message) grpc.UnaryServerIntercep
 
 // defaultMigrationsOrder returns a default migrations order: ascending alphabetical by module name,
 // except x/auth which will run last, see:
-// https://github.com/T-ragon/cosmos-sdk/issues/10591
+// https://github.com/T-ragon/cosmos-sdk/v3/issues/10591
 func defaultMigrationsOrder(modules []string) []string {
 	const authName = "auth"
 	out := make([]string, 0, len(modules))

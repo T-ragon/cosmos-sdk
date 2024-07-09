@@ -14,8 +14,8 @@ import (
 	"cosmossdk.io/x/gov/types"
 	v1 "cosmossdk.io/x/gov/types/v1"
 
-	"github.com/T-ragon/cosmos-sdk/telemetry"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/telemetry"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // EndBlocker is called every block.

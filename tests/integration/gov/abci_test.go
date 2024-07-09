@@ -16,9 +16,9 @@ import (
 	stakingkeeper "cosmossdk.io/x/staking/keeper"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func TestUnregisteredProposal_InactiveProposalFails(t *testing.T) {

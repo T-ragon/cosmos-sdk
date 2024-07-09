@@ -3,8 +3,8 @@ package types
 import (
 	"encoding/json"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
 )
 
 type (

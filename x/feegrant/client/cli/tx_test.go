@@ -23,16 +23,16 @@ import (
 	"cosmossdk.io/x/gov"
 	govcli "cosmossdk.io/x/gov/client/cli"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/crypto/hd"
-	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	clitestutil "github.com/T-ragon/cosmos-sdk/testutil/cli"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	testutilmod "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/hd"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keyring"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	clitestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/cli"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	testutilmod "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 const (

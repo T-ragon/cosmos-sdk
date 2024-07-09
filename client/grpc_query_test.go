@@ -11,17 +11,17 @@ import (
 	"cosmossdk.io/log"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/testutil/integration"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	"github.com/T-ragon/cosmos-sdk/testutil/x/counter"
-	counterkeeper "github.com/T-ragon/cosmos-sdk/testutil/x/counter/keeper"
-	countertypes "github.com/T-ragon/cosmos-sdk/testutil/x/counter/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/integration"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/x/counter"
+	counterkeeper "github.com/T-ragon/cosmos-sdk/v3/testutil/x/counter/keeper"
+	countertypes "github.com/T-ragon/cosmos-sdk/v3/testutil/x/counter/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 type IntegrationTestSuite struct {

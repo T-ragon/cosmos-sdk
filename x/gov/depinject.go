@@ -18,7 +18,7 @@ import (
 	govtypes "cosmossdk.io/x/gov/types"
 	"cosmossdk.io/x/gov/types/v1beta1"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
 )
 
 var _ depinject.OnePerModuleType = AppModule{}

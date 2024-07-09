@@ -6,10 +6,10 @@ package types
 import (
 	fmt "fmt"
 	_ "github.com/cosmos/cosmos-proto"
-	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/types"
-	types "github.com/T-ragon/cosmos-sdk/types"
-	_ "github.com/T-ragon/cosmos-sdk/types/msgservice"
-	_ "github.com/T-ragon/cosmos-sdk/types/tx/amino"
+	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/v3/types"
+	types "github.com/T-ragon/cosmos-sdk/v3/types"
+	_ "github.com/T-ragon/cosmos-sdk/v3/types/msgservice"
+	_ "github.com/T-ragon/cosmos-sdk/v3/types/tx/amino"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	proto "github.com/cosmos/gogoproto/proto"
 	io "io"
@@ -144,7 +144,7 @@ func (m *SendEnabled) GetEnabled() bool {
 // Input models transaction input.
 type Input struct {
 	Address string                                   `protobuf:"bytes,1,opt,name=address,proto3" json:"address,omitempty"`
-	Coins   github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,2,rep,name=coins,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"coins"`
+	Coins   github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,2,rep,name=coins,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"coins"`
 }
 
 func (m *Input) Reset()         { *m = Input{} }
@@ -183,7 +183,7 @@ var xxx_messageInfo_Input proto.InternalMessageInfo
 // Output models transaction outputs.
 type Output struct {
 	Address string                                   `protobuf:"bytes,1,opt,name=address,proto3" json:"address,omitempty"`
-	Coins   github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,2,rep,name=coins,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"coins"`
+	Coins   github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,2,rep,name=coins,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"coins"`
 }
 
 func (m *Output) Reset()         { *m = Output{} }
@@ -226,7 +226,7 @@ var xxx_messageInfo_Output proto.InternalMessageInfo
 // Deprecated: Do not use.
 type Supply struct {
 	// total is the total supply of coins across the network.
-	Total github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=total,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"total"`
+	Total github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=total,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"total"`
 }
 
 func (m *Supply) Reset()         { *m = Supply{} }

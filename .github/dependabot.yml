@@ -282,7 +282,7 @@ updates:
       - dependencies
       - "testing-required"
     allow:
-      - dependency-name: "github.com/T-ragon/cosmos-sdk/*"
+      - dependency-name: "github.com/T-ragon/cosmos-sdk/v3/*"
         dependency-type: "all"
       - dependency-name: "github.com/cosmos/*"
         dependency-type: "all"
@@ -307,7 +307,7 @@ updates:
       - dependencies
       - "testing-required"
     allow:
-      - dependency-name: "github.com/T-ragon/cosmos-sdk/*"
+      - dependency-name: "github.com/T-ragon/cosmos-sdk/v3/*"
         dependency-type: "all"
       - dependency-name: "github.com/cosmos/*"
         dependency-type: "all"

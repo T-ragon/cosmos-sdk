@@ -11,8 +11,8 @@ import (
 	storetypes "cosmossdk.io/store/types"
 	"cosmossdk.io/x/slashing/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // Migrate migrates state to consensus version 4. Specifically, the migration

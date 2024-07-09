@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
 )
 
 func BenchmarkAccAddressString(b *testing.B) {

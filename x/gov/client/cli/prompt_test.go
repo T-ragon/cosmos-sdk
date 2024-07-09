@@ -19,7 +19,7 @@ import (
 
 	"cosmossdk.io/x/gov/client/cli"
 
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
 )
 
 type st struct {
@@ -27,7 +27,7 @@ type st struct {
 }
 
 // Tests that we successfully report overflows in parsing ints
-// See https://github.com/T-ragon/cosmos-sdk/issues/13346
+// See https://github.com/T-ragon/cosmos-sdk/v3/issues/13346
 func TestPromptIntegerOverflow(t *testing.T) {
 	// Intentionally sending values out of the range of int.
 	intOverflowers := []string{

@@ -25,7 +25,7 @@ message BasicAllowance {
     (gogoproto.nullable)     = false,
     (amino.dont_omitempty)   = true,
     (amino.encoding)         = "legacy_coins",
-    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.Coins"
   ];
 
   // expiration specifies an optional time when this allowance expires
@@ -52,7 +52,7 @@ message PeriodicAllowance {
     (gogoproto.nullable)     = false,
     (amino.dont_omitempty)   = true,
     (amino.encoding)         = "legacy_coins",
-    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.Coins"
   ];
 
   // period_can_spend is the number of coins left to be spent before the period_reset time
@@ -60,7 +60,7 @@ message PeriodicAllowance {
     (gogoproto.nullable)     = false,
     (amino.dont_omitempty)   = true,
     (amino.encoding)         = "legacy_coins",
-    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.Coins"
   ];
 
   // period_reset is the time at which this period resets and a new one begins,

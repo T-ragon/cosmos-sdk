@@ -17,13 +17,13 @@ import (
 	stakingkeeper "cosmossdk.io/x/staking/keeper"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	codecaddress "github.com/T-ragon/cosmos-sdk/codec/address"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	"github.com/T-ragon/cosmos-sdk/testutil/configurator"
-	"github.com/T-ragon/cosmos-sdk/testutil/sims"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	codecaddress "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/configurator"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var (

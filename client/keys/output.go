@@ -3,10 +3,10 @@ package keys
 import (
 	"cosmossdk.io/core/address"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keyring"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
 )
 
 // Use protobuf interface marshaler rather then generic JSON

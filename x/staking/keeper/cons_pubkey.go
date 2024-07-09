@@ -11,10 +11,10 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	"cosmossdk.io/x/staking/types"
 
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // maxRotations is the value of max rotations can be made in unbonding period for a validator.

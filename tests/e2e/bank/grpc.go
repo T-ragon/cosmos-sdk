@@ -8,10 +8,10 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/bank/types"
 
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	grpctypes "github.com/T-ragon/cosmos-sdk/types/grpc"
-	"github.com/T-ragon/cosmos-sdk/types/query"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	grpctypes "github.com/T-ragon/cosmos-sdk/v3/types/grpc"
+	"github.com/T-ragon/cosmos-sdk/v3/types/query"
 )
 
 func (s *E2ETestSuite) TestTotalSupplyGRPCHandler() {

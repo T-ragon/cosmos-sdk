@@ -6,7 +6,7 @@ import (
 
 	"cosmossdk.io/x/auth/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // InitGenesis - Init store state from genesis data

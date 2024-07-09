@@ -3,7 +3,7 @@ package types
 import (
 	cmtproto "github.com/cometbft/cometbft/api/cometbft/types/v1"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
 )
 
 // Deprecated.

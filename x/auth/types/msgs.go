@@ -3,7 +3,7 @@ package types
 import (
 	coretransaction "cosmossdk.io/core/transaction"
 
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // GetMessages returns the cache values from the MsgNonAtomicExec.Msgs if present.

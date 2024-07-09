@@ -34,7 +34,7 @@ Each `Msg` service method must have exactly one argument, which must implement t
 See an example of a `Msg` service definition from `x/bank` module:
 
 ```protobuf reference
-https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8/x/bank/proto/cosmos/bank/v1beta1/tx.proto#L13-L41
+https://github.com/T-ragon/cosmos-sdk/v3/blob/28fa3b8/x/bank/proto/cosmos/bank/v1beta1/tx.proto#L13-L41
 ```
 
 ### `transaction.Msg` Interface
@@ -42,13 +42,13 @@ https://github.com/T-ragon/cosmos-sdk/blob/28fa3b8/x/bank/proto/cosmos/bank/v1be
 `transaction.Msg` is an alias of `proto.Message`. 
 
 ```go reference 
-https://github.com/T-ragon/cosmos-sdk/blob/main/core/transaction/transaction.go#L8
+https://github.com/T-ragon/cosmos-sdk/v3/blob/main/core/transaction/transaction.go#L8
 ```
 
 To attach a `ValidateBasic()` method to a message, then you must add methods to the type adhereing to the `HasValidateBasic`.
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/9c1e8b247cd47b5d3decda6e86fbc3bc996ee5d7/types/tx_msg.go#L84-L88
+https://github.com/T-ragon/cosmos-sdk/v3/blob/9c1e8b247cd47b5d3decda6e86fbc3bc996ee5d7/types/tx_msg.go#L84-L88
 ```
 
 In 0.50+ signers from the `GetSigners()` call is automated via a protobuf annotation. 
@@ -56,7 +56,7 @@ In 0.50+ signers from the `GetSigners()` call is automated via a protobuf annota
 Read more about the signer field [here](./05-protobuf-annotations.md).
 
 ```protobuf reference 
-https://github.com/T-ragon/cosmos-sdk/blob/e6848d99b55a65d014375b295bdd7f9641aac95e/proto/cosmos/bank/v1beta1/tx.proto#L40
+https://github.com/T-ragon/cosmos-sdk/v3/blob/e6848d99b55a65d014375b295bdd7f9641aac95e/proto/cosmos/bank/v1beta1/tx.proto#L40
 ```
 
 If there is a need for custom signers then there is an alternative path which can be taken. A function which returns `signing.CustomGetSigner` for a specific message can be defined. 
@@ -102,7 +102,7 @@ Queries should be defined using [Protobuf services](https://developers.google.co
 Here's an example of such a `Query` service definition:
 
 ```protobuf reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/proto/cosmos/auth/v1beta1/query.proto#L14-L89
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/proto/cosmos/auth/v1beta1/query.proto#L14-L89
 ```
 
 As `proto.Message`s, generated `Response` types implement by default `String()` method of [`fmt.Stringer`](https://pkg.go.dev/fmt#Stringer).
@@ -117,5 +117,5 @@ Store queries query directly for store keys. They use `clientCtx.QueryABCI(req a
 See following examples:
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/abci.go#L864-L894
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/abci.go#L864-L894
 ```

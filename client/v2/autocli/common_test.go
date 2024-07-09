@@ -19,13 +19,13 @@ import (
 	"cosmossdk.io/x/bank"
 	banktypes "cosmossdk.io/x/bank/types"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	"github.com/T-ragon/cosmos-sdk/codec/testutil"
-	sdkkeyring "github.com/T-ragon/cosmos-sdk/crypto/keyring"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	sdkkeyring "github.com/T-ragon/cosmos-sdk/v3/crypto/keyring"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 type fixture struct {

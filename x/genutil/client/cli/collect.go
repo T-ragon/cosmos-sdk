@@ -8,9 +8,9 @@ import (
 
 	"cosmossdk.io/errors"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/x/genutil"
-	"github.com/T-ragon/cosmos-sdk/x/genutil/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/x/genutil"
+	"github.com/T-ragon/cosmos-sdk/v3/x/genutil/types"
 )
 
 const flagGenTxDir = "gentx-dir"

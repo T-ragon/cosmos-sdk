@@ -22,21 +22,21 @@ import (
 	govtestutil "cosmossdk.io/x/gov/client/testutil"
 	govtypes "cosmossdk.io/x/gov/types/v1beta1"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/crypto/hd"
-	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
-	kmultisig "github.com/T-ragon/cosmos-sdk/crypto/keys/multisig"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	clitestutil "github.com/T-ragon/cosmos-sdk/testutil/cli"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	testutilmod "github.com/T-ragon/cosmos-sdk/types/module/testutil"
-	"github.com/T-ragon/cosmos-sdk/types/tx"
-	"github.com/T-ragon/cosmos-sdk/x/genutil/client/cli"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/hd"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keyring"
+	kmultisig "github.com/T-ragon/cosmos-sdk/v3/crypto/keys/multisig"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	clitestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/cli"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	testutilmod "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/x/genutil/client/cli"
 )
 
 type CLITestSuite struct {
@@ -859,7 +859,7 @@ func (s *CLITestSuite) TestGetBroadcastCommandWithoutOfflineFlag() {
 
 // TestTxWithoutPublicKey makes sure sending a proto tx message without the
 // public key doesn't cause any error in the RPC layer (broadcast).
-// See https://github.com/T-ragon/cosmos-sdk/issues/7585 for more details.
+// See https://github.com/T-ragon/cosmos-sdk/v3/issues/7585 for more details.
 func (s *CLITestSuite) TestTxWithoutPublicKey() {
 	txCfg := s.clientCtx.TxConfig
 

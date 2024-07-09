@@ -3,7 +3,7 @@ package snapshot
 import (
 	"github.com/spf13/cobra"
 
-	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
+	servertypes "github.com/T-ragon/cosmos-sdk/v3/server/types"
 )
 
 // Cmd returns the snapshots group command

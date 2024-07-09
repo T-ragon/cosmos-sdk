@@ -7,8 +7,8 @@ import (
 	"cosmossdk.io/x/staking/testutil"
 	"cosmossdk.io/x/staking/types"
 
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func (s *KeeperTestSuite) TestIncrementUnbondingID() {

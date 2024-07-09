@@ -8,7 +8,7 @@ import (
 	"cosmossdk.io/math"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // AccountKeeper expected account keeper

@@ -11,8 +11,8 @@ import (
 	"cosmossdk.io/core/comet"
 	"cosmossdk.io/x/evidence/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec/address"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func TestEquivocation_Valid(t *testing.T) {

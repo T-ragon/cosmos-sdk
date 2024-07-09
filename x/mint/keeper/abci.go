@@ -5,7 +5,7 @@ import (
 
 	"cosmossdk.io/x/mint/types"
 
-	"github.com/T-ragon/cosmos-sdk/telemetry"
+	"github.com/T-ragon/cosmos-sdk/v3/telemetry"
 )
 
 // BeginBlocker mints new tokens for the previous block.

@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/staking/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // GetBondedPool returns the bonded tokens pool's module account

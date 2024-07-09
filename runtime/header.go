@@ -5,7 +5,7 @@ import (
 
 	"cosmossdk.io/core/header"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var _ header.Service = (*HeaderService)(nil)

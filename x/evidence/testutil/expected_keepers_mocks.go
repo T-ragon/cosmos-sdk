@@ -12,8 +12,8 @@ import (
 	stakingv1beta1 "cosmossdk.io/api/cosmos/staking/v1beta1"
 	address "cosmossdk.io/core/address"
 	math "cosmossdk.io/math"
-	types "github.com/T-ragon/cosmos-sdk/crypto/types"
-	types0 "github.com/T-ragon/cosmos-sdk/types"
+	types "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	types0 "github.com/T-ragon/cosmos-sdk/v3/types"
 	gomock "github.com/golang/mock/gomock"
 )
 

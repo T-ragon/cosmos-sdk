@@ -11,18 +11,18 @@ import (
 	"cosmossdk.io/log"
 	"cosmossdk.io/x/auth/migrations/legacytx"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	"github.com/T-ragon/cosmos-sdk/codec/legacy"
-	"github.com/T-ragon/cosmos-sdk/codec/types"
-	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
-	kmultisig "github.com/T-ragon/cosmos-sdk/crypto/keys/multisig"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/crypto/types/multisig"
-	_ "github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/testutil/configurator"
-	"github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/legacy"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/v3/crypto/codec"
+	kmultisig "github.com/T-ragon/cosmos-sdk/v3/crypto/keys/multisig"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/types/multisig"
+	_ "github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/configurator"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 func TestNewMultiSig(t *testing.T) {
@@ -406,7 +406,7 @@ func TestAminoUnmarshalJSON(t *testing.T) {
 	// v0.39, hence the `threshold` field as a string.
 	// We are testing that when unmarshaling this JSON into a LegacyAminoPubKey
 	// with amino, there's no error.
-	// ref: https://github.com/T-ragon/cosmos-sdk/issues/8776
+	// ref: https://github.com/T-ragon/cosmos-sdk/v3/issues/8776
 	pkJSON := `{
 	"type": "tendermint/PubKeyMultisigThreshold",
 	"value": {

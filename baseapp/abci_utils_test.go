@@ -23,17 +23,17 @@ import (
 	"cosmossdk.io/log"
 	authtx "cosmossdk.io/x/auth/tx"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	baseapptestutil "github.com/T-ragon/cosmos-sdk/baseapp/testutil"
-	"github.com/T-ragon/cosmos-sdk/baseapp/testutil/mock"
-	"github.com/T-ragon/cosmos-sdk/client"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/mempool"
-	signingtypes "github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	baseapptestutil "github.com/T-ragon/cosmos-sdk/v3/baseapp/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp/testutil/mock"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/v3/crypto/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/mempool"
+	signingtypes "github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 const (

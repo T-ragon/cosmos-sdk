@@ -10,8 +10,8 @@ import (
 	"cosmossdk.io/x/authz"
 	banktypes "cosmossdk.io/x/bank/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/query"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/query"
 )
 
 func (suite *TestSuite) TestGRPCQueryAuthorization() {

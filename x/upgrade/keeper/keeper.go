@@ -20,11 +20,11 @@ import (
 	storetypes "cosmossdk.io/store/types"
 	"cosmossdk.io/x/upgrade/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/telemetry"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
-	"github.com/T-ragon/cosmos-sdk/types/kv"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/telemetry"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/types/kv"
 )
 
 type Keeper struct {

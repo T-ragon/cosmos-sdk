@@ -10,14 +10,14 @@ import (
 	"cosmossdk.io/core/address"
 	errorsmod "cosmossdk.io/errors"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/multisig"
-	"github.com/T-ragon/cosmos-sdk/crypto/ledger"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerr "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keyring"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/multisig"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/ledger"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerr "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 const (

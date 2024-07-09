@@ -7,8 +7,8 @@ import (
 
 	v1 "cosmossdk.io/x/gov/types/v1"
 
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 func TestVoteAlias(t *testing.T) {

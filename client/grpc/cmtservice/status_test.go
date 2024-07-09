@@ -8,13 +8,13 @@ import (
 
 	"cosmossdk.io/depinject"
 
-	"github.com/T-ragon/cosmos-sdk/server"
-	clitestutil "github.com/T-ragon/cosmos-sdk/testutil/cli"
-	"github.com/T-ragon/cosmos-sdk/testutil/network"
+	"github.com/T-ragon/cosmos-sdk/v3/server"
+	clitestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/cli"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/network"
 )
 
 func TestStatusCommand(t *testing.T) {
-	t.Skip() // https://github.com/T-ragon/cosmos-sdk/issues/17446
+	t.Skip() // https://github.com/T-ragon/cosmos-sdk/v3/issues/17446
 
 	cfg, err := network.DefaultConfigWithAppConfig(depinject.Configs() /* TODO, test skipped anyway */)
 	require.NoError(t, err)

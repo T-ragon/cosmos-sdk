@@ -11,7 +11,7 @@ import (
 
 	"cosmossdk.io/core/router"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
 )
 
 // NewMsgRouterService implements router.Service.

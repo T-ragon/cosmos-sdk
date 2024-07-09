@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/protocolpool/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func (suite *KeeperTestSuite) TestInitGenesis() {

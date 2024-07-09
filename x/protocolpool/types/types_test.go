@@ -8,8 +8,8 @@ import (
 
 	"cosmossdk.io/math"
 
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var hour = time.Hour

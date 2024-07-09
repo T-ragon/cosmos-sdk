@@ -37,5 +37,5 @@ require (
 replace cosmossdk.io/core => ../../core
 
 // NOTE: we do not want to replace to the development version of cosmossdk.io/api yet
-// Until https://github.com/T-ragon/cosmos-sdk/issues/19228 is resolved
+// Until https://github.com/T-ragon/cosmos-sdk/v3/issues/19228 is resolved
 // We are tagging x/tx from main and must keep using released versions of x/tx dependencies

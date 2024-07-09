@@ -3,8 +3,8 @@ package types
 import (
 	errorsmod "cosmossdk.io/errors"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // ValidateInputOutputs validates that each respective input and output is

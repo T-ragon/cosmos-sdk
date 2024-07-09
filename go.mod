@@ -1,6 +1,6 @@
 go 1.22.2
 
-module github.com/T-ragon/cosmos-sdk
+module github.com/T-ragon/cosmos-sdk/v3
 
 require (
 	cosmossdk.io/api v0.7.5
@@ -209,16 +209,16 @@ replace (
 
 retract (
 	// false start by tagging the wrong branch
-	v0.50.0
-	// revert fix https://github.com/T-ragon/cosmos-sdk/pull/16331
-	v0.46.12
+	v3.50.0
+	// revert fix https://github.com/T-ragon/cosmos-sdk/v3/pull/16331
+	v3.46.12
 	// subject to a bug in the group module and gov module migration
-	[v0.46.5, v0.46.6]
+	[v3.46.5, v3.46.6]
 	// subject to the dragonberry vulnerability
 	// and/or the bank coin metadata migration issue
-	[v0.46.0, v0.46.4]
+	[v3.46.0, v3.46.4]
 	// subject to the dragonberry vulnerability
-	[v0.45.0, v0.45.8]
+	[v3.45.0, v3.45.8]
 	// do not use
-	v0.43.0
+	v3.43.0
 )

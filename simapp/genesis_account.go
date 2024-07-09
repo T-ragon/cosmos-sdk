@@ -5,7 +5,7 @@ import (
 
 	authtypes "cosmossdk.io/x/auth/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var _ authtypes.GenesisAccount = (*SimGenesisAccount)(nil)

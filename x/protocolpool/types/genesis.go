@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/errors"
 	"cosmossdk.io/math"
 
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 func NewGenesisState(cf []*ContinuousFund, budget []*Budget) *GenesisState {

@@ -8,12 +8,12 @@ import (
 
 	authtx "cosmossdk.io/x/auth/tx"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/errors"
-	querytypes "github.com/T-ragon/cosmos-sdk/types/query"
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/errors"
+	querytypes "github.com/T-ragon/cosmos-sdk/v3/types/query"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 const (

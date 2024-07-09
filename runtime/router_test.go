@@ -10,12 +10,12 @@ import (
 	"cosmossdk.io/log"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	counterkeeper "github.com/T-ragon/cosmos-sdk/testutil/x/counter/keeper"
-	countertypes "github.com/T-ragon/cosmos-sdk/testutil/x/counter/types"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	counterkeeper "github.com/T-ragon/cosmos-sdk/v3/testutil/x/counter/keeper"
+	countertypes "github.com/T-ragon/cosmos-sdk/v3/testutil/x/counter/types"
 )
 
 func TestRouterService(t *testing.T) {

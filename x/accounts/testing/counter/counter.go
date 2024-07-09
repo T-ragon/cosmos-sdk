@@ -12,7 +12,7 @@ import (
 	"cosmossdk.io/x/accounts/accountstd"
 	counterv1 "cosmossdk.io/x/accounts/testing/counter/v1"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
 )
 
 var (

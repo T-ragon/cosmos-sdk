@@ -11,7 +11,7 @@ import (
 
 	"cosmossdk.io/tools/confix"
 
-	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
 )
 
 // DiffCommand creates a new command for comparing configuration files

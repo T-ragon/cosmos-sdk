@@ -10,8 +10,8 @@ import (
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
 )
 
 // DefaultConfig returns default config for the client.toml
@@ -118,7 +118,7 @@ func CreateClientConfig(ctx client.Context, customClientTemplate string, customC
 		return ctx, fmt.Errorf("couldn't get keyring: %w", err)
 	}
 
-	// https://github.com/T-ragon/cosmos-sdk/issues/8986
+	// https://github.com/T-ragon/cosmos-sdk/v3/issues/8986
 	client, err := client.NewClientFromNode(conf.Node)
 	if err != nil {
 		return ctx, fmt.Errorf("couldn't get client from nodeURI: %w", err)

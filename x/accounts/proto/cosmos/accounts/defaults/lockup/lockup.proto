@@ -17,6 +17,6 @@ message Period {
     (gogoproto.nullable)     = false,
     (amino.dont_omitempty)   = true,
     (amino.encoding)         = "legacy_coins",
-    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.Coins"
   ];
 }

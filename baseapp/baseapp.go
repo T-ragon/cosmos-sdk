@@ -26,14 +26,14 @@ import (
 	"cosmossdk.io/store/snapshots"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp/oe"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
-	"github.com/T-ragon/cosmos-sdk/telemetry"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
-	"github.com/T-ragon/cosmos-sdk/types/mempool"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp/oe"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	servertypes "github.com/T-ragon/cosmos-sdk/v3/server/types"
+	"github.com/T-ragon/cosmos-sdk/v3/telemetry"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/types/mempool"
 )
 
 type (
@@ -690,7 +690,7 @@ func (app *BaseApp) getContextForTx(mode execMode, txBytes []byte) sdk.Context {
 // a branched multi-store.
 func (app *BaseApp) cacheTxContext(ctx sdk.Context, txBytes []byte) (sdk.Context, storetypes.CacheMultiStore) {
 	ms := ctx.MultiStore()
-	// TODO: https://github.com/T-ragon/cosmos-sdk/issues/2824
+	// TODO: https://github.com/T-ragon/cosmos-sdk/v3/issues/2824
 	msCache := ms.CacheMultiStore()
 	if msCache.TracingEnabled() {
 		msCache = msCache.SetTracingContext(
@@ -888,7 +888,7 @@ func (app *BaseApp) runTx(mode execMode, txBytes []byte) (gInfo sdk.GasInfo, res
 
 		// Branch context before AnteHandler call in case it aborts.
 		// This is required for both CheckTx and DeliverTx.
-		// Ref: https://github.com/T-ragon/cosmos-sdk/issues/2772
+		// Ref: https://github.com/T-ragon/cosmos-sdk/v3/issues/2772
 		//
 		// NOTE: Alternatively, we could require that AnteHandler ensures that
 		// writes do not happen if aborted/failed.  This may have some

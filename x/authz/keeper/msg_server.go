@@ -8,8 +8,8 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	"cosmossdk.io/x/authz"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 var _ authz.MsgServer = Keeper{}

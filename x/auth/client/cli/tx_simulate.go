@@ -7,9 +7,9 @@ import (
 
 	authclient "cosmossdk.io/x/auth/client"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/client/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/client/tx"
 )
 
 // GetSimulateCmd returns a command that simulates whether a transaction will be

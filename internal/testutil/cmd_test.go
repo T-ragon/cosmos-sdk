@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/stretchr/testify/require"
 
-	"github.com/T-ragon/cosmos-sdk/internal/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/internal/testutil"
 )
 
 // TestSetArgsWithOriginalMethod is used to illustrate cobra.Command.SetArgs won't reset args as expected

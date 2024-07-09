@@ -7,9 +7,9 @@ import (
 
 	"cosmossdk.io/x/staking/types"
 
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // NewValidator is a testing helper method to create validators in tests

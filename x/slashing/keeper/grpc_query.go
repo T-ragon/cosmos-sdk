@@ -9,8 +9,8 @@ import (
 	"cosmossdk.io/store/prefix"
 	"cosmossdk.io/x/slashing/types"
 
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/types/query"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/types/query"
 )
 
 var _ types.QueryServer = Querier{}

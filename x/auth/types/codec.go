@@ -6,9 +6,9 @@ import (
 	coretransaction "cosmossdk.io/core/transaction"
 	"cosmossdk.io/x/auth/migrations/legacytx"
 
-	"github.com/T-ragon/cosmos-sdk/codec/legacy"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/legacy"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // RegisterLegacyAminoCodec registers the account interfaces and concrete types on the

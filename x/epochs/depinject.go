@@ -13,7 +13,7 @@ import (
 	"cosmossdk.io/x/epochs/keeper"
 	"cosmossdk.io/x/epochs/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
 )
 
 var _ depinject.OnePerModuleType = AppModule{}

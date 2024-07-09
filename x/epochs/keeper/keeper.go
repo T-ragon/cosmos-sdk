@@ -5,7 +5,7 @@ import (
 	"cosmossdk.io/core/appmodule"
 	"cosmossdk.io/x/epochs/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
 )
 
 type Keeper struct {

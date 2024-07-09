@@ -18,7 +18,7 @@ go install cosmossdk.io/tools/hubl/cmd/hubl@latest
 Or build from source:
 
 ```shell
-git clone --depth=1 https://github.com/T-ragon/cosmos-sdk
+git clone --depth=1 https://github.com/T-ragon/cosmos-sdk/v3
 make hubl
 ```
 

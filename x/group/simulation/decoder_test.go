@@ -12,11 +12,11 @@ import (
 	"cosmossdk.io/x/group/module"
 	"cosmossdk.io/x/group/simulation"
 
-	"github.com/T-ragon/cosmos-sdk/codec/address"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	"github.com/T-ragon/cosmos-sdk/types/kv"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	"github.com/T-ragon/cosmos-sdk/v3/types/kv"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 func TestDecodeStore(t *testing.T) {

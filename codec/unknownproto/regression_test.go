@@ -7,8 +7,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
 )
 
 // Issue #7739: Catch parse errors resulting from unexpected EOF in
@@ -19,7 +19,7 @@ func TestBadBytesPassedIntoDecoder(t *testing.T) {
 	decoder := cfg.TxConfig.TxDecoder()
 	tx, err := decoder(data)
 
-	// TODO: When issue https://github.com/T-ragon/cosmos-sdk/issues/7846
+	// TODO: When issue https://github.com/T-ragon/cosmos-sdk/v3/issues/7846
 	// is addressed, we'll remove this .Contains check.
 	require.Contains(t, err.Error(), io.ErrUnexpectedEOF.Error())
 	require.Nil(t, tx)

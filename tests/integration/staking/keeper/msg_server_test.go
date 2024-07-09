@@ -13,10 +13,10 @@ import (
 	"cosmossdk.io/x/staking/keeper"
 	"cosmossdk.io/x/staking/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec/address"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func TestCancelUnbondingDelegation(t *testing.T) {

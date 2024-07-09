@@ -12,8 +12,8 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	"cosmossdk.io/x/slashing/types"
 
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // HasValidatorSigningInfo returns if a given validator has signing information

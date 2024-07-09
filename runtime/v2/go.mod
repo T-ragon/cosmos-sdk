@@ -18,7 +18,7 @@ replace (
 	cosmossdk.io/x/distribution => ../../x/distribution
 	cosmossdk.io/x/staking => ../../x/staking
 	cosmossdk.io/x/tx => ../../x/tx
-	github.com/T-ragon/cosmos-sdk => ../..
+	github.com/T-ragon/cosmos-sdk/v3 => ../..
 )
 
 require (

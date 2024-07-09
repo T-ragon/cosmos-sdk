@@ -9,12 +9,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/server"
-	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
-	"github.com/T-ragon/cosmos-sdk/version"
-	genutiltypes "github.com/T-ragon/cosmos-sdk/x/genutil/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/server"
+	servertypes "github.com/T-ragon/cosmos-sdk/v3/server/types"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
+	genutiltypes "github.com/T-ragon/cosmos-sdk/v3/x/genutil/types"
 )
 
 const (

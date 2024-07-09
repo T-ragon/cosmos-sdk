@@ -9,7 +9,7 @@ import (
 	"cosmossdk.io/errors"
 	"cosmossdk.io/x/params/types/proposal"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var _ proposal.QueryServer = Keeper{}

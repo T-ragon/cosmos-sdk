@@ -8,7 +8,7 @@ import (
 	"cosmossdk.io/x/slashing/testutil"
 	"cosmossdk.io/x/slashing/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func (s *KeeperTestSuite) TestExportAndInitGenesis() {

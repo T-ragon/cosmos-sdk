@@ -62,19 +62,19 @@ import (
 	signing_testutil "cosmossdk.io/x/tx/signing/testutil"
 	"cosmossdk.io/x/upgrade"
 
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	ed25519types "github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/multisig"
-	secp256k1types "github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	"github.com/T-ragon/cosmos-sdk/tests/integration/rapidgen"
-	gogo_testpb "github.com/T-ragon/cosmos-sdk/tests/integration/tx/internal/gogo/testpb"
-	pulsar_testpb "github.com/T-ragon/cosmos-sdk/tests/integration/tx/internal/pulsar/testpb"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	"github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/bech32"
-	"github.com/T-ragon/cosmos-sdk/types/module/testutil"
-	signingtypes "github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	ed25519types "github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/multisig"
+	secp256k1types "github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	"github.com/T-ragon/cosmos-sdk/v3/tests/integration/rapidgen"
+	gogo_testpb "github.com/T-ragon/cosmos-sdk/v3/tests/integration/tx/internal/gogo/testpb"
+	pulsar_testpb "github.com/T-ragon/cosmos-sdk/v3/tests/integration/tx/internal/pulsar/testpb"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	"github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/bech32"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
+	signingtypes "github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 // TestAminoJSON_Equivalence tests that x/tx/Encoder encoding is equivalent to the legacy Encoder encoding.
@@ -521,7 +521,7 @@ func TestSendAuthorization(t *testing.T) {
 	// beware, Coins has as custom MarshalJSON method which changes how nil is handled
 	// nil -> [] (empty list)
 	// []  -> [] (empty list)
-	// https://github.com/T-ragon/cosmos-sdk/blob/be9bd7a8c1b41b115d58f4e76ee358e18a52c0af/types/coin.go#L199
+	// https://github.com/T-ragon/cosmos-sdk/v3/blob/be9bd7a8c1b41b115d58f4e76ee358e18a52c0af/types/coin.go#L199
 
 	// explicitly show the default for clarity
 	pulsar := &bankapi.SendAuthorization{SpendLimit: []*v1beta1.Coin{}}
@@ -571,7 +571,7 @@ func TestDecimalMutation(t *testing.T) {
 	require.NoError(t, err)
 	rateBz, _ = encCfg.Amino.MarshalJSON(rates)
 
-	// prior to the merge of https://github.com/T-ragon/cosmos-sdk/pull/15506
+	// prior to the merge of https://github.com/T-ragon/cosmos-sdk/v3/pull/15506
 	// gogoproto.Marshal would mutate Decimal fields changing JSON output as shown in the assertions below
 	// require.NotEqual(t, `{"rate":"0","max_rate":"0","max_change_rate":"0"}`, string(rateBz))
 	// require.Equal(t,

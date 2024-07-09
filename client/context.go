@@ -17,10 +17,10 @@ import (
 
 	"cosmossdk.io/core/address"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keyring"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // PreprocessTxFn defines a hook by which chains can preprocess transactions before broadcasting
@@ -108,7 +108,7 @@ func (ctx Context) WithKeyringOptions(opts ...keyring.Option) Context {
 func (ctx Context) WithInput(r io.Reader) Context {
 	// convert to a bufio.Reader to have a shared buffer between the keyring and the
 	// Commands, ensuring a read from one advance the read pointer for the other.
-	// see https://github.com/T-ragon/cosmos-sdk/issues/9566.
+	// see https://github.com/T-ragon/cosmos-sdk/v3/issues/9566.
 	ctx.Input = bufio.NewReader(r)
 	return ctx
 }

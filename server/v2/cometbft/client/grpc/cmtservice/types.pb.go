@@ -12,7 +12,7 @@ import (
 
 	v1 "github.com/cometbft/cometbft/api/cometbft/types/v1"
 	v11 "github.com/cometbft/cometbft/api/cometbft/version/v1"
-	_ "github.com/T-ragon/cosmos-sdk/types/tx/amino"
+	_ "github.com/T-ragon/cosmos-sdk/v3/types/tx/amino"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	proto "github.com/cosmos/gogoproto/proto"
 	github_com_cosmos_gogoproto_types "github.com/cosmos/gogoproto/types"

@@ -12,10 +12,10 @@ import (
 	txtestutil "cosmossdk.io/x/auth/tx/testutil"
 	"cosmossdk.io/x/tx/signing"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/std"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/std"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
 )
 
 func TestGenerator(t *testing.T) {

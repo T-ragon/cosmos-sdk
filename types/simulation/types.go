@@ -10,9 +10,9 @@ import (
 
 	"cosmossdk.io/core/address"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/kv"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/kv"
 )
 
 // Deprecated: Use WeightedProposalMsg instead.

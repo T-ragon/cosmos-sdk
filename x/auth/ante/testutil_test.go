@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	// TODO We don't need to import these API types if we use gogo's registry
-	// ref: https://github.com/T-ragon/cosmos-sdk/issues/14647
+	// ref: https://github.com/T-ragon/cosmos-sdk/v3/issues/14647
 	_ "cosmossdk.io/api/cosmos/bank/v1beta1"
 	_ "cosmossdk.io/api/cosmos/crypto/secp256k1"
 	"cosmossdk.io/core/appmodule"
@@ -26,20 +26,20 @@ import (
 	"cosmossdk.io/x/auth/types"
 	consensustypes "cosmossdk.io/x/consensus/types"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/tx"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	clitestutil "github.com/T-ragon/cosmos-sdk/testutil/cli"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	_ "github.com/T-ragon/cosmos-sdk/testutil/testdata/testpb"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
-	"github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/tx"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	clitestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/cli"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	_ "github.com/T-ragon/cosmos-sdk/v3/testutil/testdata/testpb"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 // TestAccount represents an account used in the tests in x/auth/ante.

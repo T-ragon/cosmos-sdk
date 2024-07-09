@@ -10,12 +10,12 @@ import (
 	authclient "cosmossdk.io/x/auth/client"
 	"cosmossdk.io/x/auth/signing"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/client/tx"
-	kmultisig "github.com/T-ragon/cosmos-sdk/crypto/keys/multisig"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/client/tx"
+	kmultisig "github.com/T-ragon/cosmos-sdk/v3/crypto/keys/multisig"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 const (
@@ -134,7 +134,7 @@ func makeSignBatchCmd() func(cmd *cobra.Command, args []string) error {
 				newGasLimit += fe.GetTx().GetGas()
 				// Individual fee values from each transaction need to be
 				// aggregated to calculate the total fee for the batch of transactions.
-				// https://github.com/T-ragon/cosmos-sdk/issues/18064
+				// https://github.com/T-ragon/cosmos-sdk/v3/issues/18064
 				unmergedFees := fe.GetTx().GetFee()
 				for _, fee := range unmergedFees {
 					totalFees = totalFees.Add(fee)

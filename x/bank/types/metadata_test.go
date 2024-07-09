@@ -7,7 +7,7 @@ import (
 
 	"cosmossdk.io/x/bank/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
 )
 
 func TestMetadataValidate(t *testing.T) {

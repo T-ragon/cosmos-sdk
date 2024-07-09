@@ -10,7 +10,7 @@ import (
 	"cosmossdk.io/x/auth/keeper"
 	"cosmossdk.io/x/auth/types"
 
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
 )
 
 func TestItCreatesModuleAccountOnInitBlock(t *testing.T) {

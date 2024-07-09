@@ -14,13 +14,13 @@ import (
 	"cosmossdk.io/x/tx/signing/directaux"
 	"cosmossdk.io/x/tx/signing/textual"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/codec/address"
-	"github.com/T-ragon/cosmos-sdk/codec/testutil"
-	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	signingtypes "github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/v3/crypto/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	signingtypes "github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 const (

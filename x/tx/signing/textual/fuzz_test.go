@@ -100,7 +100,7 @@ func FuzzTimestampJSONParseToParseRoundTrip(f *testing.F) {
 			// Please avoid using proto.Equal to compare timestamps given they aren't
 			// in standardized form and will produce false positives for example given input:
 			//  []byte(`[{"proto":{"nanos":1000000000}}]`)
-			// Per issue: https://github.com/T-ragon/cosmos-sdk/issues/15761
+			// Per issue: https://github.com/T-ragon/cosmos-sdk/v3/issues/15761
 			if !gotTs.AsTime().Equal(tc.Proto.AsTime()) {
 				t.Fatalf("Roundtrip mismatch\n\tGot:  %#v\n\tWant: %#v", gotTs, tc.Proto)
 			}
@@ -222,7 +222,7 @@ var (
 )
 
 func FuzzCoinsJSONTestcases(f *testing.F) {
-	f.Skip() // https://github.com/T-ragon/cosmos-sdk/pull/16521#issuecomment-1614507574
+	f.Skip() // https://github.com/T-ragon/cosmos-sdk/v3/pull/16521#issuecomment-1614507574
 
 	// Generate some seeds.
 	seed, err := os.ReadFile("./internal/testdata/coins.json")

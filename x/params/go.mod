@@ -14,7 +14,7 @@ require (
 	github.com/cometbft/cometbft/api v1.0.0-rc.1
 	github.com/cosmos/cosmos-db v1.0.2
 	github.com/cosmos/cosmos-proto v1.0.0-beta.5
-	github.com/T-ragon/cosmos-sdk v0.51.0
+	github.com/T-ragon/cosmos-sdk/v3 v0.51.0
 	github.com/cosmos/gogoproto v1.5.0
 	github.com/golang/mock v1.6.0
 	github.com/golang/protobuf v1.5.4
@@ -169,7 +169,7 @@ require (
 	sigs.k8s.io/yaml v1.4.0 // indirect
 )
 
-replace github.com/T-ragon/cosmos-sdk => ../..
+replace github.com/T-ragon/cosmos-sdk/v3 => ../..
 
 // TODO remove post spinning out all modules
 replace (

@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/T-ragon/cosmos-sdk/testutils/sims"
+	"github.com/T-ragon/cosmos-sdk/v3/testutils/sims"
 
 	"cosmossdk.io/core/log"
 
@@ -14,13 +14,13 @@ import (
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/require"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/server"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
-	"github.com/T-ragon/cosmos-sdk/x/simulation"
-	simcli "github.com/T-ragon/cosmos-sdk/x/simulation/client/cli"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/server"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/v3/x/simulation"
+	simcli "github.com/T-ragon/cosmos-sdk/v3/x/simulation/client/cli"
 )
 
 var FlagEnableBenchStreamingValue bool

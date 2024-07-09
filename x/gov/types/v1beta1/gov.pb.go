@@ -7,9 +7,9 @@ import (
 	cosmossdk_io_math "cosmossdk.io/math"
 	fmt "fmt"
 	_ "github.com/cosmos/cosmos-proto"
-	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/types"
-	types "github.com/T-ragon/cosmos-sdk/types"
-	_ "github.com/T-ragon/cosmos-sdk/types/tx/amino"
+	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/v3/types"
+	types "github.com/T-ragon/cosmos-sdk/v3/types"
+	_ "github.com/T-ragon/cosmos-sdk/v3/types/tx/amino"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	proto "github.com/cosmos/gogoproto/proto"
 	github_com_cosmos_gogoproto_types "github.com/cosmos/gogoproto/types"
@@ -214,7 +214,7 @@ type Deposit struct {
 	// depositor defines the deposit addresses from the proposals.
 	Depositor string `protobuf:"bytes,2,opt,name=depositor,proto3" json:"depositor,omitempty"`
 	// amount to be deposited by depositor.
-	Amount github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,3,rep,name=amount,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"amount"`
+	Amount github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,3,rep,name=amount,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"amount"`
 }
 
 func (m *Deposit) Reset()         { *m = Deposit{} }
@@ -267,7 +267,7 @@ type Proposal struct {
 	// deposit_end_time is the end time for deposition.
 	DepositEndTime time.Time `protobuf:"bytes,6,opt,name=deposit_end_time,json=depositEndTime,proto3,stdtime" json:"deposit_end_time"`
 	// total_deposit is the total deposit on the proposal.
-	TotalDeposit github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,7,rep,name=total_deposit,json=totalDeposit,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"total_deposit"`
+	TotalDeposit github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,7,rep,name=total_deposit,json=totalDeposit,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"total_deposit"`
 	// voting_start_time is the starting time to vote on a proposal.
 	VotingStartTime time.Time `protobuf:"bytes,8,opt,name=voting_start_time,json=votingStartTime,proto3,stdtime" json:"voting_start_time"`
 	// voting_end_time is the end time of voting on a proposal.
@@ -405,7 +405,7 @@ var xxx_messageInfo_Vote proto.InternalMessageInfo
 // DepositParams defines the params for deposits on governance proposals.
 type DepositParams struct {
 	// Minimum deposit for a proposal to enter voting period.
-	MinDeposit github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=min_deposit,json=minDeposit,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"min_deposit,omitempty"`
+	MinDeposit github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=min_deposit,json=minDeposit,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"min_deposit,omitempty"`
 	// Maximum period for Atom holders to deposit on a proposal. Initial value: 2
 	// months.
 	MaxDepositPeriod time.Duration `protobuf:"bytes,2,opt,name=max_deposit_period,json=maxDepositPeriod,proto3,stdduration" json:"max_deposit_period,omitempty"`

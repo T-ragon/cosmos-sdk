@@ -44,7 +44,7 @@ message MsgTestDependenciesResponse {
   uint64 after_gas = 4;
   // funds reports the funds from the implementation.Funds method.
   repeated cosmos.base.v1beta1.Coin funds = 5
-      [(gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins", (gogoproto.nullable) = false];
+      [(gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.Coins", (gogoproto.nullable) = false];
 }
 
 // QueryCounterRequest is used to query the counter value.

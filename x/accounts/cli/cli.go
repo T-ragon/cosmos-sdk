@@ -11,10 +11,10 @@ import (
 
 	v1 "cosmossdk.io/x/accounts/v1"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/client/tx"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/client/tx"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
 )
 
 func TxCmd(name string) *cobra.Command {

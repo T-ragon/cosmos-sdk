@@ -10,9 +10,9 @@ import (
 
 	"cosmossdk.io/x/tx/signing/aminojson"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	gogopb "github.com/T-ragon/cosmos-sdk/tests/integration/tx/internal/gogo/testpb"
-	pulsarpb "github.com/T-ragon/cosmos-sdk/tests/integration/tx/internal/pulsar/testpb"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	gogopb "github.com/T-ragon/cosmos-sdk/v3/tests/integration/tx/internal/gogo/testpb"
+	pulsarpb "github.com/T-ragon/cosmos-sdk/v3/tests/integration/tx/internal/pulsar/testpb"
 )
 
 func TestRepeatedFields(t *testing.T) {

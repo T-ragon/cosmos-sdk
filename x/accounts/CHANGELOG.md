@@ -27,4 +27,4 @@ Ref: https://keepachangelog.com/en/1.0.0/
 
 ### Features
 
-* [#19988](https://github.com/T-ragon/cosmos-sdk/pull/19988) Implemented `x/accounts/multisig`.
+* [#19988](https://github.com/T-ragon/cosmos-sdk/v3/pull/19988) Implemented `x/accounts/multisig`.

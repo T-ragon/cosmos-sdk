@@ -11,8 +11,8 @@ import (
 	"google.golang.org/grpc"
 	"gotest.tools/v3/assert"
 
-	"github.com/T-ragon/cosmos-sdk/codec/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // iterCount defines the number of iterations to run on each query to test

@@ -5,8 +5,8 @@ package types
 
 import (
 	fmt "fmt"
-	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/types"
-	types "github.com/T-ragon/cosmos-sdk/types"
+	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/v3/types"
+	types "github.com/T-ragon/cosmos-sdk/v3/types"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	proto "github.com/cosmos/gogoproto/proto"
 	github_com_cosmos_gogoproto_types "github.com/cosmos/gogoproto/types"
@@ -69,19 +69,19 @@ var xxx_messageInfo_QueryLockupAccountInfoRequest proto.InternalMessageInfo
 // QueryLockupAccountInfoResponse return lockup account info
 type QueryLockupAccountInfoResponse struct {
 	// original_locking defines the value of the account original locking coins.
-	OriginalLocking github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=original_locking,json=originalLocking,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"original_locking"`
+	OriginalLocking github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=original_locking,json=originalLocking,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"original_locking"`
 	// delegated_free defines the value of the account free delegated amount.
-	DelegatedFree github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,2,rep,name=delegated_free,json=delegatedFree,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"delegated_free"`
+	DelegatedFree github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,2,rep,name=delegated_free,json=delegatedFree,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"delegated_free"`
 	// delegated_locking defines the value of the account locking delegated amount.
-	DelegatedLocking github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,3,rep,name=delegated_locking,json=delegatedLocking,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"delegated_locking"`
+	DelegatedLocking github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,3,rep,name=delegated_locking,json=delegatedLocking,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"delegated_locking"`
 	// end_time defines the value of the account lockup start time.
 	StartTime *time.Time `protobuf:"bytes,4,opt,name=start_time,json=startTime,proto3,stdtime" json:"start_time,omitempty"`
 	// end_time defines the value of the account lockup end time.
 	EndTime *time.Time `protobuf:"bytes,5,opt,name=end_time,json=endTime,proto3,stdtime" json:"end_time,omitempty"`
 	// locked_coins defines the value of the account locking coins.
-	LockedCoins github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,6,rep,name=locked_coins,json=lockedCoins,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"locked_coins"`
+	LockedCoins github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,6,rep,name=locked_coins,json=lockedCoins,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"locked_coins"`
 	// unlocked_coins defines the value of the account released coins from lockup.
-	UnlockedCoins github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,7,rep,name=unlocked_coins,json=unlockedCoins,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"unlocked_coins"`
+	UnlockedCoins github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,7,rep,name=unlocked_coins,json=unlockedCoins,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"unlocked_coins"`
 	// owner defines the value of the owner of the lockup account.
 	Owner string `protobuf:"bytes,8,opt,name=owner,proto3" json:"owner,omitempty"`
 }

@@ -5,8 +5,8 @@ import (
 	"cosmossdk.io/core/registry"
 	coretransaction "cosmossdk.io/core/transaction"
 
-	"github.com/T-ragon/cosmos-sdk/codec/legacy"
-	"github.com/T-ragon/cosmos-sdk/types/msgservice"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/legacy"
+	"github.com/T-ragon/cosmos-sdk/v3/types/msgservice"
 )
 
 // RegisterLegacyAminoCodec registers the necessary x/staking interfaces and concrete types

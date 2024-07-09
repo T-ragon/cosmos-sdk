@@ -13,8 +13,8 @@ import (
 	"cosmossdk.io/x/staking"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	servertypes "github.com/T-ragon/cosmos-sdk/v3/server/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // ExportAppStateAndValidators exports the state of the application for a genesis

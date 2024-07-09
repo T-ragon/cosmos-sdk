@@ -6,12 +6,12 @@ import (
 	"cosmossdk.io/x/protocolpool/keeper"
 	"cosmossdk.io/x/protocolpool/types"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
-	"github.com/T-ragon/cosmos-sdk/x/simulation"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/v3/x/simulation"
 )
 
 // Simulation operation weights constants

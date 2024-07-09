@@ -8,8 +8,8 @@ import (
 	"cosmossdk.io/core/address"
 	"cosmossdk.io/math"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // Implements Delegation interface

@@ -7,8 +7,8 @@ import (
 
 	"cosmossdk.io/x/gov/types/v1beta1"
 
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // NewLegacyContent creates a new MsgExecLegacyContent from a legacy Content

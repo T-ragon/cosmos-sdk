@@ -21,15 +21,15 @@ import (
 	authtypes "cosmossdk.io/x/auth/types"
 	banktypes "cosmossdk.io/x/bank/types"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/server"
-	"github.com/T-ragon/cosmos-sdk/server/api"
-	servergrpc "github.com/T-ragon/cosmos-sdk/server/grpc"
-	servercmtlog "github.com/T-ragon/cosmos-sdk/server/log"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	"github.com/T-ragon/cosmos-sdk/x/genutil"
-	genutiltest "github.com/T-ragon/cosmos-sdk/x/genutil/client/testutil"
-	genutiltypes "github.com/T-ragon/cosmos-sdk/x/genutil/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/server"
+	"github.com/T-ragon/cosmos-sdk/v3/server/api"
+	servergrpc "github.com/T-ragon/cosmos-sdk/v3/server/grpc"
+	servercmtlog "github.com/T-ragon/cosmos-sdk/v3/server/log"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/x/genutil"
+	genutiltest "github.com/T-ragon/cosmos-sdk/v3/x/genutil/client/testutil"
+	genutiltypes "github.com/T-ragon/cosmos-sdk/v3/x/genutil/types"
 )
 
 func startInProcess(cfg Config, val *Validator) error {

@@ -5,7 +5,7 @@ import (
 
 	"cosmossdk.io/x/auth/signing"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // SignerData contains canonical useful information about the signer of a transaction

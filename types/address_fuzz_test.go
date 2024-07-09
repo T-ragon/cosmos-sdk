@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func FuzzBech32AccAddrConsistencyYAML(f *testing.F) {

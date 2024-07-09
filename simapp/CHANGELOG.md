@@ -26,27 +26,27 @@ Ref: https://keepachangelog.com/en/1.0.0/
 `SimApp` is an application built using the Cosmos SDK for testing and educational purposes.
 It won't be tagged or intented to be imported in an application.
 This changelog is aimed to help developers understand the wiring changes between SDK versions.
-It is an exautive list of changes that completes the SimApp section in the [UPGRADING.md](https://github.com/T-ragon/cosmos-sdk/blob/main/UPGRADING.md#simapp)
+It is an exautive list of changes that completes the SimApp section in the [UPGRADING.md](https://github.com/T-ragon/cosmos-sdk/v3/blob/main/UPGRADING.md#simapp)
 
 ## v0.50 to v0.51
 
-Always refer to the [UPGRADING.md](https://github.com/T-ragon/cosmos-sdk/blob/main/UPGRADING.md) to understand the changes.
+Always refer to the [UPGRADING.md](https://github.com/T-ragon/cosmos-sdk/v3/blob/main/UPGRADING.md) to understand the changes.
 
-* [#20409](https://github.com/T-ragon/cosmos-sdk/pull/20409) Add `tx` as `SkipStoreKeys` in `app_config.go`.
-* [#20485](https://github.com/T-ragon/cosmos-sdk/pull/20485) The signature of `x/upgrade/types.UpgradeHandler` has changed to accept `appmodule.VersionMap` from `module.VersionMap`.  These types are interchangeable, but usages of `UpradeKeeper.SetUpgradeHandler` may need to adjust their usages to match the new signature.
-* [#20740](https://github.com/T-ragon/cosmos-sdk/pull/20740) Update `genutilcli.Commands` to use the genutil modules from the module manager.
-* [#20771](https://github.com/T-ragon/cosmos-sdk/pull/20771) Use client/v2 `GetNodeHomeDirectory` helper in `app.go` and use the `DefaultNodeHome` constant everywhere in the app.
+* [#20409](https://github.com/T-ragon/cosmos-sdk/v3/pull/20409) Add `tx` as `SkipStoreKeys` in `app_config.go`.
+* [#20485](https://github.com/T-ragon/cosmos-sdk/v3/pull/20485) The signature of `x/upgrade/types.UpgradeHandler` has changed to accept `appmodule.VersionMap` from `module.VersionMap`.  These types are interchangeable, but usages of `UpradeKeeper.SetUpgradeHandler` may need to adjust their usages to match the new signature.
+* [#20740](https://github.com/T-ragon/cosmos-sdk/v3/pull/20740) Update `genutilcli.Commands` to use the genutil modules from the module manager.
+* [#20771](https://github.com/T-ragon/cosmos-sdk/v3/pull/20771) Use client/v2 `GetNodeHomeDirectory` helper in `app.go` and use the `DefaultNodeHome` constant everywhere in the app.
 
 <!-- TODO: move changelog.md elements to here -->
 
 ## v0.47 to v0.50
 
-No changelog is provided for this migration. Please refer to the [UPGRADING.md](https://github.com/T-ragon/cosmos-sdk/blob/main/UPGRADING.md#v050x)
+No changelog is provided for this migration. Please refer to the [UPGRADING.md](https://github.com/T-ragon/cosmos-sdk/v3/blob/main/UPGRADING.md#v050x)
 
 ## v0.46 to v0.47
 
-No changelog is provided for this migration. Please refer to the [UPGRADING.md](https://github.com/T-ragon/cosmos-sdk/blob/main/UPGRADING.md#v047x)
+No changelog is provided for this migration. Please refer to the [UPGRADING.md](https://github.com/T-ragon/cosmos-sdk/v3/blob/main/UPGRADING.md#v047x)
 
 ## v0.45 to v0.46
 
-No changelog is provided for this migration. Please refer to the [UPGRADING.md](https://github.com/T-ragon/cosmos-sdk/blob/main/UPGRADING.md#v046x)
+No changelog is provided for this migration. Please refer to the [UPGRADING.md](https://github.com/T-ragon/cosmos-sdk/v3/blob/main/UPGRADING.md#v046x)

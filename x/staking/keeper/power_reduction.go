@@ -5,7 +5,7 @@ import (
 
 	"cosmossdk.io/math"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // TokensToConsensusPower converts input tokens to potential consensus-engine power

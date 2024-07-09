@@ -28,16 +28,16 @@ import (
 	"cosmossdk.io/x/auth/signing"
 	_ "cosmossdk.io/x/auth/tx/config"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	baseapptestutil "github.com/T-ragon/cosmos-sdk/baseapp/testutil"
-	"github.com/T-ragon/cosmos-sdk/client"
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
-	"github.com/T-ragon/cosmos-sdk/types/mempool"
-	signingtypes "github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	baseapptestutil "github.com/T-ragon/cosmos-sdk/v3/baseapp/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/types/mempool"
+	signingtypes "github.com/T-ragon/cosmos-sdk/v3/types/tx/signing"
 )
 
 var ParamStoreKey = []byte("paramstore")

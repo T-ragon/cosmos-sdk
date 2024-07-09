@@ -7,14 +7,14 @@ import (
 	"cosmossdk.io/core/appmodule/v2"
 	corecontext "cosmossdk.io/core/context"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/authz"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/authz"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // TODO: Revisit this once we have proper gas fee framework.
-// Ref: https://github.com/T-ragon/cosmos-sdk/issues/9054
-// Ref: https://github.com/T-ragon/cosmos-sdk/discussions/9072
+// Ref: https://github.com/T-ragon/cosmos-sdk/v3/issues/9054
+// Ref: https://github.com/T-ragon/cosmos-sdk/v3/discussions/9072
 const gasCostPerIteration = uint64(10)
 
 // NewSendAuthorization creates a new SendAuthorization object.

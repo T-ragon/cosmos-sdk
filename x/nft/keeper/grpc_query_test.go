@@ -10,7 +10,7 @@ import (
 
 	"cosmossdk.io/x/nft"
 
-	"github.com/T-ragon/cosmos-sdk/codec/address"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/address"
 )
 
 func TestGRPCQuery(t *testing.T) {

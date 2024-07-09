@@ -7,8 +7,8 @@ import (
 	"cosmossdk.io/x/authz"
 	"cosmossdk.io/x/authz/keeper"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/types/kv"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/types/kv"
 )
 
 // NewDecodeStore returns a decoder function closure that umarshals the KVPair's

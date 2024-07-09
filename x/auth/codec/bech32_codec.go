@@ -3,7 +3,7 @@ package codec
 import (
 	"cosmossdk.io/core/address"
 
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
 )
 
 func NewBech32Codec(prefix string) address.Codec {

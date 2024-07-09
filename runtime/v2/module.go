@@ -246,7 +246,7 @@ func ProvideCometService() comet.Service {
 }
 
 // ProvideAppVersionModifier returns nil, `app.VersionModifier` is a feature of BaseApp and neither used nor required for runtim/v2.
-// nil is acceptable, see: https://github.com/T-ragon/cosmos-sdk/blob/0a6ee406a02477ae8ccbfcbe1b51fc3930087f4c/x/upgrade/keeper/keeper.go#L438
+// nil is acceptable, see: https://github.com/T-ragon/cosmos-sdk/v3/blob/0a6ee406a02477ae8ccbfcbe1b51fc3930087f4c/x/upgrade/keeper/keeper.go#L438
 func ProvideAppVersionModifier[T transaction.Tx](app *AppBuilder[T]) app.VersionModifier {
 	return nil
 }

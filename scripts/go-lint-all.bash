@@ -55,7 +55,7 @@ else
 
   if [[ $lint_sdk ]]; then
     cd "$REPO_ROOT"
-    echo "linting github.com/T-ragon/cosmos-sdk [$(date -Iseconds -u)]"
+    echo "linting github.com/T-ragon/cosmos-sdk/v3 [$(date -Iseconds -u)]"
     golangci-lint run ./... -c "${REPO_ROOT}/.golangci.yml" "$@" --build-tags=${LINT_TAGS}
   fi
 fi

@@ -8,10 +8,10 @@ import (
 	sdkmath "cosmossdk.io/math"
 	"cosmossdk.io/x/staking/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/address"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
-	"github.com/T-ragon/cosmos-sdk/x/simulation"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/address"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/v3/x/simulation"
 )
 
 // Simulation operation weights constants

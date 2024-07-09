@@ -3,8 +3,8 @@ package types
 import (
 	"encoding/json"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
 )
 
 // NewGenesisState creates a new GenesisState instance

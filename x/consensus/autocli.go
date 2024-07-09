@@ -6,8 +6,8 @@ import (
 	autocliv1 "cosmossdk.io/api/cosmos/autocli/v1"
 	consensusv1 "cosmossdk.io/api/cosmos/consensus/v1"
 
-	"github.com/T-ragon/cosmos-sdk/client/grpc/cmtservice"
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/client/grpc/cmtservice"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 // AutoCLIOptions implements the autocli.HasAutoCLIConfig interface.

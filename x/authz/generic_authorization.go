@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/authz"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/authz"
 )
 
 // NewGenericAuthorization creates a new GenericAuthorization object.

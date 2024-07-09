@@ -5,10 +5,10 @@ import (
 
 	authcli "cosmossdk.io/x/auth/client/cli"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	"github.com/T-ragon/cosmos-sdk/testutil/network"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/network"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // CheckTxCode verifies that the transaction result returns a specific code

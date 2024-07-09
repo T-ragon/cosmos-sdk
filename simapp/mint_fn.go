@@ -12,7 +12,7 @@ import (
 	minttypes "cosmossdk.io/x/mint/types"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 type MintBankKeeper interface {

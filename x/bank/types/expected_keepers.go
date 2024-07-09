@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/core/address"
 	"cosmossdk.io/x/auth/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // AccountKeeper defines the account contract that must be fulfilled when

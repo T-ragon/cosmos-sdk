@@ -5,7 +5,7 @@ import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/T-ragon/cosmos-sdk/client/grpc/node";
+option go_package = "github.com/T-ragon/cosmos-sdk/v3/client/grpc/node";
 
 // Service defines the gRPC querier service for node related queries.
 service Service {

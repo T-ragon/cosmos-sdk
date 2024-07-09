@@ -8,9 +8,9 @@ import (
 
 	banktypes "cosmossdk.io/x/bank/types"
 
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var (

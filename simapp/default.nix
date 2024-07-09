@@ -11,11 +11,11 @@ let
   version = "v0.0.1";
   tags = [ "ledger" "netgo" "rocksdb" "grocksdb_no_link" ];
   ldflags = lib.concatStringsSep "\n" ([
-    "-X github.com/T-ragon/cosmos-sdk/version.Name=${pname}"
-    "-X github.com/T-ragon/cosmos-sdk/version.AppName=${pname}"
-    "-X github.com/T-ragon/cosmos-sdk/version.Version=${version}"
-    "-X github.com/T-ragon/cosmos-sdk/version.BuildTags=${lib.concatStringsSep "," tags}"
-    "-X github.com/T-ragon/cosmos-sdk/version.Commit=${rev}"
+    "-X github.com/T-ragon/cosmos-sdk/v3/version.Name=${pname}"
+    "-X github.com/T-ragon/cosmos-sdk/v3/version.AppName=${pname}"
+    "-X github.com/T-ragon/cosmos-sdk/v3/version.Version=${version}"
+    "-X github.com/T-ragon/cosmos-sdk/v3/version.BuildTags=${lib.concatStringsSep "," tags}"
+    "-X github.com/T-ragon/cosmos-sdk/v3/version.Commit=${rev}"
   ]);
 in
 buildGoApplication rec {
@@ -38,7 +38,7 @@ buildGoApplication rec {
 
   meta = with lib; {
     description = "example chain binary in cosmos-sdk repo";
-    homepage = "https://github.com/T-ragon/cosmos-sdk";
+    homepage = "https://github.com/T-ragon/cosmos-sdk/v3";
     license = licenses.asl20;
     mainProgram = pname + stdenv.hostPlatform.extensions.executable;
     platforms = platforms.all;

@@ -3,7 +3,7 @@ package v1beta1
 import (
 	"fmt"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var _ Router = (*router)(nil)

@@ -10,7 +10,7 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/staking/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // Slash a validator for an infraction committed at a known height
@@ -44,7 +44,7 @@ func (k Keeper) Slash(ctx context.Context, consAddr sdk.ConsAddress, infractionH
 	slashAmountDec := math.LegacyNewDecFromInt(amount).Mul(slashFactor)
 	slashAmount := slashAmountDec.TruncateInt()
 
-	// ref https://github.com/T-ragon/cosmos-sdk/issues/1348
+	// ref https://github.com/T-ragon/cosmos-sdk/v3/issues/1348
 
 	validator, err := k.GetValidatorByConsAddr(ctx, consAddr)
 	if errors.Is(err, types.ErrNoValidatorFound) {

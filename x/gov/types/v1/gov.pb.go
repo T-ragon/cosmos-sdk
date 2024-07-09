@@ -6,8 +6,8 @@ package v1
 import (
 	fmt "fmt"
 	_ "github.com/cosmos/cosmos-proto"
-	types "github.com/T-ragon/cosmos-sdk/types"
-	_ "github.com/T-ragon/cosmos-sdk/types/tx/amino"
+	types "github.com/T-ragon/cosmos-sdk/v3/types"
+	_ "github.com/T-ragon/cosmos-sdk/v3/types/tx/amino"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	proto "github.com/cosmos/gogoproto/proto"
 	github_com_cosmos_gogoproto_types "github.com/cosmos/gogoproto/types"

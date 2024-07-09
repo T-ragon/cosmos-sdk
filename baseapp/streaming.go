@@ -10,8 +10,8 @@ import (
 	"cosmossdk.io/store/streaming"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	servertypes "github.com/T-ragon/cosmos-sdk/v3/server/types"
 )
 
 const (

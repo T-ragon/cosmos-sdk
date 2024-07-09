@@ -152,4 +152,4 @@ Proposed
 
 ## References
 
-* [#4554](https://github.com/T-ragon/cosmos-sdk/issues/4554)
+* [#4554](https://github.com/T-ragon/cosmos-sdk/v3/issues/4554)

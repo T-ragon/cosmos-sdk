@@ -317,4 +317,4 @@ Alternatively, we can write all the transactions to consensus state.
 
 ## References
 
-* https://github.com/T-ragon/cosmos-sdk/issues/13009
+* https://github.com/T-ragon/cosmos-sdk/v3/issues/13009

@@ -5,7 +5,7 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	"github.com/T-ragon/cosmos-sdk/crypto/hd"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/hd"
 )
 
 // SignatureAlgo defines the interface for a keyring supported algorithm.

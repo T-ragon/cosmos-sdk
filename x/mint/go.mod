@@ -14,7 +14,7 @@ require (
 	cosmossdk.io/x/epochs v0.0.0-20240522060652-a1ae4c3e0337
 	github.com/cockroachdb/tokenbucket v0.0.0-20230807174530-cc333fc44b06 // indirect
 	github.com/cosmos/cosmos-proto v1.0.0-beta.5
-	github.com/T-ragon/cosmos-sdk v0.51.0
+	github.com/T-ragon/cosmos-sdk/v3 v0.51.0
 	github.com/cosmos/gogoproto v1.5.0
 	github.com/golang/mock v1.6.0
 	github.com/golang/protobuf v1.5.4
@@ -172,7 +172,7 @@ require (
 	go.opencensus.io v0.24.0 // indirect
 )
 
-replace github.com/T-ragon/cosmos-sdk => ../../.
+replace github.com/T-ragon/cosmos-sdk/v3 => ../../.
 
 // TODO remove post spinning out all modules
 replace (

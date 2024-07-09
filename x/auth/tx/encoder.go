@@ -5,8 +5,8 @@ import (
 
 	"google.golang.org/protobuf/encoding/protojson"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // DefaultTxEncoder returns a default protobuf TxEncoder using the provided Marshaler

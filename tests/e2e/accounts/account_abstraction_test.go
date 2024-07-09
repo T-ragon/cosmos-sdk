@@ -7,9 +7,9 @@ import (
 	"testing"
 
 	"cosmossdk.io/simapp"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 	gogoproto "github.com/cosmos/gogoproto/proto"
 	"github.com/stretchr/testify/require"
 )

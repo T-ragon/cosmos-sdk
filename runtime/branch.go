@@ -8,8 +8,8 @@ import (
 	"cosmossdk.io/core/branch"
 	storetypes "cosmossdk.io/store/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 var _ branch.Service = BranchService{}

@@ -6,10 +6,10 @@ import (
 
 	"cosmossdk.io/x/slashing/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/kv"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/kv"
 )
 
 // NewDecodeStore returns a decoder function closure that unmarshals the KVPair's

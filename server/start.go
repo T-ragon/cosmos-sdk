@@ -39,17 +39,17 @@ import (
 	"cosmossdk.io/log"
 	pruningtypes "cosmossdk.io/store/pruning/types"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/server/api"
-	serverconfig "github.com/T-ragon/cosmos-sdk/server/config"
-	servergrpc "github.com/T-ragon/cosmos-sdk/server/grpc"
-	servercmtlog "github.com/T-ragon/cosmos-sdk/server/log"
-	"github.com/T-ragon/cosmos-sdk/server/types"
-	"github.com/T-ragon/cosmos-sdk/telemetry"
-	"github.com/T-ragon/cosmos-sdk/types/mempool"
-	"github.com/T-ragon/cosmos-sdk/version"
-	genutiltypes "github.com/T-ragon/cosmos-sdk/x/genutil/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/server/api"
+	serverconfig "github.com/T-ragon/cosmos-sdk/v3/server/config"
+	servergrpc "github.com/T-ragon/cosmos-sdk/v3/server/grpc"
+	servercmtlog "github.com/T-ragon/cosmos-sdk/v3/server/log"
+	"github.com/T-ragon/cosmos-sdk/v3/server/types"
+	"github.com/T-ragon/cosmos-sdk/v3/telemetry"
+	"github.com/T-ragon/cosmos-sdk/v3/types/mempool"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
+	genutiltypes "github.com/T-ragon/cosmos-sdk/v3/x/genutil/types"
 )
 
 const (

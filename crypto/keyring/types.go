@@ -1,8 +1,8 @@
 package keyring
 
 import (
-	"github.com/T-ragon/cosmos-sdk/crypto/hd"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/hd"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
 )
 
 // Language is a language to create the BIP 39 mnemonic in.

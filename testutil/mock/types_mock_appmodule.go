@@ -10,8 +10,8 @@ import (
 	reflect "reflect"
 
 	appmodule "cosmossdk.io/core/appmodule"
-	types "github.com/T-ragon/cosmos-sdk/types"
-	module "github.com/T-ragon/cosmos-sdk/types/module"
+	types "github.com/T-ragon/cosmos-sdk/v3/types"
+	module "github.com/T-ragon/cosmos-sdk/v3/types/module"
 	gomock "github.com/golang/mock/gomock"
 )
 

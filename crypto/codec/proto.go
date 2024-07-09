@@ -3,12 +3,12 @@ package codec
 import (
 	"cosmossdk.io/core/registry"
 
-	bls12_381 "github.com/T-ragon/cosmos-sdk/crypto/keys/bls12_381"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/multisig"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
-	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256r1"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	bls12_381 "github.com/T-ragon/cosmos-sdk/v3/crypto/keys/bls12_381"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/ed25519"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/multisig"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256k1"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keys/secp256r1"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
 )
 
 // RegisterInterfaces registers the sdk.Tx interface.

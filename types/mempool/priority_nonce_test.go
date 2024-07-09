@@ -12,9 +12,9 @@ import (
 	"cosmossdk.io/core/log"
 	"cosmossdk.io/x/auth/signing"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/mempool"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/mempool"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
 )
 
 func TestOutOfOrder(t *testing.T) {

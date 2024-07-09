@@ -10,7 +10,7 @@ import (
 
 	"cosmossdk.io/x/bank/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // MintingRestrictionArgs are the args provided to a MintingRestrictionFn function.

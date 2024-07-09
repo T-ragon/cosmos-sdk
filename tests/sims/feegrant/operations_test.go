@@ -26,16 +26,16 @@ import (
 	_ "cosmossdk.io/x/mint"
 	_ "cosmossdk.io/x/staking"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/codec"
-	codecaddress "github.com/T-ragon/cosmos-sdk/codec/address"
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/testutil/configurator"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
-	_ "github.com/T-ragon/cosmos-sdk/x/genutil"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	codecaddress "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/configurator"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
+	_ "github.com/T-ragon/cosmos-sdk/v3/x/genutil"
 )
 
 type SimTestSuite struct {

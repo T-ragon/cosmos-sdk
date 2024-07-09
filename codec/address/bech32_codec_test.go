@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/golang-lru/simplelru"
 	"github.com/stretchr/testify/require"
 
-	"github.com/T-ragon/cosmos-sdk/internal/conv"
+	"github.com/T-ragon/cosmos-sdk/v3/internal/conv"
 )
 
 var (

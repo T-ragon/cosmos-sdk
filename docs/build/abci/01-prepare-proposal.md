@@ -29,7 +29,7 @@ selected DO NOT exceed the maximum block gas (if set) and the maximum bytes prov
 by `req.MaxBytes`.
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/baseapp/abci_utils.go
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.0-alpha.0/baseapp/abci_utils.go
 ```
 
 This default implementation can be overridden by the application developer in

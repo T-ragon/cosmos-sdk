@@ -7,10 +7,10 @@ import (
 	context "context"
 	fmt "fmt"
 	_ "github.com/cosmos/cosmos-proto"
-	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/types"
-	types "github.com/T-ragon/cosmos-sdk/types"
-	_ "github.com/T-ragon/cosmos-sdk/types/msgservice"
-	_ "github.com/T-ragon/cosmos-sdk/types/tx/amino"
+	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/v3/types"
+	types "github.com/T-ragon/cosmos-sdk/v3/types"
+	_ "github.com/T-ragon/cosmos-sdk/v3/types/msgservice"
+	_ "github.com/T-ragon/cosmos-sdk/v3/types/tx/amino"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	grpc1 "github.com/cosmos/gogoproto/grpc"
 	proto "github.com/cosmos/gogoproto/proto"
@@ -44,7 +44,7 @@ type MsgSubmitProposal struct {
 	// messages are the arbitrary messages to be executed if proposal passes.
 	Messages []*any.Any `protobuf:"bytes,1,rep,name=messages,proto3" json:"messages,omitempty"`
 	// initial_deposit is the deposit value that must be paid at proposal submission.
-	InitialDeposit github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,2,rep,name=initial_deposit,json=initialDeposit,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"initial_deposit"`
+	InitialDeposit github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,2,rep,name=initial_deposit,json=initialDeposit,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"initial_deposit"`
 	// proposer is the account address of the proposer.
 	Proposer string `protobuf:"bytes,3,opt,name=proposer,proto3" json:"proposer,omitempty"`
 	// metadata is any arbitrary metadata attached to the proposal.
@@ -831,7 +831,7 @@ func (m *MsgCancelProposalResponse) GetCanceledHeight() uint64 {
 // MsgSubmitMultipleChoiceProposal defines a message to submit a multiple choice proposal.
 type MsgSubmitMultipleChoiceProposal struct {
 	// initial_deposit is the deposit value that must be paid at proposal submission.
-	InitialDeposit github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=initial_deposit,json=initialDeposit,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"initial_deposit"`
+	InitialDeposit github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=initial_deposit,json=initialDeposit,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/v3/types.Coins" json:"initial_deposit"`
 	// proposer is the account address of the proposer.
 	Proposer string `protobuf:"bytes,2,opt,name=proposer,proto3" json:"proposer,omitempty"`
 	// metadata is any arbitrary metadata attached to the proposal.

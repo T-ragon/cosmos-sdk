@@ -8,8 +8,8 @@ import (
 
 	"cosmossdk.io/core/registry"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/tx"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx"
 )
 
 // RegisterMsgServiceDesc registers all type_urls from Msg services described

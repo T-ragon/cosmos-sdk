@@ -6,7 +6,7 @@ import (
 
 	"cosmossdk.io/x/authz"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // InitGenesis initializes new authz genesis

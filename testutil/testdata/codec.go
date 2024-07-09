@@ -3,10 +3,10 @@ package testdata
 import (
 	"github.com/tendermint/go-amino"
 
-	"github.com/T-ragon/cosmos-sdk/codec/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/msgservice"
-	"github.com/T-ragon/cosmos-sdk/types/tx"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/msgservice"
+	"github.com/T-ragon/cosmos-sdk/v3/types/tx"
 )
 
 func NewTestInterfaceRegistry() types.InterfaceRegistry {

@@ -9,8 +9,8 @@ import (
 
 	"github.com/cometbft/cometbft/crypto"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
 )
 
 // ===============================================================================================

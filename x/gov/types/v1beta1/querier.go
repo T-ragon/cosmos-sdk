@@ -1,7 +1,7 @@
 package v1beta1
 
 import (
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // query endpoints supported by the governance Querier

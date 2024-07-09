@@ -13,13 +13,13 @@ The transactions are checked and can be rejected at two points:
 * In `CircuitBreakerDecorator` [ante handler](https://docs.cosmos.network/main/learn/advanced/baseapp#antehandler):
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/x/circuit/v0.1.0/x/circuit/ante/circuit.go#L27-L41
+https://github.com/T-ragon/cosmos-sdk/v3/blob/x/circuit/v0.1.0/x/circuit/ante/circuit.go#L27-L41
 ``` 
 
 * With a [message router check](https://docs.cosmos.network/main/learn/advanced/baseapp#msg-service-router):
 
 ```go reference
-https://github.com/T-ragon/cosmos-sdk/blob/v0.50.1/baseapp/msg_service_router.go#L104-L115
+https://github.com/T-ragon/cosmos-sdk/v3/blob/v0.50.1/baseapp/msg_service_router.go#L104-L115
 ``` 
 
 :::note
@@ -101,7 +101,7 @@ Reset is called by an authorized account to enable execution for a specific msgU
 ### MsgAuthorizeCircuitBreaker
 
 ```protobuf reference
-https://github.com/T-ragon/cosmos-sdk/blob/main/x/circuit/proto/cosmos/circuit/v1/tx.proto#L25-L40
+https://github.com/T-ragon/cosmos-sdk/v3/blob/main/x/circuit/proto/cosmos/circuit/v1/tx.proto#L25-L40
 ```
 
 This message is expected to fail if:
@@ -111,7 +111,7 @@ This message is expected to fail if:
 ### MsgTripCircuitBreaker
 
 ```protobuf reference 
-https://github.com/T-ragon/cosmos-sdk/blob/main/x/circuit/proto/cosmos/circuit/v1/tx.proto#L47-L60
+https://github.com/T-ragon/cosmos-sdk/v3/blob/main/x/circuit/proto/cosmos/circuit/v1/tx.proto#L47-L60
 ```
 
 This message is expected to fail if:
@@ -121,7 +121,7 @@ This message is expected to fail if:
 ### MsgResetCircuitBreaker
 
 ```protobuf reference
-https://github.com/T-ragon/cosmos-sdk/blob/main/x/circuit/proto/cosmos/circuit/v1/tx.proto#L67-L78
+https://github.com/T-ragon/cosmos-sdk/v3/blob/main/x/circuit/proto/cosmos/circuit/v1/tx.proto#L67-L78
 ```
 
 This message is expected to fail if:

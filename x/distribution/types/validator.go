@@ -3,7 +3,7 @@ package types
 import (
 	sdkmath "cosmossdk.io/math"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // create a new ValidatorHistoricalRewards

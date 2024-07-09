@@ -14,7 +14,7 @@ func TestIsSupportedVersion(t *testing.T) {
 	mockBuildInfo := &debug.BuildInfo{
 		Deps: []*debug.Module{
 			{
-				Path:    "github.com/T-ragon/cosmos-sdk",
+				Path:    "github.com/T-ragon/cosmos-sdk/v3",
 				Version: "v0.50.0",
 			},
 			{

@@ -7,8 +7,8 @@ import (
 
 	authtypes "cosmossdk.io/x/auth/types"
 
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func TestNewModuleCrendentials(t *testing.T) {

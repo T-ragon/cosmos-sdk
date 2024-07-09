@@ -1,8 +1,8 @@
 package simulation
 
 import (
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
-	"github.com/T-ragon/cosmos-sdk/x/simulation"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/v3/x/simulation"
 )
 
 const (

@@ -12,12 +12,12 @@ import (
 
 	"cosmossdk.io/log"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/server/api"
-	srvconfig "github.com/T-ragon/cosmos-sdk/server/config"
-	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/server/api"
+	srvconfig "github.com/T-ragon/cosmos-sdk/v3/server/config"
+	servertypes "github.com/T-ragon/cosmos-sdk/v3/server/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // Validator defines an in-process CometBFT validator node. Through this object,

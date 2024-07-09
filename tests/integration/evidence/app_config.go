@@ -10,8 +10,8 @@ import (
 	_ "cosmossdk.io/x/slashing"       // import as blank for app wiring
 	_ "cosmossdk.io/x/staking"        // import as blank for app wiring
 
-	"github.com/T-ragon/cosmos-sdk/testutil/configurator"
-	_ "github.com/T-ragon/cosmos-sdk/x/genutil" // import as blank for app wiring
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/configurator"
+	_ "github.com/T-ragon/cosmos-sdk/v3/x/genutil" // import as blank for app wiring
 )
 
 var AppConfig = configurator.NewAppConfig(

@@ -11,16 +11,16 @@ import (
 	"cosmossdk.io/log"
 	"cosmossdk.io/x/auth"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/crypto/hd"
-	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
-	genutilcli "github.com/T-ragon/cosmos-sdk/x/genutil/client/cli"
-	genutiltest "github.com/T-ragon/cosmos-sdk/x/genutil/client/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/hd"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keyring"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
+	genutilcli "github.com/T-ragon/cosmos-sdk/v3/x/genutil/client/cli"
+	genutiltest "github.com/T-ragon/cosmos-sdk/v3/x/genutil/client/testutil"
 )
 
 func TestAddGenesisAccountCmd(t *testing.T) {

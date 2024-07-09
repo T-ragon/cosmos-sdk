@@ -11,7 +11,7 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	"cosmossdk.io/x/circuit/types"
 
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 type msgServer struct {

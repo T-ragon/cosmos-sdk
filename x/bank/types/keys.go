@@ -5,7 +5,7 @@ import (
 	collcodec "cosmossdk.io/collections/codec"
 	"cosmossdk.io/math"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 const (
@@ -17,12 +17,12 @@ const (
 
 	// GovModuleName duplicates the gov module's name to avoid a cyclic dependency with x/gov.
 	// It should be synced with the gov module's name if it is ever changed.
-	// See: https://github.com/T-ragon/cosmos-sdk/blob/b62a28aac041829da5ded4aeacfcd7a42873d1c8/x/gov/types/keys.go#L9
+	// See: https://github.com/T-ragon/cosmos-sdk/v3/blob/b62a28aac041829da5ded4aeacfcd7a42873d1c8/x/gov/types/keys.go#L9
 	GovModuleName = "gov"
 
 	// MintModuleName duplicates the mint module's name to avoid a cyclic dependency with x/mint.
 	// It should be synced with the mint module's name if it is ever changed.
-	// See: https://github.com/T-ragon/cosmos-sdk/blob/0e34478eb7420b69869ed50f129fc274a97a9b06/x/mint/types/keys.go#L13
+	// See: https://github.com/T-ragon/cosmos-sdk/v3/blob/0e34478eb7420b69869ed50f129fc274a97a9b06/x/mint/types/keys.go#L13
 	MintModuleName = "mint"
 )
 

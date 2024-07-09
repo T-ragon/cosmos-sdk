@@ -44,7 +44,7 @@ type Manager struct {
 	// once store v2 is fully integrated, we can remove manual file handling and
 	// store the unexpired unordered transactions directly to SS.
 	//
-	// Ref: https://github.com/T-ragon/cosmos-sdk/issues/18467
+	// Ref: https://github.com/T-ragon/cosmos-sdk/v3/issues/18467
 	dataDir string
 
 	mu sync.RWMutex

@@ -6,8 +6,8 @@ import (
 
 	"github.com/cosmos/gogoproto/proto"
 
-	"github.com/T-ragon/cosmos-sdk/codec/unknownproto"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/unknownproto"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
 )
 
 var n1BBlob []byte

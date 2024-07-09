@@ -73,7 +73,7 @@ message MsgSubmitProposal {
   // initial_deposit is the deposit value that must be paid at proposal submission.
   repeated cosmos.base.v1beta1.Coin initial_deposit = 2 [
     (gogoproto.nullable)     = false,
-    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins",
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.Coins",
     (amino.dont_omitempty)   = true,
     (amino.encoding)         = "legacy_coins"
   ];
@@ -234,7 +234,7 @@ message MsgSubmitMultipleChoiceProposal {
   // initial_deposit is the deposit value that must be paid at proposal submission.
   repeated cosmos.base.v1beta1.Coin initial_deposit = 1 [
     (gogoproto.nullable)     = false,
-    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins",
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.Coins",
     (amino.dont_omitempty)   = true,
     (amino.encoding)         = "legacy_coins"
   ];

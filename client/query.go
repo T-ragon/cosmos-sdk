@@ -13,8 +13,8 @@ import (
 
 	"cosmossdk.io/store/rootmulti"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 // GetNode returns an RPC client. If the context's client is not defined, an

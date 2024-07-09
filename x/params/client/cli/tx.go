@@ -10,10 +10,10 @@ import (
 	paramscutils "cosmossdk.io/x/params/client/utils"
 	paramproposal "cosmossdk.io/x/params/types/proposal"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/client/tx"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client/tx"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 // NewSubmitParamChangeProposalTxCmd returns a CLI command handler for creating

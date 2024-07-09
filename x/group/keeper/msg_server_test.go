@@ -18,11 +18,11 @@ import (
 	"cosmossdk.io/x/group/keeper"
 	minttypes "cosmossdk.io/x/mint/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec/address"
-	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/query"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	simtestutil "github.com/T-ragon/cosmos-sdk/v3/testutil/sims"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/query"
 )
 
 var EventProposalPruned = "cosmos.group.v1.EventProposalPruned"

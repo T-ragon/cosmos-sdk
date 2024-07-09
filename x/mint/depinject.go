@@ -10,7 +10,7 @@ import (
 	"cosmossdk.io/x/mint/keeper"
 	"cosmossdk.io/x/mint/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
 )
 
 var _ depinject.OnePerModuleType = AppModule{}

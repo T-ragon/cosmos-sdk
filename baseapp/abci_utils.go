@@ -16,10 +16,10 @@ import (
 
 	"cosmossdk.io/core/comet"
 
-	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/mempool"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/v3/crypto/codec"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/mempool"
 )
 
 type (

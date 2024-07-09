@@ -3,7 +3,7 @@ package types
 import (
 	"fmt"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // InitialFeePool initializes a zero fee pool

@@ -13,7 +13,7 @@ import (
 	groupmath "cosmossdk.io/x/group/internal/math"
 	"cosmossdk.io/x/group/internal/orm"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 const weightInvariant = "Group-TotalWeight"

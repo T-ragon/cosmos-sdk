@@ -5,7 +5,7 @@ import (
 	"io"
 	"testing"
 
-	"github.com/T-ragon/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/types"
 )
 
 // The code in this file is adapted from agl/ed25519.

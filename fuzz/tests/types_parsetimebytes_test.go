@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func FuzzTypesParseTimeBytes(f *testing.F) {

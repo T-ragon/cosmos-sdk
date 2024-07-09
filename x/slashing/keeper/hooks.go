@@ -7,8 +7,8 @@ import (
 	sdkmath "cosmossdk.io/math"
 	"cosmossdk.io/x/slashing/types"
 
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 var _ types.StakingHooks = Hooks{}

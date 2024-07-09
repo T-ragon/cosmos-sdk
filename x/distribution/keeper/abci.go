@@ -5,7 +5,7 @@ import (
 
 	"cosmossdk.io/x/distribution/types"
 
-	"github.com/T-ragon/cosmos-sdk/telemetry"
+	"github.com/T-ragon/cosmos-sdk/v3/telemetry"
 )
 
 // BeginBlocker sets the proposer for determining distribution during endblock
@@ -23,7 +23,7 @@ func (k Keeper) BeginBlocker(ctx context.Context) error {
 	}
 
 	// TODO this is Tendermint-dependent
-	// ref https://github.com/T-ragon/cosmos-sdk/issues/3095
+	// ref https://github.com/T-ragon/cosmos-sdk/v3/issues/3095
 	if header.Height > 1 {
 		if err := k.AllocateTokens(ctx, previousTotalPower, ci.LastCommit.Votes); err != nil {
 			return err

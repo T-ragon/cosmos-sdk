@@ -11,9 +11,9 @@ import (
 	"cosmossdk.io/simapp/v2"
 	"cosmossdk.io/simapp/v2/simdv2/cmd"
 
-	"github.com/T-ragon/cosmos-sdk/client/flags"
-	svrcmd "github.com/T-ragon/cosmos-sdk/server/cmd"
-	"github.com/T-ragon/cosmos-sdk/x/genutil/client/cli"
+	"github.com/T-ragon/cosmos-sdk/v3/client/flags"
+	svrcmd "github.com/T-ragon/cosmos-sdk/v3/server/cmd"
+	"github.com/T-ragon/cosmos-sdk/v3/x/genutil/client/cli"
 )
 
 func TestInitCmd(t *testing.T) {

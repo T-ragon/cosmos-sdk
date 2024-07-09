@@ -8,7 +8,7 @@ import (
 
 	"cosmossdk.io/math"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func TestNextInflation(t *testing.T) {

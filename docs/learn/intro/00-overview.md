@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## What is the Cosmos SDK
 
-The [Cosmos SDK](https://github.com/T-ragon/cosmos-sdk) is an open-source toolkit for building multi-asset public Proof-of-Stake (PoS) <df value="blockchain">blockchains</df>, like the Cosmos Hub, as well as permissioned Proof-of-Authority (PoA) blockchains. Blockchains built with the Cosmos SDK are generally referred to as **application-specific blockchains**.
+The [Cosmos SDK](https://github.com/T-ragon/cosmos-sdk/v3) is an open-source toolkit for building multi-asset public Proof-of-Stake (PoS) <df value="blockchain">blockchains</df>, like the Cosmos Hub, as well as permissioned Proof-of-Authority (PoA) blockchains. Blockchains built with the Cosmos SDK are generally referred to as **application-specific blockchains**.
 
 The goal of the Cosmos SDK is to allow developers to easily create custom blockchains from scratch that can natively interoperate with other blockchains. 
 We further this modular approach by allowing developers to plug and play with different consensus engines this can range from the [CometBFT](https://github.com/cometbft/cometbft) or [Rollkit](https://rollkit.dev/). 

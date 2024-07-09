@@ -3,7 +3,7 @@ package exported
 import (
 	"github.com/cosmos/gogoproto/proto"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // Evidence defines the contract which concrete evidence types of misbehavior

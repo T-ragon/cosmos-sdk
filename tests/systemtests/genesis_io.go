@@ -11,7 +11,7 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // SetConsensusMaxGas max gas that can be consumed in a block

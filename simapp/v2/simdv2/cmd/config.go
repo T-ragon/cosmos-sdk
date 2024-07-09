@@ -3,8 +3,8 @@ package cmd
 import (
 	"strings"
 
-	clientconfig "github.com/T-ragon/cosmos-sdk/client/config"
-	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
+	clientconfig "github.com/T-ragon/cosmos-sdk/v3/client/config"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keyring"
 )
 
 // initAppConfig helps to override default client config template and configs.

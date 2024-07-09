@@ -8,7 +8,7 @@ import (
 
 	"cosmossdk.io/core/address"
 
-	"github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
 )
 
 // NewGenesisState creates a new genesis state for the governance module

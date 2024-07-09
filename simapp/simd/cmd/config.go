@@ -5,9 +5,9 @@ import (
 
 	cmtcfg "github.com/cometbft/cometbft/config"
 
-	clientconfig "github.com/T-ragon/cosmos-sdk/client/config"
-	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
-	serverconfig "github.com/T-ragon/cosmos-sdk/server/config"
+	clientconfig "github.com/T-ragon/cosmos-sdk/v3/client/config"
+	"github.com/T-ragon/cosmos-sdk/v3/crypto/keyring"
+	serverconfig "github.com/T-ragon/cosmos-sdk/v3/server/config"
 )
 
 // initCometBFTConfig helps to override default CometBFT Config values.

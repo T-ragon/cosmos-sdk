@@ -121,7 +121,7 @@ func (s *Store) StateAt(v uint64) (corestore.ReaderMap, error) {
 	// TODO(bez): We may want to avoid relying on the SC metadata here. Instead,
 	// we should add a VersionExists() method to the VersionedDatabase interface.
 	//
-	// Ref: https://github.com/T-ragon/cosmos-sdk/issues/19091
+	// Ref: https://github.com/T-ragon/cosmos-sdk/v3/issues/19091
 	if cInfo, err := s.stateCommitment.GetCommitInfo(v); err != nil || cInfo == nil {
 		return nil, fmt.Errorf("failed to get commit info for version %d: %w", v, err)
 	}

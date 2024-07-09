@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/codec/legacy"
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/legacy"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
 )
 
 func TestQueryDelegationRewardsAddrValidation(t *testing.T) {

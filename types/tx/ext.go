@@ -1,7 +1,7 @@
 package tx
 
 import (
-	"github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
 )
 
 // TxExtensionOptionI defines the interface for tx extension options

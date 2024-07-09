@@ -8,8 +8,8 @@ import (
 	"cosmossdk.io/x/authz"
 	"cosmossdk.io/x/authz/internal/conv"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
 )
 
 // MigrateStore performs in-place store migrations from v0.45 to v0.46. The

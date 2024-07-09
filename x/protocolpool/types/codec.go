@@ -4,7 +4,7 @@ import (
 	"cosmossdk.io/core/registry"
 	coretransaction "cosmossdk.io/core/transaction"
 
-	"github.com/T-ragon/cosmos-sdk/types/msgservice"
+	"github.com/T-ragon/cosmos-sdk/v3/types/msgservice"
 )
 
 func RegisterInterfaces(registrar registry.InterfaceRegistrar) {

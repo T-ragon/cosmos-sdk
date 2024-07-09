@@ -32,7 +32,7 @@ message QueryCommunityPoolRequest {}
 message QueryCommunityPoolResponse {
   // pool defines community pool's coins.
   repeated cosmos.base.v1beta1.DecCoin pool = 1
-      [(gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.DecCoins", (gogoproto.nullable) = false];
+      [(gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/v3/types.DecCoins", (gogoproto.nullable) = false];
 }
 
 // QueryUnclaimedBudgetRequest is the request type for the Query/UnclaimedBudgetRequest

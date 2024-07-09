@@ -3,7 +3,7 @@ package orm
 import (
 	"pgregory.net/rapid"
 
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
 )
 
 // genTableModel generates a new table model. At the moment it doesn't

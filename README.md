@@ -2,17 +2,17 @@
   <h1> Cosmos SDK </h1>
 </div>
 
-![banner](https://github.com/T-ragon/cosmos-sdk-docs/blob/main/static/img/banner.jpg)
+![banner](https://github.com/T-ragon/cosmos-sdk/v3-docs/blob/main/static/img/banner.jpg)
 
 <div align="center">
-  <a href="https://github.com/T-ragon/cosmos-sdk/blob/main/LICENSE">
+  <a href="https://github.com/T-ragon/cosmos-sdk/v3/blob/main/LICENSE">
     <img alt="License: Apache-2.0" src="https://img.shields.io/github/license/cosmos/cosmos-sdk.svg" />
   </a>
-  <a href="https://pkg.go.dev/github.com/T-ragon/cosmos-sdk">
-    <img src="https://pkg.go.dev/badge/github.com/T-ragon/cosmos-sdk.svg" alt="Go Reference">
+  <a href="https://pkg.go.dev/github.com/T-ragon/cosmos-sdk/v3">
+    <img src="https://pkg.go.dev/badge/github.com/T-ragon/cosmos-sdk/v3.svg" alt="Go Reference">
   </a>
-  <a href="https://goreportcard.com/report/github.com/T-ragon/cosmos-sdk">
-    <img alt="Go report card" src="https://goreportcard.com/badge/github.com/T-ragon/cosmos-sdk" />
+  <a href="https://goreportcard.com/report/github.com/T-ragon/cosmos-sdk/v3">
+    <img alt="Go report card" src="https://goreportcard.com/badge/github.com/T-ragon/cosmos-sdk/v3" />
   </a>
   <a href="https://sonarcloud.io/summary/overall?id=cosmos_cosmos-sdk">
     <img alt="Code Coverage" src="https://sonarcloud.io/api/project_badges/measure?project=cosmos_cosmos-sdk&metric=coverage" />
@@ -25,11 +25,11 @@
   <a href="https://discord.gg/interchain">
     <img alt="Discord" src="https://img.shields.io/discord/669268347736686612.svg" />
   </a>
-  <a href="https://sourcegraph.com/github.com/T-ragon/cosmos-sdk?badge">
-    <img alt="Imported by" src="https://sourcegraph.com/github.com/T-ragon/cosmos-sdk/-/badge.svg" />
+  <a href="https://sourcegraph.com/github.com/T-ragon/cosmos-sdk/v3?badge">
+    <img alt="Imported by" src="https://sourcegraph.com/github.com/T-ragon/cosmos-sdk/v3/-/badge.svg" />
   </a>
-    <img alt="Sims" src="https://github.com/T-ragon/cosmos-sdk/workflows/Sims/badge.svg" />
-    <img alt="Lint Status" src="https://github.com/T-ragon/cosmos-sdk/workflows/Lint/badge.svg" />
+    <img alt="Sims" src="https://github.com/T-ragon/cosmos-sdk/v3/workflows/Sims/badge.svg" />
+    <img alt="Lint Status" src="https://github.com/T-ragon/cosmos-sdk/v3/workflows/Lint/badge.svg" />
 </div>
 
 The Cosmos SDK is a framework for building blockchain applications. [CometBFT (BFT Consensus)](https://github.com/cometbft/cometbft) and the Cosmos SDK are written in the Go programming language. Cosmos SDK is used to build [Gaia](https://github.com/cosmos/gaia), the implementation of the Cosmos Hub.

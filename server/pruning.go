@@ -8,7 +8,7 @@ import (
 
 	pruningtypes "cosmossdk.io/store/pruning/types"
 
-	"github.com/T-ragon/cosmos-sdk/server/types"
+	"github.com/T-ragon/cosmos-sdk/v3/server/types"
 )
 
 // GetPruningOptionsFromFlags parses command flags and returns the correct

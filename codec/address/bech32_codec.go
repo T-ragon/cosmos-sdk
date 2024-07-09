@@ -11,10 +11,10 @@ import (
 	"cosmossdk.io/core/address"
 	errorsmod "cosmossdk.io/errors"
 
-	"github.com/T-ragon/cosmos-sdk/internal/conv"
-	sdkAddress "github.com/T-ragon/cosmos-sdk/types/address"
-	"github.com/T-ragon/cosmos-sdk/types/bech32"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/internal/conv"
+	sdkAddress "github.com/T-ragon/cosmos-sdk/v3/types/address"
+	"github.com/T-ragon/cosmos-sdk/v3/types/bech32"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 var errEmptyAddress = errors.New("empty address string is not allowed")

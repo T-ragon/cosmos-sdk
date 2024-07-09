@@ -16,4 +16,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: orijtech/consensuswarn@main
         with:
-          roots: "github.com/T-ragon/cosmos-sdk/baseapp.BaseApp.PrepareProposal,github.com/T-ragon/cosmos-sdk/baseapp.BaseApp.ProcessProposal,github.com/T-ragon/cosmos-sdk/baseapp.BaseApp.FinalizeBlock,github.com/T-ragon/cosmos-sdk/baseapp.BaseApp.Commit,github.com/T-ragon/cosmos-sdk/baseapp.BaseApp.VerifyVoteExtension"
+          roots: "github.com/T-ragon/cosmos-sdk/v3/baseapp.BaseApp.PrepareProposal,github.com/T-ragon/cosmos-sdk/v3/baseapp.BaseApp.ProcessProposal,github.com/T-ragon/cosmos-sdk/v3/baseapp.BaseApp.FinalizeBlock,github.com/T-ragon/cosmos-sdk/v3/baseapp.BaseApp.Commit,github.com/T-ragon/cosmos-sdk/v3/baseapp.BaseApp.VerifyVoteExtension"

@@ -9,8 +9,8 @@ import (
 	storetypes "cosmossdk.io/store/types"
 	"cosmossdk.io/x/group/errors"
 
-	"github.com/T-ragon/cosmos-sdk/runtime"
-	"github.com/T-ragon/cosmos-sdk/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/runtime"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
 )
 
 func TestSequenceUniqueConstraint(t *testing.T) {

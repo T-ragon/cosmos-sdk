@@ -17,11 +17,11 @@ import (
 	"cosmossdk.io/core/log"
 	authtypes "cosmossdk.io/x/auth/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/testutil/mock"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/module"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/mock"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
 )
 
 var errFoo = errors.New("dummy")
@@ -313,7 +313,7 @@ func TestCoreAPIManager_InitGenesis(t *testing.T) {
 	require.ErrorContains(t, err, "validator set is empty after InitGenesis, please ensure at least one validator is initialized with a delegation greater than or equal to the DefaultPowerReduction")
 
 	// TODO: add happy path test. We are not returning any validator updates, this will come with the services.
-	// REF: https://github.com/T-ragon/cosmos-sdk/issues/14688
+	// REF: https://github.com/T-ragon/cosmos-sdk/v3/issues/14688
 }
 
 func TestCoreAPIManager_ExportGenesis(t *testing.T) {

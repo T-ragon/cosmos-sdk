@@ -3,7 +3,7 @@ package types
 import (
 	"github.com/cosmos/gogoproto/proto"
 
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
 )
 
 // AccountI is an interface used to store coins at a given address within state.

@@ -6,9 +6,9 @@ import (
 	"cosmossdk.io/x/authz"
 	"cosmossdk.io/x/authz/internal/conv"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	"github.com/T-ragon/cosmos-sdk/types/address"
-	"github.com/T-ragon/cosmos-sdk/types/kv"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types/address"
+	"github.com/T-ragon/cosmos-sdk/v3/types/kv"
 )
 
 // Keys for store prefixes

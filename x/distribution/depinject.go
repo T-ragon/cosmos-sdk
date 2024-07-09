@@ -11,7 +11,7 @@ import (
 	"cosmossdk.io/x/distribution/types"
 	staking "cosmossdk.io/x/staking/types"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
 )
 
 var _ depinject.OnePerModuleType = AppModule{}

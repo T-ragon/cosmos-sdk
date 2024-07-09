@@ -11,8 +11,8 @@ import (
 	"cosmossdk.io/x/group/errors"
 	"cosmossdk.io/x/group/internal/orm"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 const (

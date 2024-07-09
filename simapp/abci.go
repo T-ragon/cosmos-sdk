@@ -8,8 +8,8 @@ import (
 
 	abci "github.com/cometbft/cometbft/api/cometbft/abci/v1"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 type (

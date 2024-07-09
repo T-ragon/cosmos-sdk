@@ -4,7 +4,7 @@ import (
 	"context"
 	"sync"
 
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 // DefaultKeyringServiceName defines a default service name for the keyring.

@@ -16,11 +16,11 @@ import (
 	counterv1 "cosmossdk.io/api/cosmos/counter/v1"
 	"cosmossdk.io/x/tx/signing"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	"github.com/T-ragon/cosmos-sdk/codec/types"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	countertypes "github.com/T-ragon/cosmos-sdk/testutil/x/counter/types"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	countertypes "github.com/T-ragon/cosmos-sdk/v3/testutil/x/counter/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func createTestInterfaceRegistry() types.InterfaceRegistry {

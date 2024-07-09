@@ -10,9 +10,9 @@ import (
 	"cosmossdk.io/x/mint/simulation"
 	"cosmossdk.io/x/mint/types"
 
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/types/address"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/types/address"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
 )
 
 func TestProposalMsgs(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 	autocliv1 "cosmossdk.io/api/cosmos/autocli/v1"
 	poolv1 "cosmossdk.io/api/cosmos/protocolpool/v1"
 
-	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/v3/version"
 )
 
 // AutoCLIOptions implements the autocli.HasAutoCLIConfig interface.

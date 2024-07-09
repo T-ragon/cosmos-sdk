@@ -5,11 +5,11 @@ import (
 
 	"cosmossdk.io/core/legacy"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // RegisterAminoMsg first checks that the msgName is <40 chars
-// (else this would break ledger nano signing: https://github.com/T-ragon/cosmos-sdk/issues/10870),
+// (else this would break ledger nano signing: https://github.com/T-ragon/cosmos-sdk/v3/issues/10870),
 // then registers the concrete msg type with amino.
 func RegisterAminoMsg(cdc legacy.Amino, msg sdk.Msg, msgName string) {
 	if len(msgName) > 39 {

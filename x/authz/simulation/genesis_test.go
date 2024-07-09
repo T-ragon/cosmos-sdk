@@ -13,10 +13,10 @@ import (
 	"cosmossdk.io/x/authz/simulation"
 	banktypes "cosmossdk.io/x/bank/types"
 
-	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
-	"github.com/T-ragon/cosmos-sdk/types/module"
-	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
-	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
+	codectestutil "github.com/T-ragon/cosmos-sdk/v3/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/v3/types/module/testutil"
+	simtypes "github.com/T-ragon/cosmos-sdk/v3/types/simulation"
 )
 
 func TestRandomizedGenState(t *testing.T) {

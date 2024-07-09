@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/collections"
 	"cosmossdk.io/x/distribution/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // register all distribution invariants

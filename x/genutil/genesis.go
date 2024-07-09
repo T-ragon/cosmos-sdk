@@ -5,9 +5,9 @@ import (
 
 	"cosmossdk.io/core/genesis"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/types/module"
-	"github.com/T-ragon/cosmos-sdk/x/genutil/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/types/module"
+	"github.com/T-ragon/cosmos-sdk/v3/x/genutil/types"
 )
 
 // InitGenesis - initialize accounts and deliver genesis transactions

@@ -8,8 +8,8 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	"cosmossdk.io/x/auth/ante/unorderedtx"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 var _ sdk.AnteDecorator = (*UnorderedTxDecorator)(nil)

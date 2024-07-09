@@ -14,7 +14,7 @@ import (
 
 	"cosmossdk.io/tools/confix"
 
-	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
 )
 
 // SetCommand returns a CLI command to interactively update an application config value.

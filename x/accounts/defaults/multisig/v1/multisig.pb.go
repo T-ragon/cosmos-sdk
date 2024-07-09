@@ -6,7 +6,7 @@ package v1
 import (
 	fmt "fmt"
 	_ "github.com/cosmos/cosmos-proto"
-	_ "github.com/T-ragon/cosmos-sdk/types/msgservice"
+	_ "github.com/T-ragon/cosmos-sdk/v3/types/msgservice"
 	proto "github.com/cosmos/gogoproto/proto"
 	any "github.com/cosmos/gogoproto/types/any"
 	io "io"

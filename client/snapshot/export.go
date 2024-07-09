@@ -5,9 +5,9 @@ import (
 
 	"cosmossdk.io/log"
 
-	"github.com/T-ragon/cosmos-sdk/client"
-	"github.com/T-ragon/cosmos-sdk/server"
-	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
+	"github.com/T-ragon/cosmos-sdk/v3/client"
+	"github.com/T-ragon/cosmos-sdk/v3/server"
+	servertypes "github.com/T-ragon/cosmos-sdk/v3/server/types"
 )
 
 // ExportSnapshotCmd returns a command to take a snapshot of the application state

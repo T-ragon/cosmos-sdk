@@ -12,7 +12,7 @@ import (
 )
 
 // Ensures that error checks are performed before sealing the app.
-// Please see https://github.com/T-ragon/cosmos-sdk/issues/18726
+// Please see https://github.com/T-ragon/cosmos-sdk/v3/issues/18726
 func TestNilCmsCheckBeforeSeal(t *testing.T) {
 	app := new(BaseApp)
 

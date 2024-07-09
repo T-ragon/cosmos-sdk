@@ -12,10 +12,10 @@ import (
 	"github.com/hashicorp/golang-lru/simplelru"
 	"sigs.k8s.io/yaml"
 
-	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
-	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
-	"github.com/T-ragon/cosmos-sdk/internal/conv"
-	"github.com/T-ragon/cosmos-sdk/types/bech32"
+	addresscodec "github.com/T-ragon/cosmos-sdk/v3/codec/address"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/v3/internal/conv"
+	"github.com/T-ragon/cosmos-sdk/v3/types/bech32"
 )
 
 const (

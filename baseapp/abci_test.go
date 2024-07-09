@@ -35,15 +35,15 @@ import (
 	storetypes "cosmossdk.io/store/types"
 	"cosmossdk.io/x/auth/signing"
 
-	"github.com/T-ragon/cosmos-sdk/baseapp"
-	baseapptestutil "github.com/T-ragon/cosmos-sdk/baseapp/testutil"
-	"github.com/T-ragon/cosmos-sdk/baseapp/testutil/mock"
-	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
-	"github.com/T-ragon/cosmos-sdk/testutil"
-	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
-	sdk "github.com/T-ragon/cosmos-sdk/types"
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
-	"github.com/T-ragon/cosmos-sdk/types/mempool"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp"
+	baseapptestutil "github.com/T-ragon/cosmos-sdk/v3/baseapp/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/baseapp/testutil/mock"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/v3/crypto/codec"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil"
+	"github.com/T-ragon/cosmos-sdk/v3/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
+	"github.com/T-ragon/cosmos-sdk/v3/types/mempool"
 )
 
 const (

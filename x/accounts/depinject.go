@@ -15,8 +15,8 @@ import (
 	"cosmossdk.io/x/accounts/defaults/multisig"
 	"cosmossdk.io/x/tx/signing"
 
-	"github.com/T-ragon/cosmos-sdk/codec"
-	cdctypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/v3/codec"
+	cdctypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
 )
 
 var _ depinject.OnePerModuleType = AppModule{}

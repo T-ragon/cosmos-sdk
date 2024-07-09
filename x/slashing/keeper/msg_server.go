@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/errors"
 	"cosmossdk.io/x/slashing/types"
 
-	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/v3/types/errors"
 )
 
 var _ types.MsgServer = msgServer{}

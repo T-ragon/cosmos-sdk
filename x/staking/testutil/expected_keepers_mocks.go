@@ -13,8 +13,8 @@ import (
 	math "cosmossdk.io/math"
 	types "cosmossdk.io/x/consensus/types"
 	types0 "cosmossdk.io/x/staking/types"
-	types1 "github.com/T-ragon/cosmos-sdk/crypto/types"
-	types2 "github.com/T-ragon/cosmos-sdk/types"
+	types1 "github.com/T-ragon/cosmos-sdk/v3/crypto/types"
+	types2 "github.com/T-ragon/cosmos-sdk/v3/types"
 	gomock "github.com/golang/mock/gomock"
 )
 

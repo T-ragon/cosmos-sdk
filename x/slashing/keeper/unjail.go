@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/errors"
 	"cosmossdk.io/x/slashing/types"
 
-	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 // Unjail calls the staking Unjail function to unjail a validator if the

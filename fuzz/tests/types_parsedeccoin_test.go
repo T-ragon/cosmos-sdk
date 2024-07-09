@@ -5,7 +5,7 @@ package tests
 import (
 	"testing"
 
-	"github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/v3/types"
 )
 
 func FuzzTypesParseDecCoin(f *testing.F) {

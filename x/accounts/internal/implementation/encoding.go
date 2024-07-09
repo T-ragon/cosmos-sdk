@@ -8,7 +8,7 @@ import (
 	"github.com/cosmos/gogoproto/proto"
 	"google.golang.org/protobuf/runtime/protoiface"
 
-	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	codectypes "github.com/T-ragon/cosmos-sdk/v3/codec/types"
 )
 
 type ProtoMsg = protoiface.MessageV1

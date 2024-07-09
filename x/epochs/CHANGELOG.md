@@ -27,7 +27,7 @@ Ref: https://keepachangelog.com/en/1.0.0/
 
 ### Features
 
-* [#19697](https://github.com/T-ragon/cosmos-sdk/pull/19697) Upstream from Osmosis
+* [#19697](https://github.com/T-ragon/cosmos-sdk/v3/pull/19697) Upstream from Osmosis
 
 
 ### API Breaking Changes
