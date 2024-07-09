@@ -7,8 +7,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
 )
 
 func TestLegacyParamChange(t *testing.T) {

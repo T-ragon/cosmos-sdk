@@ -6,10 +6,10 @@ package v1
 import (
 	context "context"
 	fmt "fmt"
-	github_com_cosmos_cosmos_sdk_types "github.com/cosmos/cosmos-sdk/types"
-	types "github.com/cosmos/cosmos-sdk/types"
-	_ "github.com/cosmos/cosmos-sdk/types/msgservice"
-	tx "github.com/cosmos/cosmos-sdk/types/tx"
+	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/types"
+	types "github.com/T-ragon/cosmos-sdk/types"
+	_ "github.com/T-ragon/cosmos-sdk/types/msgservice"
+	tx "github.com/T-ragon/cosmos-sdk/types/tx"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	grpc1 "github.com/cosmos/gogoproto/grpc"
 	proto "github.com/cosmos/gogoproto/proto"
@@ -43,7 +43,7 @@ type MsgInit struct {
 	Message *any.Any `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 	// funds contains the coins that the account wants to
 	// send alongside the request.
-	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,4,rep,name=funds,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"funds"`
+	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,4,rep,name=funds,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"funds"`
 }
 
 func (m *MsgInit) Reset()         { *m = MsgInit{} }
@@ -172,7 +172,7 @@ type MsgExecute struct {
 	Message *any.Any `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 	// funds contains the coins that the account wants to
 	// send alongside the request.
-	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,4,rep,name=funds,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"funds"`
+	Funds github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,4,rep,name=funds,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"funds"`
 }
 
 func (m *MsgExecute) Reset()         { *m = MsgExecute{} }

@@ -5,9 +5,9 @@ import (
 	"github.com/cometbft/cometbft/crypto"
 	cmttypes "github.com/cometbft/cometbft/types"
 
-	cryptocodec "github.com/cosmos/cosmos-sdk/crypto/codec"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
 )
 
 var _ cmttypes.PrivValidator = PV{}

@@ -1,6 +1,6 @@
 # Appmodule
 
-<!-- TODO add more docs here with https://github.com/cosmos/cosmos-sdk/issues/17207 -->
+<!-- TODO add more docs here with https://github.com/T-ragon/cosmos-sdk/issues/17207 -->
 
 This package defines what is needed for an module to be used in the Cosmos SDK. 
 

@@ -19,15 +19,15 @@ import (
 	v1 "cosmossdk.io/x/gov/types/v1"
 	"cosmossdk.io/x/gov/types/v1beta1"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	addresscodec "github.com/cosmos/cosmos-sdk/codec/address"
-	codectestutil "github.com/cosmos/cosmos-sdk/codec/testutil"
-	"github.com/cosmos/cosmos-sdk/crypto/keyring"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	testutilmod "github.com/cosmos/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/client/flags"
+	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
+	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	clitestutil "github.com/T-ragon/cosmos-sdk/testutil/cli"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	testutilmod "github.com/T-ragon/cosmos-sdk/types/module/testutil"
 )
 
 type CLITestSuite struct {

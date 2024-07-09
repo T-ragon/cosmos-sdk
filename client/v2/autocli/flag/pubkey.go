@@ -6,10 +6,10 @@ import (
 
 	"google.golang.org/protobuf/reflect/protoreflect"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/codec/types"
-	cryptocodec "github.com/cosmos/cosmos-sdk/crypto/codec"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/codec/types"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
 )
 
 type pubkeyType struct{}

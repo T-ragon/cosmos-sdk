@@ -25,14 +25,14 @@ import (
 	"cosmossdk.io/log"
 	"cosmossdk.io/simapp"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/cosmos/cosmos-sdk/server/types"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
-	"github.com/cosmos/cosmos-sdk/x/genutil"
-	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
-	gentestutil "github.com/cosmos/cosmos-sdk/x/genutil/client/testutil"
-	genutiltypes "github.com/cosmos/cosmos-sdk/x/genutil/types"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/client/flags"
+	"github.com/T-ragon/cosmos-sdk/server/types"
+	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
+	"github.com/T-ragon/cosmos-sdk/x/genutil"
+	genutilcli "github.com/T-ragon/cosmos-sdk/x/genutil/client/cli"
+	gentestutil "github.com/T-ragon/cosmos-sdk/x/genutil/client/testutil"
+	genutiltypes "github.com/T-ragon/cosmos-sdk/x/genutil/types"
 )
 
 func TestExportCmd_ConsensusParams(t *testing.T) {

@@ -10,9 +10,9 @@ import (
 	reflect "reflect"
 
 	exported "cosmossdk.io/x/bank/exported"
-	codec "github.com/cosmos/cosmos-sdk/codec"
-	types "github.com/cosmos/cosmos-sdk/types"
-	module "github.com/cosmos/cosmos-sdk/types/module"
+	codec "github.com/T-ragon/cosmos-sdk/codec"
+	types "github.com/T-ragon/cosmos-sdk/types"
+	module "github.com/T-ragon/cosmos-sdk/types/module"
 	gomock "github.com/golang/mock/gomock"
 )
 

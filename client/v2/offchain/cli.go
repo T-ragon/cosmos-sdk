@@ -8,8 +8,8 @@ import (
 
 	v2flags "cosmossdk.io/client/v2/internal/flags"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/flags"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/client/flags"
 )
 
 const (

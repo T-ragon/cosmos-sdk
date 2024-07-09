@@ -15,14 +15,14 @@ import (
 	"cosmossdk.io/core/transaction"
 	"cosmossdk.io/x/auth/signing"
 
-	codectestutil "github.com/cosmos/cosmos-sdk/codec/testutil"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	"github.com/cosmos/cosmos-sdk/testutil/x/counter"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/mempool"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	txsigning "github.com/cosmos/cosmos-sdk/types/tx/signing"
+	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/testutil/x/counter"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/mempool"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
+	txsigning "github.com/T-ragon/cosmos-sdk/types/tx/signing"
 )
 
 // testPubKey is a dummy implementation of PubKey used for testing.

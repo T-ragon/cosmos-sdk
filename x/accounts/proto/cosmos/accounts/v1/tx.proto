@@ -38,7 +38,7 @@ message MsgInit {
   // funds contains the coins that the account wants to
   // send alongside the request.
   repeated cosmos.base.v1beta1.Coin funds = 4
-      [(gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (gogoproto.nullable) = false];
+      [(gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins", (gogoproto.nullable) = false];
 }
 
 // MsgInitResponse defines the Create response type for the Msg/Create RPC method.
@@ -61,7 +61,7 @@ message MsgExecute {
   // funds contains the coins that the account wants to
   // send alongside the request.
   repeated cosmos.base.v1beta1.Coin funds = 4
-      [(gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (gogoproto.nullable) = false];
+      [(gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins", (gogoproto.nullable) = false];
 }
 
 // MsgExecuteResponse defines the Execute response type for the Msg/Execute RPC method.

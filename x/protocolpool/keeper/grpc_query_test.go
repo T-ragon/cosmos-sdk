@@ -6,8 +6,8 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/protocolpool/types"
 
-	codectestutil "github.com/cosmos/cosmos-sdk/codec/testutil"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 func (suite *KeeperTestSuite) TestUnclaimedBudget() {

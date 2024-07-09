@@ -8,7 +8,7 @@ BINDIR ?= $(GOPATH)/bin
 BUILDDIR ?= $(CURDIR)/build
 SIMAPP = simapp
 MOCKS_DIR = $(CURDIR)/tests/mocks
-HTTPS_GIT := https://github.com/cosmos/cosmos-sdk.git
+HTTPS_GIT := https://github.com/T-ragon/cosmos-sdk.git
 DOCKER := $(shell which docker)
 PROJECT_NAME = $(shell git remote get-url origin | xargs basename -s .git)
 
@@ -29,7 +29,7 @@ ifeq ($(LEDGER_ENABLED),true)
 	else
 	UNAME_S = $(shell uname -s)
 	ifeq ($(UNAME_S),OpenBSD)
-		$(warning OpenBSD detected, disabling ledger support (https://github.com/cosmos/cosmos-sdk/issues/1988))
+		$(warning OpenBSD detected, disabling ledger support (https://github.com/T-ragon/cosmos-sdk/issues/1988))
 	else
 		GCC = $(shell command -v gcc 2> /dev/null)
 		ifeq ($(GCC),)
@@ -83,11 +83,11 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 
 # process linker flags
 
-ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=sim \
-		-X github.com/cosmos/cosmos-sdk/version.AppName=simd \
-		-X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
-		-X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
-		-X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)"
+ldflags = -X github.com/T-ragon/cosmos-sdk/version.Name=sim \
+		-X github.com/T-ragon/cosmos-sdk/version.AppName=simd \
+		-X github.com/T-ragon/cosmos-sdk/version.Version=$(VERSION) \
+		-X github.com/T-ragon/cosmos-sdk/version.Commit=$(COMMIT) \
+		-X "github.com/T-ragon/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)"
 
 ifeq (,$(findstring nostrip,$(COSMOS_BUILD_OPTIONS)))
   ldflags += -w -s

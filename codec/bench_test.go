@@ -9,11 +9,11 @@ import (
 
 	counterv1 "cosmossdk.io/api/cosmos/counter/v1"
 
-	codectestutil "github.com/cosmos/cosmos-sdk/codec/testutil"
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	"github.com/cosmos/cosmos-sdk/testutil/testdata"
-	countertypes "github.com/cosmos/cosmos-sdk/testutil/x/counter/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
+	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	countertypes "github.com/T-ragon/cosmos-sdk/testutil/x/counter/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 type msgCounterWrapper struct {

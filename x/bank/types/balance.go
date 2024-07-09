@@ -9,8 +9,8 @@ import (
 	"cosmossdk.io/core/address"
 	"cosmossdk.io/x/bank/exported"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 var _ exported.GenesisBalance = (*Balance)(nil)
@@ -62,7 +62,7 @@ func SanitizeGenesisBalances(balances []Balance, addressCodec address.Codec) ([]
 	// The comparator used MUST be cheap to use lest we incur expenses like we had
 	// before whereby sdk.AccAddressFromBech32, which is a very expensive operation
 	// compared n * n elements yet discarded computations each time, as per:
-	//  https://github.com/cosmos/cosmos-sdk/issues/7766#issuecomment-786671734
+	//  https://github.com/T-ragon/cosmos-sdk/issues/7766#issuecomment-786671734
 
 	// 1. Retrieve the address equivalents for each Balance's address.
 	addresses := make([]sdk.AccAddress, len(balances))

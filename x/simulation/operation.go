@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/cosmos/cosmos-sdk/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/types/simulation"
 )
 
 // entry kinds for use within OperationEntry

@@ -8,8 +8,8 @@ import (
 	"cosmossdk.io/math"
 	minttypes "cosmossdk.io/x/mint/types"
 
-	"github.com/cosmos/cosmos-sdk/testutil"
-	grpctypes "github.com/cosmos/cosmos-sdk/types/grpc"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	grpctypes "github.com/T-ragon/cosmos-sdk/types/grpc"
 )
 
 func (s *E2ETestSuite) TestQueryGRPC() {

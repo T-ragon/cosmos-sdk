@@ -10,9 +10,9 @@ import (
 	reflect "reflect"
 
 	legacy "cosmossdk.io/core/legacy"
-	client "github.com/cosmos/cosmos-sdk/client"
-	types "github.com/cosmos/cosmos-sdk/types"
-	module "github.com/cosmos/cosmos-sdk/types/module"
+	client "github.com/T-ragon/cosmos-sdk/client"
+	types "github.com/T-ragon/cosmos-sdk/types"
+	module "github.com/T-ragon/cosmos-sdk/types/module"
 	gomock "github.com/golang/mock/gomock"
 	runtime "github.com/grpc-ecosystem/grpc-gateway/runtime"
 )

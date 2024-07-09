@@ -8,10 +8,10 @@ import (
 	"cosmossdk.io/depinject/appconfig"
 	"cosmossdk.io/x/consensus/keeper"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/runtime"
-	sdkaddress "github.com/cosmos/cosmos-sdk/types/address"
+	"github.com/T-ragon/cosmos-sdk/baseapp"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	sdkaddress "github.com/T-ragon/cosmos-sdk/types/address"
 )
 
 var _ depinject.OnePerModuleType = AppModule{}

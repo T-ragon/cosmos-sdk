@@ -47,7 +47,7 @@ message MsgSubmitProposal {
     (gogoproto.nullable)     = false,
     (amino.dont_omitempty)   = true,
     (amino.encoding)         = "legacy_coins",
-    (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"
   ];
 
   // proposer is the account address of the proposer.
@@ -125,7 +125,7 @@ message MsgDeposit {
     (gogoproto.nullable)     = false,
     (amino.dont_omitempty)   = true,
     (amino.encoding)         = "legacy_coins",
-    (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"
   ];
 }
 

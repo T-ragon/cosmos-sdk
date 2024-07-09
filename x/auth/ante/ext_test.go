@@ -8,9 +8,9 @@ import (
 	"cosmossdk.io/x/auth/ante"
 	"cosmossdk.io/x/auth/tx"
 
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	"github.com/cosmos/cosmos-sdk/testutil/testdata"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 func TestRejectExtensionOptionsDecorator(t *testing.T) {

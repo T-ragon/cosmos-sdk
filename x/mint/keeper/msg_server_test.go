@@ -4,7 +4,7 @@ import (
 	sdkmath "cosmossdk.io/math"
 	"cosmossdk.io/x/mint/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 func (s *KeeperTestSuite) TestUpdateParams() {

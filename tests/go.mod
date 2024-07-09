@@ -1,4 +1,4 @@
-module github.com/cosmos/cosmos-sdk/tests
+module github.com/T-ragon/cosmos-sdk/tests
 
 go 1.22.2
 
@@ -22,7 +22,7 @@ require (
 	github.com/cosmos/cosmos-db v1.0.2
 	github.com/cosmos/cosmos-proto v1.0.0-beta.5
 	// this version is not used as it is always replaced by the latest Cosmos SDK version
-	github.com/cosmos/cosmos-sdk v0.51.0
+	github.com/T-ragon/cosmos-sdk v0.51.0
 	github.com/cosmos/gogoproto v1.5.0
 	github.com/golang/mock v1.6.0
 	github.com/spf13/cobra v1.8.1
@@ -271,5 +271,5 @@ replace (
 	cosmossdk.io/simapp => ../simapp
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.2.0
 	// We always want to test against the latest version of the SDK.
-	github.com/cosmos/cosmos-sdk => ../.
+	github.com/T-ragon/cosmos-sdk => ../.
 )

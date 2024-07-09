@@ -3,7 +3,7 @@ package types
 import (
 	"cosmossdk.io/math"
 
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
 )
 
 // Delay, in blocks, between when validator updates are returned to the

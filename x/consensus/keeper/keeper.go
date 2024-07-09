@@ -18,7 +18,7 @@ import (
 	"cosmossdk.io/x/consensus/exported"
 	"cosmossdk.io/x/consensus/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/codec"
 )
 
 var StoreKey = "Consensus"

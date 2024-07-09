@@ -6,7 +6,7 @@ import (
 
 	"cosmossdk.io/x/protocolpool/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 func (k Keeper) InitGenesis(ctx context.Context, data *types.GenesisState) error {

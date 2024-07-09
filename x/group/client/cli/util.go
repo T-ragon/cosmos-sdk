@@ -7,8 +7,8 @@ import (
 
 	"cosmossdk.io/x/group"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // parseDecisionPolicy reads and parses the decision policy.

@@ -9,12 +9,12 @@ import (
 	"cosmossdk.io/client/v2/autocli/keyring"
 	"cosmossdk.io/core/address"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/codec/types"
-	cryptocodec "github.com/cosmos/cosmos-sdk/crypto/codec"
-	sdkkeyring "github.com/cosmos/cosmos-sdk/crypto/keyring"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/codec/types"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
+	sdkkeyring "github.com/T-ragon/cosmos-sdk/crypto/keyring"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
 )
 
 type addressStringType struct{}

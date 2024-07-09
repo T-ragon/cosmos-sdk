@@ -8,7 +8,7 @@ import (
 	"cosmossdk.io/core/address"
 	"cosmossdk.io/x/accounts/internal/implementation"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // coinsTransferMsgFunc defines a function that creates a message to send coins from one

@@ -14,13 +14,13 @@ import (
 	"cosmossdk.io/x/group"
 	client "cosmossdk.io/x/group/client/cli"
 
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/cosmos/cosmos-sdk/crypto/hd"
-	"github.com/cosmos/cosmos-sdk/crypto/keyring"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
-	"github.com/cosmos/cosmos-sdk/testutil/network"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/client/flags"
+	"github.com/T-ragon/cosmos-sdk/crypto/hd"
+	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	clitestutil "github.com/T-ragon/cosmos-sdk/testutil/cli"
+	"github.com/T-ragon/cosmos-sdk/testutil/network"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 type E2ETestSuite struct {

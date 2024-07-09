@@ -11,9 +11,9 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/mint/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/telemetry"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/telemetry"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // Keeper of the mint store

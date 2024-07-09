@@ -7,7 +7,7 @@ import (
 	"cosmossdk.io/x/auth/keeper"
 	"cosmossdk.io/x/auth/vesting/types"
 
-	"github.com/cosmos/cosmos-sdk/types/module"
+	"github.com/T-ragon/cosmos-sdk/types/module"
 )
 
 var (

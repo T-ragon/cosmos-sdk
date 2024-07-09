@@ -12,12 +12,12 @@ import (
 	storetypes "cosmossdk.io/store/types"
 	"cosmossdk.io/x/auth/ante"
 
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	"github.com/cosmos/cosmos-sdk/crypto/types/multisig"
-	"github.com/cosmos/cosmos-sdk/testutil/testdata"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/cosmos/cosmos-sdk/types/tx/signing"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/crypto/types/multisig"
+	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/types/tx/signing"
 )
 
 func TestValidateBasic(t *testing.T) {
@@ -98,7 +98,7 @@ func TestValidateMemo(t *testing.T) {
 }
 
 func TestConsumeGasForTxSize(t *testing.T) {
-	t.Skip() //  TODO(@julienrbrt) Fix after https://github.com/cosmos/cosmos-sdk/pull/20072
+	t.Skip() //  TODO(@julienrbrt) Fix after https://github.com/T-ragon/cosmos-sdk/pull/20072
 
 	suite := SetupTestSuite(t, true)
 

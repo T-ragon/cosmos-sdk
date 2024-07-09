@@ -3,7 +3,7 @@ package offchain
 import (
 	apitxsigning "cosmossdk.io/api/cosmos/tx/signing/v1beta1"
 
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
 )
 
 type SignatureData interface {

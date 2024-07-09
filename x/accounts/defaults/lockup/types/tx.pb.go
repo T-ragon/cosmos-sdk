@@ -6,10 +6,10 @@ package types
 import (
 	fmt "fmt"
 	_ "github.com/cosmos/cosmos-proto"
-	github_com_cosmos_cosmos_sdk_types "github.com/cosmos/cosmos-sdk/types"
-	types "github.com/cosmos/cosmos-sdk/types"
-	_ "github.com/cosmos/cosmos-sdk/types/msgservice"
-	_ "github.com/cosmos/cosmos-sdk/types/tx/amino"
+	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/types"
+	types "github.com/T-ragon/cosmos-sdk/types"
+	_ "github.com/T-ragon/cosmos-sdk/types/msgservice"
+	_ "github.com/T-ragon/cosmos-sdk/types/tx/amino"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	proto "github.com/cosmos/gogoproto/proto"
 	github_com_cosmos_gogoproto_types "github.com/cosmos/gogoproto/types"
@@ -361,7 +361,7 @@ var xxx_messageInfo_MsgWithdrawReward proto.InternalMessageInfo
 type MsgSend struct {
 	Sender    string                                   `protobuf:"bytes,1,opt,name=sender,proto3" json:"sender,omitempty"`
 	ToAddress string                                   `protobuf:"bytes,2,opt,name=to_address,json=toAddress,proto3" json:"to_address,omitempty"`
-	Amount    github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,3,rep,name=amount,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"amount"`
+	Amount    github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,3,rep,name=amount,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"amount"`
 }
 
 func (m *MsgSend) Reset()         { *m = MsgSend{} }
@@ -486,7 +486,7 @@ var xxx_messageInfo_MsgWithdraw proto.InternalMessageInfo
 // MsgWithdrawResponse defines the response for MsgWithdraw
 type MsgWithdrawResponse struct {
 	Receiver       string                                   `protobuf:"bytes,1,opt,name=receiver,proto3" json:"receiver,omitempty"`
-	AmountReceived github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,2,rep,name=amount_received,json=amountReceived,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"amount_received"`
+	AmountReceived github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,2,rep,name=amount_received,json=amountReceived,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"amount_received"`
 }
 
 func (m *MsgWithdrawResponse) Reset()         { *m = MsgWithdrawResponse{} }

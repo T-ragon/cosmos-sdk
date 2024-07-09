@@ -7,7 +7,7 @@ import (
 	"cosmossdk.io/errors"
 	"cosmossdk.io/x/group"
 
-	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/codec"
 )
 
 // InitGenesis initializes the group module's genesis state.

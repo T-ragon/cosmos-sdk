@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/core/address"
 	"cosmossdk.io/tools/hubl/internal/config"
 
-	addresscodec "github.com/cosmos/cosmos-sdk/codec/address"
+	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
 )
 
 // getAddressCodecFromConfig returns the address codecs for the given chain name

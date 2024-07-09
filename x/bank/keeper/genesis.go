@@ -7,8 +7,8 @@ import (
 	"cosmossdk.io/collections"
 	"cosmossdk.io/x/bank/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/query"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/query"
 )
 
 // InitGenesis initializes the bank module's state from a given genesis state.

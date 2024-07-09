@@ -17,13 +17,13 @@ import (
 	addresscodec "cosmossdk.io/core/address"
 
 	// the following will be extracted to a separate module
-	// https://github.com/cosmos/cosmos-sdk/issues/14403
+	// https://github.com/T-ragon/cosmos-sdk/issues/14403
 	authtypes "cosmossdk.io/x/auth/types"
 	govcli "cosmossdk.io/x/gov/client/cli"
 	govtypes "cosmossdk.io/x/gov/types"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	clienttx "github.com/cosmos/cosmos-sdk/client/tx"
+	"github.com/T-ragon/cosmos-sdk/client"
+	clienttx "github.com/T-ragon/cosmos-sdk/client/tx"
 )
 
 // BuildMsgCommand builds the msg commands for all the provided modules. If a custom command is provided for a

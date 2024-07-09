@@ -6,9 +6,9 @@ import (
 
 	bankexported "cosmossdk.io/x/bank/exported"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/module"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/module"
 )
 
 // StakingKeeper defines the expected staking keeper (noalias)

@@ -27,12 +27,12 @@ Ref: https://keepachangelog.com/en/1.0.0/
 
 ### Features
 
-* [#17294](https://github.com/cosmos/cosmos-sdk/pull/17294) Add snapshot manager Close method.
+* [#17294](https://github.com/T-ragon/cosmos-sdk/pull/17294) Add snapshot manager Close method.
  
 ### Improvements
 
-* [#17158](https://github.com/cosmos/cosmos-sdk/pull/17158) Start the goroutine after need to create a snapshot.
+* [#17158](https://github.com/T-ragon/cosmos-sdk/pull/17158) Start the goroutine after need to create a snapshot.
 
 ### Bug fixes
 
-* [#18651](https://github.com/cosmos/cosmos-sdk/pull/18651) Propagate iavl.MutableTree.Remove errors firstly to the caller instead of returning a synthesized error firstly.
+* [#18651](https://github.com/T-ragon/cosmos-sdk/pull/18651) Propagate iavl.MutableTree.Remove errors firstly to the caller instead of returning a synthesized error firstly.

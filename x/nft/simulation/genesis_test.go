@@ -12,11 +12,11 @@ import (
 	nftmodule "cosmossdk.io/x/nft/module"
 	"cosmossdk.io/x/nft/simulation"
 
-	addresscodec "github.com/cosmos/cosmos-sdk/codec/address"
-	codectestutil "github.com/cosmos/cosmos-sdk/codec/testutil"
-	"github.com/cosmos/cosmos-sdk/types/module"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
+	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
+	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
+	"github.com/T-ragon/cosmos-sdk/types/module"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
 )
 
 func TestRandomizedGenState(t *testing.T) {

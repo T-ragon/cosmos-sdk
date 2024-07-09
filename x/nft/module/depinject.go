@@ -8,8 +8,8 @@ import (
 	"cosmossdk.io/x/nft"
 	"cosmossdk.io/x/nft/keeper"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	cdctypes "github.com/T-ragon/cosmos-sdk/codec/types"
 )
 
 var _ depinject.OnePerModuleType = AppModule{}

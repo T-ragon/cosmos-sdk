@@ -105,7 +105,7 @@ func (s *GRPCGatewayServer[AppT, T]) Start(ctx context.Context) error {
 		return nil
 	}
 
-	// TODO start a normal Go http server (and do not leverage comet's like https://github.com/cosmos/cosmos-sdk/blob/9df6019de6ee7999fe9864bac836deb2f36dd44a/server/api/server.go#L98)
+	// TODO start a normal Go http server (and do not leverage comet's like https://github.com/T-ragon/cosmos-sdk/blob/9df6019de6ee7999fe9864bac836deb2f36dd44a/server/api/server.go#L98)
 
 	return nil
 }

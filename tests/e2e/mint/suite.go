@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/math"
 	minttypes "cosmossdk.io/x/mint/types"
 
-	"github.com/cosmos/cosmos-sdk/testutil/network"
+	"github.com/T-ragon/cosmos-sdk/testutil/network"
 )
 
 type E2ETestSuite struct {

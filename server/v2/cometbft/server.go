@@ -26,7 +26,7 @@ import (
 	"cosmossdk.io/server/v2/cometbft/types"
 	"cosmossdk.io/store/v2/snapshots"
 
-	genutiltypes "github.com/cosmos/cosmos-sdk/x/genutil/types"
+	genutiltypes "github.com/T-ragon/cosmos-sdk/x/genutil/types"
 )
 
 var (

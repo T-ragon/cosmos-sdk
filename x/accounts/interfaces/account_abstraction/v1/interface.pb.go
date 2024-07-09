@@ -5,7 +5,7 @@ package v1
 
 import (
 	fmt "fmt"
-	tx "github.com/cosmos/cosmos-sdk/types/tx"
+	tx "github.com/T-ragon/cosmos-sdk/types/tx"
 	proto "github.com/cosmos/gogoproto/proto"
 	io "io"
 	math "math"

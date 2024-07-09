@@ -8,7 +8,7 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/distribution/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 func TestValidateGenesis(t *testing.T) {

@@ -9,7 +9,7 @@ import (
 
 	"cosmossdk.io/x/epochs/types"
 
-	"github.com/cosmos/cosmos-sdk/types/module"
+	"github.com/T-ragon/cosmos-sdk/types/module"
 )
 
 // GenCommunityTax randomized CommunityTax

@@ -1,6 +1,6 @@
 go 1.22.2
 
-module github.com/cosmos/cosmos-sdk
+module github.com/T-ragon/cosmos-sdk
 
 require (
 	cosmossdk.io/api v0.7.5
@@ -210,7 +210,7 @@ replace (
 retract (
 	// false start by tagging the wrong branch
 	v0.50.0
-	// revert fix https://github.com/cosmos/cosmos-sdk/pull/16331
+	// revert fix https://github.com/T-ragon/cosmos-sdk/pull/16331
 	v0.46.12
 	// subject to a bug in the group module and gov module migration
 	[v0.46.5, v0.46.6]

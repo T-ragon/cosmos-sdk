@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/depinject/appconfig"
 
-	"github.com/cosmos/cosmos-sdk/testutil/x/counter/keeper"
+	"github.com/T-ragon/cosmos-sdk/testutil/x/counter/keeper"
 )
 
 var _ depinject.OnePerModuleType = AppModule{}

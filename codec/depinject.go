@@ -13,8 +13,8 @@ import (
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/x/tx/signing"
 
-	addresscodec "github.com/cosmos/cosmos-sdk/codec/address"
-	"github.com/cosmos/cosmos-sdk/codec/types"
+	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
+	"github.com/T-ragon/cosmos-sdk/codec/types"
 )
 
 func ProvideInterfaceRegistry(

@@ -9,7 +9,7 @@ import (
 
 	"cosmossdk.io/tools/confix/cmd"
 
-	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
+	clitestutil "github.com/T-ragon/cosmos-sdk/testutil/cli"
 )
 
 func TestMigrateCmd(t *testing.T) {

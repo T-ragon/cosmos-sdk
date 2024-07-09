@@ -103,7 +103,7 @@ message MsgSend {
     (gogoproto.nullable)     = false,
     (amino.dont_omitempty)   = true,
     (amino.encoding)         = "legacy_coins",
-    (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"
   ];
 }
 
@@ -132,6 +132,6 @@ message MsgWithdrawResponse {
     (gogoproto.nullable)     = false,
     (amino.dont_omitempty)   = true,
     (amino.encoding)         = "legacy_coins",
-    (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"
+    (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"
   ];
 }

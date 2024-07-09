@@ -12,8 +12,8 @@ import (
 	lockupaccount "cosmossdk.io/x/accounts/defaults/lockup"
 	"cosmossdk.io/x/accounts/defaults/lockup/types"
 
-	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 func (s *E2ETestSuite) TestPermanentLockingAccount() {

@@ -6,8 +6,8 @@ import (
 	"cosmossdk.io/x/params/types"
 	"cosmossdk.io/x/params/types/proposal"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // Keeper of the global paramstore

@@ -16,9 +16,9 @@ import (
 	"cosmossdk.io/tools/hubl/internal/config"
 	"cosmossdk.io/tools/hubl/internal/flags"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/grpc/cmtservice"
-	"github.com/cosmos/cosmos-sdk/crypto/keyring"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/client/grpc/cmtservice"
+	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
 )
 
 func InitCmd(config *config.Config, configDir string) *cobra.Command {

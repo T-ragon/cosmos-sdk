@@ -5,7 +5,7 @@ package keyring
 
 import (
 	fmt "fmt"
-	hd "github.com/cosmos/cosmos-sdk/crypto/hd"
+	hd "github.com/T-ragon/cosmos-sdk/crypto/hd"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	any "github.com/cosmos/gogoproto/types/any"
 	proto "github.com/golang/protobuf/proto"

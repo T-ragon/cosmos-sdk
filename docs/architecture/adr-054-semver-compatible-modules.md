@@ -19,9 +19,9 @@ addressing these issues.
 
 ## Context
 
-There has been [a fair amount of desire](https://github.com/cosmos/cosmos-sdk/discussions/10162)
+There has been [a fair amount of desire](https://github.com/T-ragon/cosmos-sdk/discussions/10162)
 in the community for semantic versioning in the SDK and there has been significant
-movement to splitting SDK modules into [standalone go modules](https://github.com/cosmos/cosmos-sdk/issues/11899).
+movement to splitting SDK modules into [standalone go modules](https://github.com/T-ragon/cosmos-sdk/issues/11899).
 Both of these will ideally allow the ecosystem to move faster because we won't
 be waiting for all dependencies to update synchronously. For instance, we could
 have 3 versions of the core SDK compatible with the latest 2 releases of
@@ -183,7 +183,7 @@ may be needed to do this.
 
 ### Approach A) Separate API and State Machine Modules
 
-One solution (first proposed in https://github.com/cosmos/cosmos-sdk/discussions/10582) is to isolate all protobuf
+One solution (first proposed in https://github.com/T-ragon/cosmos-sdk/discussions/10582) is to isolate all protobuf
 generated code into a separate module
 from the state machine module. This would mean that we could have state machine
 go modules `foo` and `foo/v2` which could use a types or API go module say
@@ -447,7 +447,7 @@ languages, possibly executed within a WASM VM.
 ### Minor API Revisions
 
 To declare minor API revisions of proto files, we propose the following guidelines (which were already documented
-in [cosmos.app.v1alpha module options](https://github.com/cosmos/cosmos-sdk/blob/main/proto/cosmos/app/v1alpha1/module.proto):
+in [cosmos.app.v1alpha module options](https://github.com/T-ragon/cosmos-sdk/blob/main/proto/cosmos/app/v1alpha1/module.proto):
 
 * proto packages which are revised from their initial version (considered revision `0`) should include a `package`
 * comment in some .proto file containing the test `Revision N` at the start of a comment line where `N` is the current
@@ -704,7 +704,7 @@ the migration overhead.
   is likely generally a good thing but does mean additional changes for users wanting to stick to the pre-depinject way
   of wiring up modules
 * `depinject` is somewhat less needed or maybe even obviated because of the full ADR 033 approach. If we adopt the
-  core API proposed in https://github.com/cosmos/cosmos-sdk/pull/12239, then a module would probably always instantiate
+  core API proposed in https://github.com/T-ragon/cosmos-sdk/pull/12239, then a module would probably always instantiate
   itself with a method `ProvideModule(appmodule.Service) (appmodule.AppModule, error)`. There is no complex wiring of
   keeper dependencies in this scenario and dependency injection may not have as much of (or any) use case.
 
@@ -722,10 +722,10 @@ Key outstanding discussions if we do adopt that direction are:
 
 ## References
 
-* https://github.com/cosmos/cosmos-sdk/discussions/10162
-* https://github.com/cosmos/cosmos-sdk/discussions/10582
-* https://github.com/cosmos/cosmos-sdk/discussions/10368
-* https://github.com/cosmos/cosmos-sdk/pull/11340
-* https://github.com/cosmos/cosmos-sdk/issues/11899
+* https://github.com/T-ragon/cosmos-sdk/discussions/10162
+* https://github.com/T-ragon/cosmos-sdk/discussions/10582
+* https://github.com/T-ragon/cosmos-sdk/discussions/10368
+* https://github.com/T-ragon/cosmos-sdk/pull/11340
+* https://github.com/T-ragon/cosmos-sdk/issues/11899
 * [ADR 020](./adr-020-protobuf-transaction-encoding.md)
 * [ADR 033](./adr-033-protobuf-inter-module-comm.md)

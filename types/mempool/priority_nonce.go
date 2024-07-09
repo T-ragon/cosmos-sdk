@@ -8,7 +8,7 @@ import (
 
 	"github.com/huandu/skiplist"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 var (

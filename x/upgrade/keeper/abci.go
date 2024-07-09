@@ -8,7 +8,7 @@ import (
 	consensusv1 "cosmossdk.io/x/consensus/types"
 	"cosmossdk.io/x/upgrade/types"
 
-	"github.com/cosmos/cosmos-sdk/telemetry"
+	"github.com/T-ragon/cosmos-sdk/telemetry"
 )
 
 // PreBlocker will check if there is a scheduled plan and if it is ready to be executed.

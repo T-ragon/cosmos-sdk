@@ -11,8 +11,8 @@ import (
 	"cosmossdk.io/x/distribution/keeper"
 	"cosmossdk.io/x/distribution/types"
 
-	codectestutil "github.com/cosmos/cosmos-sdk/codec/testutil"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 func TestMsgSetWithdrawAddress(t *testing.T) {

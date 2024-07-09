@@ -10,11 +10,11 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
-	"github.com/cosmos/cosmos-sdk/testutil/testdata"
-	"github.com/cosmos/cosmos-sdk/types/address"
-	grpctypes "github.com/cosmos/cosmos-sdk/types/grpc"
+	"github.com/T-ragon/cosmos-sdk/client"
+	clitestutil "github.com/T-ragon/cosmos-sdk/testutil/cli"
+	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	"github.com/T-ragon/cosmos-sdk/types/address"
+	grpctypes "github.com/T-ragon/cosmos-sdk/types/grpc"
 )
 
 func TestCLIQueryConn(t *testing.T) {

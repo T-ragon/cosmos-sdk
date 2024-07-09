@@ -4,7 +4,7 @@ import (
 	"flag"
 	"time"
 
-	"github.com/cosmos/cosmos-sdk/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/types/simulation"
 )
 
 const DefaultSeedValue = 42

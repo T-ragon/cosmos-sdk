@@ -9,10 +9,10 @@ import (
 
 	coretypes "github.com/cometbft/cometbft/rpc/core/types"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	querytypes "github.com/cosmos/cosmos-sdk/types/query"
+	"github.com/T-ragon/cosmos-sdk/client"
+	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	querytypes "github.com/T-ragon/cosmos-sdk/types/query"
 )
 
 // QueryTxsByEvents retrieves a list of paginated transactions from CometBFT's

@@ -5,7 +5,7 @@ package signing
 
 import (
 	fmt "fmt"
-	types "github.com/cosmos/cosmos-sdk/crypto/types"
+	types "github.com/T-ragon/cosmos-sdk/crypto/types"
 	proto "github.com/cosmos/gogoproto/proto"
 	any "github.com/cosmos/gogoproto/types/any"
 	io "io"

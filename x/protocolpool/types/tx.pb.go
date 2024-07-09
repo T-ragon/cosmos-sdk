@@ -8,9 +8,9 @@ import (
 	cosmossdk_io_math "cosmossdk.io/math"
 	fmt "fmt"
 	_ "github.com/cosmos/cosmos-proto"
-	github_com_cosmos_cosmos_sdk_types "github.com/cosmos/cosmos-sdk/types"
-	types "github.com/cosmos/cosmos-sdk/types"
-	_ "github.com/cosmos/cosmos-sdk/types/msgservice"
+	github_com_cosmos_cosmos_sdk_types "github.com/T-ragon/cosmos-sdk/types"
+	types "github.com/T-ragon/cosmos-sdk/types"
+	_ "github.com/T-ragon/cosmos-sdk/types/msgservice"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	grpc1 "github.com/cosmos/gogoproto/grpc"
 	proto "github.com/cosmos/gogoproto/proto"
@@ -41,7 +41,7 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 // MsgFundCommunityPool allows an account to directly
 // fund the community pool.
 type MsgFundCommunityPool struct {
-	Amount    github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=amount,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"amount"`
+	Amount    github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,1,rep,name=amount,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"amount"`
 	Depositor string                                   `protobuf:"bytes,2,opt,name=depositor,proto3" json:"depositor,omitempty"`
 }
 
@@ -122,7 +122,7 @@ type MsgCommunityPoolSpend struct {
 	// Authority is the address that controls the module (defaults to x/gov unless overwritten).
 	Authority string                                   `protobuf:"bytes,1,opt,name=authority,proto3" json:"authority,omitempty"`
 	Recipient string                                   `protobuf:"bytes,2,opt,name=recipient,proto3" json:"recipient,omitempty"`
-	Amount    github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,3,rep,name=amount,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"amount"`
+	Amount    github_com_cosmos_cosmos_sdk_types.Coins `protobuf:"bytes,3,rep,name=amount,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"amount"`
 }
 
 func (m *MsgCommunityPoolSpend) Reset()         { *m = MsgCommunityPoolSpend{} }
@@ -397,7 +397,7 @@ func (m *MsgClaimBudget) GetRecipientAddress() string {
 // MsgClaimBudgetResponse defines the response to executing a
 // MsgClaimBudget message.
 type MsgClaimBudgetResponse struct {
-	Amount types.Coin `protobuf:"bytes,1,opt,name=amount,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"amount"`
+	Amount types.Coin `protobuf:"bytes,1,opt,name=amount,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"amount"`
 }
 
 func (m *MsgClaimBudgetResponse) Reset()         { *m = MsgClaimBudgetResponse{} }
@@ -611,7 +611,7 @@ type MsgCancelContinuousFundResponse struct {
 	// withdrawnAllocatedFund represents the fund allocated to this recipient (if any) that have not been withdrawn yet,
 	// before a cancellation request has been initiated.
 	// It involves first withdrawing the funds and then canceling the request.
-	WithdrawnAllocatedFund types.Coin `protobuf:"bytes,4,opt,name=withdrawn_allocated_fund,json=withdrawnAllocatedFund,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"withdrawn_allocated_fund"`
+	WithdrawnAllocatedFund types.Coin `protobuf:"bytes,4,opt,name=withdrawn_allocated_fund,json=withdrawnAllocatedFund,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"withdrawn_allocated_fund"`
 }
 
 func (m *MsgCancelContinuousFundResponse) Reset()         { *m = MsgCancelContinuousFundResponse{} }
@@ -723,7 +723,7 @@ func (m *MsgWithdrawContinuousFund) GetRecipientAddress() string {
 // MsgWithdrawContinuousFundResponse defines the response to executing a
 // MsgWithdrawContinuousFund message.
 type MsgWithdrawContinuousFundResponse struct {
-	Amount types.Coin `protobuf:"bytes,1,opt,name=amount,proto3,castrepeated=github.com/cosmos/cosmos-sdk/types.Coins" json:"amount"`
+	Amount types.Coin `protobuf:"bytes,1,opt,name=amount,proto3,castrepeated=github.com/T-ragon/cosmos-sdk/types.Coins" json:"amount"`
 }
 
 func (m *MsgWithdrawContinuousFundResponse) Reset()         { *m = MsgWithdrawContinuousFundResponse{} }

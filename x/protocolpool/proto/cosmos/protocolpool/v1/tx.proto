@@ -48,7 +48,7 @@ message MsgFundCommunityPool {
   option (gogoproto.goproto_getters) = false;
 
   repeated cosmos.base.v1beta1.Coin amount = 1
-      [(gogoproto.nullable) = false, (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];
+      [(gogoproto.nullable) = false, (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"];
   string depositor = 2 [(cosmos_proto.scalar) = "cosmos.AddressString"];
 }
 
@@ -65,7 +65,7 @@ message MsgCommunityPoolSpend {
   string   authority                       = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
   string   recipient                       = 2;
   repeated cosmos.base.v1beta1.Coin amount = 3
-      [(gogoproto.nullable) = false, (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];
+      [(gogoproto.nullable) = false, (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"];
 }
 
 // MsgCommunityPoolSpendResponse defines the response to executing a
@@ -107,7 +107,7 @@ message MsgClaimBudget {
 // MsgClaimBudget message.
 message MsgClaimBudgetResponse {
   cosmos.base.v1beta1.Coin amount = 1
-      [(gogoproto.nullable) = false, (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];
+      [(gogoproto.nullable) = false, (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"];
   ;
 }
 
@@ -156,7 +156,7 @@ message MsgCancelContinuousFundResponse {
   // before a cancellation request has been initiated.
   // It involves first withdrawing the funds and then canceling the request.
   cosmos.base.v1beta1.Coin withdrawn_allocated_fund = 4
-      [(gogoproto.nullable) = false, (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];
+      [(gogoproto.nullable) = false, (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"];
   ;
 }
 
@@ -170,6 +170,6 @@ message MsgWithdrawContinuousFund {
 // MsgWithdrawContinuousFund message.
 message MsgWithdrawContinuousFundResponse {
   cosmos.base.v1beta1.Coin amount = 1
-      [(gogoproto.nullable) = false, (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"];
+      [(gogoproto.nullable) = false, (gogoproto.castrepeated) = "github.com/T-ragon/cosmos-sdk/types.Coins"];
   ;
 }

@@ -7,10 +7,10 @@ import (
 
 	banktypes "cosmossdk.io/x/bank/types"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	servertypes "github.com/cosmos/cosmos-sdk/server/types"
-	"github.com/cosmos/cosmos-sdk/x/genutil"
-	genutiltypes "github.com/cosmos/cosmos-sdk/x/genutil/types"
+	"github.com/T-ragon/cosmos-sdk/client"
+	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
+	"github.com/T-ragon/cosmos-sdk/x/genutil"
+	genutiltypes "github.com/T-ragon/cosmos-sdk/x/genutil/types"
 )
 
 // TODO(serverv2): remove app exporter notion that is server v1 specific

@@ -10,7 +10,7 @@ import (
 	"cosmossdk.io/x/group"
 	v2 "cosmossdk.io/x/group/migrations/v2"
 
-	codectestutil "github.com/cosmos/cosmos-sdk/codec/testutil"
+	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
 )
 
 func TestMigrateGenState(t *testing.T) {

@@ -4,7 +4,7 @@ import (
 	signingv1beta1 "cosmossdk.io/api/cosmos/tx/signing/v1beta1"
 	authsigning "cosmossdk.io/x/auth/signing"
 
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
 )
 
 // autoCLIKeyring represents the keyring interface used by the AutoCLI.

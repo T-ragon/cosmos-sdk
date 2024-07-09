@@ -9,11 +9,11 @@ import (
 	"cosmossdk.io/simapp"
 	"cosmossdk.io/x/distribution/types"
 
-	sdktestutil "github.com/cosmos/cosmos-sdk/testutil"
-	"github.com/cosmos/cosmos-sdk/testutil/network"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	grpctypes "github.com/cosmos/cosmos-sdk/types/grpc"
-	"github.com/cosmos/cosmos-sdk/types/query"
+	sdktestutil "github.com/T-ragon/cosmos-sdk/testutil"
+	"github.com/T-ragon/cosmos-sdk/testutil/network"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	grpctypes "github.com/T-ragon/cosmos-sdk/types/grpc"
+	"github.com/T-ragon/cosmos-sdk/types/query"
 )
 
 type GRPCQueryTestSuite struct {

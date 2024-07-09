@@ -11,10 +11,10 @@ import (
 	_ "cosmossdk.io/x/accounts"
 	"cosmossdk.io/x/tx/signing"
 
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	"github.com/cosmos/cosmos-sdk/tests/integration/tx/internal/pulsar/testpb"
-	"github.com/cosmos/cosmos-sdk/testutil/configurator"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
+	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/tests/integration/tx/internal/pulsar/testpb"
+	"github.com/T-ragon/cosmos-sdk/testutil/configurator"
+	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
 )
 
 func ProvideCustomGetSigners() signing.CustomGetSigner {

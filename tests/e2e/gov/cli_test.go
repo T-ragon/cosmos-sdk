@@ -13,7 +13,7 @@ import (
 	"cosmossdk.io/simapp"
 	v1 "cosmossdk.io/x/gov/types/v1"
 
-	"github.com/cosmos/cosmos-sdk/testutil/network"
+	"github.com/T-ragon/cosmos-sdk/testutil/network"
 )
 
 func TestE2ETestSuite(t *testing.T) {

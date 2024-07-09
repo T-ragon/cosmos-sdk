@@ -9,7 +9,7 @@ import (
 	"cosmossdk.io/store/prefix"
 	"cosmossdk.io/x/upgrade/types"
 
-	"github.com/cosmos/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/runtime"
 )
 
 const (

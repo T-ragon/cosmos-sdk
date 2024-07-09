@@ -9,7 +9,7 @@ require (
 	cosmossdk.io/x/bank v0.0.0-20240226161501-23359a0b6d91
 	cosmossdk.io/x/distribution v0.0.0-00010101000000-000000000000
 	cosmossdk.io/x/staking v0.0.0-00010101000000-000000000000
-	github.com/cosmos/cosmos-sdk v0.51.0
+	github.com/T-ragon/cosmos-sdk v0.51.0
 	github.com/cosmos/gogoproto v1.5.0
 )
 
@@ -168,7 +168,7 @@ require (
 	sigs.k8s.io/yaml v1.4.0 // indirect
 )
 
-replace github.com/cosmos/cosmos-sdk => ../../../../.
+replace github.com/T-ragon/cosmos-sdk => ../../../../.
 
 replace (
 	cosmossdk.io/api => ../../../../api

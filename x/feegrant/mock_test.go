@@ -6,7 +6,7 @@ import (
 	coregas "cosmossdk.io/core/gas"
 	coreheader "cosmossdk.io/core/header"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 type mockHeaderService struct{}

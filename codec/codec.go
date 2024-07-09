@@ -5,7 +5,7 @@ import (
 	"google.golang.org/grpc/encoding"
 	"google.golang.org/protobuf/reflect/protoreflect"
 
-	"github.com/cosmos/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/codec/types"
 )
 
 type (

@@ -6,10 +6,10 @@ import "gogoproto/gogo.proto";
 import "testpb/testdata.proto";
 import "cosmos/msg/v1/msg.proto";
 
-option go_package = "github.com/cosmos/cosmos-sdk/testutil/testdata";
+option go_package = "github.com/T-ragon/cosmos-sdk/testutil/testdata";
 
 // Msg tests the Protobuf message service as defined in
-// https://github.com/cosmos/cosmos-sdk/issues/7500.
+// https://github.com/T-ragon/cosmos-sdk/issues/7500.
 service Msg {
   option (cosmos.msg.v1.service) = true;
 
@@ -28,7 +28,7 @@ message MsgCreateDogResponse {
 }
 
 // TestMsg is msg type for testing protobuf message using any, as defined in
-// https://github.com/cosmos/cosmos-sdk/issues/6213.
+// https://github.com/T-ragon/cosmos-sdk/issues/6213.
 message TestMsg {
   option (cosmos.msg.v1.signer)      = "signers";
   option (gogoproto.goproto_getters) = false;

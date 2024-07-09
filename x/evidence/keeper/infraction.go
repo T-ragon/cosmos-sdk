@@ -8,7 +8,7 @@ import (
 	consensusv1 "cosmossdk.io/x/consensus/types"
 	"cosmossdk.io/x/evidence/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // HandleEquivocationEvidence implements an equivocation evidence handler. Assuming the

@@ -13,9 +13,9 @@ import (
 	v1 "cosmossdk.io/x/accounts/defaults/multisig/v1"
 	accountsv1 "cosmossdk.io/x/accounts/v1"
 
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 func TestE2ETestSuite(t *testing.T) {

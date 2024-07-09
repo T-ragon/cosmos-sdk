@@ -6,7 +6,7 @@ import (
 
 	"cosmossdk.io/x/params/types/proposal"
 
-	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/codec"
 )
 
 type (

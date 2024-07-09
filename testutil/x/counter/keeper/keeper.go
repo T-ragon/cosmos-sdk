@@ -12,7 +12,7 @@ import (
 	"cosmossdk.io/core/appmodule"
 	"cosmossdk.io/core/event"
 
-	"github.com/cosmos/cosmos-sdk/testutil/x/counter/types"
+	"github.com/T-ragon/cosmos-sdk/testutil/x/counter/types"
 )
 
 var StoreKey = "Counter"

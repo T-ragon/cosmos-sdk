@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	// TODO We don't need to import these API types if we use gogo's registry
-	// ref: https://github.com/cosmos/cosmos-sdk/issues/14647
+	// ref: https://github.com/T-ragon/cosmos-sdk/issues/14647
 	_ "cosmossdk.io/api/cosmos/bank/v1beta1"
 	_ "cosmossdk.io/api/cosmos/crypto/secp256k1"
 	"cosmossdk.io/core/appmodule"
@@ -26,20 +26,20 @@ import (
 	"cosmossdk.io/x/auth/types"
 	consensustypes "cosmossdk.io/x/consensus/types"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/tx"
-	codectestutil "github.com/cosmos/cosmos-sdk/codec/testutil"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	"github.com/cosmos/cosmos-sdk/runtime"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
-	"github.com/cosmos/cosmos-sdk/testutil/testdata"
-	_ "github.com/cosmos/cosmos-sdk/testutil/testdata/testpb"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	"github.com/cosmos/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/baseapp"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/client/tx"
+	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	clitestutil "github.com/T-ragon/cosmos-sdk/testutil/cli"
+	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
+	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	_ "github.com/T-ragon/cosmos-sdk/testutil/testdata/testpb"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/types/tx/signing"
 )
 
 // TestAccount represents an account used in the tests in x/auth/ante.

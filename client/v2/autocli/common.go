@@ -12,7 +12,7 @@ import (
 	"cosmossdk.io/client/v2/internal/flags"
 	"cosmossdk.io/client/v2/internal/util"
 
-	"github.com/cosmos/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/client"
 )
 
 type cmdType int

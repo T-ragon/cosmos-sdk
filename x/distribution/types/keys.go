@@ -5,9 +5,9 @@ import (
 
 	"cosmossdk.io/collections"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/address"
-	"github.com/cosmos/cosmos-sdk/types/kv"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/address"
+	"github.com/T-ragon/cosmos-sdk/types/kv"
 )
 
 const (
@@ -22,7 +22,7 @@ const (
 
 	// GovModuleName duplicates the gov module's name to avoid a cyclic dependency with x/gov.
 	// It should be synced with the gov module's name if it is ever changed.
-	// See: https://github.com/cosmos/cosmos-sdk/blob/b62a28aac041829da5ded4aeacfcd7a42873d1c8/x/gov/types/keys.go#L9
+	// See: https://github.com/T-ragon/cosmos-sdk/blob/b62a28aac041829da5ded4aeacfcd7a42873d1c8/x/gov/types/keys.go#L9
 	GovModuleName = "gov"
 	// ProtocolPoolModuleName duplicates the protocolpool module's name to avoid a cyclic dependency with x/protocolpool.
 	ProtocolPoolModuleName = "protocolpool"

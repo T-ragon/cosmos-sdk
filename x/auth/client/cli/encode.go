@@ -7,8 +7,8 @@ import (
 
 	authclient "cosmossdk.io/x/auth/client"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/flags"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/client/flags"
 )
 
 // GetEncodeCommand returns the encode command to take a JSONified transaction and turn it into

@@ -7,9 +7,9 @@ import (
 	v1 "cosmossdk.io/x/gov/types/v1"
 	"cosmossdk.io/x/gov/types/v1beta1"
 
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	"github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
 )
 
 const (
@@ -68,7 +68,7 @@ func ConvertToLegacyProposal(proposal v1.Proposal) (v1beta1.Proposal, error) {
 	}
 	// hack to fill up the content with the first message
 	// this is to support clients that have not yet (properly) use gov/v1 endpoints
-	// https://github.com/cosmos/cosmos-sdk/issues/14334
+	// https://github.com/T-ragon/cosmos-sdk/issues/14334
 	// VerifyBasic assures that we have at least one message.
 	legacyProposal.Content, err = codectypes.NewAnyWithValue(msgs[0])
 

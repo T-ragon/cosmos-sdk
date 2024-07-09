@@ -6,8 +6,8 @@ import (
 
 	"cosmossdk.io/x/params/types/proposal"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/simulation"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/simulation"
 )
 
 func min(a, b int) int {

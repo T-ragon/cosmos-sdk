@@ -15,8 +15,8 @@ import (
 
 	snapshottypes "cosmossdk.io/store/snapshots/types"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/server"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/server"
 )
 
 const SnapshotFileName = "_snapshot"

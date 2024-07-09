@@ -3,7 +3,7 @@ package simulation
 import (
 	"context"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // AccountKeeper defines the expected account keeper used for simulations (noalias)

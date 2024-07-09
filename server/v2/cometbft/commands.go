@@ -21,11 +21,11 @@ import (
 	"cosmossdk.io/server/v2/cometbft/client/rpc"
 	auth "cosmossdk.io/x/auth/client/cli"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	cryptocodec "github.com/cosmos/cosmos-sdk/crypto/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/query"
-	"github.com/cosmos/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/client"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/query"
+	"github.com/T-ragon/cosmos-sdk/version"
 )
 
 func (s *CometBFTServer[AppT, T]) rpcClient(cmd *cobra.Command) (rpc.CometRPC, error) {

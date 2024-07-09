@@ -16,9 +16,9 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
 )
 
 var (

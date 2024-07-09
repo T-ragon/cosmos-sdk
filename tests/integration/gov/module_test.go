@@ -14,8 +14,8 @@ import (
 	_ "cosmossdk.io/x/mint"
 	_ "cosmossdk.io/x/protocolpool"
 
-	"github.com/cosmos/cosmos-sdk/testutil/configurator"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
+	"github.com/T-ragon/cosmos-sdk/testutil/configurator"
+	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
 )
 
 func TestItCreatesModuleAccountOnInitBlock(t *testing.T) {

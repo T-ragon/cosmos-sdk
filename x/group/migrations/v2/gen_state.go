@@ -6,7 +6,7 @@ import (
 	"cosmossdk.io/core/address"
 	authtypes "cosmossdk.io/x/auth/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // MigrateGenState accepts exported v0.46 x/auth genesis state and migrates it to

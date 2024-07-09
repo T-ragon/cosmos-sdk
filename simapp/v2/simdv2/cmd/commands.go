@@ -20,16 +20,16 @@ import (
 	confixcmd "cosmossdk.io/tools/confix/cmd"
 	authcmd "cosmossdk.io/x/auth/client/cli"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/debug"
-	"github.com/cosmos/cosmos-sdk/client/keys"
-	"github.com/cosmos/cosmos-sdk/client/rpc"
-	"github.com/cosmos/cosmos-sdk/server"
-	servertypes "github.com/cosmos/cosmos-sdk/server/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/genutil"
-	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
-	genutiltypes "github.com/cosmos/cosmos-sdk/x/genutil/types"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/client/debug"
+	"github.com/T-ragon/cosmos-sdk/client/keys"
+	"github.com/T-ragon/cosmos-sdk/client/rpc"
+	"github.com/T-ragon/cosmos-sdk/server"
+	servertypes "github.com/T-ragon/cosmos-sdk/server/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/x/genutil"
+	genutilcli "github.com/T-ragon/cosmos-sdk/x/genutil/client/cli"
+	genutiltypes "github.com/T-ragon/cosmos-sdk/x/genutil/types"
 )
 
 var _ transaction.Codec[transaction.Tx] = &temporaryTxDecoder[transaction.Tx]{}

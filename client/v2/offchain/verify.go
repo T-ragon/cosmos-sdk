@@ -14,9 +14,9 @@ import (
 	v2flags "cosmossdk.io/client/v2/internal/flags"
 	txsigning "cosmossdk.io/x/tx/signing"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/client"
+	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
 )
 
 // Verify verifies a digest after unmarshalling it.

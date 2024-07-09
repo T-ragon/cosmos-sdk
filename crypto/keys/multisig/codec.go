@@ -3,11 +3,11 @@ package multisig
 import (
 	"github.com/cometbft/cometbft/crypto/sr25519"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	bls12_381 "github.com/cosmos/cosmos-sdk/crypto/keys/bls12_381"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	bls12_381 "github.com/T-ragon/cosmos-sdk/crypto/keys/bls12_381"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
 )
 
 // TODO: Figure out API for others to either add their own pubkey types, or

@@ -20,9 +20,9 @@ import (
 	corectx "cosmossdk.io/core/context"
 	"cosmossdk.io/log"
 
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/cosmos/cosmos-sdk/crypto/keyring"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/client/flags"
+	"github.com/T-ragon/cosmos-sdk/crypto/keyring"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // ClientContextKey defines the context key used to retrieve a client.Context from
@@ -296,7 +296,7 @@ func readTxCommandFlags(clientCtx Context, flagSet *pflag.FlagSet) (Context, err
 
 		// If the `from` signer account is a ledger key, we need to use
 		// SIGN_MODE_AMINO_JSON, because ledger doesn't support proto yet.
-		// ref: https://github.com/cosmos/cosmos-sdk/issues/8109
+		// ref: https://github.com/T-ragon/cosmos-sdk/issues/8109
 		if keyType == keyring.TypeLedger &&
 			clientCtx.SignModeStr != flags.SignModeLegacyAminoJSON &&
 			clientCtx.SignModeStr != flags.SignModeTextual &&

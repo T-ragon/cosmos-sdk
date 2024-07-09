@@ -10,7 +10,7 @@ import (
 	"cosmossdk.io/math"
 	"cosmossdk.io/x/distribution/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // AllocateTokens performs reward and fee distribution to all validators based
@@ -57,7 +57,7 @@ func (k Keeper) AllocateTokens(ctx context.Context, totalPreviousPower int64, bo
 	//
 	// TODO: Consider parallelizing later
 	//
-	// Ref: https://github.com/cosmos/cosmos-sdk/pull/3099#discussion_r246276376
+	// Ref: https://github.com/T-ragon/cosmos-sdk/pull/3099#discussion_r246276376
 	for _, vote := range bondedVotes {
 
 		validator, err := k.stakingKeeper.ValidatorByConsAddr(ctx, vote.Validator.Address)
@@ -67,7 +67,7 @@ func (k Keeper) AllocateTokens(ctx context.Context, totalPreviousPower int64, bo
 
 		// TODO: Consider micro-slashing for missing votes.
 		//
-		// Ref: https://github.com/cosmos/cosmos-sdk/issues/2525#issuecomment-430838701
+		// Ref: https://github.com/T-ragon/cosmos-sdk/issues/2525#issuecomment-430838701
 		powerFraction := math.LegacyNewDec(vote.Validator.Power).QuoTruncate(math.LegacyNewDec(totalPreviousPower))
 		reward := feeMultiplier.MulDecTruncate(powerFraction)
 

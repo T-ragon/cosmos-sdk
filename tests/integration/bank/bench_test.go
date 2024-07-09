@@ -15,12 +15,12 @@ import (
 	"cosmossdk.io/x/bank/types"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	codectestutil "github.com/cosmos/cosmos-sdk/codec/testutil"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/client"
+	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
 )
 
 var moduleAccAddr = authtypes.NewModuleAddress(stakingtypes.BondedPoolName)
@@ -63,7 +63,7 @@ func genSequenceOfTxs(txGen client.TxConfig,
 }
 
 func BenchmarkOneBankSendTxPerBlock(b *testing.B) {
-	// b.Skip("Skipping benchmark with buggy code reported at https://github.com/cosmos/cosmos-sdk/issues/10023")
+	// b.Skip("Skipping benchmark with buggy code reported at https://github.com/T-ragon/cosmos-sdk/issues/10023")
 	b.ReportAllocs()
 
 	acc := authtypes.BaseAccount{
@@ -121,7 +121,7 @@ func BenchmarkOneBankSendTxPerBlock(b *testing.B) {
 }
 
 func BenchmarkOneBankMultiSendTxPerBlock(b *testing.B) {
-	// b.Skip("Skipping benchmark with buggy code reported at https://github.com/cosmos/cosmos-sdk/issues/10023")
+	// b.Skip("Skipping benchmark with buggy code reported at https://github.com/T-ragon/cosmos-sdk/issues/10023")
 	b.ReportAllocs()
 
 	addr1Str, err := codectestutil.CodecOptions{}.GetAddressCodec().BytesToString(addr1)

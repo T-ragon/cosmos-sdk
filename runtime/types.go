@@ -3,9 +3,9 @@ package runtime
 import (
 	abci "github.com/cometbft/cometbft/api/cometbft/abci/v1"
 
-	"github.com/cosmos/cosmos-sdk/server/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/module"
+	"github.com/T-ragon/cosmos-sdk/server/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/module"
 )
 
 const ModuleName = "runtime"

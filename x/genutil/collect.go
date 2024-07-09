@@ -14,10 +14,10 @@ import (
 	"cosmossdk.io/core/address"
 	stakingtypes "cosmossdk.io/x/staking/types"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/genutil/types"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/x/genutil/types"
 )
 
 // GenAppStateFromConfig gets the genesis app state from the config
@@ -83,7 +83,7 @@ func CollectTxs(txJSONDecoder sdk.TxDecoder, moniker, genTxsDir string,
 	// addresses and IPs (and port) validator server info
 	var addressesIPs []string
 
-	// TODO (https://github.com/cosmos/cosmos-sdk/issues/17815):
+	// TODO (https://github.com/T-ragon/cosmos-sdk/issues/17815):
 	// Examine CPU and RAM profiles to see if we can parsing
 	// and ValidateAndGetGenTx concurrent.
 	for _, fo := range fos {

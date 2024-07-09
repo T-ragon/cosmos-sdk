@@ -17,8 +17,8 @@ import (
 	"cosmossdk.io/x/accounts/internal/implementation"
 	v1 "cosmossdk.io/x/accounts/v1"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 var (
@@ -299,7 +299,7 @@ func (k Keeper) getImplementation(ctx context.Context, addr []byte) (implementat
 }
 
 func (k Keeper) makeAddress(accNum uint64) ([]byte, error) {
-	// TODO: better address scheme, ref: https://github.com/cosmos/cosmos-sdk/issues/17516
+	// TODO: better address scheme, ref: https://github.com/T-ragon/cosmos-sdk/issues/17516
 	addr := sha256.Sum256(append([]byte("x/accounts"), binary.BigEndian.AppendUint64(nil, accNum)...))
 	return addr[:], nil
 }

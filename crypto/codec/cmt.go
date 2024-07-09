@@ -7,11 +7,11 @@ import (
 
 	"cosmossdk.io/errors"
 
-	bls12_381 "github.com/cosmos/cosmos-sdk/crypto/keys/bls12_381"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	bls12_381 "github.com/T-ragon/cosmos-sdk/crypto/keys/bls12_381"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
 )
 
 // FromCmtProtoPublicKey converts a CMT's cmtprotocrypto.PublicKey into our own PubKey.

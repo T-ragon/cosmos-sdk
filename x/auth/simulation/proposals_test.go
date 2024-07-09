@@ -9,10 +9,10 @@ import (
 	"cosmossdk.io/x/auth/simulation"
 	"cosmossdk.io/x/auth/types"
 
-	codectestutil "github.com/cosmos/cosmos-sdk/codec/testutil"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/address"
-	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
+	codectestutil "github.com/T-ragon/cosmos-sdk/codec/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/address"
+	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
 )
 
 func TestProposalMsgs(t *testing.T) {

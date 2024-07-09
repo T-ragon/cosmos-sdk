@@ -10,7 +10,7 @@ import (
 
 	address "cosmossdk.io/core/address"
 	types "cosmossdk.io/x/staking/types"
-	types0 "github.com/cosmos/cosmos-sdk/types"
+	types0 "github.com/T-ragon/cosmos-sdk/types"
 	gomock "github.com/golang/mock/gomock"
 )
 

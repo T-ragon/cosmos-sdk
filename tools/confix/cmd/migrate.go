@@ -12,7 +12,7 @@ import (
 
 	"cosmossdk.io/tools/confix"
 
-	"github.com/cosmos/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/client"
 )
 
 var (

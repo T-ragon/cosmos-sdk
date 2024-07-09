@@ -9,8 +9,8 @@ import (
 	"cosmossdk.io/x/params/simulation"
 	"cosmossdk.io/x/params/types/proposal"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
 )
 
 func TestProposalContents(t *testing.T) {

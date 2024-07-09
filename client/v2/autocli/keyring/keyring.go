@@ -5,7 +5,7 @@ import (
 
 	signingv1beta1 "cosmossdk.io/api/cosmos/tx/signing/v1beta1"
 
-	"github.com/cosmos/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/crypto/types"
 )
 
 // KeyringContextKey is the key used to store the keyring in the context.

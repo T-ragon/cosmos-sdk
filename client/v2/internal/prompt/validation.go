@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/url"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // ValidatePromptNotEmpty validates that the input is not empty.

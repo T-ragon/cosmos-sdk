@@ -13,8 +13,8 @@ import (
 	"cosmossdk.io/core/registry"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/client"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 var (

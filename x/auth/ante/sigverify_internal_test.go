@@ -12,8 +12,8 @@ import (
 	authcodec "cosmossdk.io/x/auth/codec"
 	authtypes "cosmossdk.io/x/auth/types"
 
-	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 type mockAccount struct {

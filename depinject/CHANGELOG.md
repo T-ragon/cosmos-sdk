@@ -24,7 +24,7 @@ Each entry must include the Github issue reference in the following format:
 
 ### Features
 
-- [#20540](https://github.com/cosmos/cosmos-sdk/pull/20540) add support for defining `appconfig` module configuration types using `github.com/cosmos/gogoproto/proto` in addition to `google.golang.org/protobuf` so that users can use gogo proto across their stack.
+- [#20540](https://github.com/T-ragon/cosmos-sdk/pull/20540) add support for defining `appconfig` module configuration types using `github.com/cosmos/gogoproto/proto` in addition to `google.golang.org/protobuf` so that users can use gogo proto across their stack.
 
 ## 1.0.0-alpha.x
 

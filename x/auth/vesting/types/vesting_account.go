@@ -9,7 +9,7 @@ import (
 	authtypes "cosmossdk.io/x/auth/types"
 	vestexported "cosmossdk.io/x/auth/vesting/exported"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // Compile-time type assertions

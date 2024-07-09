@@ -12,7 +12,7 @@ import (
 
 	"github.com/golang/mock/gomock"
 
-	"github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types"
 )
 
 // MockAnteDecorator is a mock of AnteDecorator interface.

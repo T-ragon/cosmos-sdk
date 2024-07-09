@@ -9,7 +9,7 @@ import "cometbft/types/v1/block.proto";
 import "cometbft/types/v1/types.proto";
 import "cosmos_proto/cosmos.proto";
 
-option go_package = "github.com/cosmos/cosmos-sdk/types/tx";
+option go_package = "github.com/T-ragon/cosmos-sdk/types/tx";
 
 // Service defines a gRPC service for interacting with transactions.
 service Service {

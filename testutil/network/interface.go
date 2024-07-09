@@ -7,10 +7,10 @@ import (
 
 	"cosmossdk.io/log"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	srvconfig "github.com/cosmos/cosmos-sdk/server/config"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/client"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	srvconfig "github.com/T-ragon/cosmos-sdk/server/config"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // NetworkI is an interface for a network of validators.

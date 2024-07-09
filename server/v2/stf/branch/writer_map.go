@@ -58,7 +58,7 @@ func (b WriterMap) ApplyStateChanges(stateChanges []store.StateChanges) error {
 // See WriterMap.recurseStateChanges for more details.
 // Subject to possible renaming to ensure a developer can retrieve only changes in *this* branch
 // context (not ancestors) if that is desired.
-// see: https://github.com/cosmos/cosmos-sdk/pull/20412#discussion_r1618771230
+// see: https://github.com/T-ragon/cosmos-sdk/pull/20412#discussion_r1618771230
 func (b WriterMap) GetStateChanges() ([]store.StateChanges, error) {
 	var (
 		changes = make(map[string][]store.KVPair)

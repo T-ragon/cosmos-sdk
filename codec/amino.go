@@ -12,7 +12,7 @@ import (
 
 	"cosmossdk.io/core/legacy"
 
-	"github.com/cosmos/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/codec/types"
 )
 
 // LegacyAmino defines a wrapper for an Amino codec that properly

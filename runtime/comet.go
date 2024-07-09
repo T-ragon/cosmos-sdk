@@ -5,7 +5,7 @@ import (
 
 	corecomet "cosmossdk.io/core/comet"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 var _ corecomet.Service = &ContextAwareCometInfoService{}

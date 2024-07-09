@@ -13,8 +13,8 @@ import (
 	"cosmossdk.io/x/slashing/types"
 	staking "cosmossdk.io/x/staking/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	cdctypes "github.com/T-ragon/cosmos-sdk/codec/types"
 )
 
 var _ depinject.OnePerModuleType = AppModule{}

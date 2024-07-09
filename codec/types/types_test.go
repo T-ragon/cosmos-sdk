@@ -9,8 +9,8 @@ import (
 	testdata "github.com/cosmos/gogoproto/types/any/test"
 	"github.com/stretchr/testify/require"
 
-	"github.com/cosmos/cosmos-sdk/codec/types"
-	test "github.com/cosmos/cosmos-sdk/testutil/testdata"
+	"github.com/T-ragon/cosmos-sdk/codec/types"
+	test "github.com/T-ragon/cosmos-sdk/testutil/testdata"
 )
 
 func TestAnyPackUnpack(t *testing.T) {

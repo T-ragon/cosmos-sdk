@@ -4,8 +4,8 @@ import (
 	autocliv1 "cosmossdk.io/api/cosmos/autocli/v1"
 	reflectionv1 "cosmossdk.io/api/cosmos/reflection/v1"
 
-	"github.com/cosmos/cosmos-sdk/runtime/services"
-	"github.com/cosmos/cosmos-sdk/types/module"
+	"github.com/T-ragon/cosmos-sdk/runtime/services"
+	"github.com/T-ragon/cosmos-sdk/types/module"
 )
 
 func (a *App) registerRuntimeServices(cfg module.Configurator) error { // nolint:staticcheck // SA1019: Configurator is deprecated but still used in runtime v1.

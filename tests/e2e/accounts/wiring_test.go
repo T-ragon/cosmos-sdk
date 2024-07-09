@@ -9,7 +9,7 @@ import (
 	storetypes "cosmossdk.io/store/types"
 	counterv1 "cosmossdk.io/x/accounts/testing/counter/v1"
 	"cosmossdk.io/x/bank/testutil"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 )
 

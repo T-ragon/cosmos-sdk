@@ -4,10 +4,10 @@ import (
 	"cosmossdk.io/core/legacy"
 	"cosmossdk.io/core/registry"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	cryptocodec "github.com/cosmos/cosmos-sdk/crypto/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	txtypes "github.com/cosmos/cosmos-sdk/types/tx"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	cryptocodec "github.com/T-ragon/cosmos-sdk/crypto/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	txtypes "github.com/T-ragon/cosmos-sdk/types/tx"
 )
 
 // RegisterLegacyAminoCodec registers types with the Amino codec.

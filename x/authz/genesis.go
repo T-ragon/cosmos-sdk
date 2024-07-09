@@ -3,7 +3,7 @@ package authz
 import (
 	"fmt"
 
-	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
+	cdctypes "github.com/T-ragon/cosmos-sdk/codec/types"
 )
 
 // NewGenesisState creates new GenesisState object

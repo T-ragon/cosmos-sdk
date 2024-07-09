@@ -27,11 +27,11 @@ import (
 	"cosmossdk.io/x/staking/testutil"
 	"cosmossdk.io/x/staking/types"
 
-	"github.com/cosmos/cosmos-sdk/codec/address"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
-	"github.com/cosmos/cosmos-sdk/testutil/configurator"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/codec/address"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
+	"github.com/T-ragon/cosmos-sdk/testutil/configurator"
+	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // bootstrapSlashTest creates 3 validators and bootstrap the app.
@@ -351,7 +351,7 @@ func TestSlashWithUnbondingDelegation(t *testing.T) {
 	// slash validator again
 	// all originally bonded stake has been slashed, so this will have no effect
 	// on the unbonding delegation, but it will slash stake bonded since the infraction
-	// this may not be the desirable behavior, ref https://github.com/cosmos/cosmos-sdk/issues/1440
+	// this may not be the desirable behavior, ref https://github.com/T-ragon/cosmos-sdk/issues/1440
 	f.sdkCtx = f.sdkCtx.WithBlockHeight(13)
 	_, err = f.stakingKeeper.Slash(f.sdkCtx, consAddr, 9, 10, fraction)
 	assert.NilError(t, err)
@@ -378,7 +378,7 @@ func TestSlashWithUnbondingDelegation(t *testing.T) {
 	// slash validator again
 	// all originally bonded stake has been slashed, so this will have no effect
 	// on the unbonding delegation, but it will slash stake bonded since the infraction
-	// this may not be the desirable behavior, ref https://github.com/cosmos/cosmos-sdk/issues/1440
+	// this may not be the desirable behavior, ref https://github.com/T-ragon/cosmos-sdk/issues/1440
 	f.sdkCtx = f.sdkCtx.WithBlockHeight(13)
 	_, err = f.stakingKeeper.Slash(f.sdkCtx, consAddr, 9, 10, fraction)
 	assert.NilError(t, err)
@@ -650,7 +650,7 @@ func TestSlashAmount(t *testing.T) {
 	assert.Assert(t, math.NewInt(0).Equal(noBurned))
 }
 
-// TestFixAvoidFullSlashPenalty fixes the following issue: https://github.com/cosmos/cosmos-sdk/issues/20641
+// TestFixAvoidFullSlashPenalty fixes the following issue: https://github.com/T-ragon/cosmos-sdk/issues/20641
 func TestFixAvoidFullSlashPenalty(t *testing.T) {
 	// setup
 	var authKeeper authkeeper.AccountKeeperI

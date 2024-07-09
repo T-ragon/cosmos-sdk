@@ -9,9 +9,9 @@ import (
 
 	authclient "cosmossdk.io/x/auth/client"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/cosmos/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/client/flags"
+	"github.com/T-ragon/cosmos-sdk/version"
 )
 
 // GetBroadcastCommand returns the tx broadcast command.

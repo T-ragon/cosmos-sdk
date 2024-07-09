@@ -3,8 +3,8 @@ package secp256r1
 import (
 	"encoding/base64"
 
-	"github.com/cosmos/cosmos-sdk/crypto/keys/internal/ecdsa"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/internal/ecdsa"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
 )
 
 var _ customProtobufType = (*ecdsaSK)(nil)

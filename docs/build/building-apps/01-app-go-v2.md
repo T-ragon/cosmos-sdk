@@ -28,29 +28,29 @@ The `app_config.go` file is the single place to configure all modules parameters
 1. Create the `AppConfig` variable:
 
     ```go reference
-    https://github.com/cosmos/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_config.go#L103
+    https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_config.go#L103
     ```
 
 2. Configure the `runtime` module:
 
     ```go reference
-    https://github.com/cosmos/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_config.go#L103-L167
+    https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_config.go#L103-L167
     ```
 
 3. Configure the modules defined in the `PreBlocker`, `BeginBlocker` and `EndBlocker` and the `tx` module:
 
     ```go reference
-    https://github.com/cosmos/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_config.go#L112-L129
+    https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_config.go#L112-L129
     ```
 
     ```go reference
-    https://github.com/cosmos/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_config.go#L200-L203
+    https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_config.go#L200-L203
     ```
 
 ### Complete `app_config.go`
 
 ```go reference
-https://github.com/cosmos/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_config.go
+https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_config.go
 ```
 
 ### Alternative formats
@@ -93,15 +93,15 @@ modules:
       "@type": cosmos.tx.config.v1.Config
 ```
 
-A more complete example of `app.yaml` can be found [here](https://github.com/cosmos/cosmos-sdk/blob/91b1d83f1339e235a1dfa929ecc00084101a19e3/simapp/app.yaml).
+A more complete example of `app.yaml` can be found [here](https://github.com/T-ragon/cosmos-sdk/blob/91b1d83f1339e235a1dfa929ecc00084101a19e3/simapp/app.yaml).
 
 ## `app_di.go`
 
 `app_di.go` is the place where `SimApp` is constructed. `depinject.Inject` facilitates that by automatically wiring the app modules and keepers, provided an application configuration `AppConfig` is provided. `SimApp` is constructed, when calling the injected `*runtime.AppBuilder`, with `appBuilder.Build(...)`.    
-In short `depinject` and the [`runtime` package](https://pkg.go.dev/github.com/cosmos/cosmos-sdk/runtime) abstract the wiring of the app, and the `AppBuilder` is the place where the app is constructed. [`runtime`](https://pkg.go.dev/github.com/cosmos/cosmos-sdk/runtime) takes care of registering the codecs, KV store, subspaces and instantiating `baseapp`.
+In short `depinject` and the [`runtime` package](https://pkg.go.dev/github.com/T-ragon/cosmos-sdk/runtime) abstract the wiring of the app, and the `AppBuilder` is the place where the app is constructed. [`runtime`](https://pkg.go.dev/github.com/T-ragon/cosmos-sdk/runtime) takes care of registering the codecs, KV store, subspaces and instantiating `baseapp`.
 
 ```go reference
-https://github.com/cosmos/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_v2.go#L101-L245
+https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_v2.go#L101-L245
 ```
 
 :::warning
@@ -115,7 +115,7 @@ In this case, use `depinject.Configs` for combining the extra configuration and 
 More information on how work `depinject.Configs` and `depinject.Supply` can be found in the [`depinject` documentation](https://pkg.go.dev/cosmossdk.io/depinject).
 
 ```go reference
-https://github.com/cosmos/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_v2.go#L114-L146
+https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_v2.go#L114-L146
 ```
 
 ### Registering non app wiring modules
@@ -150,5 +150,5 @@ Note that in the complete `SimApp` `app_di.go` file, testing utilities are also 
 :::
 
 ```go reference
-https://github.com/cosmos/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_v2.go
+https://github.com/T-ragon/cosmos-sdk/blob/v0.50.0-alpha.0/simapp/app_v2.go
 ```

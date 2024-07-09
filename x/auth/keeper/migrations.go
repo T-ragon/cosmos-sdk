@@ -6,7 +6,7 @@ import (
 	v5 "cosmossdk.io/x/auth/migrations/v5"
 	"cosmossdk.io/x/auth/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // Migrator is a struct for handling in-place store migrations.
