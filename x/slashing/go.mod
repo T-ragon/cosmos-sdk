@@ -14,7 +14,7 @@ require (
 	cosmossdk.io/x/staking v0.0.0-00010101000000-000000000000
 	github.com/bits-and-blooms/bitset v1.10.0
 	github.com/cosmos/cosmos-proto v1.0.0-beta.5
-	github.com/T-ragon/cosmos-sdk/v3 v3.1.1
+	github.com/T-ragon/cosmos-sdk/v3 v3.1.2
 	github.com/cosmos/gogoproto v1.5.0
 	github.com/golang/mock v1.6.0
 	github.com/golang/protobuf v1.5.4

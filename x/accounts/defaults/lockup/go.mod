@@ -9,7 +9,7 @@ require (
 	cosmossdk.io/x/bank v0.0.0-20240226161501-23359a0b6d91
 	cosmossdk.io/x/distribution v0.0.0-00010101000000-000000000000
 	cosmossdk.io/x/staking v0.0.0-00010101000000-000000000000
-	github.com/T-ragon/cosmos-sdk/v3 v3.1.1
+	github.com/T-ragon/cosmos-sdk/v3 v3.1.2
 	github.com/cosmos/gogoproto v1.5.0
 )
 
@@ -17,7 +17,7 @@ require cosmossdk.io/x/consensus v0.0.0-00010101000000-000000000000 // indirect
 
 require (
 	buf.build/gen/go/cometbft/cometbft/protocolbuffers/go v1.34.2-20240701160653-fedbb9acfd2f.2 // indirect
-	cosmossdk.io/core/testing v0.0.0-00010101000000-000000000000 // indirect
+	cosmossdk.io/core/testing v0.0.0-20240708142107-25e99c54bac1 // indirect
 	cosmossdk.io/depinject v1.0.0-alpha.4 // indirect
 	github.com/cometbft/cometbft/api v1.0.0-rc.1 // indirect
 	github.com/cosmos/crypto v0.1.1 // indirect

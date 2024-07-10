@@ -10,7 +10,7 @@ require (
 	cosmossdk.io/depinject v1.0.0-alpha.4
 	cosmossdk.io/x/bank v0.0.0-20240226161501-23359a0b6d91
 	cosmossdk.io/x/tx v0.13.3
-	github.com/T-ragon/cosmos-sdk/v3 v3.1.1
+	github.com/T-ragon/cosmos-sdk/v3 v3.1.2
 	github.com/cosmos/gogoproto v1.5.0
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.3.0
 	github.com/spf13/cobra v1.8.1

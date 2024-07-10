@@ -10,7 +10,7 @@ require (
 	cosmossdk.io/errors v1.0.1
 	cosmossdk.io/store v1.1.1-0.20240418092142-896cdf1971bc
 	cosmossdk.io/x/auth v0.0.0-00010101000000-000000000000
-	github.com/T-ragon/cosmos-sdk/v3 v3.1.1
+	github.com/T-ragon/cosmos-sdk/v3 v3.1.2
 	github.com/cosmos/gogoproto v1.5.0
 	github.com/golang/protobuf v1.5.4
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0
