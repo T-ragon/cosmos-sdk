@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	authtypes "github.com/T-ragon/cosmos-sdk/x/auth/types"
 )
 
 func TestNewModuleCrendentials(t *testing.T) {

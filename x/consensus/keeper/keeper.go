@@ -13,11 +13,11 @@ import (
 	storetypes "cosmossdk.io/core/store"
 	"cosmossdk.io/errors"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/consensus/exported"
-	"github.com/cosmos/cosmos-sdk/x/consensus/types"
-	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/x/consensus/exported"
+	"github.com/T-ragon/cosmos-sdk/x/consensus/types"
+	govtypes "github.com/T-ragon/cosmos-sdk/x/gov/types"
 )
 
 var StoreKey = "Consensus"

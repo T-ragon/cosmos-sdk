@@ -4,10 +4,10 @@ import (
 	"cosmossdk.io/log"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/params/types"
-	"github.com/cosmos/cosmos-sdk/x/params/types/proposal"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/x/params/types"
+	"github.com/T-ragon/cosmos-sdk/x/params/types/proposal"
 )
 
 // Keeper of the global paramstore

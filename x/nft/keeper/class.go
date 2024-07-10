@@ -7,7 +7,7 @@ import (
 	storetypes "cosmossdk.io/store/types"
 	"cosmossdk.io/x/nft"
 
-	"github.com/cosmos/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/runtime"
 )
 
 // SaveClass defines a method for creating a new nft class

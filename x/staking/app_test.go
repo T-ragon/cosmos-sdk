@@ -11,16 +11,16 @@ import (
 	"cosmossdk.io/log"
 	"cosmossdk.io/math"
 
-	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	bankKeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
-	stakingKeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
-	"github.com/cosmos/cosmos-sdk/x/staking/testutil"
-	"github.com/cosmos/cosmos-sdk/x/staking/types"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
+	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	authtypes "github.com/T-ragon/cosmos-sdk/x/auth/types"
+	bankKeeper "github.com/T-ragon/cosmos-sdk/x/bank/keeper"
+	stakingKeeper "github.com/T-ragon/cosmos-sdk/x/staking/keeper"
+	"github.com/T-ragon/cosmos-sdk/x/staking/testutil"
+	"github.com/T-ragon/cosmos-sdk/x/staking/types"
 )
 
 var (

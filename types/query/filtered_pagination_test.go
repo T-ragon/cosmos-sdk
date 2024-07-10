@@ -7,12 +7,12 @@ import (
 	"cosmossdk.io/store/prefix"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/address"
-	"github.com/cosmos/cosmos-sdk/types/query"
-	"github.com/cosmos/cosmos-sdk/x/bank/testutil"
-	"github.com/cosmos/cosmos-sdk/x/bank/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/address"
+	"github.com/T-ragon/cosmos-sdk/types/query"
+	"github.com/T-ragon/cosmos-sdk/x/bank/testutil"
+	"github.com/T-ragon/cosmos-sdk/x/bank/types"
 )
 
 var addr1 = sdk.AccAddress([]byte("addr1"))

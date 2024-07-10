@@ -10,12 +10,12 @@ import (
 
 	"cosmossdk.io/core/address"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/cosmos/cosmos-sdk/client/tx"
-	"github.com/cosmos/cosmos-sdk/version"
-	"github.com/cosmos/cosmos-sdk/x/group"
-	"github.com/cosmos/cosmos-sdk/x/group/internal/math"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/client/flags"
+	"github.com/T-ragon/cosmos-sdk/client/tx"
+	"github.com/T-ragon/cosmos-sdk/version"
+	"github.com/T-ragon/cosmos-sdk/x/group"
+	"github.com/T-ragon/cosmos-sdk/x/group/internal/math"
 )
 
 const (

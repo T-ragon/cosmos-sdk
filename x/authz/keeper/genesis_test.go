@@ -12,17 +12,17 @@ import (
 	sdkmath "cosmossdk.io/math"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
-	"github.com/cosmos/cosmos-sdk/codec/address"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
-	"github.com/cosmos/cosmos-sdk/runtime"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	"github.com/cosmos/cosmos-sdk/x/authz/keeper"
-	authzmodule "github.com/cosmos/cosmos-sdk/x/authz/module"
-	authztestutil "github.com/cosmos/cosmos-sdk/x/authz/testutil"
-	bank "github.com/cosmos/cosmos-sdk/x/bank/types"
+	"github.com/T-ragon/cosmos-sdk/baseapp"
+	"github.com/T-ragon/cosmos-sdk/codec/address"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/x/authz/keeper"
+	authzmodule "github.com/T-ragon/cosmos-sdk/x/authz/module"
+	authztestutil "github.com/T-ragon/cosmos-sdk/x/authz/testutil"
+	bank "github.com/T-ragon/cosmos-sdk/x/bank/types"
 )
 
 var (

@@ -8,9 +8,9 @@ import (
 	"cosmossdk.io/core/comet"
 	"cosmossdk.io/math"
 
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	stakingtypes "github.com/T-ragon/cosmos-sdk/x/staking/types"
 )
 
 type (

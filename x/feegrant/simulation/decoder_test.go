@@ -11,10 +11,10 @@ import (
 	"cosmossdk.io/x/feegrant/module"
 	"cosmossdk.io/x/feegrant/simulation"
 
-	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/kv"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/kv"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
 )
 
 var (

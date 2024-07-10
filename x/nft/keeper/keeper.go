@@ -5,7 +5,7 @@ import (
 	store "cosmossdk.io/core/store"
 	"cosmossdk.io/x/nft"
 
-	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/codec"
 )
 
 // Keeper of the nft store

@@ -6,9 +6,9 @@ import (
 
 	abci "github.com/cometbft/cometbft/abci/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	bankexported "github.com/cosmos/cosmos-sdk/x/bank/exported"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	bankexported "github.com/T-ragon/cosmos-sdk/x/bank/exported"
 )
 
 // StakingKeeper defines the expected staking keeper (noalias)

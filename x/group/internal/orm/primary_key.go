@@ -5,7 +5,7 @@ import (
 
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/codec"
 )
 
 var (

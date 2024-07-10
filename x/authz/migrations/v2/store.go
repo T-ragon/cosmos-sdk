@@ -7,11 +7,11 @@ import (
 	"cosmossdk.io/store/prefix"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/internal/conv"
-	"github.com/cosmos/cosmos-sdk/runtime"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/authz"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/internal/conv"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/x/authz"
 )
 
 // MigrateStore performs in-place store migrations from v0.45 to v0.46. The

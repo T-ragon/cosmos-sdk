@@ -8,12 +8,12 @@ import (
 	"cosmossdk.io/collections"
 	"cosmossdk.io/log"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
-	"github.com/cosmos/cosmos-sdk/telemetry"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/gov/keeper"
-	"github.com/cosmos/cosmos-sdk/x/gov/types"
-	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
+	"github.com/T-ragon/cosmos-sdk/baseapp"
+	"github.com/T-ragon/cosmos-sdk/telemetry"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/x/gov/keeper"
+	"github.com/T-ragon/cosmos-sdk/x/gov/types"
+	v1 "github.com/T-ragon/cosmos-sdk/x/gov/types/v1"
 )
 
 // EndBlocker called every block, process inflation, update validator set.

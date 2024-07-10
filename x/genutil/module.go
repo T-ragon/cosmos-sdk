@@ -12,12 +12,12 @@ import (
 	"cosmossdk.io/core/genesis"
 	"cosmossdk.io/depinject"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/codec"
-	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/cosmos/cosmos-sdk/x/genutil/types"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	cdctypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/module"
+	"github.com/T-ragon/cosmos-sdk/x/genutil/types"
 )
 
 var (

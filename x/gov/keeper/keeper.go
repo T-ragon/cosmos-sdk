@@ -9,12 +9,12 @@ import (
 	corestoretypes "cosmossdk.io/core/store"
 	"cosmossdk.io/log"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/gov/types"
-	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
-	"github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
+	"github.com/T-ragon/cosmos-sdk/baseapp"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/x/gov/types"
+	v1 "github.com/T-ragon/cosmos-sdk/x/gov/types/v1"
+	"github.com/T-ragon/cosmos-sdk/x/gov/types/v1beta1"
 )
 
 // Keeper defines the governance module Keeper

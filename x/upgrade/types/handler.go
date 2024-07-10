@@ -3,7 +3,7 @@ package types
 import (
 	context "context"
 
-	"github.com/cosmos/cosmos-sdk/types/module"
+	"github.com/T-ragon/cosmos-sdk/types/module"
 )
 
 // UpgradeHandler specifies the type of function that is called when an upgrade

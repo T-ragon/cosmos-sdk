@@ -9,15 +9,15 @@ import (
 	txsigning "cosmossdk.io/x/tx/signing"
 	"cosmossdk.io/x/tx/signing/aminojson"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/codec/legacy"
-	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
-	"github.com/cosmos/cosmos-sdk/testutil/testdata"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	signingtypes "github.com/cosmos/cosmos-sdk/types/tx/signing"
-	"github.com/cosmos/cosmos-sdk/x/auth/migrations/legacytx"
-	"github.com/cosmos/cosmos-sdk/x/auth/signing"
-	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/codec/legacy"
+	cdctypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	signingtypes "github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/x/auth/migrations/legacytx"
+	"github.com/T-ragon/cosmos-sdk/x/auth/signing"
+	banktypes "github.com/T-ragon/cosmos-sdk/x/bank/types"
 )
 
 var (

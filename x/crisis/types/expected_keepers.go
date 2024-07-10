@@ -3,7 +3,7 @@ package types
 import (
 	context "context"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 // SupplyKeeper defines the expected supply keeper (noalias)

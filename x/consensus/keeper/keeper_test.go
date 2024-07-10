@@ -9,14 +9,14 @@ import (
 
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
-	"github.com/cosmos/cosmos-sdk/runtime"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	consensusparamkeeper "github.com/cosmos/cosmos-sdk/x/consensus/keeper"
-	"github.com/cosmos/cosmos-sdk/x/consensus/types"
+	"github.com/T-ragon/cosmos-sdk/baseapp"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	authtypes "github.com/T-ragon/cosmos-sdk/x/auth/types"
+	consensusparamkeeper "github.com/T-ragon/cosmos-sdk/x/consensus/keeper"
+	"github.com/T-ragon/cosmos-sdk/x/consensus/types"
 )
 
 type KeeperTestSuite struct {

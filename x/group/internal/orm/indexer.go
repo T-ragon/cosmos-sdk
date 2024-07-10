@@ -4,7 +4,7 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/x/group/errors"
+	"github.com/T-ragon/cosmos-sdk/x/group/errors"
 )
 
 // IndexerFunc creates one or multiple index keys for the source object.

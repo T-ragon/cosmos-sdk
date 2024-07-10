@@ -10,9 +10,9 @@ import (
 	"cosmossdk.io/x/evidence/exported"
 	"cosmossdk.io/x/evidence/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
 )
 
 func TestDefaultGenesisState(t *testing.T) {

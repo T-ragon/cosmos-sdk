@@ -12,18 +12,18 @@ import (
 	"cosmossdk.io/log"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
-	"github.com/cosmos/cosmos-sdk/codec/address"
-	"github.com/cosmos/cosmos-sdk/runtime"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	"github.com/cosmos/cosmos-sdk/x/authz"
-	authzkeeper "github.com/cosmos/cosmos-sdk/x/authz/keeper"
-	authzmodule "github.com/cosmos/cosmos-sdk/x/authz/module"
-	authztestutil "github.com/cosmos/cosmos-sdk/x/authz/testutil"
-	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
+	"github.com/T-ragon/cosmos-sdk/baseapp"
+	"github.com/T-ragon/cosmos-sdk/codec/address"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/x/authz"
+	authzkeeper "github.com/T-ragon/cosmos-sdk/x/authz/keeper"
+	authzmodule "github.com/T-ragon/cosmos-sdk/x/authz/module"
+	authztestutil "github.com/T-ragon/cosmos-sdk/x/authz/testutil"
+	banktypes "github.com/T-ragon/cosmos-sdk/x/bank/types"
 )
 
 var (
@@ -303,7 +303,7 @@ func (s *TestSuite) TestDispatchAction() {
 }
 
 // Tests that all msg events included in an authz MsgExec tx
-// Ref: https://github.com/cosmos/cosmos-sdk/issues/9501
+// Ref: https://github.com/T-ragon/cosmos-sdk/issues/9501
 func (s *TestSuite) TestDispatchedEvents() {
 	require := s.Require()
 	addrs := s.addrs

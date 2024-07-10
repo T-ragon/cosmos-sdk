@@ -8,10 +8,10 @@ import (
 	"github.com/stretchr/testify/require"
 	"google.golang.org/protobuf/proto"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/mempool"
-	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	txsigning "github.com/cosmos/cosmos-sdk/types/tx/signing"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/mempool"
+	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
+	txsigning "github.com/T-ragon/cosmos-sdk/types/tx/signing"
 )
 
 type nonVerifiableTx struct{}

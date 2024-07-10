@@ -10,10 +10,10 @@ import (
 
 	"cosmossdk.io/math"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	addresscodec "github.com/cosmos/cosmos-sdk/codec/address"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/staking/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/x/staking/types"
 )
 
 func TestDelegationEqual(t *testing.T) {

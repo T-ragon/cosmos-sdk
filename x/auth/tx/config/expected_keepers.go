@@ -3,7 +3,7 @@ package tx
 import (
 	"context"
 
-	"github.com/cosmos/cosmos-sdk/x/bank/types"
+	"github.com/T-ragon/cosmos-sdk/x/bank/types"
 )
 
 // BankKeeper defines the contract needed for tx-related APIs

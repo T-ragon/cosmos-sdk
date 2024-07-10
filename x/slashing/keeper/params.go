@@ -6,7 +6,7 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	"github.com/cosmos/cosmos-sdk/x/slashing/types"
+	"github.com/T-ragon/cosmos-sdk/x/slashing/types"
 )
 
 // SignedBlocksWindow - sliding window for downtime slashing

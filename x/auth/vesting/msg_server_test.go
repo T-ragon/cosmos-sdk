@@ -12,16 +12,16 @@ import (
 	"cosmossdk.io/math"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/runtime"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	authcodec "github.com/cosmos/cosmos-sdk/x/auth/codec"
-	authkeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
-	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	"github.com/cosmos/cosmos-sdk/x/auth/vesting"
-	vestingtestutil "github.com/cosmos/cosmos-sdk/x/auth/vesting/testutil"
-	vestingtypes "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	authcodec "github.com/T-ragon/cosmos-sdk/x/auth/codec"
+	authkeeper "github.com/T-ragon/cosmos-sdk/x/auth/keeper"
+	authtypes "github.com/T-ragon/cosmos-sdk/x/auth/types"
+	"github.com/T-ragon/cosmos-sdk/x/auth/vesting"
+	vestingtestutil "github.com/T-ragon/cosmos-sdk/x/auth/vesting/testutil"
+	vestingtypes "github.com/T-ragon/cosmos-sdk/x/auth/vesting/types"
 )
 
 var (

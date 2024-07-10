@@ -3,11 +3,11 @@ package v3
 import (
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	"github.com/cosmos/cosmos-sdk/x/staking/exported"
-	"github.com/cosmos/cosmos-sdk/x/staking/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	paramtypes "github.com/T-ragon/cosmos-sdk/x/params/types"
+	"github.com/T-ragon/cosmos-sdk/x/staking/exported"
+	"github.com/T-ragon/cosmos-sdk/x/staking/types"
 )
 
 // subspace contains the method needed for migrations of the

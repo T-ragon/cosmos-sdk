@@ -11,7 +11,7 @@ require (
 	cosmossdk.io/store v1.1.0
 	github.com/cockroachdb/errors v1.11.1
 	github.com/cometbft/cometbft v0.38.9
-	github.com/cosmos/cosmos-sdk v0.50.6
+	github.com/T-ragon/cosmos-sdk v0.50.6
 	github.com/cosmos/gogoproto v1.5.0
 	github.com/golang/protobuf v1.5.4
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0

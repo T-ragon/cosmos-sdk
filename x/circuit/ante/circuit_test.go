@@ -12,14 +12,14 @@ import (
 	"cosmossdk.io/x/circuit/ante"
 	cbtypes "cosmossdk.io/x/circuit/types"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
-	"github.com/cosmos/cosmos-sdk/testutil/testdata"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	"github.com/cosmos/cosmos-sdk/x/auth"
-	"github.com/cosmos/cosmos-sdk/x/bank"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	clitestutil "github.com/T-ragon/cosmos-sdk/testutil/cli"
+	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/x/auth"
+	"github.com/T-ragon/cosmos-sdk/x/bank"
 )
 
 type fixture struct {

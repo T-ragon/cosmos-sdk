@@ -9,16 +9,16 @@ import (
 	"cosmossdk.io/math"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/runtime"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
-	"github.com/cosmos/cosmos-sdk/x/mint"
-	"github.com/cosmos/cosmos-sdk/x/mint/keeper"
-	minttestutil "github.com/cosmos/cosmos-sdk/x/mint/testutil"
-	"github.com/cosmos/cosmos-sdk/x/mint/types"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	authtypes "github.com/T-ragon/cosmos-sdk/x/auth/types"
+	govtypes "github.com/T-ragon/cosmos-sdk/x/gov/types"
+	"github.com/T-ragon/cosmos-sdk/x/mint"
+	"github.com/T-ragon/cosmos-sdk/x/mint/keeper"
+	minttestutil "github.com/T-ragon/cosmos-sdk/x/mint/testutil"
+	"github.com/T-ragon/cosmos-sdk/x/mint/types"
 )
 
 type IntegrationTestSuite struct {

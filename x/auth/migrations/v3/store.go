@@ -4,9 +4,9 @@ import (
 	corestore "cosmossdk.io/core/store"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/auth/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/x/auth/types"
 )
 
 func mapAccountAddressToAccountID(ctx sdk.Context, storeService corestore.KVStoreService, cdc codec.BinaryCodec) error {

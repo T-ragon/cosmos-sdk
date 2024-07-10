@@ -15,9 +15,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/testutil/testdata"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 type resultTestSuite struct {

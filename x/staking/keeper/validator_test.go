@@ -8,10 +8,10 @@ import (
 
 	"cosmossdk.io/math"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
-	"github.com/cosmos/cosmos-sdk/x/staking/testutil"
-	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	stakingkeeper "github.com/T-ragon/cosmos-sdk/x/staking/keeper"
+	"github.com/T-ragon/cosmos-sdk/x/staking/testutil"
+	stakingtypes "github.com/T-ragon/cosmos-sdk/x/staking/types"
 )
 
 func (s *KeeperTestSuite) applyValidatorSetUpdates(ctx sdk.Context, keeper *stakingkeeper.Keeper, expectedUpdatesLen int) []abci.ValidatorUpdate {

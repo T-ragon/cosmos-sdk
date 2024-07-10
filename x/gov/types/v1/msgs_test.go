@@ -6,11 +6,11 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/codec/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	banktypes "github.com/T-ragon/cosmos-sdk/x/bank/types"
+	v1 "github.com/T-ragon/cosmos-sdk/x/gov/types/v1"
 )
 
 var (

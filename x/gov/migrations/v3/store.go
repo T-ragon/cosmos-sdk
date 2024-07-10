@@ -5,12 +5,12 @@ import (
 	"cosmossdk.io/store/prefix"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/runtime"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	v1 "github.com/cosmos/cosmos-sdk/x/gov/migrations/v1"
-	govv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
-	govv1beta1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	v1 "github.com/T-ragon/cosmos-sdk/x/gov/migrations/v1"
+	govv1 "github.com/T-ragon/cosmos-sdk/x/gov/types/v1"
+	govv1beta1 "github.com/T-ragon/cosmos-sdk/x/gov/types/v1beta1"
 )
 
 // migrateProposals migrates all legacy proposals into MsgExecLegacyContent

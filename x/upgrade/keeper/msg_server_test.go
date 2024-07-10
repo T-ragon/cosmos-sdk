@@ -3,8 +3,8 @@ package keeper_test
 import (
 	"cosmossdk.io/x/upgrade/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/address"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/address"
 )
 
 func (s *KeeperTestSuite) TestSoftwareUpgrade() {

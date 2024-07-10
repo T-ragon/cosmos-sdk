@@ -5,7 +5,7 @@ import (
 	collcodec "cosmossdk.io/collections/codec"
 	"cosmossdk.io/math"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 const (

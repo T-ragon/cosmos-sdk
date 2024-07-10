@@ -7,7 +7,7 @@ import (
 
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/x/params/types"
+	"github.com/T-ragon/cosmos-sdk/x/params/types"
 )
 
 var (

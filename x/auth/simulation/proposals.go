@@ -3,11 +3,11 @@ package simulation
 import (
 	"math/rand"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/address"
-	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/cosmos/cosmos-sdk/x/auth/types"
-	"github.com/cosmos/cosmos-sdk/x/simulation"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/address"
+	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/x/auth/types"
+	"github.com/T-ragon/cosmos-sdk/x/simulation"
 )
 
 // Simulation operation weights constants

@@ -9,11 +9,11 @@ import (
 
 	storetypes "cosmossdk.io/store/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/group"
-	"github.com/cosmos/cosmos-sdk/x/group/errors"
-	groupmath "github.com/cosmos/cosmos-sdk/x/group/internal/math"
-	"github.com/cosmos/cosmos-sdk/x/group/internal/orm"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/x/group"
+	"github.com/T-ragon/cosmos-sdk/x/group/errors"
+	groupmath "github.com/T-ragon/cosmos-sdk/x/group/internal/math"
+	"github.com/T-ragon/cosmos-sdk/x/group/internal/orm"
 )
 
 const weightInvariant = "Group-TotalWeight"

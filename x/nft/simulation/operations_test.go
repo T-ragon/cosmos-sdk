@@ -15,17 +15,17 @@ import (
 	"cosmossdk.io/x/nft/simulation"
 	"cosmossdk.io/x/nft/testutil"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/codec"
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	"github.com/cosmos/cosmos-sdk/runtime"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	authkeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
-	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
-	banktestutil "github.com/cosmos/cosmos-sdk/x/bank/testutil"
-	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
+	authkeeper "github.com/T-ragon/cosmos-sdk/x/auth/keeper"
+	bankkeeper "github.com/T-ragon/cosmos-sdk/x/bank/keeper"
+	banktestutil "github.com/T-ragon/cosmos-sdk/x/bank/testutil"
+	stakingkeeper "github.com/T-ragon/cosmos-sdk/x/staking/keeper"
 )
 
 type SimTestSuite struct {

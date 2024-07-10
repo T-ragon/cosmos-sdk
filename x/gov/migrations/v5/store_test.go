@@ -9,14 +9,14 @@ import (
 	"cosmossdk.io/collections"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/runtime"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	"github.com/cosmos/cosmos-sdk/x/bank"
-	"github.com/cosmos/cosmos-sdk/x/gov"
-	v4 "github.com/cosmos/cosmos-sdk/x/gov/migrations/v4"
-	v5 "github.com/cosmos/cosmos-sdk/x/gov/migrations/v5"
-	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	"github.com/T-ragon/cosmos-sdk/x/bank"
+	"github.com/T-ragon/cosmos-sdk/x/gov"
+	v4 "github.com/T-ragon/cosmos-sdk/x/gov/migrations/v4"
+	v5 "github.com/T-ragon/cosmos-sdk/x/gov/migrations/v5"
+	v1 "github.com/T-ragon/cosmos-sdk/x/gov/types/v1"
 )
 
 func TestMigrateStore(t *testing.T) {

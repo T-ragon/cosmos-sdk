@@ -10,8 +10,8 @@ import (
 
 	"cosmossdk.io/math"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
 )
 
 var (
@@ -582,7 +582,7 @@ func (s *coinTestSuite) TestAddCoins() {
 }
 
 // Tests that even if coins with repeated denominations are passed into .Add that they
-// are correctly coalesced. Please see issue https://github.com/cosmos/cosmos-sdk/issues/13234
+// are correctly coalesced. Please see issue https://github.com/T-ragon/cosmos-sdk/issues/13234
 func TestCoinsAddCoalescesDuplicateDenominations(t *testing.T) {
 	A := sdk.Coins{
 		{"den", math.NewInt(2)},

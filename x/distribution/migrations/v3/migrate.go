@@ -4,10 +4,10 @@ import (
 	"cosmossdk.io/core/store"
 	sdkmath "cosmossdk.io/math"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/distribution/exported"
-	"github.com/cosmos/cosmos-sdk/x/distribution/types"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/x/distribution/exported"
+	"github.com/T-ragon/cosmos-sdk/x/distribution/types"
 )
 
 const (

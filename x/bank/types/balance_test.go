@@ -7,9 +7,9 @@ import (
 
 	"cosmossdk.io/math"
 
-	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	bank "github.com/cosmos/cosmos-sdk/x/bank/types"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/ed25519"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	bank "github.com/T-ragon/cosmos-sdk/x/bank/types"
 )
 
 func TestBalanceValidate(t *testing.T) {

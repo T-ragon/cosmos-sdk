@@ -17,16 +17,16 @@ import (
 	"cosmossdk.io/x/upgrade/keeper"
 	"cosmossdk.io/x/upgrade/types"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
-	addresscodec "github.com/cosmos/cosmos-sdk/codec/address"
-	"github.com/cosmos/cosmos-sdk/runtime"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/cosmos/cosmos-sdk/types/module"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
+	"github.com/T-ragon/cosmos-sdk/baseapp"
+	addresscodec "github.com/T-ragon/cosmos-sdk/codec/address"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/types/module"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	authtypes "github.com/T-ragon/cosmos-sdk/x/auth/types"
+	govtypes "github.com/T-ragon/cosmos-sdk/x/gov/types"
 )
 
 type TestSuite struct {

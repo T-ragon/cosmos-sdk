@@ -1,7 +1,7 @@
 package testutil
 
 import (
-	"github.com/cosmos/cosmos-sdk/x/slashing/types"
+	"github.com/T-ragon/cosmos-sdk/x/slashing/types"
 )
 
 // TestParams construct default slashing params for tests.

@@ -7,9 +7,9 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/gov"
-	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/x/gov"
+	v1 "github.com/T-ragon/cosmos-sdk/x/gov/types/v1"
 )
 
 func TestImportExportQueues_ErrorUnconsistentState(t *testing.T) {

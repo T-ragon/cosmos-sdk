@@ -5,9 +5,9 @@ import (
 
 	"cosmossdk.io/collections"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/address"
-	"github.com/cosmos/cosmos-sdk/types/kv"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/address"
+	"github.com/T-ragon/cosmos-sdk/types/kv"
 )
 
 const (

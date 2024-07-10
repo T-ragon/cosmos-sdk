@@ -8,11 +8,11 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/cosmos/cosmos-sdk/x/gov/types"
-	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/module"
+	"github.com/T-ragon/cosmos-sdk/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/x/gov/types"
+	v1 "github.com/T-ragon/cosmos-sdk/x/gov/types/v1"
 )
 
 // Simulation parameter constants

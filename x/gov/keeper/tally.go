@@ -6,9 +6,9 @@ import (
 	"cosmossdk.io/collections"
 	"cosmossdk.io/math"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
-	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	v1 "github.com/T-ragon/cosmos-sdk/x/gov/types/v1"
+	stakingtypes "github.com/T-ragon/cosmos-sdk/x/staking/types"
 )
 
 // TODO: Break into several smaller functions for clarity

@@ -9,10 +9,10 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/cosmos/cosmos-sdk/x/gov/types"
+	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	sdkerrors "github.com/T-ragon/cosmos-sdk/types/errors"
+	"github.com/T-ragon/cosmos-sdk/x/gov/types"
 )
 
 // DefaultStartingProposalID is 1

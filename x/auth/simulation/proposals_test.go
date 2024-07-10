@@ -7,11 +7,11 @@ import (
 	cmtproto "github.com/cometbft/cometbft/proto/tendermint/types"
 	"gotest.tools/v3/assert"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/address"
-	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/cosmos/cosmos-sdk/x/auth/simulation"
-	"github.com/cosmos/cosmos-sdk/x/auth/types"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/address"
+	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
+	"github.com/T-ragon/cosmos-sdk/x/auth/simulation"
+	"github.com/T-ragon/cosmos-sdk/x/auth/types"
 )
 
 func TestProposalMsgs(t *testing.T) {

@@ -15,16 +15,16 @@ import (
 
 	sdkmath "cosmossdk.io/math"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/codec"
-	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	"github.com/cosmos/cosmos-sdk/testutil/testdata"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
-	"github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
-	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/codec"
+	codectypes "github.com/T-ragon/cosmos-sdk/codec/types"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	banktypes "github.com/T-ragon/cosmos-sdk/x/bank/types"
+	v1 "github.com/T-ragon/cosmos-sdk/x/gov/types/v1"
+	"github.com/T-ragon/cosmos-sdk/x/gov/types/v1beta1"
+	stakingtypes "github.com/T-ragon/cosmos-sdk/x/staking/types"
 )
 
 func TestParseSubmitLegacyProposal(t *testing.T) {

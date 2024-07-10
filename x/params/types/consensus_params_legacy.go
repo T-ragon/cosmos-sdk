@@ -3,7 +3,7 @@ package types
 import (
 	cmtproto "github.com/cometbft/cometbft/proto/tendermint/types"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
+	"github.com/T-ragon/cosmos-sdk/baseapp"
 )
 
 // Deprecated.

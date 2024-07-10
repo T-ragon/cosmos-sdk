@@ -8,14 +8,14 @@ import (
 
 	signingv1beta1 "cosmossdk.io/api/cosmos/tx/signing/v1beta1"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	kmultisig "github.com/cosmos/cosmos-sdk/crypto/keys/multisig"
-	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	"github.com/cosmos/cosmos-sdk/crypto/types/multisig"
-	"github.com/cosmos/cosmos-sdk/testutil/testdata"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	signingtypes "github.com/cosmos/cosmos-sdk/types/tx/signing"
-	"github.com/cosmos/cosmos-sdk/x/auth/signing"
+	"github.com/T-ragon/cosmos-sdk/client"
+	kmultisig "github.com/T-ragon/cosmos-sdk/crypto/keys/multisig"
+	cryptotypes "github.com/T-ragon/cosmos-sdk/crypto/types"
+	"github.com/T-ragon/cosmos-sdk/crypto/types/multisig"
+	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	signingtypes "github.com/T-ragon/cosmos-sdk/types/tx/signing"
+	"github.com/T-ragon/cosmos-sdk/x/auth/signing"
 )
 
 // TxConfigTestSuite provides a test suite that can be used to test that a TxConfig implementation is correct.

@@ -6,9 +6,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	"github.com/cosmos/cosmos-sdk/x/group"
-	v2 "github.com/cosmos/cosmos-sdk/x/group/migrations/v2"
+	authtypes "github.com/T-ragon/cosmos-sdk/x/auth/types"
+	"github.com/T-ragon/cosmos-sdk/x/group"
+	v2 "github.com/T-ragon/cosmos-sdk/x/group/migrations/v2"
 )
 
 func TestMigrateGenState(t *testing.T) {

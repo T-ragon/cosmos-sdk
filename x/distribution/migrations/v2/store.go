@@ -3,9 +3,9 @@ package v2
 import (
 	"cosmossdk.io/core/store"
 
-	"github.com/cosmos/cosmos-sdk/runtime"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	v1 "github.com/cosmos/cosmos-sdk/x/distribution/migrations/v1"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	v1 "github.com/T-ragon/cosmos-sdk/x/distribution/migrations/v1"
 )
 
 // MigrateStore performs in-place store migrations from v0.40 to v0.43. The

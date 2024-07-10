@@ -9,14 +9,14 @@ import (
 	"cosmossdk.io/store/prefix"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/runtime"
-	"github.com/cosmos/cosmos-sdk/testutil"
-	"github.com/cosmos/cosmos-sdk/testutil/testdata"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	v1bank "github.com/cosmos/cosmos-sdk/x/bank/migrations/v1"
-	v2bank "github.com/cosmos/cosmos-sdk/x/bank/migrations/v2"
-	"github.com/cosmos/cosmos-sdk/x/bank/types"
+	"github.com/T-ragon/cosmos-sdk/runtime"
+	"github.com/T-ragon/cosmos-sdk/testutil"
+	"github.com/T-ragon/cosmos-sdk/testutil/testdata"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	v1bank "github.com/T-ragon/cosmos-sdk/x/bank/migrations/v1"
+	v2bank "github.com/T-ragon/cosmos-sdk/x/bank/migrations/v2"
+	"github.com/T-ragon/cosmos-sdk/x/bank/types"
 )
 
 func TestSupplyMigration(t *testing.T) {

@@ -12,7 +12,7 @@ import (
 	"cosmossdk.io/store/prefix"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/cosmos/cosmos-sdk/x/group/errors"
+	"github.com/T-ragon/cosmos-sdk/x/group/errors"
 )
 
 func TestNewIndexer(t *testing.T) {

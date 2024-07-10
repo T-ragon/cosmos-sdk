@@ -10,13 +10,13 @@ import (
 	"github.com/spf13/cobra"
 	"golang.org/x/exp/maps"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/cosmos/cosmos-sdk/version"
-	v043 "github.com/cosmos/cosmos-sdk/x/genutil/migrations/v043"
-	v046 "github.com/cosmos/cosmos-sdk/x/genutil/migrations/v046"
-	v047 "github.com/cosmos/cosmos-sdk/x/genutil/migrations/v047"
-	"github.com/cosmos/cosmos-sdk/x/genutil/types"
+	"github.com/T-ragon/cosmos-sdk/client"
+	"github.com/T-ragon/cosmos-sdk/client/flags"
+	"github.com/T-ragon/cosmos-sdk/version"
+	v043 "github.com/T-ragon/cosmos-sdk/x/genutil/migrations/v043"
+	v046 "github.com/T-ragon/cosmos-sdk/x/genutil/migrations/v046"
+	v047 "github.com/T-ragon/cosmos-sdk/x/genutil/migrations/v047"
+	"github.com/T-ragon/cosmos-sdk/x/genutil/types"
 )
 
 const flagGenesisTime = "genesis-time"

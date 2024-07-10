@@ -12,16 +12,16 @@ import (
 	"cosmossdk.io/log"
 	"cosmossdk.io/math"
 
-	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
-	banktestutil "github.com/cosmos/cosmos-sdk/x/bank/testutil"
-	distributionkeeper "github.com/cosmos/cosmos-sdk/x/distribution/keeper"
-	slashingkeeper "github.com/cosmos/cosmos-sdk/x/slashing/keeper"
-	"github.com/cosmos/cosmos-sdk/x/slashing/testutil"
-	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
-	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
+	"github.com/T-ragon/cosmos-sdk/crypto/keys/secp256k1"
+	simtestutil "github.com/T-ragon/cosmos-sdk/testutil/sims"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	bankkeeper "github.com/T-ragon/cosmos-sdk/x/bank/keeper"
+	banktestutil "github.com/T-ragon/cosmos-sdk/x/bank/testutil"
+	distributionkeeper "github.com/T-ragon/cosmos-sdk/x/distribution/keeper"
+	slashingkeeper "github.com/T-ragon/cosmos-sdk/x/slashing/keeper"
+	"github.com/T-ragon/cosmos-sdk/x/slashing/testutil"
+	stakingkeeper "github.com/T-ragon/cosmos-sdk/x/staking/keeper"
+	stakingtypes "github.com/T-ragon/cosmos-sdk/x/staking/types"
 )
 
 func TestSlashRedelegation(t *testing.T) {

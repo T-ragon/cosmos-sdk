@@ -12,9 +12,9 @@ import (
 	"cosmossdk.io/x/feegrant/module"
 	"cosmossdk.io/x/feegrant/simulation"
 
-	moduletypes "github.com/cosmos/cosmos-sdk/types/module"
-	moduletestutil "github.com/cosmos/cosmos-sdk/types/module/testutil"
-	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
+	moduletypes "github.com/T-ragon/cosmos-sdk/types/module"
+	moduletestutil "github.com/T-ragon/cosmos-sdk/types/module/testutil"
+	simtypes "github.com/T-ragon/cosmos-sdk/types/simulation"
 )
 
 func TestRandomizedGenState(t *testing.T) {

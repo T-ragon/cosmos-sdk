@@ -3,11 +3,11 @@ package keeper
 import (
 	"time"
 
-	"github.com/cosmos/cosmos-sdk/internal/conv"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/address"
-	"github.com/cosmos/cosmos-sdk/types/kv"
-	"github.com/cosmos/cosmos-sdk/x/authz"
+	"github.com/T-ragon/cosmos-sdk/internal/conv"
+	sdk "github.com/T-ragon/cosmos-sdk/types"
+	"github.com/T-ragon/cosmos-sdk/types/address"
+	"github.com/T-ragon/cosmos-sdk/types/kv"
+	"github.com/T-ragon/cosmos-sdk/x/authz"
 )
 
 // Keys for store prefixes
